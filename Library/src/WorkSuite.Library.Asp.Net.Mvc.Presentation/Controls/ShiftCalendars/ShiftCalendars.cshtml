@@ -1,0 +1,31 @@
+﻿@* Generator : MvcHelper GeneratePrettyNames : true *@
+
+@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Controls.Primitives
+@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Controls.ShiftCalendars
+@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Controls.ShiftPatterns
+@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Controls.ViewElements
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels
+@using WorkSuite.Library.Asp.Net.Mvc.Server.ShiftCalendars
+@using WorkSuite.Library.Asp.Net.Mvc.Server.ShiftPatterns
+@* Fallback - if we have an Unknown/undeterminable component
+*@
+@helper For(IsAViewElement element)
+{
+
+    @ViewElement.Unknown()
+}
+
+
+@helper For(ShiftCalendar view_model)
+{
+
+    <article data-component="shift-calendar"
+             class="shift-calendar @view_model.classes.AsHtmlClassString()">
+        <header>
+            <h2>@view_model.title</h2>
+            @ShiftCalendarActions.For(view_model.actions)
+        </header>
+        @ShiftPatterns.For(view_model.shift_pattern_grid)
+    </article>
+
+}

@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{538C6F62-B398-41F1-917C-10659FDF6C78}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WTS.WorkSuite.Library.DomainTypes</RootNamespace>
+    <AssemblyName>WTS.WorkSuite.Library.DomainTypes</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Colour\RGBColourRequest.cs" />
+    <Compile Include="Colour\RgbColour.cs" />
+    <Compile Include="Colour\Sanatisation\ColourSanitiser.cs" />
+    <Compile Include="Colour\Validators\RGBColourRequestValidation.cs" />
+    <Compile Include="Colour\Validators\ColourValidationResult.cs" />
+    <Compile Include="Date\DateFromatters.cs" />
+    <Compile Include="Date\DateRangeHelper.cs" />
+    <Compile Include="Date\DateTimeExtensions.cs" />
+    <Compile Include="Date\Validators\IsADate\GregorianCalendar\GregorianCalendarSanitisationResult.cs" />
+    <Compile Include="Date\Validators\IsADate\GregorianCalendar\GregorianCalendarSanitisation.cs" />
+    <Compile Include="Date\Validators\IsADate\MonthInference\IMonthSanitisation.cs" />
+    <Compile Include="Date\Validators\IsADate\MonthInference\MonthInferenceSanitisation.cs" />
+    <Compile Include="Date\DateRequest.cs" />
+    <Compile Include="Date\IDateRequest.cs" />
+    <Compile Include="DefaultValues\NotSpecified.cs" />
+    <Compile Include="DefaultValues\Null.cs" />
+    <Compile Include="DefinitionList\DefinitionListElement.cs" />
+    <Compile Include="Documents\DocumentId.cs" />
+    <Compile Include="Duration\DurationRequest.cs" />
+    <Compile Include="Duration\Validators\DurationValidationExtension.cs" />
+    <Compile Include="Duration\Validators\IsBetweenOneMinuteAndTwentyFourHours\DurationIsWithinBetweenOneMinuteAndTwentyFourHours.cs" />
+    <Compile Include="Duration\Validators\DurationValidationResult.cs" />
+    <Compile Include="Duration\Validators\IsBetweenZeroMinuteAndTwentyFourHours\DurationIsBetweenZeroMinuteAndTwentyFourHours.cs" />
+    <Compile Include="Duration\Validators\IsSpeciftyAndIsANumber\DurationIsSpecifyAndIsANumber.cs" />
+    <Compile Include="Exceptions\InternalCorruptDataException.cs" />
+    <Compile Include="Formating\ReportFormatStringExtension.cs" />
+    <Compile Include="FreeText\FreeTextAttribute.cs" />
+    <Compile Include="Images\ImageId.cs" />
+    <Compile Include="IShiftCalendarOccurrencesCountDetails.cs" />
+    <Compile Include="IShiftPattern.cs" />
+    <Compile Include="OrderList\IListEntryIndex.cs" />
+    <Compile Include="OrderList\ListEntryIndexMap.cs" />
+    <Compile Include="OrderList\ListEntryIndexMapDelegates.cs" />
+    <Compile Include="OrderList\ListEntryIndexMapper.cs" />
+    <Compile Include="OrderList\MoveIndexEntryRequest.cs" />
+    <Compile Include="OrderList\OrderList.cs" />
+    <Compile Include="PostalAddresses\Formatting\PostalAddressFormatter.cs" />
+    <Compile Include="PostalAddresses\Sanitisation\PostalAddressSanitiser.cs" />
+    <Compile Include="PostalAddresses\Validation\Address\AddressLine\AddressLineValidationSettings.cs" />
+    <Compile Include="PostalAddresses\Validation\Address\AddressLine\AddressLineValidatorSettings.cs" />
+    <Compile Include="PostalAddresses\Validation\Address\AddressLine\AddressLineValidator.cs" />
+    <Compile Include="PostalAddresses\IPostalAddress.cs" />
+    <Compile Include="PostalAddresses\Validation\Address\NumberOrName\NumberOrNameValidator.cs" />
+    <Compile Include="PostalAddresses\Validation\Address\NumberOrName\NumberOrNameValidatorSettings.cs" />
+    <Compile Include="PostalAddresses\Validation\IsUnique\PostalAddressIsUniqueRequest.cs" />
+    <Compile Include="PostalAddresses\Validation\IsUnique\PostalAddressIsUniqueValidator.cs" />
+    <Compile Include="PostalAddresses\Validation\IsUnique\PostalAddressIsUniqueValidatorSettings.cs" />
+    <Compile Include="PostalAddresses\PostalAddressIdentity.cs" />
+    <Compile Include="PostalAddresses\Validation\Address\PostalAddressValidator.cs" />
+    <Compile Include="PostalAddresses\Validation\Address\Postcode\PostcodeValidator.cs" />
+    <Compile Include="PostalAddresses\Validation\Address\Postcode\PostcodeValidatorSettings.cs" />
+    <Compile Include="Primitives\Sanitisation\StringSanitiser.cs" />
+    <Compile Include="Primitives\Validation\FieldVerifier.cs" />
+    <Compile Include="Primitives\Validation\Premises\PersonsNameIsValid.cs" />
+    <Compile Include="Primitives\Validation\Premises\TextFieldIsWithinDefaultNumberOfCharacters.cs" />
+    <Compile Include="Primitives\Validation\StaticPremises.cs" />
+    <Compile Include="Primitives\Validation\Premises\TextFieldIsMandatory.cs" />
+    <Compile Include="Primitives\Validation\PremiseValidator.cs" />
+    <Compile Include="Primitives\Validation\ValidationConstraints.cs" />
+    <Compile Include="Primitives\Validation\Validator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShiftCalendarRange.cs" />
+    <Compile Include="ReadonlyText\ReadOnly.cs" />
+    <Compile Include="ServiceStates\ServiceIsInMaintenanceMode.cs" />
+    <Compile Include="ServiceStates\ServiceIsOnline.cs" />
+    <Compile Include="ServiceStates\ServiceState.cs" />
+    <Compile Include="ServiceStates\AServiceState.cs" />
+    <Compile Include="Time\Clocks\Clock.cs" />
+    <Compile Include="Time\Clocks\UtcTime.cs" />
+    <Compile Include="Time\ConvertSecondsTotwntyForHourintegerTime.cs" />
+    <Compile Include="Time\ConvertStringTimeToSeconds.cs" />
+    <Compile Include="Time\Periods\ClashingTimePeriodScenario\ClashingTimePeriodsScnario.cs" />
+    <Compile Include="Time\Periods\ConvertEndTimeToSeconds.cs" />
+    <Compile Include="Time\Periods\TimePeriod.cs" />
+    <Compile Include="Time\Periods\BatchOfViolation\CheckBatchOfViolation.cs" />
+    <Compile Include="Time\Periods\OneViolation\ViolationCheckResult.cs" />
+    <Compile Include="Time\Periods\ViolationRequest.cs" />
+    <Compile Include="Time\Periods\OneViolation\TimePeriodValidationResponse.cs" />
+    <Compile Include="Time\Periods\OneViolation\CheckOneViolation.cs" />
+    <Compile Include="Time\TimeRequest.cs" />
+    <Compile Include="Time\TimeRequestEndTimeExtension.cs" />
+    <Compile Include="Time\TimeValidationExtention.cs" />
+    <Compile Include="Time\Validators\IsWithInATwentyFourHourDay\TimeIsWithinATwentyFourHourDay.cs" />
+    <Compile Include="Time\Validators\TimeValidationResponse.cs" />
+    <Compile Include="Time\Validators\TimeValidationResult.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Read me.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WorkSuite.Library.CodeStrutures\WorkSuite.Library.CodeStrutures.csproj">
+      <Project>{249BE708-3014-4584-9E14-CB087E54916E}</Project>
+      <Name>WorkSuite.Library.CodeStrutures</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WorkSuite.Library.EntityFramework\WorkSuite.Library.EntityFramework.csproj">
+      <Project>{E5273850-17DB-4659-833F-5CB64FA21955}</Project>
+      <Name>WorkSuite.Library.EntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WorkSuite.Library.Ninject\WorkSuite.Library.Ninject.csproj">
+      <Project>{FA9854F9-6908-483A-AE63-9354249E74BC}</Project>
+      <Name>WorkSuite.Library.Ninject</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

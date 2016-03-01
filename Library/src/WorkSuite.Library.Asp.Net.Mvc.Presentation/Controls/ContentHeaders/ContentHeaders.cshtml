@@ -1,0 +1,25 @@
+﻿@* Generator : MvcHelper GeneratePrettyNames : true *@
+
+@using Controls.ContentHeaders
+@using Controls.Primitives
+@using Controls.ViewElements
+@using Server.ContentHeaders
+@using Server.Framework.ViewModels
+@* Fallback - if we have a AReport type that we do not have an edit control for
+*@
+@helper For( IsAViewElement element ) {
+    
+    @ViewElement.Unknown(  )
+}
+
+
+@* Editor for a report
+*@
+@helper For( ContentHeader view_model ){
+
+    <div data-component="content-header" class="content-header @view_model.classes.AsHtmlClassString()">
+        <h2>@view_model.title</h2>
+        @ContentHeaderActions.For(view_model.actions)
+</div>
+    
+}

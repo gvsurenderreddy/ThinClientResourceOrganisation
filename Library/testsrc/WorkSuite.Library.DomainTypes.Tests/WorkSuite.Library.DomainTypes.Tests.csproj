@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{499B053C-13F8-457C-9AC9-E1469C567770}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WTS.WorkSuite.Library.DomainTypes.Tests</RootNamespace>
+    <AssemblyName>WTS.WorkSuite.Library.DomainTypes.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentAssertions, Version=3.0.107.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\FluentAssertions.3.0.107\lib\net45\FluentAssertions.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentAssertions.Core, Version=3.0.107.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\FluentAssertions.3.0.107\lib\net45\FluentAssertions.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="ColourPicker\ColorPicker_will.cs" />
+    <Compile Include="Date\DateRangeHelper_will.cs" />
+    <Compile Include="Date\CheckGregorianCalendarSanitisation.cs" />
+    <Compile Include="Date\MonthSanitisation.cs" />
+    <Compile Include="Duration\DurationBetweenZeroMinutesAandTwentyFourWill.cs" />
+    <Compile Include="Duration\DurationBetweenOneMinutesAandTwentyFourWill.cs" />
+    <Compile Include="Duration\DurationIsSpecifyAndIsANumberWill.cs" />
+    <Compile Include="Formatting\ReportFormatStringTest.cs" />
+    <Compile Include="OrderList\Features\Insert\Insert_will.cs" />
+    <Compile Include="OrderList\Features\Remove\Helpers\GivenForRemove.cs" />
+    <Compile Include="OrderList\Features\Remove\Helpers\ThenForRemove.cs" />
+    <Compile Include="OrderList\Features\Remove\Helpers\When.cs" />
+    <Compile Include="OrderList\Features\Remove\Remove_will.cs" />
+    <Compile Include="OrderList\Features\Reorder\Helpers\GivenForReorder.cs" />
+    <Compile Include="OrderList\Features\Reorder\Helpers\ThenForReorder.cs" />
+    <Compile Include="OrderList\Features\Reorder\Helpers\When.cs" />
+    <Compile Include="OrderList\Features\Reorder\Reorder_will.cs" />
+    <Compile Include="OrderList\Helpers\Given.cs" />
+    <Compile Include="OrderList\Features\Insert\Helpers\GivenForInsert.cs" />
+    <Compile Include="OrderList\Helpers\TestListElement.cs" />
+    <Compile Include="OrderList\Features\Insert\Helpers\ThenForInsert.cs" />
+    <Compile Include="OrderList\Features\Insert\Helpers\When.cs" />
+    <Compile Include="OrderList\Helpers\Then.cs" />
+    <Compile Include="PostalAddresses\Formatting\Given.cs" />
+    <Compile Include="PostalAddresses\Formatting\PostalAddressFormatter_will.cs" />
+    <Compile Include="PostalAddresses\Formatting\Then.cs" />
+    <Compile Include="PostalAddresses\Formatting\When.cs" />
+    <Compile Include="PostalAddresses\Helpers\APostalAddress.cs" />
+    <Compile Include="PostalAddresses\Sanitiser\Fields\country\country_returns_null_if_null.cs" />
+    <Compile Include="PostalAddresses\Sanitiser\Fields\county\county_returns_null_if_null.cs" />
+    <Compile Include="PostalAddresses\Sanitiser\Fields\line_one\line_one_returns_null_if_null.cs" />
+    <Compile Include="PostalAddresses\Sanitiser\Fields\line_three\line_three_returns_null_if_null.cs" />
+    <Compile Include="PostalAddresses\Sanitiser\Fields\line_two\line_two_returns_null_if_null.cs" />
+    <Compile Include="PostalAddresses\Sanitiser\Fields\number_or_name\number_or_name_returns_null_if_null.cs" />
+    <Compile Include="PostalAddresses\Sanitiser\Fields\postcode\postcode_returns_null_if_null.cs" />
+    <Compile Include="PostalAddresses\Sanitiser\Fields\postcode\postcode_is_converted_to_uppercase.cs" />
+    <Compile Include="PostalAddresses\Sanitiser\Fields\postcode\postcode_has_leading_and_trailing_whitespace_trimmed.cs" />
+    <Compile Include="PostalAddresses\Sanitiser\Fields\postcode\postcode_is_converted_to_null_if_an_empty_string.cs" />
+    <Compile Include="PostalAddresses\Sanitiser\Fields\postcode\postcode_is_converted_to_null_if_just_whitespace.cs" />
+    <Compile Include="PostalAddresses\Sanitiser\Fields\country\country_has_leading_and_trailing_whitespace_trimmed.cs" />
+    <Compile Include="PostalAddresses\Sanitiser\Fields\country\country_is_converted_to_null_if_an_empty_string.cs" />
+    <Compile Include="PostalAddresses\Sanitiser\Fields\country\county_is_converted_to_null_if_just_whitespace.cs" />
+    <Compile Include="PostalAddresses\Sanitiser\Fields\county\county_has_leading_and_trailing_whitespace_trimmed.cs" />
+    <Compile Include="PostalAddresses\Sanitiser\Fields\county\county_is_converted_to_null_if_an_empty_string.cs" />
+    <Compile Include="PostalAddresses\Sanitiser\Fields\county\county_is_converted_to_null_if_just_whitespace.cs" />
+    <Compile Include="PostalAddresses\Sanitiser\Fields\line_three\line_three_has_leading_and_trailing_whitespace_trimmed.cs" />
+    <Compile Include="PostalAddresses\Sanitiser\Fields\line_three\line_three_is_converted_to_null_if_an_empty_string.cs" />
+    <Compile Include="PostalAddresses\Sanitiser\Fields\line_three\line_three_is_converted_to_null_if_just_whitespace.cs" />
+    <Compile Include="PostalAddresses\Sanitiser\Fields\line_two\line_two_has_leading_and_trailing_whitespace_trimmed.cs" />
+    <Compile Include="PostalAddresses\Sanitiser\Fields\line_two\line_two_is_converted_to_null_if_an_empty_string.cs" />
+    <Compile Include="PostalAddresses\Sanitiser\Fields\line_two\line_two_is_converted_to_null_if_just_whitespace.cs" />
+    <Compile Include="PostalAddresses\Sanitiser\Fields\line_one\line_one_is_converted_to_null_if_just_whitespace.cs" />
+    <Compile Include="PostalAddresses\Sanitiser\Fields\line_one\line_one_is_converted_to_null_if_an_empty_string.cs" />
+    <Compile Include="PostalAddresses\Sanitiser\Fields\line_one\line_one_has_leading_and_trailing_whitespace_trimmed.cs" />
+    <Compile Include="PostalAddresses\Sanitiser\Fields\number_or_name\number_or_name_is_converted_to_null_if_an_empty_string.cs" />
+    <Compile Include="PostalAddresses\Sanitiser\Fields\number_or_name\number_or_name_has_leading_and_trailing_whitespace_trimmed.cs" />
+    <Compile Include="PostalAddresses\Sanitiser\Helpers\Given.cs" />
+    <Compile Include="PostalAddresses\Sanitiser\Fields\number_or_name\number_or_name_is_converted_to_null_if_just_whitespace.cs" />
+    <Compile Include="PostalAddresses\Formatting\PostalAddressFormatterSpecification.cs" />
+    <Compile Include="PostalAddresses\Sanitiser\Helpers\PostalAddressSanitiserSpecification.cs" />
+    <Compile Include="PostalAddresses\Sanitiser\Helpers\Then.cs" />
+    <Compile Include="PostalAddresses\Sanitiser\Helpers\When.cs" />
+    <Compile Include="PostalAddresses\Validation\Features\PostalAddressIsUniqueValidator_will.cs" />
+    <Compile Include="PostalAddresses\Validation\Fields\country\country_does_not_exceed_maximum_number_of_characters.cs" />
+    <Compile Include="PostalAddresses\Validation\Fields\county\county_does_not_exceed_maximum_number_of_characters.cs" />
+    <Compile Include="PostalAddresses\Validation\Fields\line_one\line_one_does_not_exceed_maximum_number_of_characters.cs" />
+    <Compile Include="PostalAddresses\Validation\Fields\line_three\line_three_does_not_exceed_maximum_number_of_characters.cs" />
+    <Compile Include="PostalAddresses\Validation\Fields\line_two\line_two_does_not_exceed_maximum_number_of_characters.cs" />
+    <Compile Include="PostalAddresses\Validation\Fields\name_or_number\name_or_number_does_not_exceed_maximum_number_of_characters.cs" />
+    <Compile Include="PostalAddresses\Validation\Fields\name_or_number\name_or_number_is_mandatory.cs" />
+    <Compile Include="PostalAddresses\Helpers\GivenAPostalAddress.cs" />
+    <Compile Include="PostalAddresses\Validation\Features\PostalAddressValidator_will.cs" />
+    <Compile Include="PostalAddresses\Validation\Fields\postcode\postcode_is_mandatory.cs" />
+    <Compile Include="PostalAddresses\Validation\Fields\postcode\postcode_accepts_alphanumeric_charaters.cs" />
+    <Compile Include="PostalAddresses\Validation\Fields\postcode\postcode_does_not_exceed_maximum_number_of_characters.cs" />
+    <Compile Include="PostalAddresses\Validation\Helpers\ResponseMessagesHelper.cs" />
+    <Compile Include="PostalAddresses\Validation\Helpers\WhenValidatingIsUnique\Given.cs" />
+    <Compile Include="PostalAddresses\Validation\Helpers\WhenValidatingIsUnique\UnitTestsPostalAddressIsUniqueValidatorSettings.cs" />
+    <Compile Include="PostalAddresses\Validation\Helpers\WhenValidatingIsUnique\PostalAddressIsUniqueValidatorSpecification.cs" />
+    <Compile Include="PostalAddresses\Validation\Helpers\WhenValidatingIsUnique\Then.cs" />
+    <Compile Include="PostalAddresses\Validation\Helpers\WhenValidatingIsUnique\When.cs" />
+    <Compile Include="PostalAddresses\Validation\Helpers\WhenValidating\Given.cs" />
+    <Compile Include="PostalAddresses\Validation\Helpers\WhenValidating\UnitTestPostcodeValidatorSettings.cs" />
+    <Compile Include="PostalAddresses\Validation\Helpers\WhenValidating\UnitTestAddressLineValidationSettings.cs" />
+    <Compile Include="PostalAddresses\Validation\Helpers\WhenValidating\PostalAddressValidatorSpecification.cs" />
+    <Compile Include="PostalAddresses\Validation\Helpers\WhenValidating\Then.cs" />
+    <Compile Include="PostalAddresses\Validation\Helpers\WhenValidating\UnitTestNumberOrNameValidatorSettings.cs" />
+    <Compile Include="PostalAddresses\Validation\Helpers\WhenValidating\When.cs" />
+    <Compile Include="Primitives\Sanitisation\StringSanitiser\normalise_for_presentation_will.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Time\Periods\List_of_block_Will.cs" />
+    <Compile Include="Time\Periods\violation_will.cs" />
+    <Compile Include="Time\TimeRequestEndtimeExtensions\calculate_endtime_from_a_start_time_in_seconds_from_midnight_will.cs" />
+    <Compile Include="Time\Time_will.cs" />
+    <Compile Include="Time\UtcFormat\TimePeriodEndTimePresentationLayerFormat.cs" />
+    <Compile Include="Time\UtcFormat\TimePeriodEndTimeUTCFormat.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\WorkSuite.Library.CodeStrutures\WorkSuite.Library.CodeStrutures.csproj">
+      <Project>{249BE708-3014-4584-9E14-CB087E54916E}</Project>
+      <Name>WorkSuite.Library.CodeStrutures</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\WorkSuite.Library.DomainTypes\WorkSuite.Library.DomainTypes.csproj">
+      <Project>{538c6f62-b398-41f1-917c-10659fdf6c78}</Project>
+      <Name>WorkSuite.Library.DomainTypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\WorkSuite.Library.Service.Specification\WorkSuite.Library.Service.Specification.csproj">
+      <Project>{E6053BB8-D527-4524-93DF-19FE290CF90E}</Project>
+      <Name>WorkSuite.Library.Service.Specification</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,22 @@
+﻿using WorkSuite.Library.Asp.Net.Mvc.Server.Infrastructure.RouteConfiguration;
+
+namespace WTS.WorkSuite.Web.ThinClient.Application.HR.Employees.Addresses.Presentation.Editor
+{
+    public class RouteConfiguration : ARouteConfiguration<AddressEditorPresenter>
+    {
+        public override string id
+        {
+            get { return Resources.id; }
+        }
+
+        public override string url
+        {
+            get { return "employee/{employee_id}/address/{address_id}/address-details-editor"; }
+        }
+
+        public override string action
+        {
+            get { return "Editor"; }
+        }
+    }
+}

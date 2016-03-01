@@ -1,0 +1,39 @@
+﻿@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Controls.Editors
+@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Controls.Primitives
+@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Controls.Reports
+@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Controls.ViewElements
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels
+@using WTS.WorkSuite.Web.ThinClient.Components.WhiteSpaceTimeAllocationPalettes
+
+
+@For(Model as dynamic)
+
+
+@helper For(IsAViewElement element)
+{
+
+    @ViewElement.Unknown()
+}
+
+@helper For(WhiteSpaceTimeAllocationPalette view_model)
+{
+    <div data-component="white-space-time-allocation-palette" class="palette shift-palette @view_model.classes.AsHtmlClassString()">
+        <h2>@view_model.title</h2>
+        <menu class="menu">
+            @ReportActions.Action(view_model.new_shift_action)
+        </menu>
+        
+        <form>
+            <fieldset>
+                @EditorFields.Input(view_model.operational_calendar_id)
+                @EditorFields.Input(view_model.shift_calendar_id)
+                @EditorFields.Input(view_model.shift_calendar_pattern_id)
+                @EditorFields.Input(view_model.start_date)
+                @EditorFields.Input(view_model.time_allocation_templates)
+                <menu class="menu">
+                    @EditorActions.Action(view_model.change_time_allocation_action)
+                </menu>
+            </fieldset>
+        </form>
+    </div>
+}

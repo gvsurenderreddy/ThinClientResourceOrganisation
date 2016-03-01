@@ -1,0 +1,21 @@
+﻿@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Controls.ViewModels
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Content
+@using WTS.WorkSuite.Web.ThinClient.Application.HR.employee.Holidays.viewHolidays.get
+
+@model WTS.WorkSuite.Web.ThinClient.Infrastructure.EntityIdentityViewModel<WTS.WorkSuite.Core.DomainIdentity.EmployeeIdentity>
+
+    @{
+        var content_repository = DependencyResolver.Current.GetService<IContentRepository>();
+        
+        Layout = @"~/Views/Shared/Layouts/GlobalLayout.cshtml";
+        ViewBag.Title = content_repository.get_resource_value("view_holidays_get_title");
+        ViewBag.Id = Resources.page_id;
+        ViewBag.ResourceIdentity = Model.identity;
+    }
+
+    @ViewModel.For(Model.view_elements)
+
+    @section dependencies {
+        require(['details'], function () { });
+        require(['details_list'], function () { });
+    }

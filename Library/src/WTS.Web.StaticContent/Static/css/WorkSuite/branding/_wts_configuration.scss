@@ -1,0 +1,87 @@
+// Common
+$body_background: none; //url("../Images/body_background.jpg");
+$basefont: "Calibri", sans-serif;
+
+@mixin body {
+	font-family: $basefont;
+	background: $body_background;
+}
+
+$layoutgrid_lineheight: 6px;
+
+$navbar_background:rgba(0, 0, 0, 0.6);
+$titlebar_background: #eeeeee;
+
+// ---------- COLOURS
+$signaturecolour_base: #70B4D6;
+$signaturecolour_dark: #006699;
+$signaturecolour_bright: #AFDFF5;
+
+$warningcolour_verybright: #ffeeee;
+$warningcolour_mid: #c00000;
+$warningcolour_dark: #660000;
+
+$calltoactioncolour_base: #F5C06b;
+$calltoactioncolour_dark: #EF9608;
+$calltoactioncolour_bright: #F9D59c;
+
+$importantcolour_verybright: #ffffee;
+$importantcolour_mid: #aa9988;
+$importantcolour_dark: #333333;
+
+// ---------- NOTIFICATIONS
+
+$page_notification_confirmation_icon: url(../Images/page-notification-confirmation-background-nocolour.png) 0 0 no-repeat;
+$page_notification_warning_icon: url(../Images/page-notification-warning-background-nocolour.png) 0 0 no-repeat;
+
+$page_notification_warning_background:$importantcolour_verybright;
+$page_notification_warning_text: $importantcolour_dark;
+$page_notification_warning_border: $importantcolour_mid;
+
+$page_notification_confirmation_background: $importantcolour_verybright;
+$page_notification_confirmation_text: $importantcolour_dark;
+$page_notification_confirmation_border: $importantcolour_mid;
+
+// ---------- HEADER
+@mixin breadcrumb {
+	background-image:url(../Images/header-icon-home-config.png);
+}
+
+$title_bar: solid 3px $signaturecolour_base;
+
+// ---------- FORMS
+$control_border_colour:#cccccc;
+$control_border_colour_warning:#c00000;
+$control_border_colour_required:$signaturecolour_base;
+$control_border_colour_selected:#170692;
+$editor_border_colour: $signaturecolour_base;
+
+// HELP
+@mixin help_style {
+	@include round_all_corners;
+	@include titletext;
+	background-color: $calltoactioncolour_dark;
+}
+
+// ---------- BUTTONS
+// PRIMARY CALL TO ACTOIN
+$primary_call_to_action_background_light: $calltoactioncolour_bright;
+$primary_call_to_action_background_dark: $calltoactioncolour_base;
+$primary_call_to_action_background_hover: $calltoactioncolour_base;
+$primary_call_to_action_background_active: $calltoactioncolour_bright;
+$primary_call_to_action_border: $calltoactioncolour_dark;
+@mixin primary_call_to_action {
+	color:#000000;
+}
+
+// SECONDARY CALL TO ACTION
+$secondary_call_to_action_background_light: #E1E1E1;
+$secondary_call_to_action_background_dark: #AFAFAF;
+$secondary_call_to_action_background_hover: #E1E1E1;
+$secondary_call_to_action_background_active: #AFAFAF;
+$secondary_call_to_action_border: #999999;
+@mixin secondary_call_to_action {
+	color:#000000;
+}
+
+body {border:solid 1px #f00;}

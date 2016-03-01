@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{28ECB242-41D7-4A1F-8FC5-56853334FF29}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WTS.WorkSuite.Persistence.EF</RootNamespace>
+    <AssemblyName>WTS.WorkSuite.Persistence.EF</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Domain\Allocation\ModelBuilder.cs" />
+    <Compile Include="Domain\Allocation\OperationCalendars\ModelBuilder.cs" />
+    <Compile Include="Domain\Allocation\ShiftCalendars\ModelBuilder.cs" />
+    <Compile Include="Domain\Audit\Employees\AddressDetails\ModelBuilder.cs" />
+    <Compile Include="Domain\Audit\Employees\AuditRecords\ModelBuilder.cs" />
+    <Compile Include="Domain\Audit\Employees\ContactDetails\ModelBuilder.cs" />
+    <Compile Include="Domain\Audit\Employees\DocumentDetails\ModelBuilder.cs" />
+    <Compile Include="Domain\Audit\Employees\EmergencyContactDetails\ModelBuilder.cs" />
+    <Compile Include="Domain\Audit\Employees\EmploymentDetails\ModelBuilder.cs" />
+    <Compile Include="Domain\Audit\Employees\ImageDetails\ModelBuilder.cs" />
+    <Compile Include="Domain\Audit\Employees\ModelBuilder.cs" />
+    <Compile Include="Domain\Audit\Employees\NoteDetails\ModelBuilder.cs" />
+    <Compile Include="Domain\Audit\Employees\PersonalDetails\ModelBuilder.cs" />
+    <Compile Include="Domain\Audit\Employees\QualificationDetails\ModelBuilder.cs" />
+    <Compile Include="Domain\Audit\Employees\SkillDetails\ModelBuilder.cs" />
+    <Compile Include="Domain\Audit\ModelBuilder.cs" />
+    <Compile Include="Domain\DocumentStore\Documents\ModelBuilder.cs" />
+    <Compile Include="Domain\DocumentStore\ModelBuilder.cs" />
+    <Compile Include="Domain\HR\Addresses\ModelBuilder.cs" />
+    <Compile Include="Domain\HR\EmergencyContacts\ModelBuilder.cs" />
+    <Compile Include="Domain\HR\EmployeeQualifications\ModelBuilder.cs" />
+    <Compile Include="Domain\HR\EmployeeSkills\ModelBuilder.cs" />
+    <Compile Include="Domain\HR\Employees\ModelBuilder.cs" />
+    <Compile Include="Domain\HR\ModelBuilder.cs" />
+    <Compile Include="Domain\HR\EmployeeDocuments\ModelBuilder.cs" />
+    <Compile Include="Domain\HR\Notes\ModelBuilder.cs" />
+    <Compile Include="Domain\HR\ReferenceData\EthnicOrigin\ModelBuilder.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Gender\ModelBuilder.cs" />
+    <Compile Include="Domain\HR\ReferenceData\JobTitle\ModelBuilder.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Location\ModelBuilder.cs" />
+    <Compile Include="Domain\HR\ReferenceData\MaritalStatus\ModelBuilder.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Nationality\ModelBuilder.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Relationship\ModelBuilder.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Skill\ModelBuilder.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Title\ModelBuilder.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Qualification\ModelBuilder.cs" />
+    <Compile Include="Domain\ModelBuilder.cs" />
+    <Compile Include="Domain\PlannedSupply\Employees\ModelBuilder.cs" />
+    <Compile Include="Domain\PlannedSupply\ModelBuilder.cs" />
+    <Compile Include="Domain\PlannedSupply\OperationalCalendars\ModelBuilder.cs" />
+    <Compile Include="Domain\PlannedSupply\Breaks\ModelBuilder.cs" />
+    <Compile Include="Domain\PlannedSupply\ResourceAllocation\ModelBuilder.cs" />
+    <Compile Include="Domain\PlannedSupply\ShiftBreakTemplates\ModelBuilder.cs" />
+    <Compile Include="Domain\PlannedSupply\ShiftCalendarPatterns\ModelBuilder.cs" />
+    <Compile Include="Domain\PlannedSupply\ShiftCalendars\ModelBuilder.cs" />
+    <Compile Include="Domain\PlannedSupply\ShiftTemplate\ModelBuilder.cs" />
+    <Compile Include="Domain\PlannedSupply\TimeAllocationBreaks\ModelBuilder.cs" />
+    <Compile Include="Domain\PlannedSupply\TimeAllocationOccurrences\ModelBuilder.cs" />
+    <Compile Include="Domain\PlannedSupply\TimeAllocations\ModelBuilder.cs" />
+    <Compile Include="Domain\SupplyShortage\Employees\ModelBuilder.cs" />
+    <Compile Include="Domain\SupplyShortage\ModelBuilder.cs" />
+    <Compile Include="Domain\ThinClient.Query\AllocatableResourcesTableViews\ModelBuilder.cs" />
+    <Compile Include="Domain\ThinClient.Query\AllocatedResourcesListViews\ModelBuilder.cs" />
+    <Compile Include="Domain\ThinClient.Query\ConfirmResourceAllocationEditorViews\ModelBuilder.cs" />
+    <Compile Include="Domain\ThinClient.Query\HolidayListViews\ModelBuilder.cs" />
+    <Compile Include="Domain\ThinClient.Query\SicknessListViews\ModelBuilder.cs" />
+    <Compile Include="Domain\ThinClient.Query\EmployeeViewScheduleTableViews\ModelBuilder.cs" />
+    <Compile Include="Domain\ThinClient.Query\ModelBuilder.cs" />
+    <Compile Include="Infrastructure\DependencyConfiguration.cs" />
+    <Compile Include="Infrastructure\PersistenceEFConfiguration.cs" />
+    <Compile Include="Infrastructure\WorkSuiteConnectionStringProvider.cs" />
+    <Compile Include="Infrastructure\WorkSuiteContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Library\src\WorkSuite.Library.CodeStrutures\WorkSuite.Library.CodeStrutures.csproj">
+      <Project>{249BE708-3014-4584-9E14-CB087E54916E}</Project>
+      <Name>WorkSuite.Library.CodeStrutures</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Library\src\WorkSuite.Library.DomainTypes\WorkSuite.Library.DomainTypes.csproj">
+      <Project>{538C6F62-B398-41F1-917C-10659FDF6C78}</Project>
+      <Name>WorkSuite.Library.DomainTypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Library\src\WorkSuite.Library.EntityFramework\WorkSuite.Library.EntityFramework.csproj">
+      <Project>{E5273850-17DB-4659-833F-5CB64FA21955}</Project>
+      <Name>WorkSuite.Library.EntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Library\src\WorkSuite.Library.Ninject\WorkSuite.Library.Ninject.csproj">
+      <Project>{FA9854F9-6908-483A-AE63-9354249E74BC}</Project>
+      <Name>WorkSuite.Library.Ninject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Library\src\WorkSuite.Library.Persistence.EF\WorkSuite.Library.Persistence.EF.csproj">
+      <Project>{422C302F-F4DD-4008-8F86-0124BEA8DE7B}</Project>
+      <Name>WorkSuite.Library.Persistence.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Library\src\WorkSuite.Library.Persistence\WorkSuite.Library.Persistence.csproj">
+      <Project>{C55F23BE-BC7A-4F70-81D3-AF5D645FE831}</Project>
+      <Name>WorkSuite.Library.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\PlannedSupply.Persistence\PlannedSupply.Persistence.csproj">
+      <Project>{f5f8687c-2ab8-4cda-a346-2b8eafcdcd73}</Project>
+      <Name>PlannedSupply.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Clients\ThinClient\src\ThinClient.Query.Persistence\ThinClient.Query.Persistence.csproj">
+      <Project>{476eaf1f-9400-4524-91d2-07b4b19da472}</Project>
+      <Name>ThinClient.Query.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Domains\Allocation\src\Persistence\Allocation.Persistence.csproj">
+      <Project>{d2f349f0-f8f7-4593-83e7-27cb93d67bfe}</Project>
+      <Name>Allocation.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Domains\Audit\src\Persistence\Audit.Persistence.csproj">
+      <Project>{BAE5C69D-879F-4C0B-B615-B600E5266B74}</Project>
+      <Name>Audit.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Domains\HR\src\Persistence\HR.Persistence.csproj">
+      <Project>{30E54F69-6055-4747-AFD7-D85E7C7F55A0}</Project>
+      <Name>HR.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Domains\SupplyShortage\src\Persistence\SupplyShortage.Persistence.csproj">
+      <Project>{CC840EEF-A77F-477A-97D8-CDB877C5CB6D}</Project>
+      <Name>SupplyShortage.Persistence</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Infrastructure\WorkSuiteConnectionString.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

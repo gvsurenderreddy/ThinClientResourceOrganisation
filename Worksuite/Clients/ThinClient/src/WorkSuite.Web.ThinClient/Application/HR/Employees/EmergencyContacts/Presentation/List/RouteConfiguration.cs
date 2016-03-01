@@ -1,0 +1,22 @@
+﻿using WorkSuite.Library.Asp.Net.Mvc.Server.Infrastructure.RouteConfiguration;
+
+namespace WTS.WorkSuite.Web.ThinClient.Application.HR.Employees.EmergencyContacts.Presentation.List
+{
+    public class RouteConfiguration : ARouteConfiguration<EmergencyContactsListPresenter>
+    {
+        public override string id
+        {
+            get { return Resources.route_name; }
+        }
+
+        public override string url
+        {
+            get { return "employee/{employee_id}/emergency-contacts/list"; }
+        }
+
+        public override string action
+        {
+            get { return "List"; }
+        }
+    }
+}

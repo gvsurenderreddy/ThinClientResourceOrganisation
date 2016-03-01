@@ -1,0 +1,23 @@
+﻿@model WorkSuite.Library.Asp.Net.Mvc.Presentation.Tests.Controllers.Controls.TileGridViewModel
+@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Controls.Tiles
+@{
+    Layout = null;
+
+    const string title = "WorkSuite.Library.Asp.Net.Mvc.Presentation.Tests - TileGrids";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@title</title>
+</head>
+<body>
+    <h1>@title</h1>
+    @Tiles.For( Model.tiles as dynamic )
+    @Tiles.For( Model.tile_grid as dynamic )
+    @Tiles.For( Model.tile_grid_section as dynamic )
+    @Tiles.For( Model.sectioned_tile_grid as dynamic )
+</body>
+</html>

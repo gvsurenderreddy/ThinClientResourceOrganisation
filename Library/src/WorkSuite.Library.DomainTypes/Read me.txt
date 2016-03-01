@@ -1,0 +1,4 @@
+﻿The main idea of this assembly is that it contains domain specific types (as interfaces) and behaviour that can be applied to them. The interfaces are just data that can then be ascribed to classes in a specific domain which allows the behaviours defined for the types in this assembly to be applied to the classes that have been ascribed with the types. Note the idea behind this is that Interfaces just define data and all behaviour that can be applied to an interface is implemented in separate classes.
+
+Primitives
+This is basically the fudge folder which contains all the general behaviour. The stuff that is going in here is the stuff that we have created before we settled on the concept of having interfaces and then behaviours that work on them.  New behaviour should not be put in here as hope that all new behaviour will be applied against specific types (Interfaces).

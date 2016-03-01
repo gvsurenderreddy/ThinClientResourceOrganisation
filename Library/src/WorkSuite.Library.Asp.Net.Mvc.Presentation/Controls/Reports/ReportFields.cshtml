@@ -1,0 +1,165 @@
+﻿@* Generator : MvcHelper GeneratePrettyNames : true *@
+@using Humanizer
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.Primitives.Fields.RGBColourField
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.Primitives.Fields.ServiceStateField
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.Primitives.Fields.SimpleImageField
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.Primitives.Fields.DurationRequestField
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.Primitives.Fields
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.Primitives.Fields.BooleanField
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.Primitives.Fields.ImageField
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.Primitives.Fields.MultiLineFields
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.Primitives.Fields.StringField
+@* Displays a collection of actions in a  report
+*@
+@helper For(IEnumerable<Field> fields)
+{
+
+    if (fields.Any())
+    {
+
+        <dl>
+
+            @foreach (var field in fields)
+            {
+                @Field(field as dynamic)
+            }
+        </dl>
+    }
+}
+
+@* Fallback - if we have a field type that we do not have a control for
+
+    to do: Get what we should display from Tim
+*@
+@helper Field(Field field)
+{
+
+    <dt>Unknown field</dt>
+}
+
+@helper Field(WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.Primitives.Fields.CalendarAffected.ACalendarAffectedField field)
+{
+    @Title(field.title)
+    <dd>
+        <dl class="CalendarsAffected">
+            @foreach (var calander_field in field.value)
+            {
+                <dt class="DescriptionList-Title">@calander_field.name</dt>
+                <dd class="DescriptionList-Value">Occurrences @calander_field.count</dd>
+            }
+        </dl>
+    </dd>
+
+}
+
+@helper Field(ADurationRequestField field)
+{
+    @Title(field.title)
+    var duration = "";
+    if (@field.value.minutes == "0")
+    {
+        duration = string.Format("{0}{1}", @field.value.hours, "h");
+    }
+    else if (@field.value.hours == "0")
+    {
+        duration = string.Format("{0}{1}", @field.value.minutes, "m");
+    }
+    else
+    {
+        duration = string.Format("{0}{1}{2}{3}{4}", @field.value.hours, "h", " ", @field.value.minutes, "m");
+    }
+    <dd id="@field.id">@duration</dd>
+}
+
+@* AStringReportField - displayed as simple text
+*@
+@helper Field(AStringReportField field)
+{
+    var field_value = field.humanize ? field.value.Humanize(LetterCasing.Sentence) : field.value;
+
+    @Title(field.title)
+    @Body(field.id, field_value, field.icon, field.is_rich_text)
+}
+
+@helper Field(ABooleanReportField field)
+{
+    @Title(field.title)
+    @YesNoBoolean(field.id, field.value)
+
+}
+
+@* AnImageReportField - displayed as simple text for now
+*@
+@helper Field(AnImageField field)
+{
+    @Title(field.title)
+    <dd id="@field.id"><img src=@field.url alt="0" width="120"></dd>
+}
+
+@* ASimpleImageReportField - displayed as simple image tag
+*@
+@helper Field(ASimpleImageField field)
+{
+    <img src=@field.url alt="0" width="120" />
+}
+
+@* AMultilineStringReportField - there is more than one line in the body.
+*@
+@helper Field(AMultilineStringReportField field)
+{
+    @Title(field.title)
+    @Lines(field.id, field.value)
+}
+
+@* AServiceStateField - displayed in a humanized form *@
+@helper Field(AServiceStateField field)
+{
+    @Title(field.title)
+    @Body(field.id, field.value.ToString().Humanize(LetterCasing.Sentence), field.icon, field.is_rich_text)
+}
+
+@helper Field(ARgbColourField field)
+{
+    @Title(field.title)
+    <div class="editor-colour-wrapper">
+        <div class="editor-colour-block" style="background-color: rgb(@string.Format("{0},{1},{2}",@field.value.R,@field.value.G,@field.value.B))">
+        </div>
+    </div>
+}
+
+@* Enumeration of string - display each entry in a field body
+*@
+@helper Lines(string id, IEnumerable<string> lines)
+{
+    var i = 1;
+
+    foreach (var line in lines)
+    {
+        @Body(id + "-" + (i++), line)
+    }
+}
+
+@* Field title
+*@
+@helper Title(string value)
+{
+
+    <dt>@value</dt>
+}
+
+@*  Field body
+*@
+@helper Body(string id, string value, string icon = "", bool rich_text = false)
+{
+
+    <dd id="@id" class="@(rich_text ? "rich-text":null)">
+        @value@{if (!string.IsNullOrEmpty(icon))
+        {<span class="@icon"></span>}}
+    </dd>
+}
+
+@helper YesNoBoolean(string id, Boolean value)
+{
+    <dd id="@id">@(value ? "Yes" : "No")</dd>
+}
+

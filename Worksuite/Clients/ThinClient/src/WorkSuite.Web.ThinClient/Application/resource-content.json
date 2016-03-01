@@ -1,0 +1,9 @@
+﻿{
+    "application_resource_text_field_exceeds_max_characters": {
+        "value": "Please use no more than {0} characters."
+    },
+
+    "application_resource_persons_name_has_invalid_characters": {
+        "value": "Please only use the letters A-Z, the numbers 0-9, spaces and the characters ' & -"
+    }
+}

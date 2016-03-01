@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{249BE708-3014-4584-9E14-CB087E54916E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WTS.WorkSuite.Library.CodeStrutures</RootNamespace>
+    <AssemblyName>WTS.WorkSuite.Library.CodeStrutures</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Behavioral\DefaultedLookup.cs" />
+    <Compile Include="Behavioral\Events\IEventPublisher.cs" />
+    <Compile Include="Behavioral\Events\IEventSubscriber.cs" />
+    <Compile Include="Behavioral\Events\PublishEventToSubscriberSynchronously.cs" />
+    <Compile Include="Behavioral\FuncExtensions.cs" />
+    <Compile Include="Behavioral\Guard.cs" />
+    <Compile Include="Behavioral\ICommand.cs" />
+    <Compile Include="Behavioral\IExecutePermission.cs" />
+    <Compile Include="Behavioral\IMapper.cs" />
+    <Compile Include="Behavioral\IPolicy.cs" />
+    <Compile Include="Behavioral\IEnumerableExtension.cs" />
+    <Compile Include="Behavioral\IQuery.cs" />
+    <Compile Include="Behavioral\IResponseCommand.cs" />
+    <Compile Include="Behavioral\IServiceStatusResponseCommand.cs" />
+    <Compile Include="Behavioral\Maybe.cs" />
+    <Compile Include="Behavioral\PermissionGranted.cs" />
+    <Compile Include="Behavioral\PropertyExpressionExtensions.cs" />
+    <Compile Include="Behavioral\RangExtention.cs" />
+    <Compile Include="Behavioral\Response.cs" />
+    <Compile Include="Behavioral\ResponseBuilder.cs" />
+    <Compile Include="Behavioral\ResponseMessage.cs" />
+    <Compile Include="Behavioral\ServiceStatusResponse.cs" />
+    <Compile Include="Behavioral\ServiceStatusResponseBuilder.cs" />
+    <Compile Include="Creational\IBuilder.cs" />
+    <Compile Include="Creational\IFactory.cs" />
+    <Compile Include="Creational\ISeeder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Structural\ConfigurationRegister.cs" />
+    <Compile Include="Structural\IConfiguration.cs" />
+    <Compile Include="Behavioral\IIndex.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

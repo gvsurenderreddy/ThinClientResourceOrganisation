@@ -1,0 +1,19 @@
+﻿using WorkSuite.Library.Asp.Net.Mvc.Server.Infrastructure.RouteConfiguration;
+
+namespace WTS.WorkSuite.Web.ThinClient.Application.HR.ReferenceData.Genders.Presentation.Editor {
+
+    public class RouteConfiguration
+                    : ARouteConfiguration<GenderEditorPresenter> {
+        public override string id {
+            get { return Resources.id; }
+        }
+
+        public override string url {
+            get { return "genders/{id}/editor"; }
+        }
+
+        public override string action {
+            get { return "Editor"; }
+        } 
+    }
+}

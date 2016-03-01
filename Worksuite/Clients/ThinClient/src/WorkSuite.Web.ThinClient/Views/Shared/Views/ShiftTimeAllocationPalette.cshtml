@@ -1,0 +1,87 @@
+﻿@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Controls.Primitives
+@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Controls.ViewElements
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.Primitives.UserActions
+@using WTS.WorkSuite.Library.DomainTypes.Time.Clocks
+@using WTS.WorkSuite.Library.DomainTypes.Time.Periods
+@using WTS.WorkSuite.Web.ThinClient.Components.ShiftTimeAllocationPalettes
+
+
+@For(Model as dynamic)
+
+
+@helper For(IsAViewElement element)
+{
+
+    @ViewElement.Unknown()
+}
+
+@helper For(ShiftTimeAllocationPalette view_model)
+{
+    <div data-component="shift-time-allocation-palette" class="palette shift-palette @view_model.classes.AsHtmlClassString()">
+        <h2>@view_model.title</h2>
+        <div class="ShiftDetials">
+            <h3 class="ShiftDetials_Title">@view_model.shift_title</h3>
+            <div class="DefinitionListArticle">
+                <header class="DefinitionListArticle_Header">
+                    <h3 class="DefinitionListArticle_Header_Title">Shift times</h3>
+                </header>
+                <dl class="DefinitionListArticle_Section">
+
+                    @* improve:
+
+                        We have gone for the simplest thing that works for the time formatting, this is not how we want
+                        it as a final solution but time formatting is quite a complex area to understand and needs to be
+                        driven by Ux.
+
+                        We have classes like UtcTime, etc that will be used to present the time information to the presentation layer. We
+                        need to investigate how time needs to be displayed, we expect that there may be two or three scenarios depending on
+                        usage.  Once this has been understood we will be able to create system wide utility routines etc that can be applied but
+                        we do not want to jump the gun and start creating these without a decent understanding as it will just increase the technical
+                        debt.
+
+                    *@
+
+                    <dt class="DefinitionListArticle_Section_Title StartTime Clock">Start time</dt>
+                    <dd class="DefinitionListArticle_Section_Value StartTime Clock">@view_model.time_period.start_at.hours.ToString("00"):@view_model.time_period.start_at.minutes.ToString("00")</dd>
+                    <dt class="DefinitionListArticle_Section_Title EndTime Clock">End time</dt>
+                    <dd class="DefinitionListArticle_Section_Value EndTime Clock">@view_model.time_period.calculate_end_time().hours.ToString("00"):@view_model.time_period.calculate_end_time().minutes.ToString("00")</dd>
+                </dl>
+            </div>
+            @foreach (var bm in view_model.breaks)
+            {
+                <div class="DefinitionListArticle Small">
+                    <header class="DefinitionListArticle_Header">
+                        <h3 class="DefinitionListArticle_Header_Title">@bm.title</h3>
+                    </header>
+                    <dl class="DefinitionListArticle_Section">
+                        <dt class="DefinitionListArticle_Section_Title StartTime Clock">Start time</dt>
+                        <dd class="DefinitionListArticle_Section_Value StartTime Clock">@bm.start_time</dd>
+                        <dt class="DefinitionListArticle_Section_Title EndTime Clock">End time</dt>
+                        <dd class="DefinitionListArticle_Section_Value EndTime Clock">@bm.end_time</dd>
+                        <dt class="DefinitionListArticle_Section_Title PaymentType">Payment type</dt>
+                        <dd class="DefinitionListArticle_Section_Value PaymentType">@bm.payment_type</dd>
+                    </dl>
+                </div>
+            }
+
+        </div>
+        <menu class="menu">
+            @Action(view_model.edit_shift_action)
+            @Action(view_model.remove_shift_action)
+        </menu>
+        <menu class="menu">
+            @Action(view_model.edit_all_shift_action)
+            @Action(view_model.remove_all_shift_action)
+        </menu>
+
+
+    </div>
+}
+
+
+@helper Action(RoutedAction action)
+{
+    <a data-action="@action.name" class="action @action.name @action.classes.AsHtmlClassString()" href="@action.url">@action.title</a>
+}
+

@@ -1,0 +1,24 @@
+﻿@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Components.Tiles._1
+@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Utilities
+
+@model TileViewModel
+
+@{
+    Layout = "~/Tests/html/shared/QUnitTestLayout.cshtml";
+    ViewBag.Title = "Tile Tests";
+}
+
+@TileComponent.Render( Model )
+
+@section page_boot_scripts {
+
+}
+
+@section test_scripts {
+
+    <script>
+        view_model = @Html.Raw(Model.ToJson())
+    </script>
+
+    <script src="~/Tests/html/component-system/components/tiles/tile-bootstrapper-tests.js"></script>
+}

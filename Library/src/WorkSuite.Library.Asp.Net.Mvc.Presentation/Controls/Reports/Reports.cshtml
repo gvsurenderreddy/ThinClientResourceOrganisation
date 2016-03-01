@@ -1,0 +1,56 @@
+﻿@* Generator : MvcHelper GeneratePrettyNames : true *@
+
+@using Controls.Reports
+@using Controls.ViewElements
+@using Server.Framework.ViewModels.Primitives.UserActions
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.Reports
+
+@* Fallback - if we have a AReport type that we do not have a report control for
+*@
+@helper For(IsAViewElement element)
+{
+    
+    @ViewElement.Unknown()
+}
+
+
+@*  Collection of View Elements
+
+    For collections of view elements just call the appropriate control for 
+    each element.  
+*@
+@helper For(IEnumerable<IsAViewElement> view_elements)
+{
+
+    foreach (var element in view_elements)
+    {
+    @For(element as dynamic)
+    }    
+}
+
+
+@*  Reports
+
+    For a report wrap all the action's and fields inside the container element.
+*@
+@helper For(Report report)
+{
+    var routedAction = new RoutedAction();
+    <article id="@report.id"
+             class="report @(report.is_marked_as_hidden ? "report-hidden" : null)"
+             @(!String.IsNullOrWhiteSpace(report.report_reorder_url) ? String.Format("data-report-reorder={0}", report.report_reorder_url) : null)>
+
+        @if (!String.IsNullOrWhiteSpace(report.title) )
+        {
+            <h2>@report.title</h2>
+        }
+
+        @ReportActions.For(report.actions)
+        @if (!string.IsNullOrWhiteSpace(report.description))
+        {
+             <p>@report.description</p>
+        }
+        @ReportFields.For(report.fields)
+    </article>
+}

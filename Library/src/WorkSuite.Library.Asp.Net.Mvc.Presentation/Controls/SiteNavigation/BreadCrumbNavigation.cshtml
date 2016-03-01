@@ -1,0 +1,18 @@
+﻿@* Generator : MvcHelper GeneratePrettyNames : true *@
+@using ViewModels = WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels
+
+@helper For( ViewModels.BreadCrumbNavigation.Model.BreadCrumbNavigation navigation )
+{
+    <nav>
+            <ul class="breadcrumb">
+                @foreach (var item in navigation.items)
+                {
+                    <li>
+                        <a href="@item.Url">
+                            @item.Description
+                        </a>
+                    </li>
+                }
+            </ul>
+        </nav>    
+}

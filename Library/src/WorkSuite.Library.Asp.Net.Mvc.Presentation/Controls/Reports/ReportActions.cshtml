@@ -1,0 +1,28 @@
+﻿@* Generator : MvcHelper GeneratePrettyNames : true *@
+
+@using Controls.Primitives
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.Primitives.UserActions
+@* Displays a collection of actions in a report
+*@
+@helper For( IEnumerable<RoutedAction> actions ) {
+    
+    <menu>
+        @foreach (var action in @actions) {
+            @Action( action )
+        }                
+    </menu>        
+}
+
+
+@* Control for a report action 
+*@
+@helper Action ( RoutedAction action ) {
+    if (action.is_enabled)
+    {
+        <a id="@action.id" class="action @action.name @action.classes.AsHtmlClassString()" href="@action.url">@action.title</a>
+    }
+    else
+    {
+           <a id="@action.id" class="action @action.name @action.classes.AsHtmlClassString()" href="@action.url" disabled="disabled">@action.title</a>
+    }
+}

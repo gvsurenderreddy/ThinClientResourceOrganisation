@@ -1,0 +1,15 @@
+.TileGrid {
+	margin: 0 0 $layoutgrid_lineheight $layoutgrid_page_gutter;
+}
+
+.TileGrid_Section_Title {
+	clear: both;
+	margin: 0 0 $layoutgrid_lineheight 0;
+	@include titletext;
+	font-size: 14pt;
+}
+
+.TileGrid_Section_Tile {
+	float: left;
+    margin: 0 $layoutgrid_page_gutter $layoutgrid_lineheight 0;
+}

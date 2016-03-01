@@ -1,0 +1,15 @@
+﻿@* Generator : MvcHelper TypeVisibility : Internal *@
+@using Controls.Primitives
+@using Controls.Tiles
+@using Server.Framework.ViewModels.TileGrids
+@using WTS.WorkSuite.Library.CodeStrutures.Behavioral
+
+@helper Render( TileGrid grid_section ) {
+    Guard.IsNotNull( grid_section, "grid_section" );
+    
+    <div class="tile-grid-section @grid_section.classes.AsHtmlClassString(  )">
+        <h2 class="tile-grid-header">@grid_section.title</h2>
+        @TileGridControl.Render( grid_section.tiles )
+    </div>
+}
+

@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{977B1E2B-403C-4F88-B33C-DFFBBFD0295F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WTS.WorkSuite.SupplyShortage</RootNamespace>
+    <AssemblyName>WTS.WorkSuite.SupplyShortage.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ninject">
+      <HintPath>..\..\..\..\..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Employee\eventHandlers\CreateEmployeeSupplyShortageWhenEmployeeCreated.cs" />
+    <Compile Include="Employee\eventHandlers\DependencyConfiguration.cs" />
+    <Compile Include="Employee\eventHandlers\RemoveEmployeeSupplyShortageWhenEmployeeRemoved.cs" />
+    <Compile Include="Employee\Holiday\addHoliday\DependencyConfiguration.cs" />
+    <Compile Include="Employee\Holiday\addHoliday\get\GetAddHolidayRequestHandler.cs" />
+    <Compile Include="Employee\Holiday\addHoliday\post\AddHolidayRequestHandler.cs" />
+    <Compile Include="Employee\Holiday\removeHoliday\DependencyConfiguration.cs" />
+    <Compile Include="Employee\Holiday\removeHoliday\RemoveHolidayRequestHandler.cs" />
+    <Compile Include="Employee\Sickness\addSickness\DependencyConfiguration.cs" />
+    <Compile Include="Employee\Sickness\addSickness\get\GetAddSicknessRequestHandler.cs" />
+    <Compile Include="Employee\Sickness\addSickness\post\AddSicknessRequestHandler.cs" />
+    <Compile Include="Employee\Sickness\removeSickness\DependencyConfiguration.cs" />
+    <Compile Include="Employee\Sickness\removeSickness\RemoveSicknessRequestHandler.cs" />
+    <Compile Include="Infrastructure\DomainConfiguration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.CodeStrutures\WorkSuite.Library.CodeStrutures.csproj">
+      <Project>{249be708-3014-4584-9e14-cb087e54916e}</Project>
+      <Name>WorkSuite.Library.CodeStrutures</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.DomainTypes\WorkSuite.Library.DomainTypes.csproj">
+      <Project>{538c6f62-b398-41f1-917c-10659fdf6c78}</Project>
+      <Name>WorkSuite.Library.DomainTypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.Ninject\WorkSuite.Library.Ninject.csproj">
+      <Project>{fa9854f9-6908-483a-ae63-9354249e74bc}</Project>
+      <Name>WorkSuite.Library.Ninject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.Persistence\WorkSuite.Library.Persistence.csproj">
+      <Project>{c55f23be-bc7a-4f70-81d3-af5d645fe831}</Project>
+      <Name>WorkSuite.Library.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Core\src\Worksuite.Core\Worksuite.Core.csproj">
+      <Project>{1df54fed-2bc7-4317-b32e-53135723b267}</Project>
+      <Name>Worksuite.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\HR\src\Services\HR.Services.csproj">
+      <Project>{3D42E5CB-8885-42A6-A018-1C0F1D369123}</Project>
+      <Name>HR.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Persistence\SupplyShortage.Persistence.csproj">
+      <Project>{cc840eef-a77f-477a-97d8-cdb877c5cb6d}</Project>
+      <Name>SupplyShortage.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\SupplyShortage.Services.csproj">
+      <Project>{64491fba-1797-42c3-9420-c64de0fa00ff}</Project>
+      <Name>SupplyShortage.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,23 @@
+@mixin header {
+	font-size: 16px;
+	clear: both;
+	display: inline;
+	float: left;
+	overflow: hidden;
+	@include wordbreak;
+	@include branding_header;
+	margin-right: 6px;
+	padding: 0 0 $layoutgrid_lineheight $layoutgrid_column_gutter;
+}
+
+@mixin subheader {
+	font-size: 14px;
+	clear: both;
+	display: inline;
+	float: left;
+	overflow: hidden;
+	@include wordbreak;
+	@include branding_subheader;
+	margin-right: 6px;
+	padding: 0 0 $layoutgrid_lineheight $layoutgrid_column_gutter;
+}

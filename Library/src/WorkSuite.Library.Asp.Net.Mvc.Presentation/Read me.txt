@@ -1,0 +1,24 @@
+﻿Folder structure.
+-----------------
+
+\Components
+
+  Holds the component system.  We are using a semantic versioning system approach so all components should be postfixed with the major versions. e.g. The first version of the Tile component should live in the following folder ~\Components\Tiles\1\Tiles.cshtml.  This should allow us to create new major version and have them work in the same project as tiles that are still working on a previous version.  This works because on each page you have to be explicit about the components that you are using so you can specify which version of the tile you are using. The only limitation is that we will not be able to have two different versions of a tiles on the same page.
+
+  Major versions are version that are not backward compatables.
+
+
+\Configuration
+
+  *** Legacy components system should not be extended ***
+
+  Note sure exactly what the purpose of the contents of this folder it appears to hold utitlity functions that are not components but may be used by a component or in a view.
+ 
+
+\Controls
+
+  *** Legacy components system should not be extended ***
+
+  This is the legacy implementation of the component system.  It was our first attempt and so did not scale well, it did gave us enough to know where we wanted to shape it in the second version.  As such no new components should be put under this structure.  All new components should be developed using the component system held under the components folder.
+
+

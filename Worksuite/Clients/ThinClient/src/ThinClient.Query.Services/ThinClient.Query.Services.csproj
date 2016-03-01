@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{88633F01-0B3E-4C75-8D8D-641211E2455D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WTS.WorkSuite.ThinClient.Query</RootNamespace>
+    <AssemblyName>WTS.WorkSuite.ThinClient.Query.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Application\HR\employee\Holidays\listItems\HolidayListItem.cs" />
+    <Compile Include="Application\HR\employee\Holidays\listItems\GetHolidayListItemsResponse.cs" />
+    <Compile Include="Application\HR\employee\Holidays\listItems\IGetHolidayListItems.cs" />
+    <Compile Include="Application\HR\employee\Sickness\listItems\SicknessListItem.cs" />
+    <Compile Include="Application\HR\employee\Sickness\listItems\GetListItemsResponse.cs" />
+    <Compile Include="Application\HR\employee\Sickness\listItems\IGetSicknessListItems.cs" />
+    <Compile Include="Application\HR\employee\ViewSchedules\tableItems\EmployeeViewScheduleTableItem.cs" />
+    <Compile Include="Application\HR\employee\ViewSchedules\tableItems\GetEmployeeViewScheduleTableItemsResponse.cs" />
+    <Compile Include="Application\HR\employee\ViewSchedules\tableItems\IGetEmployeeViewScheduleTableItems.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\tableItem\IGetAllocatableResources.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\tableItem\Status.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\tableItem\TableItem.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\listItem\listItems.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\listItem\IGetAllocated.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\listItem\Resource.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\ConfirmResourcesAllocation\editor\Details.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\ConfirmResourcesAllocation\editor\IGetAllocation.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\ConfirmResourcesAllocation\editor\Items.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.CodeStrutures\WorkSuite.Library.CodeStrutures.csproj">
+      <Project>{249be708-3014-4584-9e14-cb087e54916e}</Project>
+      <Name>WorkSuite.Library.CodeStrutures</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.DomainTypes\WorkSuite.Library.DomainTypes.csproj">
+      <Project>{538c6f62-b398-41f1-917c-10659fdf6c78}</Project>
+      <Name>WorkSuite.Library.DomainTypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.Persistence\WorkSuite.Library.Persistence.csproj">
+      <Project>{c55f23be-bc7a-4f70-81d3-af5d645fe831}</Project>
+      <Name>WorkSuite.Library.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.Service.Specification\WorkSuite.Library.Service.Specification.csproj">
+      <Project>{e6053bb8-d527-4524-93df-19fe290cf90e}</Project>
+      <Name>WorkSuite.Library.Service.Specification</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\PlannedSupply.Services\PlannedSupply.Services.csproj">
+      <Project>{1E90397A-D33C-42F3-AE41-C1925820F3D8}</Project>
+      <Name>PlannedSupply.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Core\src\Worksuite.Core\Worksuite.Core.csproj">
+      <Project>{1df54fed-2bc7-4317-b32e-53135723b267}</Project>
+      <Name>Worksuite.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

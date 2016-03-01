@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7F524819-E795-446A-A492-CBECC3AE874F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WTS.WorkSuite.ThinClient.Query.Services</RootNamespace>
+    <AssemblyName>WTS.WorkSuite.ThinClient.Query.Services.Specification</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ninject">
+      <HintPath>..\..\..\..\..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="Application\HR\employee\Holidays\eventHandlers\AddHolidayWhenHolidayCreated\HolidayCreatedEventFixture.cs" />
+    <Compile Include="Application\HR\employee\Holidays\eventHandlers\AddHolidayWhenHolidayCreated\HolidayCreatedEventSpecification.cs" />
+    <Compile Include="Application\HR\employee\Holidays\eventHandlers\AddHolidayWhenHolidayCreated\holiday_created_event_will.cs" />
+    <Compile Include="Application\HR\employee\Holidays\eventHandlers\holidayRemoved\HolidayRemovedEventFixture.cs" />
+    <Compile Include="Application\HR\employee\Holidays\eventHandlers\holidayRemoved\HolidayRemovedEventSpecification.cs" />
+    <Compile Include="Application\HR\employee\Holidays\eventHandlers\holidayRemoved\holiday_removed_event_will.cs" />
+    <Compile Include="Application\HR\employee\Holidays\eventHandlers\RemoveHolidaysWhenEmployeeRemoved\event_handler_will.cs" />
+    <Compile Include="Application\HR\employee\Holidays\eventHandlers\RemoveHolidaysWhenEmployeeRemoved\Fixture.cs" />
+    <Compile Include="Application\HR\employee\Holidays\eventHandlers\RemoveHolidaysWhenEmployeeRemoved\Specification.cs" />
+    <Compile Include="Application\HR\employee\Holidays\listItems\GetHolidayListItemsFixture.cs" />
+    <Compile Include="Application\HR\employee\Holidays\listItems\GetHolidayListItemsSpecification.cs" />
+    <Compile Include="Application\HR\employee\Holidays\listItems\Setup\DependencyConfiguration.cs" />
+    <Compile Include="Application\HR\employee\Holidays\listItems\Setup\HolidayListViewBuilder.cs" />
+    <Compile Include="Application\HR\employee\Holidays\listItems\Setup\HolidayListViewHelper.cs" />
+    <Compile Include="Application\HR\employee\Holidays\listItems\Setup\FakeHolidayListViewRepository.cs" />
+    <Compile Include="Application\HR\employee\Holidays\listItems\should_return.cs" />
+    <Compile Include="Application\HR\employee\Sickness\eventHandlers\RemoveSicknessesWhenEmployeeRemoved\event_handler_will.cs" />
+    <Compile Include="Application\HR\employee\Sickness\eventHandlers\RemoveSicknessesWhenEmployeeRemoved\Fixture.cs" />
+    <Compile Include="Application\HR\employee\Sickness\eventHandlers\RemoveSicknessesWhenEmployeeRemoved\Specification.cs" />
+    <Compile Include="Application\HR\employee\Sickness\eventHandlers\sicknessCreated\SicknessCreatedEventFixture.cs" />
+    <Compile Include="Application\HR\employee\Sickness\eventHandlers\sicknessCreated\SicknessCreatedEventSpecification.cs" />
+    <Compile Include="Application\HR\employee\Sickness\eventHandlers\sicknessCreated\sickness_created_event_will.cs" />
+    <Compile Include="Application\HR\employee\Sickness\eventHandlers\sicknessRemoved\SicknessRemovedEventFixture.cs" />
+    <Compile Include="Application\HR\employee\Sickness\eventHandlers\sicknessRemoved\SicknessRemovedEventSpecification.cs" />
+    <Compile Include="Application\HR\employee\Sickness\eventHandlers\sicknessRemoved\sickness_removed_event_will.cs" />
+    <Compile Include="Application\HR\employee\Sickness\listItems\GetSicknessListItemsFixture.cs" />
+    <Compile Include="Application\HR\employee\Sickness\listItems\GetSicknessListItemsSpecification.cs" />
+    <Compile Include="Application\HR\employee\Sickness\listItems\Setup\DependencyConfiguration.cs" />
+    <Compile Include="Application\HR\employee\Sickness\listItems\Setup\SicknessListViewBuilder.cs" />
+    <Compile Include="Application\HR\employee\Sickness\listItems\Setup\SicknessListViewHelper.cs" />
+    <Compile Include="Application\HR\employee\Sickness\listItems\Setup\FakeSicknessListViewRepository.cs" />
+    <Compile Include="Application\HR\employee\Sickness\listItems\should_return.cs" />
+    <Compile Include="Application\HR\employee\ViewSchedules\tableItems\GetEmployeeViewScheduleTableItemsFixture.cs" />
+    <Compile Include="Application\HR\employee\ViewSchedules\tableItems\GetEmployeeViewScheduleTableItemsSpecification.cs" />
+    <Compile Include="Application\HR\employee\ViewSchedules\tableItems\Setup\DependencyConfiguration.cs" />
+    <Compile Include="Application\HR\employee\ViewSchedules\tableItems\Setup\EmployeeViewScheduleTableViewBuilder.cs" />
+    <Compile Include="Application\HR\employee\ViewSchedules\tableItems\Setup\EmployeeViewScheduleTableViewHelper.cs" />
+    <Compile Include="Application\HR\employee\ViewSchedules\tableItems\Setup\FakeEmployeeViewScheduleTableViewRepository.cs" />
+    <Compile Include="Application\HR\employee\ViewSchedules\should_return.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\Fields\FackCalendar.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\Fields\emp_id\merge_will.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\Fields\emp_ref\merge_will.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\Fields\forname\merge_will.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\Fields\Job\merge_will.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\Fields\location\merge_will.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\Fields\Surname\merge_will.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\Fields\Fixture.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\Fields\should_return.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\Fields\Specification.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\tableItemQuery\Fixture.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\tableItemQuery\Should_return.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\tableItemQuery\Specification.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\Events\Create\event_will.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\Events\Create\Fixture.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\Events\Create\Specification.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\Events\Details\event_will.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\Events\Details\Fixture.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\Events\Details\Specification.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\Events\JobTitle\event_will.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\Events\JobTitle\Fixture.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\Events\JobTitle\specification.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\Events\Location\event_will.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\Events\Location\Fixture.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\Events\Location\Specification.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\Events\Personal\event_will.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\Events\Personal\Fixture.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\Events\Personal\Specification.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\Events\Remove\event_will.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\Events\Remove\Fixture.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\Events\Remove\Specification.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\Fields\should_return.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\Fields\emp_ref\merge_will.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\Fields\FakeGetBy.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\Fields\Fixture.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\Fields\job_title\merge_will.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\Fields\label\merge_will.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\Fields\location\merge_will.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\Fields\name\merge_will.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\Fields\Specification.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\ListItemQuery\Fixture.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\ListItemQuery\should_return.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\ListItemQuery\Specification.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\Setup\Configuration.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\Setup\ListViewBuilder.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\Setup\ListViewHelper.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\Setup\FakeRepository.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\Setup\ResourceBuilder.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\ConfirmAllocation\Event\Create\event_will.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\ConfirmAllocation\Event\Create\Fixture.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\ConfirmAllocation\Event\Create\Specification.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\ConfirmAllocation\Event\Details\event_will.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\ConfirmAllocation\Event\Details\Fixture.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\ConfirmAllocation\Event\Details\Specification.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\ConfirmAllocation\Event\JobTitle\event_will.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\ConfirmAllocation\Event\JobTitle\Fixture.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\ConfirmAllocation\Event\JobTitle\specification.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\ConfirmAllocation\Event\Location\event_will.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\ConfirmAllocation\Event\Location\Fixture.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\ConfirmAllocation\Event\Location\Specification.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\ConfirmAllocation\Event\Personal\event_will.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\ConfirmAllocation\Event\Personal\Fixture.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\ConfirmAllocation\Event\Personal\Specification.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\ConfirmAllocation\Event\Remove\event_will.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\ConfirmAllocation\Event\Remove\Fixture.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\ConfirmAllocation\Event\Remove\Specification.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\ConfirmAllocation\Fields\emp_id\emp_id_will.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\ConfirmAllocation\Fields\emp_ref\em_ref_will.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\ConfirmAllocation\Fields\FakeRequest.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\ConfirmAllocation\Fields\Fixture.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\ConfirmAllocation\Fields\name\name_will.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\ConfirmAllocation\Fields\job\job_will.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\ConfirmAllocation\Fields\location\will.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\ConfirmAllocation\Fields\Specification.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\ConfirmAllocation\editorItemsQuery\Fixture.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\ConfirmAllocation\editorItemsQuery\should_return.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\ConfirmAllocation\editorItemsQuery\Specification.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\ConfirmAllocation\Setup\Configuration.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\ConfirmAllocation\Setup\FakeRepository.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\ConfirmAllocation\Setup\EditorViewBuilder.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\ConfirmAllocation\Setup\EditorViewHelper.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\Events\Created\Fixture.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\Events\Created\Specification.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\Events\Created\event_will.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\Events\Details\event_will.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\Events\Details\Fixture.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\Events\Details\Specification.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\Events\JobTitle\event_will.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\Events\JobTitle\Fixture.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\Events\JobTitle\specification.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\Events\Location\event_will.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\Events\Location\Fixture.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\Events\Location\Specification.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\Events\Personal\Fixture.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\Events\Personal\Specification.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\Events\Personal\event_will.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\Events\Remove\event_will.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\Events\Remove\Fixture.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\Events\Remove\Specification.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\Setup\Configuration.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\Setup\FakeRepository.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\Setup\ResourceBuilder.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\Setup\TableViewBuilder.cs" />
+    <Compile Include="Application\PlannedSupply\OpCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\Setup\TableViewHelper.cs" />
+    <Compile Include="Infrastructure\ThinClientQuerySpecification.cs" />
+    <Compile Include="Infrastructure\ThinClientQueryUnitTestDependencyConfiguration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.CodeStrutures\WorkSuite.Library.CodeStrutures.csproj">
+      <Project>{249be708-3014-4584-9e14-cb087e54916e}</Project>
+      <Name>WorkSuite.Library.CodeStrutures</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.Ninject\WorkSuite.Library.Ninject.csproj">
+      <Project>{fa9854f9-6908-483a-ae63-9354249e74bc}</Project>
+      <Name>WorkSuite.Library.Ninject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.Persistence\WorkSuite.Library.Persistence.csproj">
+      <Project>{c55f23be-bc7a-4f70-81d3-af5d645fe831}</Project>
+      <Name>WorkSuite.Library.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.Service.Specification\WorkSuite.Library.Service.Specification.csproj">
+      <Project>{e6053bb8-d527-4524-93df-19fe290cf90e}</Project>
+      <Name>WorkSuite.Library.Service.Specification</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\PlannedSupply.Services\PlannedSupply.Services.csproj">
+      <Project>{1E90397A-D33C-42F3-AE41-C1925820F3D8}</Project>
+      <Name>PlannedSupply.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Core\src\Worksuite.Core\Worksuite.Core.csproj">
+      <Project>{1df54fed-2bc7-4317-b32e-53135723b267}</Project>
+      <Name>Worksuite.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Domains\HR\src\Services\HR.Services.csproj">
+      <Project>{3d42e5cb-8885-42a6-a018-1c0f1d369123}</Project>
+      <Name>HR.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Domains\SupplyShortage\src\Services\SupplyShortage.Services.csproj">
+      <Project>{64491fba-1797-42c3-9420-c64de0fa00ff}</Project>
+      <Name>SupplyShortage.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\ThinClient.Query.Implementation\ThinClient.Query.Implementation.csproj">
+      <Project>{1481e644-3e09-43e6-8870-f2c3f4fb0b2e}</Project>
+      <Name>ThinClient.Query.Implementation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\ThinClient.Query.Persistence\ThinClient.Query.Persistence.csproj">
+      <Project>{476EAF1F-9400-4524-91D2-07B4B19DA472}</Project>
+      <Name>ThinClient.Query.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\ThinClient.Query.Services\ThinClient.Query.Services.csproj">
+      <Project>{88633f01-0b3e-4c75-8d8d-641211e2455d}</Project>
+      <Name>ThinClient.Query.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\WorkSuite.Web.ThinClient\WorkSuite.Web.ThinClient.csproj">
+      <Project>{7D77B7BD-CF76-4AEE-841B-6AADB0B4E10C}</Project>
+      <Name>WorkSuite.Web.ThinClient</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

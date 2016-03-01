@@ -1,0 +1,101 @@
+﻿@* Generator : MvcHelper GeneratePrettyNames : true *@
+
+@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Controls.ViewElements
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.Primitives.Fields.DefinitionListField
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.Primitives.Fields.DurationRequestField
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.Primitives.Fields.RGBColourField
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.Primitives.Fields.StringField
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.Primitives.Fields.TimeRequestField
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.Tables
+@using WTS.WorkSuite.Library.DomainTypes.DefinitionList
+
+@helper For(IsAViewElement element)
+{
+    @ViewElement.Unknown()
+}
+
+@helper For(Table table)
+{
+
+    <table id="@table.id" class="statictable">
+
+        <thead>
+            <tr>
+                @foreach (var column in table.columns)
+                {
+                    <th>@column</th>
+                }
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var row in table.rows)
+            {
+                <tr id="@row.id" data-details-url="@row.url">
+                    @foreach (var field in row.fields)
+                    {
+                        <td>@Field(field as dynamic)</td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@helper Field(AStringReportField field)
+{
+    @field.value
+}
+
+@helper Field(ATimeRequestField field)
+{
+    @string.Format("{0}{1}{2}", @field.value.hours, ":", @field.value.minutes)
+}
+
+@helper Field(ADurationRequestField field)
+{
+    if (@field.value.minutes == "0")
+    {
+        @string.Format("{0}{1}", @field.value.hours, "h")
+    }
+    else if (@field.value.hours == "0")
+    {
+        @string.Format("{0}{1}", @field.value.minutes, "m")
+    }
+    else
+    {
+        @string.Format("{0}{1}{2}{3}{4}", @field.value.hours, "h", " ", @field.value.minutes, "m")
+    }
+
+}
+
+@helper Field(ARgbColourField field)
+{
+    <div class="shift-colour" style="background-color: rgb( @field.value.R, @field.value.G,@field.value.B)"></div>
+}
+
+@* ADefinitionListReportField - there is more than one line in the body.
+*@
+@helper Field(ADefinitionListReportField field)
+{
+    if (field.value.Any())
+    {
+        <div class="DescriptionList">
+            <dl>
+                @DefinitionItem(field.value)
+            </dl>
+        </div>
+    }
+}
+
+@* Enumeration of DefinitionListElement - display each entry in a field body
+*@
+@helper DefinitionItem(IEnumerable<DefinitionListElement> lines)
+{
+    foreach (var line in lines)
+    {
+        <dt class="DescriptionList-Title">@line.title</dt>
+        <dd class="DescriptionList-Value">@line.definition</dd>
+    }
+}

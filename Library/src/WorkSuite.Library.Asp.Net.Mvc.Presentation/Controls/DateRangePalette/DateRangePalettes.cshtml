@@ -1,0 +1,106 @@
+﻿@* Generator : MvcHelper GeneratePrettyNames : true *@
+
+@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Controls.Primitives
+@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Controls.ViewElements
+@using WorkSuite.Library.Asp.Net.Mvc.Server.DateRangePalettes
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels
+@using WTS.WorkSuite.Library.DomainTypes.Date
+
+
+@helper For(IsAViewElement element)
+{
+
+    @ViewElement.Unknown()
+}
+
+
+@helper Action(DateRangePaletteAction action)
+{
+    <a data-action="@action.name" class="action @action.classes.AsHtmlClassString() secondary-action">
+        @action.title
+    </a>
+}
+
+@helper For(DateRangePalette view_model)
+{
+    <div class="palette">
+        <h2>@view_model.title</h2>
+        <menu data-selected-range="@view_model.selected_range.ToString()" class="menu Palette-DateRange-Toggle">
+            @foreach (var action in view_model.actions)
+            {
+                @Action(action)
+            }
+        </menu>
+        @render_calendar(view_model.calendar)        
+    </div>
+}
+
+@helper render_calendar(DateRangeCalendar view_model)
+{
+    <div class="fc fc-ltr" data-calendar-start-date="@view_model.calendar_start_date.ToClientSideDateString()" data-selected-start-date="@view_model.selected_start_date.ToClientSideDateString()" id='calendar'>
+        <table class="fc-header">
+            <tbody>
+                <tr>
+                    <td id="date-range-back" class="fc-header-left">
+                        <span class="fc-button  fc-state-default fc-corner-left fc-corner-right">
+                            <span class="fc-icon fc-icon-left-single-arrow"></span>
+                        </span>
+                    </td>
+                    <td class="fc-header-center">
+                        <span class="fc-header-title">
+                            <h2>@view_model.calendar_start_date.ToCalendarPaletteHeaderString()</h2>
+                        </span>
+                    </td>
+                    <td id="date-range-forward" class="fc-header-right">
+                        <span class="fc-button fc-state-default fc-corner-left fc-corner-right">
+                            <span class="fc-icon fc-icon-right-single-arrow"></span>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="fc-content" style="">
+            <div class="fc-view fc-grid">
+                <div style="position:absolute;z-index:8;top:0;left:0" class="fc-event-container"></div>
+                <table cellspacing="0" style="width:100%" class="fc-border-separate">
+                    <thead>
+                        <tr class="fc-first fc-last">
+                            @foreach (var week_day in view_model.week_days)
+                            {
+                                <th class="fc-day-header fc-widget-header" style="width: 27px;">@week_day</th>
+                            }
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var week in view_model.dates)
+                        {
+                            @render_week(week)
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+}
+
+@helper render_week(IEnumerable<CalendarDate> dates)
+{
+    <tr class="fc-first">
+        @foreach (var day in dates)
+        {
+            @render_day(day)
+        }
+    </tr>
+}
+
+@helper render_day(CalendarDate date)
+{
+    <td data-date="@date.date.ToClientSideDateString()" class="fc-day fc-widget-content fc-first @(date.is_selected ? "highlighted" : null) @(date.is_in_selected_month ? null : "fc-other-month")">
+        <div style="min-height: 22px;">
+            <div class="fc-day-number">@date.date.Day</div>
+            <div class="fc-day-content">
+                <div style="position: relative; height: 0px;">&nbsp;</div>
+            </div>
+        </div>
+    </td>
+}

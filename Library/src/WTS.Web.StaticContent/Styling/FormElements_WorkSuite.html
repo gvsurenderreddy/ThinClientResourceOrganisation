@@ -1,0 +1,1004 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link href="../Static/css/WorkSuite.css" rel="stylesheet" />
+    <title>Form element templates - WorkSuite Styling</title>
+    <style>
+        inp
+        editor-input-focus{display:block;}
+    </style>
+</head>
+<body onload="document.myForm.select.focus();">
+    <div id="content">
+        <div class="notification-warning"><div class="notification-warning-icon"></div>Lorem iposum</div>
+        <form name="myForm" data-type=" editor" action="" data-report="" id="submit-employee-personal-details-edit" class="editor">
+            <fieldset>
+                <legend class="editor-title">Text box</legend>
+                <!-- textbox -->
+                <div class="editor-controlset editor-inputtext">
+                    <div class="editor-label-wrapper hidden">
+                        <label for="textbox" class="editor-label-error"></label>
+                    </div>
+                    <label name="textbox" class="editor-label">Label </label>
+                    <input type="text" name="textbox" class="editor-input-inputtext" />
+                </div>
+
+                <!-- textbox required -->
+                <div class="editor-controlset editor-inputtext">
+                    <div class="editor-label-wrapper hidden">
+                        <label for="textboxrequired" class="editor-label-error"></label>
+                    </div>
+                    <label for="textboxrequired" class="editor-label">Label <span class="editor-optreq">(Required)</span></label>
+                    <input type="text" name="textboxrequired" class="editor-input-inputtext editor-input-required" />
+                    <br style="clear:both;">
+                </div>
+
+                <!-- textbox focus -->
+                <div class="editor-controlset editor-inputtext">
+                    <div class="editor-label-wrapper hidden">
+                        <label for="textboxfocus" class="editor-label-error"></label>
+                    </div>
+                    <label for="textboxfocus" class="editor-label">Label </label>
+                    <input type="text" name="textboxfocus" class="editor-input-inputtext editor-input-focus" />
+                </div>
+
+                <!-- textbox help -->
+                <div class="editor-controlset editor-inputtext">
+                    <div class="editor-label-help-wrapper">
+                        <label for="textboxhelp" class="editor-label-help">Lorem ipsum.</label>
+                    </div>
+                    <label for="textboxhelp" class="editor-label">Label </label>
+                    <input type="text" name="textboxhelp" class="editor-input-inputtext" />
+                </div>
+
+                <!-- textbox hoverhelp -->
+                <div class="editor-controlset editor-inputtext">
+                    <div class="editor-label-hoverhelp">
+                        <div class="editor-label-hoverhelp-icon"></div>
+                        <div class="editor-label-help-wrapper">
+                            <label class="editor-label-help">Lorem ipsum.</label>
+                        </div>
+                    </div>
+                    <label for="textboxhoverhelp" class="editor-label">Label</label>
+                    <input type="text" name="textboxhoverhelp" class="editor-input-inputtext" />
+                </div>
+
+                <!-- textbox error -->
+                <div class="editor-controlset editor-inputtext">
+                    <div class="editor-label-errorwrapper">
+                        <label for="textboxerror" class="editor-label-error">Lorem ipsum.</label>
+                    </div>
+                    <label for="textboxerror" class="editor-label">Label </label>
+                    <input type="text" name="textboxerror" class="editor-input-inputtext editor-input-error" />
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend class="editor-title">Dropdown selector menu</legend>
+                <!-- select -->
+                <div class="editor-controlset editor-select">
+                    <label for="select" class="editor-label">Label</label>
+                    <select name="select" class="editor-input-select">
+                        <option value="Mr">Mr</option>
+                        <option value="Mrs">Mrs</option>
+                        <option value="Miss">Miss</option>
+                        <option value="The ever living">The ever living</option>
+                    </select>
+                </div>
+
+                <!-- select required -->
+                <div class="editor-controlset editor-select">
+                    <div class="editor-label-errorwrapper hidden">
+                        <label for="selectrequired" class="editor-label-error">Lorem ipsum.</label>
+                    </div>
+                    <label for="selectrequired" class="editor-label">Label <span class="editor-optreq">(Required)</span></label>
+                    <select name="selectrequired" class="editor-input-select editor-input-required">
+                        <option value="Mr">Mr</option>
+                        <option value="Mrs">Mrs</option>
+                        <option value="Miss">Miss</option>
+                        <option value="The ever living">The ever living</option>
+                    </select>
+                </div>
+
+                <!-- select focus -->
+                <div class="editor-controlset editor-select">
+                    <div class="editor-label-errorwrapper hidden">
+                        <label for="selectfocus" class="editor-label-error">Lorem ipsum.</label>
+                    </div>
+                    <label for="selectfocus" class="editor-label">Label </label>
+                    <select name="selectfocus" class="editor-input-select editor-input-focus">
+                        <option value="Mr">Mr</option>
+                        <option value="Mrs">Mrs</option>
+                        <option value="Miss">Miss</option>
+                        <option value="The ever living">The ever living</option>
+                    </select>
+                </div>
+
+                <!-- select help -->
+                <div class="editor-controlset editor-select">
+                    <div class="editor-label-help-wrapper">
+                        <label for="selecthelp" class="editor-label-help">Lorem ipsum.</label>
+                    </div>
+                    <label for="selecthelp" class="editor-label">Label</label>
+                    <select name="selecthelp" class="editor-input-select">
+                        <option value="Mr">Mr</option>
+                        <option value="Mrs">Mrs</option>
+                        <option value="Miss">Miss</option>
+                        <option value="The ever living">The ever living</option>
+                    </select>
+                </div>
+                <!-- select help -->
+                <div class="editor-controlset editor-select">
+                    <div class="editor-label-hoverhelp">
+                        <div class="editor-label-hoverhelp-icon"></div>
+                        <div class="editor-label-help-wrapper">
+                            <label class="editor-label-help">Lorem ipsum.</label>
+                        </div>
+                    </div>
+                    <label for="selecthoverhelp" class="editor-label">Label</label>
+                    <select name="selecthoverhelp" class="editor-input-select">
+                        <option value="Mr">Mr</option>
+                        <option value="Mrs">Mrs</option>
+                        <option value="Miss">Miss</option>
+                        <option value="The ever living">The ever living</option>
+                    </select>
+                </div>
+                <!-- select error -->
+                <div class="editor-controlset editor-select">
+                    <div class="editor-label-errorwrapper">
+                        <label for="selecterror" class="editor-label-error">Lorem ipsum.</label>
+                    </div>
+                    <label for="selecterror" class="editor-label">Label</label>
+                    <select name="selecterror" class="editor-input-select editor-input-error">
+                        <option value="Mr">Mr</option>
+                        <option value="Mrs">Mrs</option>
+                        <option value="Miss">Miss</option>
+                        <option value="The ever living">The ever living</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend class="editor-title">Check boxes</legend>
+                <!-- checkbox -->
+                <div class="editor-controlset editor-checkbox">
+                    <div class="editor-label-errorwrapper hidden">
+                        <label for="checkbox" class="editor-label-error">Lorem ipsum.</label>
+                    </div>
+                    <label for="checkbox" class="editor-label">Label</label>
+                    <div class="editor-input-checkbox-wrapper">
+                        <input type="checkbox" name="checkbox" class="editor-input-checkbox">
+                    </div>
+                </div>
+
+                <!-- checkbox required -->
+                <div class="editor-controlset editor-checkbox">
+                    <div class="editor-label-errorwrapper hidden">
+                        <label for="checkboxrequired" class="editor-label-error">Lorem ipsum.</label>
+                    </div>
+                    <label for="checkboxrequired" class="editor-label">Label <span class="editor-optreq">(Required)</span></label>
+                    <div class="editor-input-checkbox-wrapper">
+                        <input type="checkbox" name="checkboxrequired" class="editor-input-checkbox editor-input-required">
+                    </div>
+                </div>
+
+                <!-- checkbox focus -->
+                <div class="editor-controlset editor-checkbox">
+                    <div class="editor-label-errorwrapper hidden">
+                        <label for="checkboxfocus" class="editor-label-error">Lorem ipsum.</label>
+                    </div>
+                    <label for="checkboxfocus" class="editor-label">Label</label>
+                    <div class="editor-input-checkbox-wrapper">
+                        <input type="checkbox" name="checkboxfocus" class="editor-input-checkbox editor-input-focus">
+                    </div>
+                </div>
+
+                <!-- checkbox help -->
+                <div class="editor-controlset editor-checkbox">
+                    <div class="editor-label-help-wrapper">
+                        <label for="checkboxhelp" class="editor-label-help">Lorem ipsum.</label>
+                    </div>
+                    <label for="checkboxhelp" class="editor-label">Label</label>
+                    <div class="editor-input-checkbox-wrapper">
+                        <input type="checkbox" name="checkboxhelp" class="editor-input-checkbox">
+                    </div>
+                </div>
+
+                <!-- checkbox hoverhelp -->
+                <div class="editor-controlset editor-checkbox">
+                    <div class="editor-label-hoverhelp">
+                        <div class="editor-label-hoverhelp-icon"></div>
+                        <div class="editor-label-help-wrapper">
+                            <label class="editor-label-help">Lorem ipsum.</label>
+                        </div>
+                    </div>
+                    <label for="checkboxhoverhelp" class="editor-label">Label</label>
+                    <div class="editor-input-checkbox-wrapper">
+                        <input type="checkbox" name="checkboxhoverhelp" class="editor-input-checkbox">
+                    </div>
+                </div>
+
+                <!-- checkbox error -->
+                <div class="editor-controlset editor-checkbox">
+                    <div class="editor-label-errorwrapper">
+                        <label for="[xxxxx]" class="editor-label-error">Lorem ipsum.</label>
+                    </div>
+                    <label for="[xxxxx]" class="editor-label">Label</label>
+                    <div class="editor-input-checkbox-wrapper">
+                        <input type="checkbox" name="[xxxxx]" class="editor-input-error">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend class="editor-title">Radio buttons</legend>
+                <!-- radio -->
+                <div class="editor-controlset editor-radio">
+                    <div class="editor-label-errorwrapper hidden">
+                        <label for="radio" class="editor-label-error ">Lorem ipsum.</label>
+                    </div>
+                    <label for="radio" class="editor-label">Label</label>
+                    <div class="editor-input-radio-wrapper">
+                        <input type="radio" name="radio" class="editor-input-radio editor-input-required">
+                    </div>
+                </div>
+
+                <!-- radio required -->
+                <div class="editor-controlset editor-radio">
+                    <div class="editor-label-errorwrapper hidden">
+                        <label for="radiorequired" class="editor-label-error">Lorem ipsum.</label>
+                    </div>
+                    <label for="radiorequired" class="editor-label">Label <span class="editor-optreq">(Required)</span></label>
+                    <div class="editor-input-radio-wrapper">
+                        <input type="radio" name="radiorequired" class="editor-input-radio editor-input-required">
+                    </div>
+                </div>
+
+                <!-- radio focus -->
+                <div class="editor-controlset editor-radio">
+                    <div class="editor-label-errorwrapper hidden">
+                        <label for="radiofocus" class="editor-label-error">Lorem ipsum.</label>
+                    </div>
+                    <label for="radiofocus" class="editor-label">Label</label>
+                    <div class="editor-input-radio-wrapper">
+                        <input type="radio" name="radiofocus" class="editor-input-radio editor-input-focus">
+                    </div>
+                </div>
+
+                <!-- radio help -->
+                <div class="editor-controlset editor-radio">
+                    <div class="editor-label-help-wrapper">
+                        <label for="radiohelp" class="editor-label-help">Lorem ipsum.</label>
+                    </div>
+                    <label for="radiohelp" class="editor-label">Label</label>
+                    <div class="editor-input-radio-wrapper">
+                        <input type="radio" name="radiohelp" class="editor-input-radio">
+                    </div>
+                </div>
+
+                <!-- radio hoverhelp -->
+                <div class="editor-controlset editor-radio">
+                    <div class="editor-label-hoverhelp">
+                        <div class="editor-label-hoverhelp-icon"></div>
+                        <div class="editor-label-help-wrapper">
+                            <label class="editor-label-help">Lorem ipsum.</label>
+                        </div>
+                    </div>
+                    <label for="radiohoverhelp" class="editor-label">Label</label>
+                    <div class="editor-input-radio-wrapper">
+                        <input type="radio" name="radiohoverhelp" class="editor-input-radio">
+                    </div>
+                </div>
+
+                <!-- radio error -->
+                <div class="editor-controlset editor-radio">
+                    <div class="editor-label-errorwrapper">
+                        <label for="radioerror" class="editor-label-error">Lorem ipsum.</label>
+                    </div>
+                    <label for="radioerror" class="editor-label">Label</label>
+                    <div class="editor-input-radio-wrapper">
+                        <input type="radio" name="radioerror" class="editor-input-radio editor-input-error">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend class="editor-title">Date of birth selector</legend>
+                <!-- Date of birth picker -->
+                <div class="editor-controlset editor-dateofbirth">
+                    <div class="editor-label-errorwrapper hidden">
+                        <label class="editor-label-error">Lorem ipsum.</label>
+                    </div>
+                    <label class="editor-label">Label</label>
+                    <div class="editor-input-dateofbirth-wrapper">
+                        <input type="text" class="editor-input-dayofbirth" placeholder="dd"><span>/</span><input type="text" class="editor-input-monthofbirth" placeholder="mm"><span>/</span><input type="text" class="editor-input-yearofbirth" placeholder="yyyy">
+                    </div>
+                </div>
+
+                <!-- Date of birth picker required -->
+                <div class="editor-controlset editor-dateofbirth">
+                    <div class="editor-label-errorwrapper hidden">
+                        <label class="editor-label-error">Lorem ipsum.</label>
+                    </div>
+                    <label class="editor-label">Label <span class="editor-optreq">(Required)</span></label>
+                    <div class="editor-input-dateofbirth-wrapper">
+                        <input type="text" class="editor-input-dayofbirth editor-input-required" placeholder="dd"><span>/</span><input type="text" class="editor-input-monthofbirth editor-input-required" placeholder="mm"><span>/</span><input type="text" class="editor-input-yearofbirth editor-input-required" placeholder="yyyy">
+                    </div>
+                </div>
+
+                <!-- Date of birth picker focus -->
+                <div class="editor-controlset editor-dateofbirth">
+                    <div class="editor-label-errorwrapper hidden">
+                        <label for="[xxxxx]" class="editor-label-error">Lorem ipsum.</label>
+                    </div>
+                    <label for="[xxxxx]" class="editor-label">Label</label>
+                    <div class="editor-input-dateofbirth-wrapper">
+                        <input type="text" class="editor-input-dayofbirth editor-input-focus" placeholder="dd"><span>/</span><input type="text" class="editor-input-monthofbirth" placeholder="mm"><span>/</span><input type="text" class="editor-input-yearofbirth" placeholder="yyyy">
+                    </div>
+                </div>
+
+                <!-- Date of birth picker help -->
+                <div class="editor-controlset editor-dateofbirth">
+                    <div class="editor-label-help-wrapper">
+                        <label for="[xxxxx]" class="editor-label-help">Lorem ipsum.</label>
+                    </div>
+                    <label for="[xxxxx]" class="editor-label">Label</label>
+                    <div class="editor-input-dateofbirth-wrapper">
+                        <input type="text" class="editor-input-dayofbirth" placeholder="dd"><span>/</span><input type="text" class="editor-input-monthofbirth" placeholder="mm"><span>/</span><input type="text" class="editor-input-yearofbirth" placeholder="yyyy">
+                    </div>
+                </div>
+
+                <!-- Date of birth picker hover help -->
+                <div class="editor-controlset editor-dateofbirth">
+                    <div class="editor-label-hoverhelp">
+                        <div class="editor-label-hoverhelp-icon"></div>
+                        <div class="editor-label-help-wrapper">
+                            <label class="editor-label-help">Lorem ipsum.</label>
+                        </div>
+                    </div>
+                    <label class="editor-label">Label</label>
+                    <div class="editor-input-dateofbirth-wrapper">
+                        <input type="text" class="editor-input-dayofbirth" placeholder="dd"><span>/</span><input type="text" class="editor-input-monthofbirth" placeholder="mm"><span>/</span><input type="text" class="editor-input-yearofbirth" placeholder="yyyy">
+                    </div>
+                </div>
+
+                <!-- Date of birth picker error -->
+                <div class="editor-controlset editor-dateofbirth">
+                    <div class="editor-label-errorwrapper">
+                        <label class="editor-label-error">Lorem ipsum.</label>
+                    </div>
+                    <label class="editor-label">Label</label>
+                    <div class="editor-input-dateofbirth-wrapper">
+                        <input type="text" class="editor-input-dayofbirth editor-input-error" placeholder="dd"><span>/</span><input type="text" class="editor-input-monthofbirth editor-input-error" placeholder="mm"><span>/</span><input type="text" class="editor-input-yearofbirth editor-input-error" placeholder="yyyy">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend class="editor-title">Text area</legend>
+                <!-- textarea -->
+                <div class="editor-controlset editor-textarea">
+                    <div class="editor-label-wrapper hidden">
+                        <label for="textbox" class="editor-label-error"></label>
+                    </div>
+                    <label name="textbox" class="editor-label">Label </label>
+                    <textarea name="textbox" class="editor-input-textarea"></textarea>
+                </div>
+
+                <!-- textarea required -->
+                <div class="editor-controlset editor-textarea">
+                    <div class="editor-label-wrapper hidden">
+                        <label for="textboxrequired" class="editor-label-error"></label>
+                    </div>
+                    <label for="textboxrequired" class="editor-label">Label <span class="editor-optreq">(Required)</span></label>
+                    <textarea name="textboxrequired" class="editor-input-textarea editor-input-required"></textarea>
+                    <br style="clear:both;">
+                </div>
+
+                <!-- textarea focus -->
+                <div class="editor-controlset editor-textarea">
+                    <div class="editor-label-wrapper hidden">
+                        <label for="textboxfocus" class="editor-label-error"></label>
+                    </div>
+                    <label for="textboxfocus" class="editor-label">Label </label>
+                    <textarea name="textboxfocus" class="editor-input-textarea editor-input-focus"></textarea>
+                </div>
+
+                <!-- textarea help -->
+                <div class="editor-controlset editor-textarea">
+                    <div class="editor-label-help-wrapper">
+                        <label for="textboxhelp" class="editor-label-help">Lorem ipsum.</label>
+                    </div>
+                    <label for="textboxhelp" class="editor-label">Label </label>
+                    <textarea name="textboxhelp" class="editor-input-textarea"></textarea>
+                </div>
+
+                <!-- textarea hoverhelp -->
+                <div class="editor-controlset editor-textarea">
+                    <div class="editor-label-hoverhelp">
+                        <div class="editor-label-hoverhelp-icon"></div>
+                        <div class="editor-label-help-wrapper">
+                            <label class="editor-label-help">Lorem ipsum.</label>
+                        </div>
+                    </div>
+                    <label for="textboxhoverhelp" class="editor-label">Label</label>
+                    <textarea name="textboxhoverhelp" class="editor-input-textarea"></textarea>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend class="editor-title">File upload</legend>
+                <!-- fileupload -->
+                <div class="editor-controlset editor-fileupload">
+                    <div class="editor-label-wrapper hidden">
+                        <label for="fileupload" class="editor-label-error"></label>
+                    </div>
+                    <label name="fileupload" class="editor-label">Label </label>
+                    <input type="file" accept="image/*" name="fileupload" class="editor-input-fileupload" />
+                </div>
+
+                <!-- fileupload required -->
+                <div class="editor-controlset editor-fileupload">
+                    <div class="editor-label-wrapper hidden">
+                        <label for="fileuploadrequired" class="editor-label-error"></label>
+                    </div>
+                    <label for="fileuploadrequired" class="editor-label">Label <span class="editor-optreq">(Required)</span></label>
+                    <input type="file" accept="image/*" name="fileuploadrequired" class="editor-input-fileupload editor-input-required" />
+                    <br style="clear:both;">
+                </div>
+
+                <!-- fileupload focus -->
+                <div class="editor-controlset editor-fileupload">
+                    <div class="editor-label-wrapper hidden">
+                        <label for="fileuploadfocus" class="editor-label-error"></label>
+                    </div>
+                    <label for="fileuploadfocus" class="editor-label">Label </label>
+                    <input type="file" accept="image/*" name="fileuploadfocus" class="editor-input-fileupload editor-input-focus" />
+                </div>
+
+                <!-- fileupload help -->
+                <div class="editor-controlset editor-fileupload">
+                    <div class="editor-label-help-wrapper">
+                        <label for="fileuploadhelp" class="editor-label-help">Lorem ipsum.</label>
+                    </div>
+                    <label for="fileuploadhelp" class="editor-label">Label </label>
+                    <input type="file" accept="image/*" name="fileuploadhelp" class="editor-input-fileupload" />
+                </div>
+
+                <!-- fileupload hoverhelp -->
+                <div class="editor-controlset editor-fileupload">
+                    <div class="editor-label-hoverhelp">
+                        <div class="editor-label-hoverhelp-icon"></div>
+                        <div class="editor-label-help-wrapper">
+                            <label class="editor-label-help">Lorem ipsum.</label>
+                        </div>
+                    </div>
+                    <label for="fileuploadhelp" class="editor-label">Label</label>
+                    <input type="file" accept="image/*" name="fileuploadhoverhelp" class="editor-input-fileupload" />
+                </div>
+
+                <!-- fileupload error -->
+                <div class="editor-controlset editor-fileupload">
+                    <div class="editor-label-errorwrapper">
+                        <label for="fileuploaderror" class="editor-label-error">Lorem ipsum.</label>
+                    </div>
+                    <label for="fileuploaderror" class="editor-label">Label </label>
+                    <input type="file" accept="image/*" name="fileuploaderror" class="editor-input-fileupload editor-input-error" />
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend class="editor-title">Buttons</legend>
+                <div class="editor-controlset editor-submit">
+                    <input type="submit" class="Button" value="Button">
+                    <input type="submit" class="Button Button_Primary" value="Primary">
+                    <input type="submit" class="Button Button_Disabled" value="Disabled">
+                    <input type="submit" class="Button Button_Primary Button_Disabled" value="Primary Disabled">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend class="editor-title">Button group</legend>
+                <div class="editor-controlset editor-submit">
+                    <div class="ButtonGroup_Wrapper">
+                        <input type="submit" class="ButtonGroup" value="Button">
+                        <input type="submit" class="ButtonGroup ButtonGroup_Primary" value="Primary">
+                        <input type="submit" class="ButtonGroup ButtonGroup_Disabled" value="Disabled">
+                        <input type="submit" class="ButtonGroup ButtonGroup_Selected" value="Selected">
+                        <input type="submit" class="ButtonGroup ButtonGroup_Primary ButtonGroup_Selected" value="Primary Selected">
+                        </div>
+                    </div>
+            </fieldset>
+
+            <fieldset>
+                <legend class="editor-title">Split button</legend>
+                <div class="editor-controlset editor-submit">
+                    <div class="SplitButton SplitButton_Secondary">
+                        <a href="#" class="SplitButton_Option">Save</a>
+                        <menu class="SplitButton_MenuToggle">
+                            <ul class="SplitButton_Menu">  
+                                <li class="SplitButton_Menu_Option"><a href="#" class="SplitButton_Menu_Link">Text</a></li>
+                                <li class="SplitButton_Menu_Option"><a href="#" class="SplitButton_Menu_Link">Save and choose another item</a></li>
+                                <li class="SplitButton_Menu_Option"><a href="#" class="SplitButton_Menu_Link">Save and return to the main menu</a></li>
+                            </ul>
+                        </menu>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend class="editor-title">Time</legend>
+                <!-- Time -->
+                <div class="editor-controlset editor-time">
+                    <div class="editor-label-errorwrapper hidden">
+                        <label class="editor-label-error">Lorem ipsum.</label>
+                    </div>
+                    <label class="editor-label">Label</label>
+                    <div class="editor-input-time-wrapper">
+                        <input type="text" class="editor-input-time-hours" placeholder="hh">
+                        <span></span>
+                        <select class="editor-input-time-minutes">
+                            <option value="0">00</option>
+                            <option value="15">15</option>
+                            <option value="30">30</option>
+                            <option value="45">45</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Time required -->
+                <div class="editor-controlset editor-time">
+                    <div class="editor-label-errorwrapper hidden">
+                        <label class="editor-label-error">Lorem ipsum.</label>
+                    </div>
+                    <label class="editor-label">Label <span class="editor-optreq">(Required)</span></label>
+                    <div class="editor-input-time-wrapper">
+                        <input type="text" class="editor-input-time-hours editor-input-required" placeholder="hh">
+                        <span></span>
+                        <select class="editor-input-time-minutes editor-input-required">
+                            <option value="0">00</option>
+                            <option value="15">15</option>
+                            <option value="30">30</option>
+                            <option value="45">45</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Time focus -->
+                <div class="editor-controlset editor-time">
+                    <div class="editor-label-errorwrapper hidden">
+                        <label for="[xxxxx]" class="editor-label-error">Lorem ipsum.</label>
+                    </div>
+                    <label for="[xxxxx]" class="editor-label">Label</label>
+                    <div class="editor-input-time-wrapper">
+                        <input type="text" class="editor-input-time-hours editor-input-focus" placeholder="hh">
+                        <span></span>
+                        <select class="editor-input-time-minutes  editor-input-focus">
+                            <option value="0">00</option>
+                            <option value="15">15</option>
+                            <option value="30">30</option>
+                            <option value="45">45</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Time help -->
+                <div class="editor-controlset editor-time">
+                    <div class="editor-label-help-wrapper">
+                        <label for="[xxxxx]" class="editor-label-help">Lorem ipsum.</label>
+                    </div>
+                    <label for="[xxxxx]" class="editor-label">Label</label>
+                    <div class="editor-input-time-wrapper">
+                        <input type="text" class="editor-input-time-hours" placeholder="hh">
+                        <span></span>
+                        <select class="editor-input-time-minutes">
+                            <option value="0">00</option>
+                            <option value="15">15</option>
+                            <option value="30">30</option>
+                            <option value="45">45</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Time hover help -->
+                <div class="editor-controlset editor-time">
+                    <div class="editor-label-hoverhelp">
+                        <div class="editor-label-hoverhelp-icon"></div>
+                        <div class="editor-label-help-wrapper">
+                            <label class="editor-label-help">Lorem ipsum.</label>
+                        </div>
+                    </div>
+                    <label class="editor-label">Label</label>
+                    <div class="editor-input-time-wrapper">
+                        <input type="text" class="editor-input-time-hours" placeholder="hh">
+                        <span></span>
+                        <select class="editor-input-time-minutes">
+                            <option value="0">00</option>
+                            <option value="15">15</option>
+                            <option value="30">30</option>
+                            <option value="45">45</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Time error -->
+                <div class="editor-controlset editor-time">
+                    <div class="editor-label-errorwrapper">
+                        <label class="editor-label-error">Lorem ipsum.</label>
+                    </div>
+                    <label class="editor-label">Label</label>
+                    <div class="editor-input-time-wrapper">
+                        <input type="text" class="editor-input-time-hours editor-input-error" placeholder="hh">
+                        <span></span>
+                        <select class="editor-input-time-minutes editor-input-error">
+                            <option value="0">00</option>
+                            <option value="15">15</option>
+                            <option value="30">30</option>
+                            <option value="45">45</option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend class="editor-title">Duration</legend>
+                <!-- Duration -->
+                <div class="editor-controlset editor-duration">
+                    <div class="editor-label-errorwrapper hidden">
+                        <label class="editor-label-error">Lorem ipsum.</label>
+                    </div>
+                    <label class="editor-label">Label</label>
+                    <div class="editor-input-duration-wrapper">
+                        <input type="text" class="editor-input-duration-hours" placeholder="hh">
+                        <span class="editor-input-duration-hours-label"></span>
+                        <select class="editor-input-duration-minutes">
+                            <option value="0">0</option>
+                            <option value="15">15</option>
+                            <option value="30">30</option>
+                            <option value="45">45</option>
+                        </select>
+                        <span class="editor-input-duration-minutes-label"></span>
+                    </div>
+                </div>
+
+                <!-- Duration required -->
+                <div class="editor-controlset editor-duration">
+                    <div class="editor-label-errorwrapper hidden">
+                        <label class="editor-label-error">Lorem ipsum.</label>
+                    </div>
+                    <label class="editor-label">Label <span class="editor-optreq">(Required)</span></label>
+                    <div class="editor-input-duration-wrapper">
+                        <input type="text" class="editor-input-duration-hours editor-input-required" placeholder="hh">
+                        <span class="editor-input-duration-hours-label"></span>
+                        <select class="editor-input-duration-minutes editor-input-required">
+                            <option value="0">0</option>
+                            <option value="15">15</option>
+                            <option value="30">30</option>
+                            <option value="45">45</option>
+                        </select>
+                        <span class="editor-input-duration-minutes-label"></span>
+                    </div>
+                </div>
+
+                <!-- Duration focus -->
+                <div class="editor-controlset editor-duration">
+                    <div class="editor-label-errorwrapper hidden">
+                        <label for="[xxxxx]" class="editor-label-error">Lorem ipsum.</label>
+                    </div>
+                    <label for="[xxxxx]" class="editor-label">Label</label>
+                    <div class="editor-input-duration-wrapper">
+                        <input type="text" class="editor-input-duration-hours editor-input-focus" placeholder="hh">
+                        <span class="editor-input-duration-hours-label"></span>
+                        <select class="editor-input-duration-minutes editor-input-focus">
+                            <option value="0">0</option>
+                            <option value="15">15</option>
+                            <option value="30">30</option>
+                            <option value="45">45</option>
+                        </select>
+                        <span class="editor-input-duration-minutes-label"></span>
+                    </div>
+                </div>
+
+                <!-- Duration help -->
+                <div class="editor-controlset editor-duration">
+                    <div class="editor-label-help-wrapper">
+                        <label for="[xxxxx]" class="editor-label-help">Lorem ipsum.</label>
+                    </div>
+                    <label for="[xxxxx]" class="editor-label">Label</label>
+                    <div class="editor-input-duration-wrapper">
+                        <input type="text" class="editor-input-duration-hours" placeholder="hh">
+                        <span class="editor-input-duration-hours-label"></span>
+                        <select class="editor-input-duration-minutes">
+                            <option value="0">0</option>
+                            <option value="15">15</option>
+                            <option value="30">30</option>
+                            <option value="45">45</option>
+                        </select>
+                        <span class="editor-input-duration-minutes-label"></span>
+                    </div>
+                </div>
+
+                <!-- Duration hover help -->
+                <div class="editor-controlset editor-duration">
+                    <div class="editor-label-hoverhelp">
+                        <div class="editor-label-hoverhelp-icon"></div>
+                        <div class="editor-label-help-wrapper">
+                            <label class="editor-label-help">Lorem ipsum.</label>
+                        </div>
+                    </div>
+                    <label class="editor-label">Label</label>
+                    <div class="editor-input-duration-wrapper">
+                        <input type="text" class="editor-input-duration-hours" placeholder="hh">
+                        <span class="editor-input-duration-hours-label"></span>
+                        <select class="editor-input-duration-minutes">
+                            <option value="0">0</option>
+                            <option value="15">15</option>
+                            <option value="30">30</option>
+                            <option value="45">45</option>
+                        </select>
+                        <span class="editor-input-duration-minutes-label"></span>
+                    </div>
+                </div>
+
+                <!-- Duration error -->
+                <div class="editor-controlset editor-duration">
+                    <div class="editor-label-errorwrapper">
+                        <label class="editor-label-error">Lorem ipsum.</label>
+                    </div>
+                    <label class="editor-label">Label</label>
+                    <div class="editor-input-duration-wrapper">
+                        <input type="text" class="editor-input-duration-hours editor-input-error" placeholder="hh">
+                        <span class="editor-input-duration-hours-label"></span>
+                        <select class="editor-input-duration-minutes editor-input-error">
+                            <option value="0">0</option>
+                            <option value="15">15</option>
+                            <option value="30">30</option>
+                            <option value="45">45</option>
+                        </select>
+                        <span class="editor-input-duration-minutes-label"></span>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <br /><br /><hr style="clear:both" />
+                <!-- Picture -->
+                <div class="editor-controlset editor-imageupload">
+                    <div class="editor-label-wrapper hidden">
+                        <label for="fileupload" class="editor-label-error"></label>
+                    </div>
+                    <label name="fileupload" class="editor-label">Label </label>
+                    <input type="file" accept="image/*" name="fileupload" class="editor-input-fileupload" />
+                    <label name="fileupload" class="editor-label">Label </label>
+                    <div class="editor-picture-wrapper">
+                        <img src="Images/employee_blank.png" width="60" height="72">
+                        <a href="">Reset to default</a>
+                    </div>
+                </div>
+
+                <br /><br /><hr style="clear:both" />
+
+            </fieldset>
+            <fieldset>
+                <legend class="editor-title">Color picker</legend>
+                <!-- Duration -->
+                <div class="editor-controlset editor-ColourPicker">
+                    <div class="editor-label-errorwrapper hidden">
+                        <label class="editor-label-error">Lorem ipsum.</label>
+                    </div>
+                    <label class="editor-label">Color</label>
+                    <div class="ColourPicker-Wrapper">
+                        <div class="ColourPicker-Toggle"><div style="background-color:rgb(255,238,143);"></div></div>
+                        <div class="ColourPicker-Palette">
+                            <div class="ColourPicker-Palette-Close">Close</div>
+                            <div class="ColourPicker-Palette-Current">
+                                <div style="background-color:rgb(0,238,143);"></div>
+                            </div>
+                            <div class="ColourPicker-Palette-Common">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class="ColourPicker-Palette-Time">
+                                <table>
+                                    <tr>
+                                        <td>0:00 - 1:00</td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1:00 - 2:00</td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2:00 - 3:00</td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3:00 - 4:00</td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4:00 - 5:00</td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td>5:00 - 6:00</td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td>6:00 - 7:00</td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td>7:00 - 8:00</td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td>8:00 - 9:00</td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td>9:00 - 10:00</td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td>10:00 - 11:00</td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td>11:00 - 12:00</td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td>12:00 - 13:00</td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td>13:00 - 14:00</td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td>14:00 - 15:00</td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td>15:00 - 16:00</td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td>16:00 - 17:00</td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td>17:00 - 18:00</td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td>18:00 - 19:00</td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td>19:00 - 20:00</td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td>20:00 - 21:00</td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td>21:00 - 22:00</td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td>22:00 - 23:00</td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td>23:00 - 24:00</td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                        <td><div></div></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <br /><br /><hr style="clear:both" />
+            <fieldset>
+                <div class="editor-controlset">
+                    <label class="editor-label"> Calendar name </label>
+                    <div class="editor-text">
+                        <dl>
+                            <dt class="DescriptionList-Title">High Season packer</dt>
+                            <dd class="DescriptionList-Value">Occurrences 30</dd>
+                            <dt class="DescriptionList-Title">FLT Drivers</dt>
+                            <dd class="DescriptionList-Value">Occurrences 30</dd>
+                        </dl>
+                    </div>
+                </div>
+            </fieldset>
+           </form>
+    </div>
+    <footer>
+        &copy; 2013 Working Time Solutions Ltd.
+    </footer>
+
+ <br /><br /><br /><br /><br />
+</body>
+</html>

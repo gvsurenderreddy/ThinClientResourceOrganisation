@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1481E644-3E09-43E6-8870-F2C3F4FB0B2E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WTS.WorkSuite.ThinClient.Query</RootNamespace>
+    <AssemblyName>WTS.WorkSuite.ThinClient.Query.Implementation</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ninject">
+      <HintPath>..\..\..\..\..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Application\HR\employee\Holidays\eventHandlers\DependencyConfiguration.cs" />
+    <Compile Include="Application\HR\employee\Holidays\eventHandlers\HolidayCreatedEventHandler.cs" />
+    <Compile Include="Application\HR\employee\Holidays\eventHandlers\HolidayRemovedEventHandler.cs" />
+    <Compile Include="Application\HR\employee\Holidays\eventHandlers\RemoveEmployeeHolidaysWhenEmployeeRemoved.cs" />
+    <Compile Include="Application\HR\employee\Holidays\listReport\DependencyConfiguration.cs" />
+    <Compile Include="Application\HR\employee\Holidays\listReport\GetHolidayListItems.cs" />
+    <Compile Include="Application\HR\employee\Sickness\eventHandlers\DependencyConfiguration.cs" />
+    <Compile Include="Application\HR\employee\Sickness\eventHandlers\RemoveEmployeeSicknessesWhenEmployeeRemoved.cs" />
+    <Compile Include="Application\HR\employee\Sickness\eventHandlers\SicknessCreatedEventHandler.cs" />
+    <Compile Include="Application\HR\employee\Sickness\eventHandlers\SicknessRemovedEventHandler.cs" />
+    <Compile Include="Application\HR\employee\Sickness\listReport\DependencyConfiguration.cs" />
+    <Compile Include="Application\HR\employee\Sickness\listReport\GetSicknessListItems.cs" />
+    <Compile Include="Application\HR\employee\ViewSchedules\tableReport\DependencyConfiguration.cs" />
+    <Compile Include="Application\HR\employee\ViewSchedules\tableReport\GetEmployeeViewScheduleTableItems.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\eventHandlers\EmployeeDetails.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\eventHandlers\JobTitleEvent.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\eventHandlers\LocationUpdated.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\eventHandlers\PersonalUpdated.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\eventHandlers\Configuration.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\eventHandlers\CreateEvent.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\eventHandlers\RemoveEvent.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\tableItem\DependencyConfiguration.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\tableItem\TableItem.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\tableItem\GetAllocatableResources.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\tableItem\Merge.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\AllocatableResources\tableItem\MergeRequest.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\eventHandlers\Configuration.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\eventHandlers\CreateEvent.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\eventHandlers\EmployeeDetails.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\eventHandlers\JobTitleEvent.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\eventHandlers\LocationUpdated.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\eventHandlers\PersonalUpdated.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\eventHandlers\RemoveEvent.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\listReport\DependencyConfiguration.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\listReport\GetAllocated.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\listReport\ListReport.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\listReport\merge.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\AllocatedResources\listReport\mergeRequest.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\ConfirmResourcesAllocation\eventHandlers\Configuration.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\ConfirmResourcesAllocation\eventHandlers\CreateEvent.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\ConfirmResourcesAllocation\eventHandlers\EmployeeDetails.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\ConfirmResourcesAllocation\eventHandlers\JobTitleEvent.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\ConfirmResourcesAllocation\eventHandlers\LocationUpdated.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\ConfirmResourcesAllocation\eventHandlers\PersonalUpdated.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\ConfirmResourcesAllocation\eventHandlers\RemoveEvent.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\ConfirmResourcesAllocation\editor\DependencyConfiguration.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\ConfirmResourcesAllocation\editor\GetAllocation.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\ConfirmResourcesAllocation\editor\EditorItems.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\ConfirmResourcesAllocation\editor\Merge.cs" />
+    <Compile Include="Application\PlannedSupply\OperationsCalendar\ShiftCalendars\Patterns\Allocations\ConfirmResourcesAllocation\editor\MergeRequest.cs" />
+    <Compile Include="Infrastructure\DomainConfiguration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.CodeStrutures\WorkSuite.Library.CodeStrutures.csproj">
+      <Project>{249BE708-3014-4584-9E14-CB087E54916E}</Project>
+      <Name>WorkSuite.Library.CodeStrutures</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.DomainTypes\WorkSuite.Library.DomainTypes.csproj">
+      <Project>{538c6f62-b398-41f1-917c-10659fdf6c78}</Project>
+      <Name>WorkSuite.Library.DomainTypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.Ninject\WorkSuite.Library.Ninject.csproj">
+      <Project>{fa9854f9-6908-483a-ae63-9354249e74bc}</Project>
+      <Name>WorkSuite.Library.Ninject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.Persistence\WorkSuite.Library.Persistence.csproj">
+      <Project>{C55F23BE-BC7A-4F70-81D3-AF5D645FE831}</Project>
+      <Name>WorkSuite.Library.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\PlannedSupply.Services\PlannedSupply.Services.csproj">
+      <Project>{1E90397A-D33C-42F3-AE41-C1925820F3D8}</Project>
+      <Name>PlannedSupply.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Core\src\Worksuite.Core\Worksuite.Core.csproj">
+      <Project>{1df54fed-2bc7-4317-b32e-53135723b267}</Project>
+      <Name>Worksuite.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Domains\HR\src\Services\HR.Services.csproj">
+      <Project>{3d42e5cb-8885-42a6-a018-1c0f1d369123}</Project>
+      <Name>HR.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Domains\SupplyShortage\src\Services\SupplyShortage.Services.csproj">
+      <Project>{64491FBA-1797-42C3-9420-C64DE0FA00FF}</Project>
+      <Name>SupplyShortage.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ThinClient.Query.Persistence\ThinClient.Query.Persistence.csproj">
+      <Project>{476EAF1F-9400-4524-91D2-07B4B19DA472}</Project>
+      <Name>ThinClient.Query.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ThinClient.Query.Services\ThinClient.Query.Services.csproj">
+      <Project>{88633f01-0b3e-4c75-8d8d-641211e2455d}</Project>
+      <Name>ThinClient.Query.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

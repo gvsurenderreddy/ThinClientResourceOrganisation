@@ -1,0 +1,20 @@
+// ---------- UTILITIES / VENDORS
+@import "../css/WorkSuite/utilities/_normalize";
+
+// ---------- MODULES - MIXINS AND VARIABLES THAT DO NOT GENERATE CSS
+@import "../css/WorkSuite/primitives/_scaffolding";
+@import "../css/WorkSuite/branding/_base";
+@import "../css/WorkSuite/branding/_wts_configuration";
+@import "../css/WorkSuite/primitives/_common";
+@import "../css/WorkSuite/primitives/_tile_grids";
+@import "../css/WorkSuite/primitives/_buttons";
+@import "../css/WorkSuite/primitives/_menus";
+@import "../css/WorkSuite/primitives/_headers";
+
+// ---------- 
+@import "../css/WorkSuite/components/_page_frame";
+@import "../css/WorkSuite/components/_page_layout";
+@import "../css/WorkSuite/components/_notifications";
+@import "../css/WorkSuite/components/_editors";
+@import "../css/WorkSuite/components/_reports";
+@import "../css/WorkSuite/components/_headers";

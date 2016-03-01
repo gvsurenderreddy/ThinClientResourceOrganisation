@@ -1,0 +1,23 @@
+﻿@* Generator : MvcHelper GeneratePrettyNames : true *@
+
+@*
+    Will render the correct component for a view model
+*@
+
+@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Components.ViewComponents._1;
+@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Components.Tiles._1;
+@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Components.TileGrids._1;
+
+
+@helper Render ( IComponentViewModel view_model ) {
+
+    @* Render nothing as we do not know what the actual type of view model is that we are displaying *@    
+}
+
+@helper Render ( TileViewModel view_model ) { 
+    @TileComponent.Render( view_model )
+}
+
+@helper Render ( TileGridViewModel view_model ) {
+    @TileGridComponent.Render( view_model )
+}

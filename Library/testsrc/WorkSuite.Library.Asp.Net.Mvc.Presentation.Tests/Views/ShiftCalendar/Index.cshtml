@@ -1,0 +1,21 @@
+﻿@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Controls.ShiftCalendars
+@model WorkSuite.Library.Asp.Net.Mvc.Server.ShiftCalendars.ShiftCalendar
+
+@{
+    Layout = null;
+
+    const string title = "WorkSuite.Library.Asp.Net.Mvc.Presentation.Tests - Shift Calendars";
+}
+
+<!DOCTYPE HTML>
+
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>@title</title>
+    </head>
+    <body>
+        <h1>@title</h1>
+        @ShiftCalendars.For( Model as dynamic)
+    </body>
+</html>

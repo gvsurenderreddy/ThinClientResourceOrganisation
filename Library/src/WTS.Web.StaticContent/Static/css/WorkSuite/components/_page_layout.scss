@@ -1,0 +1,92 @@
+// ---------- PAGE LAYOUT
+#content {
+	padding: $layoutgrid_lineheight 0 0 0;
+	min-height: 500px;
+	Zoom:1;
+}
+
+// CLEAR FIX
+#content:after{
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+
+.palette {
+	margin: 0 $layoutgrid_page_gutter $layoutgrid_lineheight $layoutgrid_page_gutter;
+	@include border_box_sizing;
+	@include respond-to(tablet) {
+		width: $layoutgrid_span3 - ($layoutgrid_page_gutter * 2);
+		float: left;
+		clear: left;
+	}
+}
+
+// SUMMARY COLUMN
+#employee-summary {
+	margin: 0 $layoutgrid_page_gutter $layoutgrid_lineheight $layoutgrid_page_gutter;
+	@include border_box_sizing;
+	@include respond-to(tablet) {
+		width: $layoutgrid_span3 - ($layoutgrid_page_gutter * 2);
+		float: left;
+		clear: left;
+	}
+}
+
+// RIGHT ALIGNED REPORTS AND LIST REPORTS WITH SUMMARY COLUMN
+#employee-personal-details-report,
+#employee-contact-details-report,
+#employee-image-details-report,
+#employee-address-details-list,
+#employee-notes-details-list,
+#emergency-contacts-details-list,
+#employee-skills-details-list,
+#document-details-list,
+#employee-employment-details-report,
+#employee-qualifications-details-list,
+.employee-details .sectioned-tile-grid,
+#employee-personal-details-editor.editor,
+#employee-contact-details-editor.editor,
+form#employee-image-details-editor,
+#employee-remove-employee-editor.editor,
+form#employee-employment-details-editor,
+#employee-schedules,
+#employee-sickness-list,
+#employee-holiday-list{
+	margin:0 $layoutgrid_page_gutter $layoutgrid_lineheight $layoutgrid_page_gutter;
+	@include border_box_sizing;
+	@include respond-to(tablet) {
+		width: $layoutgrid_span9 - ($layoutgrid_page_gutter * 2.1);
+		float:right;
+		clear: right;
+	}
+}
+
+// NEW LAYOUT WITHOUT REPORTS
+.operations-calendar-details .content-header,
+.control-bar,
+#shift-calendar,
+.shift-calendars-lister,
+.operations-calendar-details #operations-calendar-details-editor,
+#remove-operations-calendar-editor {
+	position:relative;
+	//margin:0;
+	@include border_box_sizing;
+	@include respond-to(tablet) {
+		margin:0 0 $layoutgrid_lineheight ($layoutgrid_span3 + $layoutgrid_page_gutter) !important;
+		width: $layoutgrid_span9 - ($layoutgrid_page_gutter * 2);
+		clear: none;
+	}
+}
+
+#shift-template-details-editor {
+	margin-bottom: 0;
+	border-bottom: 0;
+}
+
+#remove-shift-template-editor {
+	border-top: 0;
+}

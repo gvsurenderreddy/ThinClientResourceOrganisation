@@ -1,0 +1,480 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3D42E5CB-8885-42A6-A018-1C0F1D369123}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WTS.WorkSuite.HR</RootNamespace>
+    <AssemblyName>WTS.WorkSuite.HR.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Humanizer, Version=1.28.0.0, Culture=neutral, PublicKeyToken=979442b78dfc278e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\packages\Humanizer.1.28.0\lib\portable-win+net40+sl50+wp8+wpa81\Humanizer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DocumentStore\Documents\DocumentDetails.cs" />
+    <Compile Include="DocumentStore\Documents\DocumentIdentity.cs" />
+    <Compile Include="DocumentStore\Documents\GetById\GetDocumentByIdResponse.cs" />
+    <Compile Include="DocumentStore\Documents\GetById\IGetDocumentById.cs" />
+    <Compile Include="DocumentStore\Documents\New\ICanCreateDocument.cs" />
+    <Compile Include="DocumentStore\Documents\New\IGetNewDocumentRequest.cs" />
+    <Compile Include="DocumentStore\Documents\New\INewDocument.cs" />
+    <Compile Include="DocumentStore\Documents\New\NewDocumentRequest.cs" />
+    <Compile Include="DocumentStore\Documents\New\NewDocumentResponse.cs" />
+    <Compile Include="DocumentStore\Documents\Remove\ICanRemoveDocument.cs" />
+    <Compile Include="DocumentStore\Documents\Remove\IRemoveDocument.cs" />
+    <Compile Include="DocumentStore\Documents\Remove\IRemoveManyDocuments.cs" />
+    <Compile Include="DocumentStore\Documents\Remove\RemoveDocumentResponse.cs" />
+    <Compile Include="DocumentStore\Documents\Remove\RemoveManyDocumentsResponse.cs" />
+    <Compile Include="HR\Employees\addEmployee\AddEmployeeRequest.cs" />
+    <Compile Include="HR\Employees\addEmployee\get\GetAddEmployeeResponse.cs" />
+    <Compile Include="HR\Employees\addEmployee\get\IGetAddEmployeeRequestHandler.cs" />
+    <Compile Include="HR\Employees\addEmployee\post\AddEmployeeResponse.cs" />
+    <Compile Include="HR\Employees\addEmployee\post\AddEmployeeServiceStatuses.cs" />
+    <Compile Include="HR\Employees\addEmployee\post\IAddEmployeeRequestHandler.cs" />
+    <Compile Include="HR\Employees\Addresses\Events\EmployeeAddressDetailsCreatedEvent.cs" />
+    <Compile Include="HR\Employees\Addresses\Events\EmployeeAddressDetailsUpdatedEvent.cs" />
+    <Compile Include="HR\Employees\Addresses\Events\EmployeeAddressRemovedEvent.cs" />
+    <Compile Include="HR\Employees\Addresses\Events\EmployeeAddressReorderedEvent.cs" />
+    <Compile Include="HR\Employees\ContactDetails\Events\EmployeeContactDetailsUpdatedEvent.cs" />
+    <Compile Include="HR\Employees\EmergencyContacts\Events\EmployeeEmergencyContactDetailsRemoveEvent.cs" />
+    <Compile Include="HR\Employees\EmergencyContacts\Events\EmployeeEmergencyContactDetailsUpdateEvent.cs" />
+    <Compile Include="HR\Employees\EmergencyContacts\Events\EmployeeEmergencyContactDetailsCreateEvent.cs" />
+    <Compile Include="HR\Employees\EmergencyContacts\Events\EmployeeEmergencyContactReorderedEvent.cs" />
+    <Compile Include="HR\Employees\EmployeeDocuments\Events\EmployeeDocumentRemovedEvent.cs" />
+    <Compile Include="HR\Employees\EmployeeDocuments\Events\EmployeeDocumentUploadedEvent.cs" />
+    <Compile Include="HR\Employees\EmployeeImage\Events\EmployeeImageDetailsRemovedEvent.cs" />
+    <Compile Include="HR\Employees\EmployeeImage\Events\EmployeeImageDetailsUpdatedEvent.cs" />
+    <Compile Include="HR\Employees\EmployeePersonalDetails\Events\EmployeePersonalDetailsUpdatedEvent.cs" />
+    <Compile Include="HR\Employees\EmployeeQualifications\Events\EmployeeQualificationCreatedEvent.cs" />
+    <Compile Include="HR\Employees\EmployeeQualifications\Events\EmployeeQualificationRemovedEvent.cs" />
+    <Compile Include="HR\Employees\EmployeeSkills\Events\EmployeeSkillRemovedEvent.cs" />
+    <Compile Include="HR\Employees\EmployeeSkills\Events\EmployeeSkillReorderedEvent.cs" />
+    <Compile Include="HR\Employees\EmployeeSkills\Events\EmployeeSkillCreatedEvent.cs" />
+    <Compile Include="HR\Employees\EmploymentDetails\Events\EmployeeEmploymentDetailsUpdatedEvent.cs" />
+    <Compile Include="HR\Employees\EmployeeQualifications\EmployeeQualificationDetails.cs" />
+    <Compile Include="HR\Employees\EmployeeQualifications\EmployeeQualificationIdentity.cs" />
+    <Compile Include="HR\Employees\EmployeeQualifications\GetAll\GetAllEmployeeQualificationsResponse.cs" />
+    <Compile Include="HR\Employees\EmployeeQualifications\GetAll\IGetAllEmployeeQualifications.cs" />
+    <Compile Include="HR\Employees\EmployeeQualifications\New\IGetNewEmployeeQualificationRequest.cs" />
+    <Compile Include="HR\Employees\EmployeeQualifications\New\INewEmployeeQualification.cs" />
+    <Compile Include="HR\Employees\EmployeeQualifications\New\NewEmployeeQualificationRequest.cs" />
+    <Compile Include="HR\Employees\EmployeeQualifications\New\NewEmployeeQualificationResponse.cs" />
+    <Compile Include="HR\Employees\EmployeeQualifications\Remove\IRemoveEmployeeQualification.cs" />
+    <Compile Include="HR\Employees\EmployeeQualifications\Remove\RemoveEmployeeQualificationResponse.cs" />
+    <Compile Include="HR\Employees\Events\EmployeeCreatedEvent.cs" />
+    <Compile Include="HR\Employees\Events\EmployeeRemovedEvent.cs" />
+    <Compile Include="HR\Employees\Notes\addNote\AddNoteRequest.cs" />
+    <Compile Include="HR\Employees\Notes\addNote\get\GetAddNoteRequest.cs" />
+    <Compile Include="HR\Employees\Notes\addNote\get\GetAddNoteResponse.cs" />
+    <Compile Include="HR\Employees\Notes\addNote\get\IGetAddNoteRequestHandler.cs" />
+    <Compile Include="HR\Employees\Notes\addNote\post\AddNoteRequestHandlerStatuses.cs" />
+    <Compile Include="HR\Employees\Notes\addNote\post\AddNoteResponse.cs" />
+    <Compile Include="HR\Employees\Notes\addNote\post\IAddNoteRequestHandler.cs" />
+    <Compile Include="HR\Employees\Notes\Events\EmployeeNoteCreatedEvent.cs" />
+    <Compile Include="HR\Employees\Notes\Events\EmployeeNoteRemovedEvent.cs" />
+    <Compile Include="HR\Employees\Notes\Events\EmployeeNoteUpdatedEvent.cs" />
+    <Compile Include="HR\Employees\Notes\addNote\NoteIdentity.cs" />
+    <Compile Include="HR\ReferenceData\EthnicOrigins\Events\EthnicOriginUpdatedEvent.cs" />
+    <Compile Include="HR\ReferenceData\Genders\Events\GenderUpdatedEvent.cs" />
+    <Compile Include="HR\ReferenceData\Generic\Events\ReferenceDataUpdatedEvent.cs" />
+    <Compile Include="HR\ReferenceData\JobTitles\Edit\GetUpdateRequest\GetUpdateJobTitleRequestResponse.cs" />
+    <Compile Include="HR\ReferenceData\JobTitles\Edit\GetUpdateRequest\IGetUpdateJobTitleRequest.cs" />
+    <Compile Include="HR\ReferenceData\JobTitles\Edit\UpdateJobTitleRequest.cs" />
+    <Compile Include="HR\ReferenceData\JobTitles\Edit\Update\IUpdateJobTitle.cs" />
+    <Compile Include="HR\ReferenceData\JobTitles\Edit\Update\UpdateJobTitleResponse.cs" />
+    <Compile Include="HR\ReferenceData\JobTitles\Events\JobTitleUpdatedEvent.cs" />
+    <Compile Include="HR\ReferenceData\JobTitles\New\CreateJobTitleRequest.cs" />
+    <Compile Include="HR\ReferenceData\JobTitles\New\Create\CreateJobTitleResponse.cs" />
+    <Compile Include="HR\ReferenceData\JobTitles\New\Create\ICreateJobTitle.cs" />
+    <Compile Include="HR\ReferenceData\JobTitles\New\GetCreateRequest\GetCreateJobTitleRequestResponse.cs" />
+    <Compile Include="HR\ReferenceData\JobTitles\New\GetCreateRequest\IGetCreateJobTitleRequest.cs" />
+    <Compile Include="HR\ReferenceData\JobTitles\Queries\IGetDetailsOfAllJobTitles.cs" />
+    <Compile Include="HR\ReferenceData\JobTitles\Queries\IGetDetailsOfJobTitlesEligibleForEmployee.cs" />
+    <Compile Include="HR\ReferenceData\JobTitles\Queries\JobTitleDetails.cs" />
+    <Compile Include="HR\ReferenceData\JobTitles\Remove\IRemoveJobTitle.cs" />
+    <Compile Include="HR\ReferenceData\JobTitles\Remove\RemoveJobTitleRequest.cs" />
+    <Compile Include="HR\ReferenceData\JobTitles\Remove\RemoveJobTitleResponse.cs" />
+    <Compile Include="HR\ReferenceData\Locations\Edit\GetUpdateRequest\GetUpdateLocationRequestResponse.cs" />
+    <Compile Include="HR\ReferenceData\Locations\Edit\GetUpdateRequest\IGetUpdateLocationRequest.cs" />
+    <Compile Include="HR\ReferenceData\Locations\Edit\UpdateLocationRequest.cs" />
+    <Compile Include="HR\ReferenceData\Locations\Edit\Update\IUpdateLocation.cs" />
+    <Compile Include="HR\ReferenceData\Locations\Edit\Update\UpdateLocationResponse.cs" />
+    <Compile Include="HR\ReferenceData\Locations\Events\LocationUpdatedEvent.cs" />
+    <Compile Include="HR\ReferenceData\Locations\New\CreateLocationRequest.cs" />
+    <Compile Include="HR\ReferenceData\Locations\New\Create\CreateLocationResponse.cs" />
+    <Compile Include="HR\ReferenceData\Locations\New\Create\ICreateLocation.cs" />
+    <Compile Include="HR\ReferenceData\Locations\New\GetCreateRequest\GetCreateLocationRequestResponse.cs" />
+    <Compile Include="HR\ReferenceData\Locations\New\GetCreateRequest\IGetCreateLocationRequest.cs" />
+    <Compile Include="HR\ReferenceData\Locations\Queries\IGetDetailsOfAllLocations.cs" />
+    <Compile Include="HR\ReferenceData\Locations\Queries\IGetDetailsOfLocationsEligibleForEmployee.cs" />
+    <Compile Include="HR\ReferenceData\Locations\Queries\LocationDetails.cs" />
+    <Compile Include="HR\ReferenceData\Locations\Remove\IRemoveLocation.cs" />
+    <Compile Include="HR\ReferenceData\Locations\Remove\RemoveLocationRequest.cs" />
+    <Compile Include="HR\ReferenceData\Locations\Remove\RemoveLocationResponse.cs" />
+    <Compile Include="HR\ReferenceData\MaritalStatuses\Events\MaritalStatusUpdatedEvent.cs" />
+    <Compile Include="HR\ReferenceData\Nationalities\Events\NationalityUpdatedEvent.cs" />
+    <Compile Include="HR\ReferenceData\Qualifications\Events\QualificationUpdatedEvent.cs" />
+    <Compile Include="HR\ReferenceData\Qualifications\Queries\IGetDetailsOfQualificationsEligibleForEmployee.cs" />
+    <Compile Include="HR\Employees\Addresses\Reorder\ICanReorderAddress.cs" />
+    <Compile Include="HR\Employees\Addresses\Reorder\IGetReorderAddressRequest.cs" />
+    <Compile Include="HR\Employees\Addresses\Reorder\IReorderAddress.cs" />
+    <Compile Include="HR\Employees\Addresses\Reorder\ReorderAddressDetails.cs" />
+    <Compile Include="HR\Employees\Addresses\Reorder\ReorderAddressRequest.cs" />
+    <Compile Include="HR\Employees\Addresses\Reorder\ReorderAddressResponse.cs" />
+    <Compile Include="HR\Employees\EmergencyContacts\Edit\ICanUpdateEmergencyContact.cs" />
+    <Compile Include="HR\Employees\EmergencyContacts\Edit\IGetUpdateRequest.cs" />
+    <Compile Include="HR\Employees\EmergencyContacts\Edit\IUpdate.cs" />
+    <Compile Include="HR\Employees\EmergencyContacts\Edit\UpdateRequest.cs" />
+    <Compile Include="HR\Employees\EmergencyContacts\Edit\UpdateResponse.cs" />
+    <Compile Include="HR\Employees\EmergencyContacts\GetById\IGetEmergencyContactById.cs" />
+    <Compile Include="HR\Employees\EmergencyContacts\New\ICanAddNewEmergencyContact.cs" />
+    <Compile Include="HR\Employees\EmergencyContacts\New\IGetNewEmergencyContactRequest.cs" />
+    <Compile Include="HR\Employees\EmergencyContacts\New\INewEmergencyContact.cs" />
+    <Compile Include="HR\Employees\EmergencyContacts\New\NewEmergencyContactRequest.cs" />
+    <Compile Include="HR\Employees\EmergencyContacts\New\NewEmergencyContactResponse.cs" />
+    <Compile Include="HR\Employees\EmergencyContacts\Remove\IRemoveEmergencyContact.cs" />
+    <Compile Include="HR\Employees\EmergencyContacts\Remove\RemoveEmergencyContactResponse.cs" />
+    <Compile Include="HR\Employees\EmergencyContacts\Details\EmergencyContactDetails.cs" />
+    <Compile Include="HR\Employees\EmergencyContacts\EmergencyContactIdentity.cs" />
+    <Compile Include="HR\Employees\EmergencyContacts\GetAll\IGetAllEmergencyContacts.cs" />
+    <Compile Include="HR\Employees\EmergencyContacts\Reorder\ICanReorderEmergencyContact.cs" />
+    <Compile Include="HR\Employees\EmergencyContacts\Reorder\IGetReorderEmergencyContactRequest.cs" />
+    <Compile Include="HR\Employees\EmergencyContacts\Reorder\IReorderEmergencyContact.cs" />
+    <Compile Include="HR\Employees\EmergencyContacts\Reorder\ReorderEmergencyContactDetails.cs" />
+    <Compile Include="HR\Employees\EmergencyContacts\Reorder\ReorderEmergencyContactRequest.cs" />
+    <Compile Include="HR\Employees\EmergencyContacts\Reorder\ReorderEmergencyContactResponse.cs" />
+    <Compile Include="HR\Employees\EmployeeDocuments\EmployeeDocumentDetails.cs" />
+    <Compile Include="HR\Employees\EmployeeDocuments\GetAll\GetAllEmployeeDocumentsResponse.cs" />
+    <Compile Include="HR\Employees\EmployeeDocuments\GetAll\IGetAllEmployeeDocuments.cs" />
+    <Compile Include="HR\Employees\EmployeeDocuments\New\IGetNewEmployeeDocumentRequest.cs" />
+    <Compile Include="HR\Employees\EmployeeDocuments\New\INewEmployeeDocument.cs" />
+    <Compile Include="HR\Employees\EmployeeDocuments\New\NewEmployeeDocumentRequest.cs" />
+    <Compile Include="HR\Employees\EmployeeDocuments\New\NewEmployeeDocumentResponse.cs" />
+    <Compile Include="HR\Employees\EmployeeDocuments\EmployeeDocumentIdentity.cs" />
+    <Compile Include="HR\Employees\EmployeeDocuments\Remove\IRemoveEmployeeDocument.cs" />
+    <Compile Include="HR\Employees\EmployeeDocuments\Remove\RemoveEmployeeDocumentResponse.cs" />
+    <Compile Include="HR\Employees\EmployeeImage\Details\EmployeeImageDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HR\Employees\EmployeeImage\Remove\IRemove.cs" />
+    <Compile Include="HR\Employees\EmployeeImage\Remove\RemoveResponse.cs" />
+    <Compile Include="HR\Employees\EmployeeImage\Edit\IGetUpdateRequest.cs" />
+    <Compile Include="HR\Employees\EmployeeImage\Edit\IUpdate.cs" />
+    <Compile Include="HR\Employees\EmployeeImage\Edit\UpdateRequest.cs" />
+    <Compile Include="HR\Employees\EmployeeImage\Edit\UpdateResponse.cs" />
+    <Compile Include="HR\Employees\EmployeeImage\GetById\IGetEmployeeImageById.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HR\Employees\EmployeeSkills\EmployeeSkillDetails.cs" />
+    <Compile Include="HR\Employees\EmployeeSkills\EmployeeSkillIdentity.cs" />
+    <Compile Include="HR\Employees\EmployeeSkills\GetAll\GetAllEmployeeSkillsResponse.cs" />
+    <Compile Include="HR\Employees\EmployeeSkills\GetAll\IGetAllEmployeeSkills.cs" />
+    <Compile Include="HR\Employees\EmployeeSkills\New\IGetNewEmployeeSkillRequest.cs" />
+    <Compile Include="HR\Employees\EmployeeSkills\New\INewEmployeeSkill.cs" />
+    <Compile Include="HR\Employees\EmployeeSkills\New\NewEmployeeSkillRequest.cs" />
+    <Compile Include="HR\Employees\EmployeeSkills\New\NewEmployeeSkillResponse.cs" />
+    <Compile Include="HR\Employees\EmployeeSkills\Remove\IRemoveEmployeeSkill.cs" />
+    <Compile Include="HR\Employees\EmployeeSkills\Remove\RemoveEmployeeSkillResponse.cs" />
+    <Compile Include="HR\Employees\EmployeeSkills\Reorder\IGetReorderEmployeeSkillRequestDetails.cs" />
+    <Compile Include="HR\Employees\EmployeeSkills\Reorder\IReorderEmployeeSkill.cs" />
+    <Compile Include="HR\Employees\EmployeeSkills\Reorder\ReorderEmployeeSkillDetails.cs" />
+    <Compile Include="HR\Employees\EmployeeSkills\Reorder\ReorderEmployeeSkillRequest.cs" />
+    <Compile Include="HR\Employees\EmployeeSkills\Reorder\ReorderEmployeeSkillResponse.cs" />
+    <Compile Include="HR\Employees\EmploymentDetails\ById\IGetEmploymentDetailsById.cs" />
+    <Compile Include="HR\Employees\EmploymentDetails\Edit\ICanUpdateEmploymentDetails.cs" />
+    <Compile Include="HR\Employees\EmploymentDetails\Edit\IGetUpdateEmploymentDetailsRequest.cs" />
+    <Compile Include="HR\Employees\EmploymentDetails\Edit\IUpdateEmploymentDetails.cs" />
+    <Compile Include="HR\Employees\EmploymentDetails\Edit\UpdateEmploymentDetailsRequest.cs" />
+    <Compile Include="HR\Employees\EmploymentDetails\Edit\UpdateEmploymentDetailsResponse.cs" />
+    <Compile Include="HR\Employees\EmploymentDetails\EmployeeEmploymentDetails.cs" />
+    <Compile Include="HR\Employees\Remove\ICanRemoveEmployee.cs" />
+    <Compile Include="HR\Employees\Remove\IGetRemoveEmployeeRequest.cs" />
+    <Compile Include="HR\Employees\Remove\RemoveEmployeeDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HR\Employees\Remove\RemoveEmployeeRequest.cs" />
+    <Compile Include="HR\Employees\Remove\RemoveEmployeeResponse.cs" />
+    <Compile Include="HR\ReferenceData\EthnicOrigins\Edit\GetUpdateRequest\GetUpdateEthnicOriginRequestResponse.cs" />
+    <Compile Include="HR\ReferenceData\EthnicOrigins\Edit\GetUpdateRequest\IGetUpdateEthnicOriginRequest.cs" />
+    <Compile Include="HR\ReferenceData\EthnicOrigins\Edit\Update\IUpdateEthnicOrigin.cs" />
+    <Compile Include="HR\ReferenceData\EthnicOrigins\Edit\Update\UpdateEthnicOriginResponse.cs" />
+    <Compile Include="HR\ReferenceData\EthnicOrigins\New\CreateEthnicOriginRequest.cs" />
+    <Compile Include="HR\ReferenceData\EthnicOrigins\New\Create\CreateEthnicOriginResponse.cs" />
+    <Compile Include="HR\ReferenceData\EthnicOrigins\New\Create\ICreateEthnicOrigin.cs" />
+    <Compile Include="HR\ReferenceData\EthnicOrigins\New\GetCreateRequest\GetCreateEthnicOriginRequestResponse.cs" />
+    <Compile Include="HR\ReferenceData\EthnicOrigins\New\GetCreateRequest\IGetCreateEthnicOriginRequest.cs" />
+    <Compile Include="HR\ReferenceData\EthnicOrigins\Queries\EthnicOriginDetails.cs" />
+    <Compile Include="HR\ReferenceData\EthnicOrigins\Queries\IGetDetailsOfAllEthnicOrigins.cs" />
+    <Compile Include="HR\ReferenceData\EthnicOrigins\Edit\UpdateEthnicOriginRequest.cs" />
+    <Compile Include="HR\ReferenceData\EthnicOrigins\Queries\IGetDetailsOfASpecificEthnicOrigin.cs" />
+    <Compile Include="HR\ReferenceData\EthnicOrigins\Queries\IGetDetailsOfEthnicOriginsEligibleForEmployee.cs" />
+    <Compile Include="HR\ReferenceData\EthnicOrigins\Remove\IRemoveEthnicOrigin.cs" />
+    <Compile Include="HR\ReferenceData\EthnicOrigins\Remove\RemoveEthnicOriginRequest.cs" />
+    <Compile Include="HR\ReferenceData\EthnicOrigins\Remove\RemoveEthnicOriginResponse.cs" />
+    <Compile Include="HR\ReferenceData\Genders\Edit\GetUpdateRequest\GetUpdateGenderRequestResponse.cs" />
+    <Compile Include="HR\ReferenceData\Genders\Edit\GetUpdateRequest\IGetUpdateGenderRequest.cs" />
+    <Compile Include="HR\ReferenceData\Genders\Edit\UpdateGenderRequest.cs" />
+    <Compile Include="HR\ReferenceData\Genders\Edit\Update\IUpdateGender.cs" />
+    <Compile Include="HR\ReferenceData\Genders\Edit\Update\UpdateGenderResponse.cs" />
+    <Compile Include="HR\ReferenceData\Genders\Queries\GenderDetails.cs" />
+    <Compile Include="HR\ReferenceData\Genders\New\CreateGenderRequest.cs" />
+    <Compile Include="HR\ReferenceData\Genders\New\Create\CreateGenderResponse.cs" />
+    <Compile Include="HR\ReferenceData\Genders\New\Create\ICreateGender.cs" />
+    <Compile Include="HR\ReferenceData\Genders\New\GetCreateRequest\GetCreateGenderRequestResponse.cs" />
+    <Compile Include="HR\ReferenceData\Genders\New\GetCreateRequest\IGetCreateGenderRequest.cs" />
+    <Compile Include="HR\ReferenceData\Genders\Queries\IGetDetailsOfAllGenders.cs" />
+    <Compile Include="HR\ReferenceData\Genders\Queries\IGetDetailsOfASpecificGender.cs" />
+    <Compile Include="HR\ReferenceData\Genders\Queries\IGetDetailsOfGendersEligibleForEmployee.cs" />
+    <Compile Include="HR\ReferenceData\Genders\Remove\IRemoveGender.cs" />
+    <Compile Include="HR\ReferenceData\Genders\Remove\RemoveGenderRequest.cs" />
+    <Compile Include="HR\ReferenceData\Genders\Remove\RemoveGenderResponse.cs" />
+    <Compile Include="HR\ReferenceData\Generic\Edit\GetUpdateRequest\GetUpdateReferenceDataRequestResponse.cs" />
+    <Compile Include="HR\ReferenceData\Generic\Edit\GetUpdateRequest\IGetUpdateReferenceDataRequest.cs" />
+    <Compile Include="HR\ReferenceData\Generic\Edit\UpdateReferenceDataRequest.cs" />
+    <Compile Include="HR\ReferenceData\Generic\Edit\Update\IUpdateReferenceData.cs" />
+    <Compile Include="HR\ReferenceData\Generic\Edit\Update\UpdateReferenceDataResponse.cs" />
+    <Compile Include="HR\ReferenceData\Generic\Queries\IGetDetailsOfReferencDataEligibleForEmployee.cs" />
+    <Compile Include="HR\ReferenceData\Generic\Queries\IGetDetailsOfASpecificReferenceData.cs" />
+    <Compile Include="HR\ReferenceData\Generic\New\GetCreateRequest\GetCreateReferenceDataRequestResponse.cs" />
+    <Compile Include="HR\ReferenceData\Generic\New\GetCreateRequest\IGetCreateReferenceDataRequest.cs" />
+    <Compile Include="HR\ReferenceData\Generic\New\Create\ICreateReferenceData.cs" />
+    <Compile Include="HR\ReferenceData\Generic\New\CreateReferenceDataRequest.cs" />
+    <Compile Include="HR\ReferenceData\Generic\New\Create\CreateReferenceDataResponse.cs" />
+    <Compile Include="HR\ReferenceData\Generic\Queries\ReferenceDataDetails.cs" />
+    <Compile Include="HR\ReferenceData\Generic\Queries\IGetDetailsOfAllReferenceData.cs" />
+    <Compile Include="HR\ReferenceData\Generic\ReferenceDataIdentity.cs" />
+    <Compile Include="HR\ReferenceData\Generic\Remove\IRemoveReferenceData.cs" />
+    <Compile Include="HR\ReferenceData\Generic\Remove\RemoveReferenceDataRequest.cs" />
+    <Compile Include="HR\ReferenceData\Generic\Remove\RemoveReferenceDataResponse.cs" />
+    <Compile Include="HR\Employees\Addresses\Details\AddressDetails.cs" />
+    <Compile Include="HR\Employees\Addresses\Details\AddressDetailsForEdit.cs" />
+    <Compile Include="HR\Employees\Addresses\GetAll\IGetAllAddresses.cs" />
+    <Compile Include="HR\Employees\Addresses\GetById\IGetAddressById.cs" />
+    <Compile Include="HR\Employees\Addresses\New\AddressIdentity.cs" />
+    <Compile Include="HR\Employees\Addresses\New\ICanAddNewAddress.cs" />
+    <Compile Include="HR\Employees\Addresses\New\IGetNewAddressRequest.cs" />
+    <Compile Include="HR\Employees\Addresses\New\INewAddress.cs" />
+    <Compile Include="HR\Employees\Addresses\New\NewAddressRequest.cs" />
+    <Compile Include="HR\Employees\Addresses\New\NewAddressResponse.cs" />
+    <Compile Include="HR\Employees\Addresses\Remove\IRemoveAddress.cs" />
+    <Compile Include="HR\Employees\Addresses\Remove\RemoveAddressResponse.cs" />
+    <Compile Include="HR\Employees\Addresses\Edit\ICanUpdateAddress.cs" />
+    <Compile Include="HR\Employees\Addresses\Edit\IGetUpdateRequest.cs" />
+    <Compile Include="HR\Employees\Addresses\Edit\IUpdateAddress.cs" />
+    <Compile Include="HR\Employees\Addresses\Edit\UpdateAddressRequest.cs" />
+    <Compile Include="HR\Employees\Addresses\Edit\UpdateAddressResponse.cs" />
+    <Compile Include="HR\Employees\ContactDetails\ById\IGetContactDetailsById.cs" />
+    <Compile Include="HR\Employees\ContactDetails\EmployeeContactDetails.cs" />
+    <Compile Include="HR\Employees\ContactDetails\Edit\ICanUpdateContactDetails.cs" />
+    <Compile Include="HR\Employees\ContactDetails\Edit\IGetUpdateRequest.cs" />
+    <Compile Include="HR\Employees\ContactDetails\Edit\IUpdate.cs" />
+    <Compile Include="HR\Employees\ContactDetails\Edit\UpdateRequest.cs" />
+    <Compile Include="HR\Employees\ContactDetails\Edit\UpdateResponse.cs" />
+    <Compile Include="HR\Employees\EmployeeDetails\EmployeeDetail.cs" />
+    <Compile Include="HR\Employees\EmployeeDetails\EmployeeName.cs" />
+    <Compile Include="HR\Employees\EmployeeDetails\GetAll\GetAllEmployeeDetailsResponse.cs" />
+    <Compile Include="HR\Employees\EmployeeDetails\EmployeeSummary\IGetEmployeeSummary.cs" />
+    <Compile Include="HR\Employees\EmployeeDetails\GetAll\IGetAllEmployeeDetails.cs" />
+    <Compile Include="HR\Employees\Notes\EmployeeNoteDetails.cs" />
+    <Compile Include="HR\Employees\Notes\GetAll\IGetAllNotes.cs" />
+    <Compile Include="HR\Employees\Notes\GetById\IGetNoteById.cs" />
+    <Compile Include="HR\Employees\Notes\New\ICanAddNewNote.cs" />
+    <Compile Include="HR\Employees\Notes\New\IGetNewNoteRequest.cs" />
+    <Compile Include="HR\Employees\Notes\New\INewNote.cs" />
+    <Compile Include="HR\Employees\Notes\New\NewNoteRequest.cs" />
+    <Compile Include="HR\Employees\Notes\New\NewNoteResponse.cs" />
+    <Compile Include="HR\Employees\Notes\New\NoteIdentity.cs" />
+    <Compile Include="HR\Employees\Notes\Remove\IRemove.cs" />
+    <Compile Include="HR\Employees\Notes\Remove\RemoveResponse.cs" />
+    <Compile Include="HR\Employees\Notes\Edit\ICanUpdateNote.cs" />
+    <Compile Include="HR\Employees\Notes\Edit\IGetUpdateRequest.cs" />
+    <Compile Include="HR\Employees\Notes\Edit\IUpdate.cs" />
+    <Compile Include="HR\Employees\Notes\Edit\UpdateRequest.cs" />
+    <Compile Include="HR\Employees\Notes\Edit\UpdateResponse.cs" />
+    <Compile Include="HR\Employees\EmployeePersonalDetails\EmployeePersonalDetails.cs" />
+    <Compile Include="HR\Employees\EmployeePersonalDetails\ById\IGetPersonalDetailsById.cs" />
+    <Compile Include="HR\Employees\EmployeePersonalDetails\Edit\ICanUpdatePersonalDetails.cs" />
+    <Compile Include="HR\Employees\EmployeePersonalDetails\Edit\IGetUpdateEmployeePersonalDetailsRequest.cs" />
+    <Compile Include="HR\Employees\EmployeePersonalDetails\Edit\IUpdateEmployeePersonalDetails.cs" />
+    <Compile Include="HR\Employees\EmployeePersonalDetails\Edit\UpdateEmployeePersonalDetailsRequest.cs" />
+    <Compile Include="HR\Employees\EmployeePersonalDetails\Edit\UpdateEmployeePersonalDetailsResponse.cs" />
+    <Compile Include="HR\Employees\Remove\IRemoveEmployee.cs" />
+    <Compile Include="HR\Employees\Remove\RemoveResponse.cs" />
+    <Compile Include="HR\ReferenceData\MaritalStatuses\Edit\GetUpdateRequest\GetUpdateMaritalStatusRequestResponse.cs" />
+    <Compile Include="HR\ReferenceData\MaritalStatuses\Edit\GetUpdateRequest\IGetUpdateMaritalStatusRequest.cs" />
+    <Compile Include="HR\ReferenceData\MaritalStatuses\Edit\UpdateMaritalStatusRequest.cs" />
+    <Compile Include="HR\ReferenceData\MaritalStatuses\Edit\Update\IUpdateMaritalStatus.cs" />
+    <Compile Include="HR\ReferenceData\MaritalStatuses\Edit\Update\UpdateMaritalStatusResponse.cs" />
+    <Compile Include="HR\ReferenceData\MaritalStatuses\New\CreateMaritalStatusRequest.cs" />
+    <Compile Include="HR\ReferenceData\MaritalStatuses\New\Create\CreateMaritalStatusResponse.cs" />
+    <Compile Include="HR\ReferenceData\MaritalStatuses\New\Create\ICreateMaritalStatus.cs" />
+    <Compile Include="HR\ReferenceData\MaritalStatuses\New\GetCreateRequest\GetCreateMaritalStatusRequestResponse.cs" />
+    <Compile Include="HR\ReferenceData\MaritalStatuses\New\GetCreateRequest\IGetCreateMaritalStatusRequest.cs" />
+    <Compile Include="HR\ReferenceData\MaritalStatuses\Queries\IGetDetailsOfASpecificMaritalStatus.cs" />
+    <Compile Include="HR\ReferenceData\MaritalStatuses\Queries\IGetDetailsOfMaritalStatusesEligibleForEmployee.cs" />
+    <Compile Include="HR\ReferenceData\MaritalStatuses\Queries\MaritalStatusDetails.cs" />
+    <Compile Include="HR\ReferenceData\MaritalStatuses\Queries\IGetDetailsOfAllMaritalStatuses.cs" />
+    <Compile Include="HR\ReferenceData\MaritalStatuses\Remove\IRemoveMaritalStatus.cs" />
+    <Compile Include="HR\ReferenceData\MaritalStatuses\Remove\RemoveMaritalStatusResponse.cs" />
+    <Compile Include="HR\ReferenceData\MaritalStatuses\Remove\RemoveMaritalStatusRequest.cs" />
+    <Compile Include="HR\ReferenceData\Nationalities\Edit\GetUpdateRequest\GetUpdateNationalityRequestResponse.cs" />
+    <Compile Include="HR\ReferenceData\Nationalities\Edit\GetUpdateRequest\IGetUpdateNationalityRequest.cs" />
+    <Compile Include="HR\ReferenceData\Nationalities\Edit\UpdateNationalityRequest.cs" />
+    <Compile Include="HR\ReferenceData\Nationalities\Edit\Update\IUpdateNationality.cs" />
+    <Compile Include="HR\ReferenceData\Nationalities\Edit\Update\UpdateNationalityResponse.cs" />
+    <Compile Include="HR\ReferenceData\Nationalities\New\CreateNationalityRequest.cs" />
+    <Compile Include="HR\ReferenceData\Nationalities\New\Create\CreateNationalityResponse.cs" />
+    <Compile Include="HR\ReferenceData\Nationalities\New\Create\ICreateNationality.cs" />
+    <Compile Include="HR\ReferenceData\Nationalities\New\GetCreateRequest\GetCreateNationalityRequestResponse.cs" />
+    <Compile Include="HR\ReferenceData\Nationalities\New\GetCreateRequest\IGetCreateNationalityRequest.cs" />
+    <Compile Include="HR\ReferenceData\Nationalities\Queries\IGetDetailsOfAllNationalities.cs" />
+    <Compile Include="HR\ReferenceData\Nationalities\Queries\IGetDetailsOfASpecificNationality.cs" />
+    <Compile Include="HR\ReferenceData\Nationalities\Queries\IGetDetailsOfNationalitiesEligibleForEmployee.cs" />
+    <Compile Include="HR\ReferenceData\Nationalities\Queries\NationalityDetails.cs" />
+    <Compile Include="HR\ReferenceData\Nationalities\Remove\IRemoveNationality.cs" />
+    <Compile Include="HR\ReferenceData\Nationalities\Remove\RemoveNationalityRequest.cs" />
+    <Compile Include="HR\ReferenceData\Nationalities\Remove\RemoveNationalityResponse.cs" />
+    <Compile Include="HR\ReferenceData\Relationships\Edit\GetUpdateRequest\GetUpdateRelationshipRequestResponse.cs" />
+    <Compile Include="HR\ReferenceData\Relationships\Edit\GetUpdateRequest\IGetUpdateRelationshipRequest.cs" />
+    <Compile Include="HR\ReferenceData\Relationships\Edit\UpdateRelationshipRequest.cs" />
+    <Compile Include="HR\ReferenceData\Relationships\Edit\Update\IUpdateRelationship.cs" />
+    <Compile Include="HR\ReferenceData\Relationships\Edit\Update\UpdateRelationshipResponse.cs" />
+    <Compile Include="HR\ReferenceData\Relationships\Events\RelationshipUpdatedEvent.cs" />
+    <Compile Include="HR\ReferenceData\Relationships\New\CreateRelationshipRequest.cs" />
+    <Compile Include="HR\ReferenceData\Relationships\New\Create\CreateRelationshipResponse.cs" />
+    <Compile Include="HR\ReferenceData\Relationships\New\Create\ICreateRelationship.cs" />
+    <Compile Include="HR\ReferenceData\Relationships\New\GetCreateRequest\GetCreateRelationshipRequestResponse.cs" />
+    <Compile Include="HR\ReferenceData\Relationships\New\GetCreateRequest\IGetCreateRelationshipRequest.cs" />
+    <Compile Include="HR\ReferenceData\Relationships\Queries\IGetDetailsOfAllRelationships.cs" />
+    <Compile Include="HR\ReferenceData\Relationships\Queries\IGetDetailsOfASpecificRelationship.cs" />
+    <Compile Include="HR\ReferenceData\Relationships\Queries\IGetDetailsOfRelationshipsEligibleForEmergencyContact.cs" />
+    <Compile Include="HR\ReferenceData\Relationships\Queries\RelationshipDetails.cs" />
+    <Compile Include="HR\ReferenceData\Relationships\Remove\IRemoveRelationship.cs" />
+    <Compile Include="HR\ReferenceData\Relationships\Remove\RemoveRelationshipRequest.cs" />
+    <Compile Include="HR\ReferenceData\Relationships\Remove\RemoveRelationshipResponse.cs" />
+    <Compile Include="HR\ReferenceData\Skills\Edit\GetUpdateRequest\GetUpdateSkillRequestResponse.cs" />
+    <Compile Include="HR\ReferenceData\Skills\Edit\GetUpdateRequest\IGetUpdateSkillRequest.cs" />
+    <Compile Include="HR\ReferenceData\Skills\Edit\UpdateSkillRequest.cs" />
+    <Compile Include="HR\ReferenceData\Skills\Edit\Update\IUpdateSkill.cs" />
+    <Compile Include="HR\ReferenceData\Skills\Edit\Update\UpdateSkillResponse.cs" />
+    <Compile Include="HR\ReferenceData\Skills\Events\SkillUpdatedEvent.cs" />
+    <Compile Include="HR\ReferenceData\Skills\New\CreateSkillRequest.cs" />
+    <Compile Include="HR\ReferenceData\Skills\New\Create\CreateSkillResponse.cs" />
+    <Compile Include="HR\ReferenceData\Skills\New\Create\ICreateSkill.cs" />
+    <Compile Include="HR\ReferenceData\Skills\New\GetCreateRequest\GetCreateSkillRequestResponse.cs" />
+    <Compile Include="HR\ReferenceData\Skills\New\GetCreateRequest\IGetCreateSkillRequest.cs" />
+    <Compile Include="HR\ReferenceData\Skills\Queries\IGetDetailsOfAllSkills.cs" />
+    <Compile Include="HR\ReferenceData\Skills\Queries\IGetDetailsOfASpecificSkill.cs" />
+    <Compile Include="HR\ReferenceData\Skills\Queries\IGetDetailsOfSkillsEligibleForEmployeeSkill.cs" />
+    <Compile Include="HR\ReferenceData\Skills\Queries\SkillDetails.cs" />
+    <Compile Include="HR\ReferenceData\Skills\Remove\IRemoveSkill.cs" />
+    <Compile Include="HR\ReferenceData\Skills\Remove\RemoveSkillRequest.cs" />
+    <Compile Include="HR\ReferenceData\Skills\Remove\RemoveSkillResponse.cs" />
+    <Compile Include="HR\ReferenceData\Titles\Edit\GetUpdateRequest\GetUpdateTitleRequestResponse.cs" />
+    <Compile Include="HR\ReferenceData\Titles\Events\TitleUpdatedEvent.cs" />
+    <Compile Include="HR\ReferenceData\Titles\Queries\TitleDetails.cs" />
+    <Compile Include="HR\ReferenceData\Titles\Queries\IGetDetailsOfAllTitles.cs" />
+    <Compile Include="HR\ReferenceData\Titles\Queries\IGetDetailsOfASpecificTitle.cs" />
+    <Compile Include="HR\ReferenceData\Titles\Queries\IGetDetailsOfTitlesEligibleForEmployee.cs" />
+    <Compile Include="HR\ReferenceData\Titles\New\GetCreateRequest\GetCreateTitleRequestResponse.cs" />
+    <Compile Include="HR\ReferenceData\Titles\New\GetCreateRequest\IGetCreateTitleRequest.cs" />
+    <Compile Include="HR\ReferenceData\Titles\New\Create\ICreateTitle.cs" />
+    <Compile Include="HR\ReferenceData\Titles\New\CreateTitleRequest.cs" />
+    <Compile Include="HR\ReferenceData\Titles\New\Create\CreateTitleResponse.cs" />
+    <Compile Include="HR\ReferenceData\Titles\Remove\RemoveTitleRequest.cs" />
+    <Compile Include="HR\ReferenceData\Titles\Remove\IRemoveTitle.cs" />
+    <Compile Include="HR\ReferenceData\Titles\Remove\RemoveTitleResponse.cs" />
+    <Compile Include="HR\ReferenceData\Titles\Edit\GetUpdateRequest\IGetUpdateTitleRequest.cs" />
+    <Compile Include="HR\ReferenceData\Titles\Edit\Update\IUpdateTitle.cs" />
+    <Compile Include="HR\ReferenceData\Titles\Edit\UpdateTitleRequest.cs" />
+    <Compile Include="HR\ReferenceData\Titles\Edit\Update\UpdateTitleResponse.cs" />
+    <Compile Include="HR\ReferenceData\Qualifications\Edit\GetUpdateRequest\GetUpdateQualificationRequestResponse.cs" />
+    <Compile Include="HR\ReferenceData\Qualifications\Edit\GetUpdateRequest\IGetUpdateQualificationRequest.cs" />
+    <Compile Include="HR\ReferenceData\Qualifications\Edit\Update\IUpdateQualification.cs" />
+    <Compile Include="HR\ReferenceData\Qualifications\Edit\UpdateQualificationRequest.cs" />
+    <Compile Include="HR\ReferenceData\Qualifications\Edit\Update\UpdateQualificationResponse.cs" />
+    <Compile Include="HR\ReferenceData\Qualifications\New\CreateQualificationRequest.cs" />
+    <Compile Include="HR\ReferenceData\Qualifications\New\Create\CreateQualificationResponse.cs" />
+    <Compile Include="HR\ReferenceData\Qualifications\New\Create\ICreateQualification.cs" />
+    <Compile Include="HR\ReferenceData\Qualifications\New\GetCreateRequest\GetCreateQualificationRequestResponse.cs" />
+    <Compile Include="HR\ReferenceData\Qualifications\New\GetCreateRequest\IGetCreateQualificationRequest.cs" />
+    <Compile Include="HR\ReferenceData\Qualifications\Queries\IGetDetailsOfAllQualifications.cs" />
+    <Compile Include="HR\ReferenceData\Qualifications\Queries\IGetDetailsOfASpecificQualification.cs" />
+    <Compile Include="HR\ReferenceData\Qualifications\Queries\QualificationDetails.cs" />
+    <Compile Include="HR\ReferenceData\Qualifications\Remove\IRemoveQualification.cs" />
+    <Compile Include="HR\ReferenceData\Qualifications\Remove\RemoveQualificationRequest.cs" />
+    <Compile Include="HR\ReferenceData\Qualifications\Remove\RemoveQualificationResponse.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.CodeStrutures\WorkSuite.Library.CodeStrutures.csproj">
+      <Project>{249BE708-3014-4584-9E14-CB087E54916E}</Project>
+      <Name>WorkSuite.Library.CodeStrutures</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.DomainTypes\WorkSuite.Library.DomainTypes.csproj">
+      <Project>{538C6F62-B398-41F1-917C-10659FDF6C78}</Project>
+      <Name>WorkSuite.Library.DomainTypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.Persistence\WorkSuite.Library.Persistence.csproj">
+      <Project>{C55F23BE-BC7A-4F70-81D3-AF5D645FE831}</Project>
+      <Name>WorkSuite.Library.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Core\src\Worksuite.Core\Worksuite.Core.csproj">
+      <Project>{1df54fed-2bc7-4317-b32e-53135723b267}</Project>
+      <Name>Worksuite.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Persistence\HR.Persistence.csproj">
+      <Project>{30E54F69-6055-4747-AFD7-D85E7C7F55A0}</Project>
+      <Name>HR.Persistence</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

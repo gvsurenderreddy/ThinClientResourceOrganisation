@@ -1,0 +1,25 @@
+﻿@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Configuration.StaticContent;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>WorkSuite.Library.Asp.Net.Mvc.Presentation.Tests - StaticContent</title>
+
+</head>
+    <body>
+        <h1>WorkSuite.Library.Asp.Net.Mvc.Presentation.Tests - StaticContent</h1>
+        
+        <dl>
+            <dt>Host</dt>
+            <dd>@StaticContent.host()</dd>
+
+            <dt>get_url_for</dt>
+            <dd>@StaticContent.get_url_for( "a-test-url-path" )</dd>
+        </dl>
+    </body>
+</html>

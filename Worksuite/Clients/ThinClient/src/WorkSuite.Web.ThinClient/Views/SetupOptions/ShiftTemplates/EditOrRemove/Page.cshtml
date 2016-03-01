@@ -1,0 +1,16 @@
+﻿@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Controls.ViewModels
+@using WTS.WorkSuite.Web.ThinClient.Application.SetupOptions.ShiftTemplates.Presentation.EditOrRemove.Page
+
+
+@{
+    Layout = @"~/Views/Shared/Layouts/GlobalLayout.cshtml";
+    ViewBag.Title = Resources.page_title;
+    ViewBag.Id = Resources.page_id;
+}
+
+@ViewModel.For(Model as dynamic)
+
+@section dependencies {
+   require(['color_picker_startup'], function(){ });
+   require(['component_system'], function () { });
+}

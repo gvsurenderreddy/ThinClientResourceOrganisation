@@ -1,0 +1,89 @@
+﻿@* Generator : MvcHelper GeneratePrettyNames : true *@
+@using System.Linq
+@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Controls.Primitives
+@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Utilities
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.Primitives.UserActions
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.Workflow.Model
+
+
+@helper For(IEnumerable<RoutedAction> actions)
+{
+    @For(actions, null);
+}
+
+
+@helper For(IEnumerable<RoutedAction> actions, string data_type)
+{
+    <div class="editor-controlset editor-submit">
+        @foreach (var action in @actions)
+        {
+            @Action(action, data_type)
+        }
+    </div>
+}
+
+
+@helper Action(RoutedAction action)
+{
+    @Action(action, null);
+}
+
+
+@helper Action(RoutedAction action, string data_type)
+{
+    var action_string = String.Format("formaction={0}", action.url);
+
+    //We have used a static helper class here because we couldn't get the dependency resolver to work in here
+    var destinations = WorkflowHelper.Current.get_destinations(data_type, action.name);
+
+    @(
+ destinations.Count <= 1
+        ? normal_button(action, destinations.FirstOrDefault(), action_string)
+        : split_button(action, destinations)
+    )
+}
+
+@helper normal_button(RoutedAction action, Destination destination, string action_string)
+{
+    <input data-action="@action.name"
+           type="submit"
+           id="@action.id"
+           name="@action.name"
+           value="@action.title"
+           class="action @action.name @action.classes.AsHtmlClassString()"
+           @(String.IsNullOrWhiteSpace(action.url) ? null : action_string)
+           @(destination != null && destination.is_post_existing ? "data-post-exists" : null)
+           data-destination-route="@(destination != null ? destination.route_name : null)" />
+}
+
+@helper split_button(RoutedAction action, List<Destination> destinations)
+{
+    var action_string = String.Format("formaction={0}", action.url);
+
+    <div class="SplitButton @(action.classes.Contains("primary-action") ? "SplitButton_Primary": "SplitButton_Secondary")">
+        <a data-action="@action.name"
+           class="action @action.name @action.classes.AsHtmlClassString() SplitButton_Option"
+           @(String.IsNullOrWhiteSpace(action.url) ? null : action_string)
+           @(destinations.First().is_post_existing ? "data-post-exists" : null)
+           data-destination-route="@destinations.First().route_name"
+           href="#">@action.title</a>
+        <menu class="SplitButton_MenuToggle">
+            <ul class="SplitButton_Menu">
+                @foreach (var destination in destinations.Skip(1))
+                {
+                    <li class="SplitButton_Menu_Option">
+                        <a data-action="@action.name"
+                           @(destination.is_post_existing ? "data-post-exists" : null)
+                           href="#"
+                           class="SplitButton_Menu_Link @action.name"
+                           data-destination-route="@destination.route_name"
+                           @(String.IsNullOrWhiteSpace(action.url) ? null : action_string)>
+                            @destination.title
+                        </a>
+                    </li>
+                }
+            </ul>
+        </menu>
+
+    </div>
+}

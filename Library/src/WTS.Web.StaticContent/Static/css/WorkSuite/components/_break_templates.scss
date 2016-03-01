@@ -1,0 +1,140 @@
+.break-templates td {
+	vertical-align: top;
+}
+
+.breaks-details {
+	line-height:18px;
+}
+
+.breaks-details dt {
+	cLear:left;
+	float: left;
+}
+
+.breaks-details dd {
+	float: left;
+	margin: 0 0 0 $layoutgrid_column_gutter;
+}
+
+.breaks-details dd {
+	float: left;
+	margin: 0 0 0 $layoutgrid_column_gutter;
+}
+
+.breaks-labels {
+	clear: left;
+		@include respond-to(tablet) {
+			clear: left;
+		}
+}
+
+.breaks-labels div {
+	float: left;
+	height: 20px;
+	width: 4%;
+	position: relative;
+}
+
+.breaks-labels div:after {
+	content:"";
+	height: 6px;
+	width: 2px;
+	background-color: #cccccc;
+	display: block;
+	position: absolute;
+}
+
+.breaks-graph {
+	clear: left;
+}
+
+.breaks-graph div {
+	float: left;
+	height: 20px;
+}
+
+.breaks-graph .sit-time {
+	background-color: #000000;
+	color: #ffffff;
+	font-size: 8pt;
+}
+
+.breaks-graph .paid-break {
+	background-color: transparent;
+}
+
+.breaks-graph .unpaid-break {
+	border-bottom: solid 4px #000000;
+	height: 12px !important;
+}
+
+// PATTERN 1
+.b1 .breaks-graph-block1 {
+	width: (4% * 2);
+}
+
+.b1 .breaks-graph-block2 {
+	width: (4% * .25);
+}
+
+.b1 .breaks-graph-block3 {
+	width: (4% * 1.75);
+}
+
+.b1 .breaks-graph-block4 {
+	width: 4%;
+}
+
+.b1 .breaks-graph-block5 {
+	width: (4% * 2);
+}
+
+.b1 .breaks-graph-block6 {
+	width: (4% * .25);
+}
+
+.b1 .breaks-graph-block7 {
+	width: (4% * 16.75);
+}
+
+// PATTERN 2
+.b2 .breaks-graph-block1 {
+	width: (4% * 3);
+}
+
+.b2 .breaks-graph-block2 {
+	width: (4% * .25);
+}
+
+.b2 .breaks-graph-block3 {
+	width: (4% * 2.75);
+}
+
+.b2 .breaks-graph-block4 {
+	width: 4%;
+}
+
+.b2 .breaks-graph-block5 {
+	width: (4% * 2);
+}
+
+.b2 .breaks-graph-block6 {
+	width: (4% * .25);
+}
+
+.b2 .breaks-graph-block7 {
+	width: (4% * 14.75);
+}
+
+// PATTERN 3
+.b3 .breaks-graph-block1 {
+	width: (4% * 3.5);
+}
+
+.b3 .breaks-graph-block2 {
+	width: 4%;
+}
+
+.b3 .breaks-graph-block3 {
+	width: (4% * 19.5);
+}

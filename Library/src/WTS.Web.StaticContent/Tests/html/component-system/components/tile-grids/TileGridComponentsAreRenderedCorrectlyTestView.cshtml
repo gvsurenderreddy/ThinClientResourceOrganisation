@@ -1,0 +1,25 @@
+﻿@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Components.TileGrids._1
+@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Utilities
+
+@model TileGridViewModel
+
+@{
+
+    Layout = "~/Tests/html/shared/QUnitTestLayout.cshtml";
+    ViewBag.Title = "Tile grid componnts are rendered correctly tests";
+}
+
+@TileGridComponent.Render( Model )
+
+@section page_boot_scripts {
+
+}
+
+@section test_scripts {
+
+    <script>
+        view_model = @Html.Raw(Model.ToJson())
+    </script>
+
+    <script src="~/Tests/html/component-system/components/tile-grids/the-correct-component-is-rendered-in-a-tile.js"></script>
+}

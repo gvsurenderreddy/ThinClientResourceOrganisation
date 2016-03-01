@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A8364489-28D1-4007-B1DB-76BAF9BD6931}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WorkSuite.Confgiuration.Web.ThinClient</RootNamespace>
+    <AssemblyName>WorkSuite.Confgiuration.Web.ThinClient</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Extensions.Conventions, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\packages\Ninject.Extensions.Conventions.3.2.0.0\lib\net45-full\Ninject.Extensions.Conventions.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\packages\Ninject.Web.Common.3.2.2.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\packages\Ninject.MVC3.3.2.1.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.0\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.0\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\packages\Microsoft.AspNet.Mvc.5.2.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\packages\Microsoft.AspNet.Razor.3.2.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\packages\WebActivatorEx.2.0.5\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Application\Configuration\DatabaseSetting\Commands\update\Resources.cs" />
+    <Compile Include="Application\Configuration\DatabaseSetting\Commands\update\RouteConfiguration.cs" />
+    <Compile Include="Application\Configuration\DatabaseSetting\Commands\update\UpdateDatabaseSettingController.cs" />
+    <Compile Include="Application\Configuration\DatabaseSetting\Presentation\Editor\DatabseSettingEditorPresenter.cs" />
+    <Compile Include="Application\Configuration\DatabaseSetting\Presentation\Editor\MetadataConfiguration.cs" />
+    <Compile Include="Application\Configuration\DatabaseSetting\Presentation\Editor\Resources.cs" />
+    <Compile Include="Application\Configuration\DatabaseSetting\Presentation\Editor\RouteConfiguration.cs" />
+    <Compile Include="Application\Configuration\DatabaseSetting\Presentation\Report\GetConnectioStringPresentationMetadata.cs" />
+    <Compile Include="Application\Configuration\DatabaseSetting\Presentation\Report\MetadataConfiguration.cs" />
+    <Compile Include="Application\Configuration\DatabaseSetting\Presentation\Report\Resources.cs" />
+    <Compile Include="Application\Configuration\Help\Command\Update\Resources.cs" />
+    <Compile Include="Application\Configuration\Help\Command\Update\RouteConfiguration.cs" />
+    <Compile Include="Application\Configuration\Help\Command\Update\UpdateHelpController.cs" />
+    <Compile Include="Application\Configuration\Help\Presentation\Editor\HelpEditorPresenter.cs" />
+    <Compile Include="Application\Configuration\Help\Presentation\Editor\MetadataConfiguration.cs" />
+    <Compile Include="Application\Configuration\Help\Presentation\Editor\Resources.cs" />
+    <Compile Include="Application\Configuration\Help\Presentation\Editor\RouteConfiguration.cs" />
+    <Compile Include="Application\Configuration\Help\Presentation\Report\GetHelpUrlPresentationMetadata.cs" />
+    <Compile Include="Application\Configuration\Help\Presentation\Report\MetadataConfiguration.cs" />
+    <Compile Include="Application\Configuration\Help\Presentation\Report\Resources.cs" />
+    <Compile Include="Application\Configuration\Infrastructure\Page\InfrastructurePresenter.cs" />
+    <Compile Include="Application\Configuration\Infrastructure\Page\Resources.cs" />
+    <Compile Include="Application\Configuration\Infrastructure\Page\RouteConfiguration.cs" />
+    <Compile Include="Application\Configuration\StaticContent\Commands\Update\Resources.cs" />
+    <Compile Include="Application\Configuration\StaticContent\Commands\Update\RouteConfiguration.cs" />
+    <Compile Include="Application\Configuration\StaticContent\Commands\Update\UpdateStaticContentController.cs" />
+    <Compile Include="Application\Configuration\StaticContent\Presentation\Report\GetLocationUrlPresentationMetadata.cs" />
+    <Compile Include="Application\Configuration\StaticContent\Presentation\Editor\MetadataConfiguration.cs" />
+    <Compile Include="Application\Configuration\StaticContent\Presentation\Editor\Resourcse.cs" />
+    <Compile Include="Application\Configuration\StaticContent\Presentation\Editor\RouteConfiguration.cs" />
+    <Compile Include="Application\Configuration\StaticContent\Presentation\Editor\StaticContentEditorPresenter.cs" />
+    <Compile Include="Application\Configuration\StaticContent\Presentation\Report\MetadataConfiguration.cs" />
+    <Compile Include="Application\Configuration\StaticContent\Presentation\Report\Resources.cs" />
+    <Compile Include="Application\Management\Service\ForceOnline\Controller\RouteConfiguration.cs" />
+    <Compile Include="Application\Management\Service\ForceOnline\Editor\ForceOnlineAction.cs" />
+    <Compile Include="Application\Management\Service\ForceOnline\Controller\ForceOnlineController.cs" />
+    <Compile Include="Application\Management\Service\ForceOnline\Controller\Resources.cs" />
+    <Compile Include="Application\Management\Service\ForceOnline\Editor\EditForceOnlinePresenter.cs" />
+    <Compile Include="Application\Management\MaintenanceSession\End\Command\EndMaintenanceSession.cs" />
+    <Compile Include="Application\Management\MaintenanceSession\End\Controller\EndMaintenanceSessionController.cs" />
+    <Compile Include="Application\Management\MaintenanceSession\End\Controller\Resources.cs" />
+    <Compile Include="Application\Management\MaintenanceSession\End\Controller\RouteConfiguration.cs" />
+    <Compile Include="Application\Management\MaintenanceSession\End\Editor\EndMaintenanceSessionAction.cs" />
+    <Compile Include="Application\Management\MaintenanceSession\End\Editor\EndMaintenanceSessionRequest.cs" />
+    <Compile Include="Application\Management\MaintenanceSession\End\Editor\MetadataConfiguration.cs" />
+    <Compile Include="Application\Management\MaintenanceSession\Start\Command\StartMaintenanceSession.cs" />
+    <Compile Include="Application\Management\MaintenanceSession\Start\Command\StartMaintenanceSessionConstants.cs" />
+    <Compile Include="Application\Management\MaintenanceSession\Status\Editor\Resources.cs" />
+    <Compile Include="Application\Management\MaintenanceSession\Status\Editor\RouteConfiguration.cs" />
+    <Compile Include="Application\Management\MaintenanceSession\Status\Editor\EditMaintenanceSessionPresenter.cs" />
+    <Compile Include="Application\Management\MaintenanceSession\Status\States\AMaintenanceSesssionStatus.cs" />
+    <Compile Include="Application\Management\MaintenanceSession\Status\Query\GetMaintenanceSessionStatus.cs" />
+    <Compile Include="Application\Management\MaintenanceSession\Status\Query\GetMaintenanceSessionStatusResponse.cs" />
+    <Compile Include="Application\Management\MaintenanceSession\Status\States\InMaintenanceSession.cs" />
+    <Compile Include="Application\Management\MaintenanceSession\Status\States\MaintenanceSessionState.cs" />
+    <Compile Include="Application\Management\MaintenanceSession\Status\States\NotInMaintenanceSession.cs" />
+    <Compile Include="Application\Management\MaintenanceSession\Start\Controller\Resources.cs" />
+    <Compile Include="Application\Management\MaintenanceSession\Start\Controller\RouteConfiguration.cs" />
+    <Compile Include="Application\Management\MaintenanceSession\Start\Editor\StartMaintenanceSessionAction.cs" />
+    <Compile Include="Application\Management\MaintenanceSession\Start\Controller\StartMaintenanceSessionController.cs" />
+    <Compile Include="Application\Management\MaintenanceSession\Start\Editor\MetadataConfiguration.cs" />
+    <Compile Include="Application\Management\MaintenanceSession\Start\Editor\StartMaintenanceSessionRequest.cs" />
+    <Compile Include="Application\Management\MaintenanceSession\Status\Report\MetadataConfiguration.cs" />
+    <Compile Include="Application\Management\MaintenanceSession\Status\Report\Resources.cs" />
+    <Compile Include="Application\Management\Service\ForceOnline\Editor\MetadataConfiguration.cs" />
+    <Compile Include="Application\Management\Service\ForceOnline\Editor\Resources.cs" />
+    <Compile Include="Application\Management\Service\ForceOnline\Editor\RouteConfiguration.cs" />
+    <Compile Include="Application\Management\Service\ForceOnline\Report\MetadataConfiguration.cs" />
+    <Compile Include="Application\Management\Service\ForceOnline\Report\Resources.cs" />
+    <Compile Include="Application\Management\Service\Status\Presentation\GetServiceStatusPresentationMetadata.cs" />
+    <Compile Include="Application\Management\Service\Status\Presentation\MaintenanceModeServiceStatusPresentationMetadata.cs" />
+    <Compile Include="Application\Management\Service\Status\Presentation\OnlineServiceStatusPresentationMetadata.cs" />
+    <Compile Include="Application\Management\Service\Status\Presentation\ServiceStatusPresentationMetadata.cs" />
+    <Compile Include="Application\Management\Service\Status\Presentation\UnknownServiceStatusPresentationMetadata.cs" />
+    <Compile Include="Application\Security\Users\Home\Resources.cs" />
+    <Compile Include="Application\Security\Users\Home\RouteConfiguration.cs" />
+    <Compile Include="App_Start\ControllerFactoryRegistration.cs" />
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
+    <Compile Include="App_Start\ViewModelMetadataConfiguration.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\DependencyConfiguration\RouteConfiguration.cs" />
+    <Compile Include="Infrastructure\DependencyConfiguration\ThinClientConfiguration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Content Include="Global.asax" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\UserHome\Page.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Layouts\GlobalLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.Asp.Net.Mvc.Presentation\WorkSuite.Library.Asp.Net.Mvc.Presentation.csproj">
+      <Project>{468f0b44-d85c-4b73-af2e-ca31223dce64}</Project>
+      <Name>WorkSuite.Library.Asp.Net.Mvc.Presentation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.Asp.Net.Mvc.Server\WorkSuite.Library.Asp.Net.Mvc.Server.csproj">
+      <Project>{B8E420E6-C270-44A9-AA9F-A1418975BD39}</Project>
+      <Name>WorkSuite.Library.Asp.Net.Mvc.Server</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.CodeStrutures\WorkSuite.Library.CodeStrutures.csproj">
+      <Project>{249BE708-3014-4584-9E14-CB087E54916E}</Project>
+      <Name>WorkSuite.Library.CodeStrutures</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.DomainTypes\WorkSuite.Library.DomainTypes.csproj">
+      <Project>{538C6F62-B398-41F1-917C-10659FDF6C78}</Project>
+      <Name>WorkSuite.Library.DomainTypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.Ninject\WorkSuite.Library.Ninject.csproj">
+      <Project>{FA9854F9-6908-483A-AE63-9354249E74BC}</Project>
+      <Name>WorkSuite.Library.Ninject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Domains\Configuration\src\Services\Configuration.Service.csproj">
+      <Project>{40093D0A-9087-40D1-A81C-B462CE08EE6E}</Project>
+      <Name>Configuration.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Integration\src\WorkSuite.Services.Integration\WorkSuite.Services.Integration.csproj">
+      <Project>{60B26944-DB9B-4514-B8EB-B4A0C809801C}</Project>
+      <Name>WorkSuite.Services.Integration</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Configuration\Infrastructure\Page.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Views\Editor.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Management\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Views\Report.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>38901</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1877/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

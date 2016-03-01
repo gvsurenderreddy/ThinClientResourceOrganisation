@@ -1,0 +1,19 @@
+﻿@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Controls.ViewModels
+@using WTS.WorkSuite.Web.ThinClient.Application.Operations.OperationalCalendars.PlannedSupply.ShiftCalendars.Patterns.viewPatterns.get
+
+@model WTS.WorkSuite.Web.ThinClient.Infrastructure.EntityIdentityViewModel<WTS.WorkSuite.PlannedSupply.OperationsCalendar.ShiftCalendar.ShiftCalendarPattern.ShiftCalendarPatternIdentity>
+
+@{
+    Layout = @"~/Views/Shared/Layouts/GlobalLayout.cshtml";
+    ViewBag.Title = Resources.page_title;
+    ViewBag.Id = Resources.page_id;
+    ViewBag.ResourceIdentity = Model.identity;
+}
+
+@ViewModel.For(Model.view_elements)
+
+@section dependencies {
+    require(['sortable_startup'], function () { });
+    require(['details'], function () { });
+    require(['details_list'], function () { });
+}

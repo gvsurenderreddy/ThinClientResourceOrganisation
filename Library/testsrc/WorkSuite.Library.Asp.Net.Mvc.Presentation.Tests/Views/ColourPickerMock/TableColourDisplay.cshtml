@@ -1,0 +1,12 @@
+﻿@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Controls.Table
+
+
+@{
+    Layout = @"~/Views/Shared/Layout.cshtml";
+    ViewBag.Title = "Display colour in table";
+    ViewBag.Id = "DisplayColurInTable";
+}
+
+<h1>WorkSuite.Library.Asp.Net.Mvc.Presentation.Tests - Display colour in table</h1>
+
+@Tables.For(Model as dynamic)

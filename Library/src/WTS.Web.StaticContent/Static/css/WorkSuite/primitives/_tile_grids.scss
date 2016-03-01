@@ -1,0 +1,25 @@
+.sectioned-tile-grid {
+    float: left;
+	margin: 0 $layoutgrid_page_gutter $layoutgrid_lineheight $layoutgrid_page_gutter;
+}
+
+.tile-grid {
+	margin: 0 0 $layoutgrid_lineheight;
+	@include respond-to(tablet) {
+		float:left;
+	}
+}
+
+.tile-grid-header {
+	clear: both;
+	margin: 0 0 $layoutgrid_lineheight 0;
+	@include titletext;
+	font-size: 14pt;
+}
+
+.tile-grid li {
+	float: left;
+	margin: 0 0 12px 0;
+	padding: 0;
+}
+

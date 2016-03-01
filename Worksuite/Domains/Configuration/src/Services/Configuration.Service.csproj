@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{40093D0A-9087-40D1-A81C-B462CE08EE6E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WorkSuite.Configuration.Service</RootNamespace>
+    <AssemblyName>WorkSuite.Configuration.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\DatabaseSettings\DatabaseSettingDetails.cs" />
+    <Compile Include="Configuration\DatabaseSettings\Edit\IGetUpdateRequest.cs" />
+    <Compile Include="Configuration\DatabaseSettings\Edit\IUpdateDatabaseSettings.cs" />
+    <Compile Include="Configuration\DatabaseSettings\Edit\UpdateDatabaseSettingRequest.cs" />
+    <Compile Include="Configuration\DatabaseSettings\Edit\UpdateDatabaseSettingsResponse.cs" />
+    <Compile Include="Configuration\DatabaseSettings\GetCurrentDatabaseSetting\GetCurrentDatabaseSettingResponse.cs" />
+    <Compile Include="Configuration\DatabaseSettings\GetCurrentDatabaseSetting\IGetCurrentDatabaseSetting.cs" />
+    <Compile Include="Configuration\Help\Edit\IGetUpdateHelpRequest.cs" />
+    <Compile Include="Configuration\Help\Edit\IUpdateHelp.cs" />
+    <Compile Include="Configuration\Help\Edit\UpdateHelpRequest.cs" />
+    <Compile Include="Configuration\Help\Edit\UpdateHelpResponse.cs" />
+    <Compile Include="Configuration\Help\GetCurrentHelpUrl\GetCurrentHelpUrlResponse.cs" />
+    <Compile Include="Configuration\Help\GetCurrentHelpUrl\IGetCurrentHelpUrl.cs" />
+    <Compile Include="Configuration\Help\HelpUrlDetails.cs" />
+    <Compile Include="Configuration\StaticContent\Edit\IGetUpdateStaticContentRequest.cs" />
+    <Compile Include="Configuration\StaticContent\Edit\IUpdateStaticContents.cs" />
+    <Compile Include="Configuration\StaticContent\Edit\UpdateStaticContentRequest.cs" />
+    <Compile Include="Configuration\StaticContent\Edit\UpdateStaticContentResponse.cs" />
+    <Compile Include="Configuration\StaticContent\GetCurrentStaticContent\GetCurrentStaticContentResponse.cs" />
+    <Compile Include="Configuration\StaticContent\GetCurrentStaticContent\IGetCurrentStaticContent.cs" />
+    <Compile Include="Configuration\StaticContent\StaticContentDetails.cs" />
+    <Compile Include="Messages\ConfirmationMessages.cs" />
+    <Compile Include="Messages\ErrorMessages.cs" />
+    <Compile Include="Management\MaintenanceSessions\EndAll\EndAllMaintenanceSessionsRequest.cs" />
+    <Compile Include="Management\MaintenanceSessions\EndAll\EndAllMaintenanceSessionsResponse.cs" />
+    <Compile Include="Management\MaintenanceSessions\EndAll\IEndAllMaintenanceSessions.cs" />
+    <Compile Include="Management\MaintenanceSessions\EndAll\IGetEndAllMaintenanceSessionsRequest.cs" />
+    <Compile Include="Management\MaintenanceSessions\End\EndMaintenanceSessionResponse.cs" />
+    <Compile Include="Management\MaintenanceSessions\End\IEndMaintenanceSession.cs" />
+    <Compile Include="Management\MaintenanceSessions\GetById\GetMaintenanceSessionByIdResponse.cs" />
+    <Compile Include="Management\MaintenanceSessions\GetById\IGetMaintenanceSessionById.cs" />
+    <Compile Include="Management\MaintenanceSessions\MaintenanceSessionDetails.cs" />
+    <Compile Include="Management\MaintenanceSessions\MaintenanceSessionIdentity.cs" />
+    <Compile Include="Management\MaintenanceSessions\Start\IStartMaintenanceSession.cs" />
+    <Compile Include="Management\MaintenanceSessions\Start\StartMaintenanceSessionResponse.cs" />
+    <Compile Include="Management\ServiceStates\Queries\IGetServiceStatus.cs" />
+    <Compile Include="Management\ServiceStates\Queries\Configuration_ServiceStatusResponse.cs" />
+    <Compile Include="Messages\HelpMessages.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.CodeStrutures\WorkSuite.Library.CodeStrutures.csproj">
+      <Project>{249BE708-3014-4584-9E14-CB087E54916E}</Project>
+      <Name>WorkSuite.Library.CodeStrutures</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.DomainTypes\WorkSuite.Library.DomainTypes.csproj">
+      <Project>{538C6F62-B398-41F1-917C-10659FDF6C78}</Project>
+      <Name>WorkSuite.Library.DomainTypes</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,755 @@
+// CONTENT MENU HEADER
+.content-header {
+	margin: 0 $layoutgrid_column_gutter $layoutgrid_lineheight $layoutgrid_column_gutter;
+	position: relative;
+	padding: 4px; 
+	clear:left;
+	@include respond-to(tablet) {
+		clear: none;
+	}
+}
+
+.content-header h2 {
+	@include header;
+	padding-left: 0;
+	@include respond-to(tablet) {
+		float: inherit;
+		display:inline;
+	}
+}
+
+.content-header menu {
+	@include respond-to(tablet) {
+		display:inline;
+	}
+}
+
+.content-header menu a {
+	@include header_menu_link;
+	float: inherit;
+}
+
+.content-header menu a:hover {
+	@include header_menu_link_hover;
+}
+
+.content-header menu a:visited {
+	@include header_menu_link;
+}
+
+// ---------- STYLE REPORTS
+// SECTIONS
+.report-wrapper {
+	margin: 0 $layoutgrid_page_gutter $layoutgrid_lineheight $layoutgrid_page_gutter;
+	padding:0;
+	background:url(../Images/report-background.png) 0 0 repeat-x;
+	@include report;
+	border: solid 1px #cccccc;
+	position: relative;
+	background-color: #ffffff;
+}
+
+.report-wrapper:before {
+	@include liftcorner_shadow_before;
+}
+
+.report-wrapper:after {
+		@include liftcorner_shadow_after;
+}
+
+// INDIVIDUAL ARTICLES
+#employee-summary,
+#employee-personal-details-report,
+#employee-image-details-report,
+#employee-contact-details-report,
+#single-occurrence-details-report,
+#all-occurrences-details-report,
+#shift-calendar-details-report,
+#shift-calendar-pattern-details-report,
+#employee-employment-details-report,
+#employee-employment-document-report,
+.shift-calendars-lister,
+#maintenance-session-report,
+#database-setting-report,
+#force-online-report,
+#static-content-report,
+#help-report {
+	margin: 0 $layoutgrid_column_gutter $layoutgrid_lineheight $layoutgrid_column_gutter;
+	padding: $layoutgrid_lineheight 0 0 0;
+	background: url(../Images/report-background.png) 0 0 repeat-x;
+	border: solid 1px #cccccc;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	position: relative;
+	@include report;
+	background-color: #ffffff;
+}
+
+#force-online-report {
+	overflow: hidden;
+}
+
+#employee-summary:before,
+#employee-personal-details-report:before,
+#employee-image-details-report:before,
+#employee-contact-details-report:before,
+#single-occurrence-details-report:before,
+#shift-calendar-details-report:before,
+#shift-calendar-pattern-details-report:before,
+#all-occurrences-details-report:before,
+#employee-employment-details-report:before,
+#employee-employment-document-report:before,
+.shift-calendars-lister:before {
+	@include report_before;
+}
+
+#employee-summary:after,
+#employee-personal-details-report:after,
+#employee-image-details-report:after,
+#employee-contact-details-report:after,
+#single-occurrence-details-report:after,
+#all-occurrences-details-report:after,
+#shift-calendar-details-report:after,
+#shift-calendar-pattern-details-report:after,
+#employee-employment-details-report:after,
+#employee-employment-document-report:after,
+.shift-calendars-lister:after {
+	@include report_after;
+}
+
+// ARTICLES IN SECTIONS
+.report-wrapper .report,
+.shift-calendars-lister .shift-calendar {
+	border-bottom: 0;
+	border-right: 0;
+	border-top: 1px solid #cccccc;
+	border-left: 0;
+	margin: 0 !important;
+	overflow: hidden;
+	padding: $layoutgrid_lineheight 0 0 0;
+}
+
+.shift-calendars-lister .shift-calendar {
+    clear: left;
+    @include respond-to(tablet) {
+            clear: none;
+    }
+}
+
+.report-wrapper .report:first-child{
+	border: 0;
+}
+
+.report-hidden {
+    @include report_hidden;
+}
+
+// EMPLYEE SUMMARY
+#employee-summary img{
+	@include header;
+	margin: 0 $layoutgrid_page_gutter*4 0 0;
+}
+
+// ---------- REPORT HEADER
+.report h2,
+control-bar h2 {
+	@include header;
+	@include respond-to(tablet) {
+		margin-left: $layoutgrid_span4;
+	}
+}
+
+.report-wrapper .report h2 {
+	@include subheader;
+}
+
+.report-wrapper .report:first-child h2 {
+	@include header;
+}
+
+// EMPOLOYEE SUMMARY
+#employee-summary h2 {
+	float:left;
+	margin-left: $layoutgrid_column_gutter !important;
+	@include report_sidebartitle;
+}
+
+#employee-skills-details-list-header h2 {
+	margin-bottom: 6px !important;
+}
+
+.report p {
+	clear: left;
+	font-size: 10pt;
+	padding: 0 0 12px $layoutgrid_column_gutter;
+	@include respond-to(tablet) {
+		margin:0 $layoutgrid_column_gutter 0 $layoutgrid_span4;
+		clear: left;
+	}
+}
+
+// REPORT MENUS
+.report menu {
+	@include header_menu;
+}
+
+.report-wrapper menu {
+	@include subheader_menu;
+}
+
+.report-wrapper .report:first-child menu {
+	@include header_menu;
+}
+
+#employee-notes-details-list menu,
+#employee-sickness-list menu,
+#employee-holiday-list menu,
+#employee-qualifications-details-list menu {
+	padding: 0 $layoutgrid_column_gutter;
+	@include respond-to(tablet) {
+		margin: 0 0 $layoutgrid_lineheight $layoutgrid_span4;
+	}
+}
+
+#employee-notes-details-list-header menu,
+#emergency-contacts-details-list-header menu,
+#employee-sickness-list-header menu,
+#employee-holiday-list-header menu,
+#employee-qualifications-details-list-header menu,
+#shift-calendar-patterns-list-header menu {
+	margin: 0 6px 0 0;
+	padding: 0;
+}
+
+.report menu a  {
+	@include header_menu_link;
+}
+
+.report menu a:hover  {
+	@include header_menu_link_hover;
+}
+
+.report menu a:visited  {
+	@include header_menu_link;
+}
+
+.dropped menu a {
+	color: #EF9608 !important;
+}
+
+// REORDER
+.reorder-report {
+	cursor: move;
+}
+
+// DISABLED
+menu a[disabled=disabled] {
+	cursor: default;
+	color: #cccccc;
+}
+
+menu a:hover[disabled=disabled] {
+	cursor: text;
+	color: #cccccc;
+}
+
+// REPORT DEFINITION LISTS
+.report dl {
+	clear:both;
+	overflow:hidden;
+	margin:0 0 $layoutgrid_lineheight 0;
+}
+
+.report dt {
+	@include report_label;
+	margin:0;
+	padding:0 $layoutgrid_column_gutter $layoutgrid_lineheight*.5 $layoutgrid_column_gutter;
+	clear:both;
+	@include respond-to(tablet) {
+		float: left;
+		@include layoutgrid_span4;
+		padding:0 $layoutgrid_column_gutter;
+		text-align: right;
+	}
+}
+
+.report .CalendarsAffected dt,
+.report .CalendarsAffected dd {
+    text-align: left !important;
+    display:inline !important;
+    padding:0;
+    margin:0;
+    float:left;
+    width:auto;
+}
+
+.report .CalendarsAffected dd {
+	padding: 0 0 0 $layoutgrid_column_gutter;
+}
+
+.report dd {
+	@include report_text;
+	margin:0;
+	padding:0 $layoutgrid_column_gutter $layoutgrid_lineheight*.5 $layoutgrid_column_gutter;
+	@include wordbreak;
+	@include respond-to(tablet) {
+		float: right;
+		@include layoutgrid_span8;
+		padding:0 $layoutgrid_column_gutter $layoutgrid_lineheight*.5 $layoutgrid_column_gutter;
+	}
+}
+
+#employee-notes-details-list dd,
+#document-details-list .rich-text {
+	white-space: pre-wrap;
+	padding-top: -1em;
+	white-space: -moz-pre-wrap !important;
+	white-space: -pre-wrap;
+	white-space: -o-pre-wrap;
+	word-wrap: break-word;
+	max-height: 200px;
+	overflow-y: auto;
+}
+
+.icon-word,
+.icon-pdf,
+.icon-image,
+.icon-file {
+    width: 16px;
+	height: 16px;
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+}
+
+.icon-word {
+	background: url(../Images/icon-word.png) 0 0 no-repeat;
+}
+
+.icon-pdf {
+	background: url(../Images/icon-pdf.png) 0 0 no-repeat;
+} 
+
+.icon-image {
+	background: url(../Images/icon-image.png) 0 0 no-repeat;
+} 
+
+.icon-file {
+	background: url(../Images/icon-file.png) 0 0 no-repeat;
+}
+
+menu a:hover  {
+	color: #170692;
+}
+
+menu a[disabled=disabled] {
+	color: #cccccc !important;
+}
+menu a[disabled=disabled]:hover  {
+	color: #cccccc !important;
+}
+
+// START - TO BE INCLUDED AS A PART OF GOAL 2264
+.DefinitionListArticle {
+    clear: left;
+    margin-bottom: 6px;
+}
+
+// ARTICLE SECTION
+.DefinitionListArticle_Section {
+    overflow: hidden;
+    padding: 0 0 0 $layoutgrid_column_gutter;
+    display: inline !important;
+}
+
+.AlignCenter.Small .DefinitionListArticle_Section {
+    clear: left;
+    margin-left: 33.3333%;
+}
+
+.AlignLeft.Small .DefinitionListArticle_Section {
+    padding: 0;
+}
+
+// HEADER TITLE
+.DefinitionListArticle_Header_Title {
+     clear: left;
+     font-weight: 700;
+     margin: 0;
+     padding: 0 0 ($layoutgrid_lineheight*.5) $layoutgrid_column_gutter;
+     font-size: 10pt;
+     word-break: break-all;
+     overflow: hidden;
+     display: block;
+}
+
+.Small .DefinitionListArticle_Header_Title {
+     padding: 0 0 ($layoutgrid_lineheight*.5) $layoutgrid_column_gutter;
+     float: left;
+     display: inline-block !important;
+     font-size: 10pt !important;
+     font-weight: 700;
+}
+
+.AlignCenter .DefinitionListArticle_Header_Title {
+     font-size: 12pt;
+     font-weight: 400;
+     margin-left: 33.3333%;
+}
+
+// SECTION TITLES
+.DefinitionListArticle_Section_Title {
+    color: #555555;
+    font-size: 10pt;
+    margin:0;
+    padding:0;
+    padding: 0 0 $layoutgrid_lineheight*.5 $layoutgrid_column_gutter;
+    clear: left;
+    float: left;
+}
+
+.Small .DefinitionListArticle_Section_Title {
+	padding: 0 0 $layoutgrid_lineheight*.5 3px;
+    float: left;
+    display: inline-block;
+    clear: none;
+}
+
+
+.DefinitionListArticle_Section_Title.StartTime.Clock,
+.DefinitionListArticle_Section_Title.EndTime.Clock,
+.DefinitionListArticle_Section_Title.PaymentType {
+    @include respond-to(tablet) {
+        display:none;
+    }
+}
+
+.AlignCenter .DefinitionListArticle_Section_Title {
+    box-sizing: border-box;
+    float: left;
+    padding: 0 $layoutgrid_column_gutter;
+    text-align: right;
+    width: 33.3333%;
+    clear: both;
+    margin: 0;
+}
+
+.AlignCenter.Small .DefinitionListArticle_Section_Title{
+    width:auto;
+    clear:none;
+    padding: 0 0 $layoutgrid_lineheight*.5 3px;
+}
+
+//SECTION VALUES
+.DefinitionListArticle_Section_Value {
+    display: inline-block;
+    color: #000000;
+    font-size: 10pt;
+    padding: 0 0 $layoutgrid_lineheight*.5 3px;
+    float: left;
+}
+
+.Small .DefinitionListArticle_Section_Value {
+	padding: 0 0 $layoutgrid_lineheight*.5 3px;
+    float: left;
+}
+
+.Small .DefinitionListArticle_Section_Value:after {
+    content: ",";
+}
+
+.DefinitionListArticle_Section_Value.StartTime.Clock:after {
+    content: "";
+    @include respond-to(tablet) {
+        content: "-";
+        margin-left: 3px;
+    }
+}
+
+.Small .DefinitionListArticle_Section_Value.StartTime.Clock:after {
+    content: ",";
+    @include respond-to(tablet) {
+        content: "-";
+        margin-left: 3px;
+    }
+}
+
+.Small .DefinitionListArticle_Section dd:Last-of-type:after {
+    content: ".";
+}
+// END - TO BE INCLUDED AS A PART OF GOAL 2264
+
+// LINK ICONS - DO NOT REMOVE!!!
+/* THESE HAVE BEEN DESIGNED AND TESTED AND ARE READY TO DEPLY.
+.edit-report,
+.edit {
+	position: relative;
+	padding-right: 12px;
+}
+
+.edit-report:before,
+.edit:before {
+	width: 5px;
+	height: 5px;
+	background-color: #555555;
+	content: "";
+    transform: skew(-20deg, -20deg);
+	-ms-transform: skew(-20deg, -20deg);
+	-webkit-transform: skew(-20deg, -20deg);
+	display:inline-block;
+	position: absolute;
+	right: 3px;
+	top:7px;
+}
+
+.edit-report:after,
+.edit:after {
+	height: 11px;
+	background-color: #555555;
+	content: "";
+	margin-left: 12px;
+    transform: rotate(45deg);
+	-ms-transform:rotate(45deg);
+	-webkit-transform:rotate(45deg);
+    width: 4px;
+    border-bottom: 1px solid #cccccc;
+	display:inline-block;
+	position: absolute;
+	right: 0px;
+	top:0;
+}
+
+.edit-report:hover:before, 
+.edit-report:hover:after,
+.edit:hover:before, 
+.edit:hover:after  {
+	background-color: #170692;
+}
+
+.edit-report[disabled=disabled]:before, 
+.edit-report[disabled=disabled]:after,
+.edit[disabled=disabled]:before, 
+.edit[disabled=disabled]:after {
+	background-color: #cccccc !important;
+}
+
+.remove-entity,
+.generic-remove-entity,
+.remove {
+	position: relative;
+	padding-right: 18px !important;
+	line-height:14px;
+}
+
+input.generic-remove-entity {
+	padding-right: 3px !important;
+}
+
+.remove-entity:before,
+.generic-remove-entity:before,
+.remove:before {
+	border-radius: 50%;
+	width: 14px;
+	height: 14px;
+	background-color: #555555;
+	content: "";
+	position: absolute;
+	right: 0px;
+	text-decoration: none;
+	top: 0px;
+}
+
+.remove-entity:after,
+.generic-remove-entity:after,
+.remove:after {
+	content: "x";
+	color: #cccccc;
+	display: inline-block;
+	vertical-align: middle;
+	position: absolute;
+	right: 3px;
+	top: -2px;
+	font-size: 13pt !important;
+	font-family: calibri;
+}
+
+.remove-entity:hover:before,
+.generic-remove-entity:hover:before,
+.remove:hover:before {
+	background-color: #990000;
+}
+
+.remove-entity[disabled=disabled]:before, 
+.generic-remove-entity[disabled=disabled]:before,
+.remove[disabled=disabled]:before {
+	background-color: #cccccc !important;
+}
+
+.remove-entity[disabled=disabled]:after, 
+.generic-remove-entity[disabled=disabled]:after,
+.remove[disabled=disabled]:after {
+	color: #eeeeee !important;
+}
+
+.download-file {
+	position: relative;
+	padding-right: 18px !important;
+	line-height:14px;
+}
+
+.download-file:before {
+	width: 6px;
+	height: 8px;
+	background-color: #555555;
+	content: "";
+	position: absolute;
+	right: 5px;
+	top: 0px;
+}
+
+.download-file:after {
+	content: "";
+	color: #cccccc;
+	display: inline-block;
+	vertical-align: middle;
+	position: absolute;
+	right: 0px;
+	top: 8px;
+    border-color: #555555 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+    border-style: solid solid solid solid;
+    border-width: 8px;
+    cursor: pointer;
+}
+
+.download-file:hover:before {
+	background-color: #170692;
+}
+
+.download-file:hover:after {
+	border-color: #170692 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+}
+
+.reorder-report {
+	position: relative;
+	padding-right: 18px !important;
+	line-height:14px;
+}
+
+.reorder-report:before {
+	content: "";
+	display: inline-block;
+	vertical-align: middle;
+	position: absolute;
+	right: 0px;
+	top: 10px;
+    border-color: #555555 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+    border-style: solid solid solid solid;
+    border-width: 5px;
+}
+
+.reorder-report:after {
+	content: "";
+	display: inline-block;
+	vertical-align: middle;
+	position: absolute;
+	right: 0px;
+	top: -4px;
+    border-color:  rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #555555 rgba(0, 0, 0, 0);
+    border-style: solid solid solid solid;
+    border-width: 5px;
+}
+*/
+/*
+.reorder-report:hover:before  {
+    border-color: #170692 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+}
+
+.reorder-report:hover:after  {
+	border-color:  rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #170692 rgba(0, 0, 0, 0);
+}
+
+.new-entry,
+.new {
+	position: relative;
+	padding-right: 14px !important;
+	line-height:14px;
+}
+
+.new-entry:before,
+.new:before  {
+	content: "";
+	display: inline-block;
+	vertical-align: middle;
+	position: absolute;
+	right: 0px;
+	top: 6px;
+	width: 11px;
+	height: 3px;
+	background-color: #555555;
+}
+
+.new-entry:after,
+.new:after {
+	content: "";
+	display: inline-block;
+	vertical-align: middle;
+	position: absolute;
+	right: 4px;
+	top: 2px;
+	width: 3px;
+	height: 11px;
+	background-color: #555555;
+}
+
+.new-entry:hover:before,
+.new:hover:before {
+    background-color: #170692;
+}
+
+.new-entry:hover:after,
+.new:hover:after {
+	background-color: #170692;
+}
+
+.new-entry[disabled=disabled]:before,
+.new[disabled=disabled]:before {
+    background-color: #cccccc !important;
+}
+
+.new-entry[disabled=disabled]:after,
+.new[disabled=disabled]:after {
+	background-color: #cccccc !important;
+}
+
+.view {
+	position: relative;
+	padding-right: 24px !important;
+	line-height:14px;
+}
+
+.view:before {
+    background: none repeat scroll 0 0 #555555;
+    border-radius: 12px 0;
+    height: 14px;
+    right: 3px;
+    margin-top: -8px;
+    transform: rotate(45deg);
+    width: 14px;    
+	content: "";
+	top: 50%;
+	position: absolute;
+}
+
+.view:after {
+    border: 2px solid #FFFFFF;
+    border-radius: 6px;
+    height: 4px;
+    margin-top: -5px;
+    width: 4px;
+	position: absolute;
+	content: "";
+	top: 50%;
+    right: 6px;
+}
+*/

@@ -1,0 +1,99 @@
+// ---------- CONTROL BAR
+.control-bar {
+	margin: 0 $layoutgrid_column_gutter $layoutgrid_lineheight $layoutgrid_column_gutter;
+	border: solid 1px #cccccc;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	position: relative;
+	background-color:#eeeeee;
+	padding: 4px; 
+	clear:left;
+	@include respond-to(tablet) {
+		clear: none;
+	}
+}
+
+.control-bar .grid-list-toggle {	
+	float:right;
+}
+
+.control-bar .grid-list-toggle-listicon,
+.control-bar .grid-list-toggle-gridicon {
+	display:inline-block;
+	@include toggle_unselected;
+	margin:0 0 0 6px;
+}
+
+.control-bar .grid-list-toggle-listicon:hover,
+.control-bar .grid-list-toggle-gridicon:hover {
+	background:#cccccc;
+}
+
+.control-bar .grid-list-toggle-selected {
+	background:#ffffff;
+}
+
+.control-bar .grid-list-toggle-listicon a,
+.control-bar .grid-list-toggle-gridicon a {
+	height:16px;
+	width: 16px;
+	display:block;
+	margin:3px 3px 2px 3px;
+}
+
+.control-bar .grid-list-toggle-listicon a {
+	background: url(../Images/icon_listview.png);
+}
+
+.control-bar .grid-list-toggle-gridicon a {
+	background: url(../Images/icon_gridview.png);
+}
+
+// DATE RANGE
+
+#date_range {
+}
+
+#date_range #date {
+	@include branding_header;
+	margin: 0 6px 0 0;
+}
+
+#date_range #back {
+	border-color: rgba(0, 0, 0, 0) #000000 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+    border-style: solid solid solid none;
+    border-width: 9px;
+    cursor: pointer;
+    display: block;
+    height: 0 !important;
+    padding: 0;
+    width: 0 !important;
+	display: inline;
+	line-height: 1.2;
+	vertical-align: text-top;
+	margin: 0 6px 0 0;
+}
+
+#date_range #forward {
+	border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #000000;
+    border-style: solid none solid solid;
+    border-width: 9px;
+    cursor: pointer;
+    display: block;
+    height: 0 !important;
+    padding: 0;
+    width: 0 !important;
+	display: inline;
+	line-height: 1.2;
+	vertical-align: text-top;
+	margin: 0 6px 0 0;
+}
+
+#date_range #today {
+	display: inline;
+	float: inherit !important;
+	margin: 0;
+	padding: 1px;
+	vertical-align: top;
+}

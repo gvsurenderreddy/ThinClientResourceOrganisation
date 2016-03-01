@@ -1,0 +1,192 @@
+/* TABLES */
+// Needs moving to its own document
+
+.statictable {
+	border-spacing: 3px 0px !important;
+	border-collapse: separate;
+	@include layoutgrid_span12;
+	@include tabletext;
+}
+
+.statictable tr th {
+	border-bottom:solid 5px $signaturecolour_base;
+	text-align:left;
+	padding:3px;
+	font-weight:bold;
+}
+
+.statictable tbody td {
+	border-bottom:solid 1px $basecolour_verybright;
+	vertical-align: middle;
+	padding:3px
+}
+
+.statictable tbody tr:hover {
+	background-color:$calltoactioncolour_base;
+	cursor:pointer;
+	color:#ffffff;
+}
+
+#employee-schedules tbody tr:hover {
+	cursor: default;
+    background-color: white;
+    color: #000000;
+}
+
+.statictable .shift-colour {
+	width: 12px;
+	height: 12px;
+	border: solid 1px #cccccc;
+}
+
+@mixin card {
+	background:url(../Images/report-background.png) 0 0 repeat-x;
+	background-color: #ffffff;
+
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	position: relative;
+	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);//, 0 0 20px rgba(0, 0, 0, 0.1) inset;
+	-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);//, 0 0 20px rgba(0, 0, 0, 0.1) inset;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);//, 0 0 20px rgba(0, 0, 0, 0.1) inset;
+	margin: 0 12px 24px 0 !important;
+}
+
+@mixin card_afterhover {
+
+	content: "";
+	position: absolute;
+	z-index: -3;
+	
+	bottom: 10px;
+	height: 20%;
+	width: 50%;
+	max-width: 300px;	
+	right: 0px;
+	left: auto;
+	-webkit-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.4);
+	box-shadow: 0 15px 10px rgba(0, 0, 0, 0.4);
+	-webkit-transform: rotate(6deg);
+	-moz-transform: rotate(6deg);
+	-ms-transform: rotate(6deg);
+	-o-transform: rotate(6deg);
+	transform: rotate(6deg);
+}
+
+@mixin card_after {
+	height: 0;
+	width: 0;
+}
+
+.tile.employee-details-card {
+	@include card;
+}
+
+.tile.employee-details-card:after {
+	@include card_after;
+}
+
+.tile.employee-details-card {
+	border: solid 1px $basecolour_bright;
+	width: 200px;
+	font-size: 10pt;
+	display: block;
+}
+
+.tile.employee-details-card:hover {
+	border: solid 1px $calltoactioncolour_dark;
+	background: none;
+	background-color: $calltoactioncolour_bright;
+}
+
+.tile.employee-details-card:not(:hover):after {
+	@include card_afterhover;
+}
+
+.tile.employee-details-card a{
+	text-decoration: none;
+}
+
+.tile.employee-details-card h3 {
+	clear: both;
+	margin: ($layoutgrid_lineheight*.5) 0 ($layoutgrid_lineheight*.25) 3px;
+	@include titletext;
+}
+
+.tile.employee-details-card .employee-reference {
+	clear: both;
+	margin: 0 0 ($layoutgrid_lineheight*.5) 3px;
+	@include subtext;
+  line-height:14px;
+}
+
+.tile.employee-details-card img {
+	float:left;
+	margin: 0 0 6px 3px;
+}
+
+.tile.employee-details-card .address {
+  margin: 0 0 6px 65px;
+  @include subtext;
+  line-height:14px;
+  overflow: hidden;
+}
+
+.tile.employee-details-card .address .title {
+  display:block;
+   @include text;
+}
+
+.tile.employee-details-card .address .value {
+  display:block;
+  float:left;
+  margin-right: 3pt;
+}
+
+.tile.employee-details-card .address .value:after {
+	content: ".";
+}
+
+.tile.employee-details-card .address .value:not(:last-child):after {
+	content: ",";
+}
+.employee-details-card .phone,
+.employee-details-card .mobile,
+.employee-details-card .email {
+	@include subtext;
+	clear: both;
+	margin: 0 0 3px 3px;
+	overflow: hidden;
+	@include wordbreak;
+	line-height:14px;
+}
+
+.employee-details-card .phone .title, 
+.employee-details-card .mobile .title,
+.employee-details-card .email .title {
+	@include hidetext;
+	float:left;
+	height: 16px;
+	width: 16px;
+}
+
+.employee-details-card .phone .title{
+	background: url(../Images/icon_phone.png) no-repeat;
+}
+
+.employee-details-card .mobile .title {
+	background: url(../Images/icon_mobile.png) no-repeat;
+}
+
+.employee-details-card .email  .title {
+	background: url(../Images/icon_email.png) no-repeat;
+}
+
+.employee-details-card .phone .value,
+.employee-details-card .mobile .value,
+.employee-details-card .email .value {
+	margin-left: 3px;
+	height: 16px;
+	vertical-align:text-bottom;
+}

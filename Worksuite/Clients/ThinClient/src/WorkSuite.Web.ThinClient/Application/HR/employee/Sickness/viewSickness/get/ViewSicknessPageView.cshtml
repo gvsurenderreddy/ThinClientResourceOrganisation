@@ -1,0 +1,22 @@
+﻿@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Controls.ViewModels
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Content
+@using WTS.WorkSuite.Web.ThinClient.Application.HR.employee.Sickness.viewSickness.get
+
+@model WTS.WorkSuite.Web.ThinClient.Application.HR.Employees.EmployeeIdentityViewModel
+
+@{
+    var content_repository = DependencyResolver.Current.GetService<IContentRepository>();
+    
+        Layout = @"~/Views/Shared/Layouts/GlobalLayout.cshtml";
+        ViewBag.Title = content_repository.get_resource_value("view_sickness_get_title");
+        ViewBag.Id = Resources.page_id;
+        ViewBag.ResourceIdentity = Model.identity;
+
+    }
+
+    @ViewModel.For(Model.view_elements)
+
+    @section dependencies {
+        require(['details'], function () { });
+        require(['details_list'], function () { });
+    }

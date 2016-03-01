@@ -1,0 +1,52 @@
+﻿<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+
+  <UsingTask TaskName="MergeJson" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
+    <ParameterGroup>
+      <In ParameterType="System.String" Required="true" />
+      <Out ParameterType="System.String" Output="true" />
+    </ParameterGroup>
+    <Task>
+      <Reference Include="System.Core" />
+      <Using Namespace="System" />
+      <Using Namespace="System.Text.RegularExpressions" />
+      <Code Type="Fragment" Language="cs">
+        <![CDATA[
+             //The read lines from file separates file contents with a semi-colon,
+             //so we need to consider that in our replace regex
+             
+             Out = Regex.Replace(In, "\r\n};{", ",");
+             
+        ]]>
+      </Code>
+    </Task>
+  </UsingTask>
+
+  <Target Name="ConcatenateJsonFiles">
+
+    <Message Text="Searching through: $(ProjectDir) for resource-content files" Importance="high"></Message>
+
+    <ItemGroup>
+      <ConcatFiles Include="$(ProjectDir)Application\**\resource*.json"/>
+    </ItemGroup>
+
+    <Message Text="Concatenating: %(ConcatFiles.Identity)" Importance="high"></Message>
+
+    <ItemGroup>
+      <FileContents Include="$([System.IO.File]::ReadAllText(%(ConcatFiles.Identity)))"/>
+    </ItemGroup>
+
+    <MergeJson In="@(FileContents)">
+      <Output PropertyName="MergeResult" TaskParameter="Out" />
+    </MergeJson>
+
+    <WriteLinesToFile File="$(outdir)json_content_store_en.json" Lines="$(MergeResult)" Overwrite="true" />
+
+    <Message Text="Done compiling resource-content merge to: $(outdir)json_content_store_en.json" Importance="high"></Message>
+
+  </Target>
+
+  <Target Name="AfterBuild">
+    <CallTarget Targets="ConcatenateJsonFiles"></CallTarget>
+  </Target>
+</Project>

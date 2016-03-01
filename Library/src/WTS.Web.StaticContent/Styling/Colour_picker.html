@@ -1,0 +1,66 @@
+﻿
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Spectrum - The No Hassle jQuery Colorpicker</title>
+    <link rel="stylesheet" type="text/css" href="../spectrum.css">
+    <script type="text/javascript" src="../spectrum.js"></script>
+</head>
+<body>
+
+<br><br>
+<input type='text' id="full"/>
+
+
+<script type="text/javascript">
+
+$("#update").click (function() {
+    console.log($("#full").spectrum("option", "palette"));
+    $("#full").spectrum("option", "palette", [
+        ["red", "green", "blue"]    
+    ]);
+});
+
+var i = 0;
+var wts_pallet = [];
+wts_pallet.push (["rgb(255, 0, 0)"]);
+wts_pallet.push (["rgb(128, 128, 128)", "rgb(200, 200, 200)", "rgb(230, 230, 230)"]);
+while ( i < 24 ) {
+	//wts_pallet.push (["HSV("+(i*10+15)+", 60%, 100%)", "HSV("+(i*10+15)+", 40%, 100%)", "HSV("+(i*10+15)+", 20%, 100%)"]);
+	wts_pallet.push (["HSV("+(i*10+30)+", 100%, 50%)", "HSV("+(i*10+30)+", 80%, 100%)", "HSV("+(i*10+30)+", 30%, 100%)"]);
+	i++;
+}
+$("#full").spectrum({
+    color: "",
+    flat: true,
+    showInput: true,
+    className: "full-spectrum",
+    showInitial: true,
+    showPalette: true,
+    showSelectionPalette: true,
+    maxPaletteSize: 10,
+    preferredFormat: "hex",
+    localStorageKey: "spectrum.demo",
+    move: function (color) {
+        
+    },
+    show: function () {
+    
+    },
+    beforeShow: function () {
+    
+    },
+    hide: function () {
+    
+    },
+    change: function() {
+        
+    },
+	palette: wts_pallet
+});
+
+</script>
+</body>
+</html>
+

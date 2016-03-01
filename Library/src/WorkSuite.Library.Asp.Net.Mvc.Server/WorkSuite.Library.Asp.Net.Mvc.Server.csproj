@@ -1,0 +1,527 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B8E420E6-C270-44A9-AA9F-A1418975BD39}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WorkSuite.Library.Asp.Net.Mvc.Server</RootNamespace>
+    <AssemblyName>WorkSuite.Library.Asp.Net.Mvc.Server</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Humanizer, Version=1.28.0.0, Culture=neutral, PublicKeyToken=979442b78dfc278e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Humanizer.1.28.0\lib\portable-win+net40+sl50+wp8+wpa81\Humanizer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Extensions.Conventions, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\ninject.extensions.conventions.3.2.0.0\lib\net45-full\Ninject.Extensions.Conventions.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Microsoft.AspNet.Mvc.5.2.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Microsoft.AspNet.Razor.3.2.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ColourPickerPalettes\ColourPickerPalette.cs" />
+    <Compile Include="ColourPickerPalettes\Dynamic\ColourPickerPaletteBuilder.cs" />
+    <Compile Include="ContentHeaders\ContentHeader.cs" />
+    <Compile Include="ContentHeaders\ContentHeaderAction.cs" />
+    <Compile Include="ContentHeaders\Dynamic\StaticDefinitions\BuildDynamicContentHeaderFromStaticDefinition.cs" />
+    <Compile Include="ContentHeaders\Dynamic\StaticDefinitions\Definitions\AContentHeaderBuilderFactory.cs" />
+    <Compile Include="ContentHeaders\Dynamic\StaticDefinitions\Definitions\Actions\DynamicContentHeaderActionsStaticDefintionBuilder.cs" />
+    <Compile Include="ContentHeaders\Dynamic\StaticDefinitions\Definitions\Actions\DynamicContentHeaderActionStaticDefinitionBuilder.cs" />
+    <Compile Include="ContentHeaders\Dynamic\StaticDefinitions\Definitions\Actions\DynamicContentHeaderActionStaticDefintion.cs" />
+    <Compile Include="ContentHeaders\Dynamic\StaticDefinitions\Definitions\BuildAllContentHeaderDefinitionsDefinedInAssembly.cs" />
+    <Compile Include="ContentHeaders\Dynamic\StaticDefinitions\Definitions\ContentHeaderDefinitionsBuilder.cs" />
+    <Compile Include="ContentHeaders\Dynamic\StaticDefinitions\Definitions\DynamicContentHeaderStaticDefinition.cs" />
+    <Compile Include="ContentHeaders\Dynamic\StaticDefinitions\Definitions\DynamicContentHeaderStaticDefinitionBuilder.cs" />
+    <Compile Include="ContentHeaders\Dynamic\StaticDefinitions\Definitions\DynamicContentHeaderStaticDefinitionRepository.cs" />
+    <Compile Include="ContentHeaders\Dynamic\StaticDefinitions\Definitions\IContentHeaderDefinitionsBuilder.cs" />
+    <Compile Include="Content\ContentData.cs" />
+    <Compile Include="Content\IContentDataProvider.cs" />
+    <Compile Include="Content\IContentRepository.cs" />
+    <Compile Include="Content\IContentFileLocation.cs" />
+    <Compile Include="Content\JsonContent\ContentDataFromJsonFileProvider.cs" />
+    <Compile Include="Content\JsonContent\ContentRepository.cs" />
+    <Compile Include="DateRangeBars\DateRangeBar.cs" />
+    <Compile Include="DateRangeBars\Dynamic\BuildDynamicDateRangeBarFromStaticDefinition.cs" />
+    <Compile Include="DateRangeBars\Dynamic\StaticDefinitions\Configuration\ADateRangeBarBuilderFactory.cs" />
+    <Compile Include="DateRangeBars\Dynamic\StaticDefinitions\Configuration\BuildAllDateRangeBarDefinitionsDefinedInAssembly.cs" />
+    <Compile Include="DateRangeBars\Dynamic\StaticDefinitions\Configuration\IDateRangeBarDefinitionsBuilder.cs" />
+    <Compile Include="DateRangeBars\Dynamic\StaticDefinitions\Configuration\DateRangeBarDefinitionsBuilder.cs" />
+    <Compile Include="DateRangeBars\Dynamic\StaticDefinitions\DynamicDateRangeBarStaticDefinitionBuilder.cs" />
+    <Compile Include="DateRangeBars\Dynamic\StaticDefinitions\DynamicDateRangeBarStaticDefinitionRepository.cs" />
+    <Compile Include="DateRangePalettes\DateRangePaletteAction.cs" />
+    <Compile Include="DateRangePalettes\DateRangePalette.cs" />
+    <Compile Include="DateRangeBars\Dynamic\StaticDefinitions\DynamicDateRangeBarStaticDefinition.cs" />
+    <Compile Include="DateRangePalettes\Dynamic\BuildDynamicDateRangePaletteFromStaticDefinition.cs" />
+    <Compile Include="DateRangePalettes\Dynamic\StaticDefinitions\Actions\DynamicDateRangePaletteActionsStaticDefinitionBuilder.cs" />
+    <Compile Include="DateRangePalettes\Dynamic\StaticDefinitions\Actions\DynamicDateRangePaletteActionStaticDefinition.cs" />
+    <Compile Include="DateRangePalettes\Dynamic\StaticDefinitions\Actions\DynamicDateRangePaletteActionStaticDefinitionBuilder.cs" />
+    <Compile Include="DateRangePalettes\Dynamic\StaticDefinitions\Configuration\ADateRangePaletteBuilderFactory.cs" />
+    <Compile Include="DateRangePalettes\Dynamic\StaticDefinitions\Configuration\BuildAllDateRangePaletteDefinitionsDefinedInAssembly.cs" />
+    <Compile Include="DateRangePalettes\Dynamic\StaticDefinitions\Configuration\DateRangePaletteDefinitionsBuilder.cs" />
+    <Compile Include="DateRangePalettes\Dynamic\StaticDefinitions\Configuration\IDateRangePaletteDefinitionsBuilder.cs" />
+    <Compile Include="DateRangePalettes\Dynamic\StaticDefinitions\Model\DynamicDateRangePaletteStaticDefinition.cs" />
+    <Compile Include="DateRangePalettes\Dynamic\StaticDefinitions\Model\DynamicDateRangePaletteStaticDefinitionBuilder.cs" />
+    <Compile Include="DateRangePalettes\Dynamic\StaticDefinitions\DynamicDateRangePaletteStaticDefinitionRepository.cs" />
+    <Compile Include="Framework\ViewModels\BreadCrumbNavigation\Metadata\Static\NavigationItemMetadata.cs" />
+    <Compile Include="Framework\ViewModels\PageIdentity\DependencyConfiguration.cs" />
+    <Compile Include="Framework\ViewModels\PageIdentity\ICurrentPageIdentityRepository.cs" />
+    <Compile Include="Framework\ViewModels\PageIdentity\CurrentPageIdentityRepository.cs" />
+    <Compile Include="Framework\ViewModels\PageIdentity\IPageIdentity.cs" />
+    <Compile Include="Framework\ViewModels\Page\Metadata\Static\BuildPageMetadataDefinedInAssembly.cs" />
+    <Compile Include="Framework\ViewModels\Page\Metadata\Static\Model\PageModelMetadataBuilderFactory.cs" />
+    <Compile Include="Framework\ViewModels\Page\Metadata\Static\Model\PageModelMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Page\Metadata\Static\Model\IPageModelMetadataBuilderFactory.cs" />
+    <Compile Include="Framework\ViewModels\Metadata\Static\BuildViewModelMatadataDefinedInAssembly.cs" />
+    <Compile Include="Framework\ViewModels\DetailsLists\Actions\ActionsBuilder.cs" />
+    <Compile Include="Framework\ViewModels\DetailsLists\ADetailsListBuilderFactory.cs" />
+    <Compile Include="Framework\ViewModels\DetailsLists\Metadata\Static\BuildDetailsListMetadataDefinedInAssembly.cs" />
+    <Compile Include="Framework\ViewModels\DetailsLists\Metadata\Static\DetailsListMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\DetailsLists\Metadata\Static\IDetailsListMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\DetailsLists\Metadata\Static\Model\DetailsListMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\DetailsLists\Metadata\Static\Model\DetailsListMetadataRepository.cs" />
+    <Compile Include="Framework\ViewModels\DetailsLists\Metadata\Static\Actions\DetailsListActionMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\DetailsLists\Metadata\Static\Actions\IDetailsListActionMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\DetailsLists\Metadata\Static\Actions\DetailsListActionsMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\DetailsLists\Metadata\Static\Actions\IDetailsListActionsMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\DetailsLists\Metadata\Static\Actions\DetailsListActionMetadataRepository.cs" />
+    <Compile Include="Framework\ViewModels\DetailsLists\Metadata\Static\Model\IDetailsListMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\DetailsLists\DetailsList.cs" />
+    <Compile Include="Framework\ViewModels\DetailsLists\DetailsListBuilder.cs" />
+    <Compile Include="Framework\ViewModels\DetailsLists\DetailsListHeader.cs" />
+    <Compile Include="Framework\ViewModels\DetailsLists\Actions\DetailsListActionMetadata.cs" />
+    <Compile Include="Framework\ViewModels\DetailsLists\Actions\IDetailsListActionMetadataRepository.cs" />
+    <Compile Include="Framework\ViewModels\DetailsLists\Model\DetailsListMetadata.cs" />
+    <Compile Include="Framework\ViewModels\DetailsLists\Model\IDetailsListMetadataRepository.cs" />
+    <Compile Include="Framework\ViewModels\Editors\Actions\EditorActionsBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Editors\AnEditorBuilderFactory.cs" />
+    <Compile Include="Framework\ViewModels\Editors\Metadata\Static\BuildEditorMetadataDefinedInAssembly.cs" />
+    <Compile Include="Framework\ViewModels\Editors\Metadata\Static\EditorMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Editors\Metadata\Static\Actions\EditorActionMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Editors\Metadata\Static\Actions\EditorActionsMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Editors\Metadata\Static\Actions\IEditorActionMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Editors\Metadata\Static\IEditorMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Editors\Metadata\Static\Actions\EditorActionMetadataRepository.cs" />
+    <Compile Include="Framework\ViewModels\Editors\Metadata\Static\Actions\IEditorActionsMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Editors\Metadata\Static\Fields\EditorFieldsMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Editors\Metadata\Static\Fields\IEditorFieldMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Editors\Metadata\Static\Fields\EditorFieldMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Editors\Metadata\Static\Fields\IEditorFieldsMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Editors\Metadata\Static\Fields\EditorFieldMetadataRepository.cs" />
+    <Compile Include="Framework\ViewModels\Editors\Metadata\Static\Model\IEditorModelMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Editors\Metadata\Static\Model\EditorModelMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Editors\Metadata\Static\Model\EditorModelMetadataRepository.cs" />
+    <Compile Include="Framework\ViewModels\Editors\Metadata\Static\Fields\Lookup\LookupFieldValuesRepository.cs" />
+    <Compile Include="Framework\ViewModels\Editors\DisplayPolicy\DefaultAlwaySayYesPolicy.cs" />
+    <Compile Include="Framework\ViewModels\Editors\DisplayPolicy\IShouldBeDisplayed.cs" />
+    <Compile Include="Framework\ViewModels\Editors\Fields\DisplayPolicy\DefaultAlwaysSayYesPolicy.cs" />
+    <Compile Include="Framework\ViewModels\Editors\Fields\DisplayPolicy\IShouldBeDisplayedOnEditor.cs" />
+    <Compile Include="Framework\ViewModels\Editors\Fields\EditorFieldFactory.cs" />
+    <Compile Include="Framework\ViewModels\Editors\Fields\EditorFieldsBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Editors\Fields\EditorFieldStatus.cs" />
+    <Compile Include="Framework\ViewModels\Editors\Actions\IEditorActionMetadataRepository.cs" />
+    <Compile Include="Framework\ViewModels\Editors\Fields\FieldTypes.cs" />
+    <Compile Include="Framework\ViewModels\Editors\Metadata\IEditorFieldMetadataRepository.cs" />
+    <Compile Include="Framework\ViewModels\Editors\Model\IEditorModelMetadataRepository.cs" />
+    <Compile Include="Framework\ViewModels\Editors\Actions\EditorActionMetadata.cs" />
+    <Compile Include="Framework\ViewModels\Editors\Fields\EditorFieldMetdata.cs" />
+    <Compile Include="Framework\ViewModels\Editors\Model\EditorModelMetadata.cs" />
+    <Compile Include="Framework\ViewModels\Editors\Editor.cs" />
+    <Compile Include="Framework\ViewModels\Editors\EditorBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\CalendarAffected\ACalendarAffectedField.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\CalendarAffected\ACalendarAffectedFieldBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\DateRequestField\ADateRequestField.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\DateRequestField\ADateRequestFieldBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\DefinitionListField\ADefinitionListReportField.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\DefinitionListField\ADefinitionListReportFieldBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\DurationRequestField\ADurationRequestFieldBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\DurationRequestField\ADurationRequestField.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\RGBColourField\ARgbColourField.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\RGBColourField\ARgbColourFieldBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\RGBColourRequestField\ARgbColourRequestField.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\ServiceStateField\AServiceStateField.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\ServiceStateField\AServiceStateFieldBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\DocumentField\ADocumentField.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\DocumentField\ADocumentFieldBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\ImageField\AnImageField.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\ImageField\AnImageFieldBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\SimpleImageField\ASimpleImageFieldBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\SimpleImageField\ASimpleImageField.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\RGBColourRequestField\ARgbColourRequestFieldBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\TimeRequestField\ATimeRequestField.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\TimeRequestField\ATimeRequestFieldBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\UserActions\CommonActionDefinition.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\UserActions\Configuration\Static\ActionMetadataBuilder\IRoutedActionMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\UserActions\Configuration\Static\ActionMetadataBuilder\RoutedActionMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\UserActions\Configuration\Static\ActionsMetadataBuilder\IRoutedActionsMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\UserActions\Configuration\Static\ActionsMetadataBuilder\RoutedActionsMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\UserActions\Configuration\Static\CallToActionTypes\CallToAction.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\UserActions\Configuration\Static\CallToActionTypes\PrimaryCallToAction.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\UserActions\Configuration\Static\CallToActionTypes\SecondaryCallToAction.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\UserActions\Configuration\Static\Repository\RoutedActionMetadataRepository.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\UserActions\IUserAction.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\UserActions\Metadata\IRoutedActionMetadataRepository.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\UserActions\Metadata\RoutedActionMetadata.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\UserActions\RoutedAction.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\UserActions\RoutedActionBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\BooleanField\ABooleanReportField.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\BooleanField\ABooleanReportFieldBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\FreeTextField\AFreeTextStringReportField.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\FreeTextField\AFreeTextStringReportFieldBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\HiddenField\AHiddenField.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\HiddenField\AHiddenFieldBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\Field.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\Constructors\Factory.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\Constructors\FieldBuilder\IBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\Constructors\FieldBuilder\Builder.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\LookupField\ALookupField.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\LookupField\ALookupFieldBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\LookupField\ILookupFieldValuesRepository.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\LookupField\LookupValue.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\Metadata\FieldMetadata.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\Metadata\IRepository.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\MultiLineFields\AMultilineStringReportField.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\MultiLineFields\AMultilineStringReportFieldBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\ReadOnlyField\AReadOnlyField.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\ReadOnlyField\AReadOnlyFieldBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\VisibilityPolicies\IPropertyShouldBeDisplayed.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\FieldsBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\StringField\AStringReportField.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Fields\StringField\AStringReportFieldBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Models\Metadata\IModelMetadata.cs" />
+    <Compile Include="Framework\ViewModels\Primitives\Models\Metadata\IRepository.cs" />
+    <Compile Include="Framework\ViewModels\Reports\Actions\ActionsBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Reports\AReportBuilderFactory.cs" />
+    <Compile Include="Framework\ViewModels\Reports\Fields\FieldTypes.cs" />
+    <Compile Include="Framework\ViewModels\Reports\Fields\ReportFieldStatus.cs" />
+    <Compile Include="Framework\ViewModels\Reports\Metadata\Static\BuildReportMetadataDefinedInAssembly.cs" />
+    <Compile Include="Framework\ViewModels\Reports\Metadata\Static\IReportMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Reports\Metadata\Static\ReportMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Reports\Metadata\Static\Actions\IReportActionMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Reports\Metadata\Static\Actions\IReportActionsMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Reports\Metadata\Static\Actions\ReportActionMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Reports\Metadata\Static\Actions\ReportActionsMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Reports\Metadata\Static\Fields\IReportFieldsMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Reports\Metadata\Static\Fields\ReportFieldsMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Reports\Fields\DisplayPolicy\AlwaysReturnsTruePolicy.cs" />
+    <Compile Include="Framework\ViewModels\Reports\Fields\DisplayPolicy\IShouldBeDisplayedOnReport.cs" />
+    <Compile Include="Framework\ViewModels\Reports\Fields\ReportFieldFactory.cs" />
+    <Compile Include="Framework\ViewModels\Reports\Fields\ReportFieldsBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Reports\Metadata\Static\Actions\ReportActionMetadataRepository.cs" />
+    <Compile Include="Framework\ViewModels\Reports\Metadata\Static\Fields\IReportFieldMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Reports\Metadata\Static\Fields\ReportFieldMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Reports\Metadata\Static\Fields\ReportFieldMetadataRepository.cs" />
+    <Compile Include="Framework\ViewModels\Reports\Metadata\Static\Model\IReportModelMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Reports\Metadata\Static\Model\ReportModelMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Reports\Metadata\Static\Model\ReportModelMetadataRepository.cs" />
+    <Compile Include="Framework\ViewModels\Reports\DisplayPolicy\IShouldBeDisplayed.cs" />
+    <Compile Include="Framework\ViewModels\Reports\Actions\IReportActionMetadataRepository.cs" />
+    <Compile Include="Framework\ViewModels\Reports\Fields\IReportFieldMetadataRepository.cs" />
+    <Compile Include="Framework\ViewModels\Reports\Model\IReportModelMetadataRepository.cs" />
+    <Compile Include="Framework\ViewModels\Reports\Fields\ReportFieldMetdata.cs" />
+    <Compile Include="Framework\ViewModels\Reports\Model\ReportModelMetadata.cs" />
+    <Compile Include="Framework\ViewModels\Reports\Sections\AReportSection.cs" />
+    <Compile Include="Framework\ViewModels\Reports\Sections\AReportSectionBuilder.cs" />
+    <Compile Include="Framework\ViewModels\SectionedTileGrid\SectionedTileGrid.cs" />
+    <Compile Include="Framework\ViewModels\SectionedTileGrid\StaticallyDefined\Builder\StaticSectionedTileGridBuilder.cs" />
+    <Compile Include="Framework\ViewModels\SectionedTileGrid\StaticallyDefined\Metadata\Model\SectionedStaticTileGridMetadata.cs" />
+    <Compile Include="Framework\ViewModels\SectionedTileGrid\StaticallyDefined\Metadata\StaticSectionedTileGridMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\SectionedTileGrid\StaticallyDefined\Metadata\StaticTileGridSectionMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\BreadCrumbNavigation\Model\BreadCrumbNavigation.cs" />
+    <Compile Include="Framework\ViewModels\BreadCrumbNavigation\Model\DependencyConfiguration.cs" />
+    <Compile Include="Framework\ViewModels\BreadCrumbNavigation\Model\IBreadCrumbNavigationBuilder.cs" />
+    <Compile Include="Framework\ViewModels\BreadCrumbNavigation\Repository\BreadCrumbNavigationRepository.cs" />
+    <Compile Include="Framework\ViewModels\BreadCrumbNavigation\Model\BreadCrumbNavigationBuilder.cs" />
+    <Compile Include="Framework\ViewModels\BreadCrumbNavigation\Repository\DependencyConfiguration.cs" />
+    <Compile Include="Framework\ViewModels\BreadCrumbNavigation\Repository\IBreadCrumbNavigationRepository.cs" />
+    <Compile Include="Framework\ViewModels\BreadCrumbNavigation\Metadata\Static\DependencyConfiguration.cs" />
+    <Compile Include="Framework\ViewModels\BreadCrumbNavigation\Metadata\Static\IBreadCrumbNavigationMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\BreadCrumbNavigation\Metadata\Static\BreadCrumbNavigationMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Tables\ATableRow.cs" />
+    <Compile Include="Framework\ViewModels\Tables\Configuration\Application\ITableMetadataConfiguration.cs" />
+    <Compile Include="Framework\ViewModels\Tables\Configuration\Application\TableMetadataConfiguration.cs" />
+    <Compile Include="Framework\ViewModels\Tables\Configuration\TableFieldMetadataRepository\ITableFieldMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Tables\Configuration\TableFieldMetadataRepository\ITableFieldsMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Tables\Configuration\TableFieldMetadataRepository\TableFieldMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Tables\Configuration\TableFieldMetadataRepository\TableFieldMetadataRepository.cs" />
+    <Compile Include="Framework\ViewModels\Tables\Configuration\TableFieldMetadataRepository\TableFieldsMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Tables\Configuration\TableModelMetadataRepository\ITableModelMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Tables\Configuration\TableModelMetadataRepository\TableModelMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Tables\Configuration\TableModelMetadataRepository\TableModelMetadataRepository.cs" />
+    <Compile Include="Framework\ViewModels\Tables\Fields\DisplayPolicy\DefaultAlwaySayYesPolicy.cs" />
+    <Compile Include="Framework\ViewModels\Tables\Fields\DisplayPolicy\IShouldBeDisplayedOnTable.cs" />
+    <Compile Include="Framework\ViewModels\Tables\Fields\DisplayPolicy\MetadataBasedPolicy.cs" />
+    <Compile Include="Framework\ViewModels\Tables\Fields\TableFieldFactory.cs" />
+    <Compile Include="Framework\ViewModels\Tables\Fields\TableFieldsBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Tables\Metadata\ITableFieldMetadataRepository.cs" />
+    <Compile Include="Framework\ViewModels\Tables\Metadata\ITableModelMetadataRepository.cs" />
+    <Compile Include="Framework\ViewModels\Tables\Metadata\TableFieldMetadata.cs" />
+    <Compile Include="Framework\ViewModels\Tables\Metadata\TableModelMetadata.cs" />
+    <Compile Include="Framework\ViewModels\Tables\Table.cs" />
+    <Compile Include="Framework\ViewModels\Tables\TableBuilder.cs" />
+    <Compile Include="Framework\ViewModels\TileGrids\StaticallyDefined\Builder\StaticTileGridBuilder.cs" />
+    <Compile Include="Framework\ViewModels\TileGrids\StaticallyDefined\Metadata\BaseStaticTileGridMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\TileGrids\StaticallyDefined\Metadata\Model\StaticTileGridMetadata.cs" />
+    <Compile Include="Framework\ViewModels\TileGrids\StaticallyDefined\Metadata\StaticTileGridTileMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\TileGrids\StaticallyDefined\Metadata\StaticTileGridMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\TileGrids\TileGrid.cs" />
+    <Compile Include="Framework\ViewModels\Tiles\DynamicTiles\StaticallyDefined\Definitions\DynamicTileStaticDefinition.cs" />
+    <Compile Include="Framework\ViewModels\Tiles\DynamicTiles\StaticallyDefined\Definitions\DynamicTileStaticDefinitionBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Tiles\DynamicTiles\StaticallyDefined\Definitions\DynamicTileStaticDefinitionRepository.cs" />
+    <Compile Include="Framework\ViewModels\Tiles\DynamicTiles\StaticallyDefined\Definitions\Fields\DynamicTileFieldsStaticDefinitionBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Tiles\DynamicTiles\StaticallyDefined\Definitions\Fields\DynamicTileFieldStaticDefinition.cs" />
+    <Compile Include="Framework\ViewModels\Tiles\DynamicTiles\StaticallyDefined\Definitions\Fields\DynamicTileFieldStaticDefinitionBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Workflow\Builder\DependencyConfiguration.cs" />
+    <Compile Include="Framework\ViewModels\Workflow\Builder\IWorkflowMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Workflow\Repository\DependencyConfiguration.cs" />
+    <Compile Include="Framework\ViewModels\Workflow\Repository\IWorkflowMetadataRepository.cs" />
+    <Compile Include="Framework\ViewModels\Workflow\Builder\WorkflowMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Workflow\Model\ActionToDestinationDictionary.cs" />
+    <Compile Include="Framework\ViewModels\Workflow\Model\Destination.cs" />
+    <Compile Include="Framework\ViewModels\Workflow\Model\EditorToActionToDestinationDictionary.cs" />
+    <Compile Include="Framework\ViewModels\Workflow\Model\PageToEditorToActionToDestinationDictionary.cs" />
+    <Compile Include="Framework\ViewModels\Workflow\Repository\WorkflowMetadataRepository.cs" />
+    <Compile Include="Infrastructure\ActionDefinitions\Cancel.cs" />
+    <Compile Include="Infrastructure\ActionDefinitions\DetailsList\Edit.cs" />
+    <Compile Include="Infrastructure\ActionDefinitions\Report\View.cs" />
+    <Compile Include="Infrastructure\ActionDefinitions\SubmitApply.cs" />
+    <Compile Include="Infrastructure\ActionDefinitions\SubmitRemove.cs" />
+    <Compile Include="Infrastructure\ActionDefinitions\SubmitEdit.cs" />
+    <Compile Include="Infrastructure\ActionDefinitions\SubmitNew.cs" />
+    <Compile Include="Infrastructure\ActionDefinitions\New.cs" />
+    <Compile Include="Infrastructure\ActionDefinitions\Edit.cs" />
+    <Compile Include="Infrastructure\ActionDefinitions\Remove.cs" />
+    <Compile Include="Infrastructure\ActionDefinitions\ToggleFourWeeks.cs" />
+    <Compile Include="Infrastructure\ActionDefinitions\ToggleWeek.cs" />
+    <Compile Include="Infrastructure\ActionDefinitions\View.cs" />
+    <Compile Include="Infrastructure\DateRangeBarBuilderFactory\DependencyResolverDateRangeBarBuilderFactory.cs" />
+    <Compile Include="Infrastructure\DependencyConfiguration\DateRangeBarConfiguration.cs" />
+    <Compile Include="Infrastructure\DependencyConfiguration\DateRangePaletteConfiguration.cs" />
+    <Compile Include="Infrastructure\DependencyConfiguration\SimplePaletteConfiguration.cs" />
+    <Compile Include="Infrastructure\DateRangePaletteBuilderFactory\DependencyResolverDateRangePaletteBuilderFactory.cs" />
+    <Compile Include="Infrastructure\Requests\HttpRequestBaseExtensions.cs" />
+    <Compile Include="Infrastructure\RouteConfiguration\NamedRoute.cs" />
+    <Compile Include="Infrastructure\RouteConfiguration\RESTNamedRouteDefinition.cs" />
+    <Compile Include="Infrastructure\SimplePaletteBuilderFactory\DependencyResolverSimplePaletteBuilderFactory.cs" />
+    <Compile Include="Infrastructure\ContentHeaderBuilderFactory\DependencyResolverContentHeaderBuilderFactory.cs" />
+    <Compile Include="Infrastructure\DependencyConfiguration\ContentHeaderConfiguration.cs" />
+    <Compile Include="Infrastructure\DependencyConfiguration\ShiftCalendarConfiguration.cs" />
+    <Compile Include="Infrastructure\DependencyConfiguration\ShiftCalendarsListerConfiguration.cs" />
+    <Compile Include="Infrastructure\ShiftCalendarBuilderFactory\DependencyResolverShiftCalendarBuilderFactory.cs" />
+    <Compile Include="Infrastructure\ShiftCalendarsListerBuilderFactory\DependencyResolverShiftCalendarsListerBuilderFactory.cs" />
+    <Compile Include="Infrastructure\NamedRouteMetadataRepository\NamedRouteMetadataRepository.cs" />
+    <Compile Include="Infrastructure\NamedRouteMetadataRepository\DependencyConfiguration.cs" />
+    <Compile Include="Infrastructure\NamedRouteMetadataRepository\INamedRouteMetadataRepository.cs" />
+    <Compile Include="ShiftCalendarsListers\Dynamic\StaticDefinitions\BuildDynamicShiftCalendarsListerFromStaticDefinition.cs" />
+    <Compile Include="ShiftCalendarsListers\Dynamic\StaticDefinitions\Definitions\Actions\DynamicShiftCalendarsListerActionsStaticDefinitionBuilder.cs" />
+    <Compile Include="ShiftCalendarsListers\Dynamic\StaticDefinitions\Definitions\Actions\DynamicShiftCalendarsListerActionStaticDefinition.cs" />
+    <Compile Include="ShiftCalendarsListers\Dynamic\StaticDefinitions\Definitions\Actions\DynamicShiftCalendarsListerActionStaticDefinitionBuilder.cs" />
+    <Compile Include="ShiftCalendarsListers\Dynamic\StaticDefinitions\Definitions\AShiftCalendarsListerBuilderFactory.cs" />
+    <Compile Include="ShiftCalendarsListers\Dynamic\StaticDefinitions\Definitions\BuildAllShiftCalendarsListerDefinitionsDefinedInAssembly.cs" />
+    <Compile Include="ShiftCalendarsListers\Dynamic\StaticDefinitions\Definitions\DynamicShiftCalendarsListerStaticDefinition.cs" />
+    <Compile Include="ShiftCalendarsListers\Dynamic\StaticDefinitions\Definitions\DynamicShiftCalendarsListerStaticDefinitionBuilder.cs" />
+    <Compile Include="ShiftCalendarsListers\Dynamic\StaticDefinitions\Definitions\DynamicShiftCalendarsListerStaticDefinitionRepository.cs" />
+    <Compile Include="ShiftCalendarsListers\Dynamic\StaticDefinitions\Definitions\IShiftCalendarsListerDefinitionsBuilder.cs" />
+    <Compile Include="ShiftCalendarsListers\Dynamic\StaticDefinitions\Definitions\ShiftCalendarsListerDefinitionsBuilder.cs" />
+    <Compile Include="ShiftCalendarsListers\ShiftCalendarsLister.cs" />
+    <Compile Include="ShiftCalendarsListers\ShiftCalendarsListerAction.cs" />
+    <Compile Include="ShiftCalendars\Dynamic\StaticDefinitions\BuildDynamicShiftCalendarFromStaticDefinition.cs" />
+    <Compile Include="ShiftCalendars\Dynamic\StaticDefinitions\Definitions\Actions\DynamicShiftCalendarActionsStaticDefinitionBuilder.cs" />
+    <Compile Include="ShiftCalendars\Dynamic\StaticDefinitions\Definitions\Actions\DynamicShiftCalendarActionStaticDefinition.cs" />
+    <Compile Include="ShiftCalendars\Dynamic\StaticDefinitions\Definitions\Actions\DynamicShiftCalendarActionStaticDefinitionBuilder.cs" />
+    <Compile Include="ShiftCalendars\Dynamic\StaticDefinitions\Definitions\AShiftCalendarBuilderFactory.cs" />
+    <Compile Include="ShiftCalendars\Dynamic\StaticDefinitions\Definitions\BuildAllShiftCalendarDefinitionsDefinedInAssembly.cs" />
+    <Compile Include="ShiftCalendars\Dynamic\StaticDefinitions\Definitions\DynamicShiftCalendarStaticDefinition.cs" />
+    <Compile Include="ShiftCalendars\Dynamic\StaticDefinitions\Definitions\DynamicShiftCalendarStaticDefinitionBuilder.cs" />
+    <Compile Include="ShiftCalendars\Dynamic\StaticDefinitions\Definitions\DynamicShiftCalendarStaticDefinitionRepository.cs" />
+    <Compile Include="ShiftCalendars\Dynamic\StaticDefinitions\Definitions\IShiftCalendarDefinitionsBuilder.cs" />
+    <Compile Include="ShiftCalendars\Dynamic\StaticDefinitions\Definitions\ShiftCalendarDefinitionsBuilder.cs" />
+    <Compile Include="ShiftCalendars\ShiftCalendar.cs" />
+    <Compile Include="ShiftCalendars\ShiftCalendarAction.cs" />
+    <Compile Include="ShiftPatterns\Dynamic\ShiftPatternGridViewModelBuilder.cs" />
+    <Compile Include="ShiftPatterns\ShiftPattern.cs" />
+    <Compile Include="ShiftPatterns\ShiftPatternGrid.cs" />
+    <Compile Include="SimplePalettes\Dynamic\StaticDefinitions\BuildDynamicSimplePaletteFromStaticDefinition.cs" />
+    <Compile Include="SimplePalettes\Dynamic\StaticDefinitions\Definitions\ASimplePaletteBuilderFactory.cs" />
+    <Compile Include="SimplePalettes\Dynamic\StaticDefinitions\Definitions\Actions\DynamicSimplePaletteActionsStaticDefintionBuilder.cs" />
+    <Compile Include="SimplePalettes\Dynamic\StaticDefinitions\Definitions\Actions\DynamicSimplePaletteActionStaticDefinitionBuilder.cs" />
+    <Compile Include="SimplePalettes\Dynamic\StaticDefinitions\Definitions\Actions\DynamicSimplePaletteActionStaticDefintion.cs" />
+    <Compile Include="SimplePalettes\Dynamic\StaticDefinitions\Definitions\BuildAllSimplePaletteDefinitionsDefinedInAssembly.cs" />
+    <Compile Include="SimplePalettes\Dynamic\StaticDefinitions\Definitions\SimplePaletteDefinitionsBuilder.cs" />
+    <Compile Include="SimplePalettes\Dynamic\StaticDefinitions\Definitions\DynamicSimplePaletteStaticDefinitionBuilder.cs" />
+    <Compile Include="SimplePalettes\Dynamic\StaticDefinitions\Definitions\DynamicSimplePaletteStaticDefinition.cs" />
+    <Compile Include="SimplePalettes\Dynamic\StaticDefinitions\Definitions\DynamicSimplePaletteStaticDefinitionRepository.cs" />
+    <Compile Include="SimplePalettes\Dynamic\StaticDefinitions\Definitions\ISimplePaletteDefinitionsBuilder.cs" />
+    <Compile Include="SimplePalettes\SimplePalette.cs" />
+    <Compile Include="SimplePalettes\SimplePaletteAction.cs" />
+    <Compile Include="Urls\BuildUrlFromDefinition.cs" />
+    <Compile Include="Framework\ViewModels\Tiles\DynamicTiles\StaticallyDefined\BuildDynamicTileFromStaticDefinition.cs" />
+    <Compile Include="Framework\ViewModels\Tiles\StaticTiles\StaticallyDefined\Definitions\BaseStaticTileStaticDefinitionBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Tiles\StaticTiles\StaticallyDefined\Definitions\StaticTileStaticDefinition.cs" />
+    <Compile Include="Framework\ViewModels\Tiles\StaticTiles\StaticallyDefined\Definitions\StaticTileStaticDefinitionBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Tiles\StaticTiles\StaticallyDefined\BuildStaticTileFromStaticDefinition.cs" />
+    <Compile Include="Framework\ViewModels\Tiles\Tile.cs" />
+    <Compile Include="Framework\ViewModels\Tiles\TileField.cs" />
+    <Compile Include="Framework\ViewModels\ViewModelBuilder\AViewModelBuilder.cs" />
+    <Compile Include="Framework\ViewModels\ViewModelBuilder\AViewModelSectionBuilder.cs" />
+    <Compile Include="Framework\ViewModels\IsAViewElement.cs" />
+    <Compile Include="Framework\ViewModels\Reports\Actions\ReportActionMetadata.cs" />
+    <Compile Include="Framework\ViewModels\Reports\Report.cs" />
+    <Compile Include="Framework\ViewModels\Page\Metadata\Static\IPageMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Page\Metadata\Static\PageMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Page\Metadata\Static\Model\IPageModelMetadataBuilder.cs" />
+    <Compile Include="Framework\ViewModels\ANullViewElement.cs" />
+    <Compile Include="Framework\ViewModels\Reports\ReportBuilder.cs" />
+    <Compile Include="Infrastructure\ActionDefinitions\DetailsList\New.cs" />
+    <Compile Include="Infrastructure\ActionDefinitions\DetailsList\Remove.cs" />
+    <Compile Include="Infrastructure\ActionDefinitions\DetailsList\Reorder.cs" />
+    <Compile Include="Infrastructure\ActionDefinitions\Editor\Cancel.cs" />
+    <Compile Include="Infrastructure\ActionDefinitions\Editor\Remove.cs" />
+    <Compile Include="Infrastructure\ActionDefinitions\Editor\Save.cs" />
+    <Compile Include="Infrastructure\ActionDefinitions\Entity\Remove.cs" />
+    <Compile Include="Infrastructure\ActionDefinitions\Report\Download.cs" />
+    <Compile Include="Infrastructure\ActionDefinitions\Report\Edit.cs" />
+    <Compile Include="Framework\ViewModels\BreadCrumbNavigation\Model\NavigationItem.cs" />
+    <Compile Include="Infrastructure\Cookies\RequestCookies\DependencyConfiguration.cs" />
+    <Compile Include="Infrastructure\Cookies\RequestCookies\HttpRequestCookies.cs" />
+    <Compile Include="Infrastructure\Cookies\RequestCookies\IRequestCookies.cs" />
+    <Compile Include="Infrastructure\Cookies\ResponseCookies\DependencyConfiguration.cs" />
+    <Compile Include="Infrastructure\Cookies\ResponseCookies\HttpResponseCookies.cs" />
+    <Compile Include="Infrastructure\Cookies\ResponseCookies\IResponseCookies.cs" />
+    <Compile Include="Infrastructure\DependencyConfiguration\DetailsListConfiguration.cs" />
+    <Compile Include="Infrastructure\DependencyConfiguration\EditorConfiguration.cs" />
+    <Compile Include="Infrastructure\DependencyConfiguration\PageConfiguration.cs" />
+    <Compile Include="Infrastructure\DependencyConfiguration\ReportConfiguration.cs" />
+    <Compile Include="Infrastructure\DependencyConfiguration\RouteBuilderConfiguration.cs" />
+    <Compile Include="Infrastructure\DependencyConfiguration\TableConfiguration.cs" />
+    <Compile Include="Infrastructure\DependencyConfiguration\LibraryConfiguration.cs" />
+    <Compile Include="Infrastructure\DependencyConfiguration\TileConfiguration.cs" />
+    <Compile Include="Infrastructure\DependencyConfiguration\ViewModelBuilderConfiguration.cs" />
+    <Compile Include="Infrastructure\EditorBuilderFactory\DependencyResolverEditorBuilderFactory.cs" />
+    <Compile Include="Infrastructure\Filters\DisableCachingFilter.cs" />
+    <Compile Include="Infrastructure\ReportBuilderFactory\DependencyResolverDetailsListBuilderFactory.cs" />
+    <Compile Include="Infrastructure\ReportBuilderFactory\DependencyResolverReportBuilderFactory.cs" />
+    <Compile Include="Infrastructure\RouteConfiguration\SimpleNamedRouteDefinition.cs" />
+    <Compile Include="Infrastructure\RouteConfiguration\NamedRouteDefinition.cs" />
+    <Compile Include="Framework\ViewModels\Page\Metadata\Static\Model\PageModelMetadataRepository.cs" />
+    <Compile Include="Framework\ViewModels\Page\Model\IPageModelMetadataRepository.cs" />
+    <Compile Include="Framework\ViewModels\Page\Model\PageModelMetatdata.cs" />
+    <Compile Include="Infrastructure\ControllerFactory\IPresenter.cs" />
+    <Compile Include="Infrastructure\ControllerFactory\Presenter.cs" />
+    <Compile Include="Infrastructure\ControllerFactory\PresenterAndControllerFactory.cs" />
+    <Compile Include="Infrastructure\ControllerFactory\PresenterDictionary.cs" />
+    <Compile Include="Infrastructure\UrlBuilder\NamedRouteUrlBuildDefinition.cs" />
+    <Compile Include="Infrastructure\UrlBuilder\INamedRouteUrlBuilder.cs" />
+    <Compile Include="Infrastructure\UrlBuilder\NamedRouteUrlDictionaryBuildDefinition.cs" />
+    <Compile Include="Infrastructure\UrlBuilder\NamedRouteUrlObjectBuildDefinition.cs" />
+    <Compile Include="Infrastructure\UrlBuilder\NamedRouteUrlBuilder.cs" />
+    <Compile Include="Urls\UrlDefinition.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\PlannedSupply.Services\PlannedSupply.Services.csproj">
+      <Project>{1E90397A-D33C-42F3-AE41-C1925820F3D8}</Project>
+      <Name>PlannedSupply.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Worksuite\Domains\HR\src\Services\HR.Services.csproj">
+      <Project>{3D42E5CB-8885-42A6-A018-1C0F1D369123}</Project>
+      <Name>HR.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WorkSuite.Library.CodeStrutures\WorkSuite.Library.CodeStrutures.csproj">
+      <Project>{249BE708-3014-4584-9E14-CB087E54916E}</Project>
+      <Name>WorkSuite.Library.CodeStrutures</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WorkSuite.Library.DomainTypes\WorkSuite.Library.DomainTypes.csproj">
+      <Project>{538C6F62-B398-41F1-917C-10659FDF6C78}</Project>
+      <Name>WorkSuite.Library.DomainTypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WorkSuite.Library.Ninject\WorkSuite.Library.Ninject.csproj">
+      <Project>{FA9854F9-6908-483A-AE63-9354249E74BC}</Project>
+      <Name>WorkSuite.Library.Ninject</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Framework\ViewModels\Primitives\UserActions\Configuration\Static\FieldMetadataBuilder\" />
+    <Folder Include="Framework\ViewModels\Tiles\DynamicTiles\StaticallyDefined\Definitions\Url\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

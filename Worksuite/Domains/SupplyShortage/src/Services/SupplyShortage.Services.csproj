@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{64491FBA-1797-42C3-9420-C64DE0FA00FF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WTS.WorkSuite.SupplyShortage</RootNamespace>
+    <AssemblyName>WTS.WorkSuite.SupplyShortage.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Employee\Holiday\addHoliday\AddHolidayRequest.cs" />
+    <Compile Include="Employee\Holiday\addHoliday\get\GetAddHolidayRequest.cs" />
+    <Compile Include="Employee\Holiday\addHoliday\get\GetAddHolidayResponse.cs" />
+    <Compile Include="Employee\Holiday\addHoliday\get\IGetAddHolidayRequestHandler.cs" />
+    <Compile Include="Employee\Holiday\addHoliday\post\AddHolidayResponse.cs" />
+    <Compile Include="Employee\Holiday\addHoliday\post\AddHolidayRequestHandlerStatuses.cs" />
+    <Compile Include="Employee\Holiday\addHoliday\post\IAddHolidayRequestHandler.cs" />
+    <Compile Include="Employee\Holiday\events\HolidayCreatedEvent.cs" />
+    <Compile Include="Employee\Holiday\events\HolidayRemovedEvent.cs" />
+    <Compile Include="Employee\Holiday\removeHoliday\RemoveHolidayResponse.cs" />
+    <Compile Include="Employee\Holiday\removeHoliday\IRemoveHolidayRequestHandler.cs" />
+    <Compile Include="Employee\Holiday\removeHoliday\RemoveHolidayRequest.cs" />
+    <Compile Include="Employee\Sickness\events\SicknessCreatedEvent.cs" />
+    <Compile Include="Employee\Holiday\HolidayIdentity.cs" />
+    <Compile Include="Employee\Sickness\addSickness\AddSicknessRequest.cs" />
+    <Compile Include="Employee\Sickness\addSickness\get\GetAddSicknessRequest.cs" />
+    <Compile Include="Employee\Sickness\addSickness\get\GetAddSicknessResponse.cs" />
+    <Compile Include="Employee\Sickness\addSickness\get\IGetAddSicknessRequestHandler.cs" />
+    <Compile Include="Employee\Sickness\addSickness\post\AddSicknessRequestHandlerStatuses.cs" />
+    <Compile Include="Employee\Sickness\addSickness\post\AddSicknessResponse.cs" />
+    <Compile Include="Employee\Sickness\addSickness\post\IAddSicknessRequestHandler.cs" />
+    <Compile Include="Employee\Sickness\events\SicknessRemovedEvent.cs" />
+    <Compile Include="Employee\Sickness\removeSickness\IRemoveSicknessRequestHandler.cs" />
+    <Compile Include="Employee\Sickness\removeSickness\RemoveSicknessRequest.cs" />
+    <Compile Include="Employee\Sickness\removeSickness\RemoveSicknessResponse.cs" />
+    <Compile Include="Employee\Sickness\SicknessIdentity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.CodeStrutures\WorkSuite.Library.CodeStrutures.csproj">
+      <Project>{249BE708-3014-4584-9E14-CB087E54916E}</Project>
+      <Name>WorkSuite.Library.CodeStrutures</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.DomainTypes\WorkSuite.Library.DomainTypes.csproj">
+      <Project>{538C6F62-B398-41F1-917C-10659FDF6C78}</Project>
+      <Name>WorkSuite.Library.DomainTypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Core\src\Worksuite.Core\Worksuite.Core.csproj">
+      <Project>{1df54fed-2bc7-4317-b32e-53135723b267}</Project>
+      <Name>Worksuite.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

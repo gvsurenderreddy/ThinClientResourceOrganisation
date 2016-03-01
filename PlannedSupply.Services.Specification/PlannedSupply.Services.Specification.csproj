@@ -1,0 +1,495 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D29AC509-D1F2-4F81-97F7-9CD3E486184A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WTS.WorkSuite.PlannedSupply.Services</RootNamespace>
+    <AssemblyName>WTS.WorkSuite.PlannedSupply.Services.Specification</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentAssertions">
+      <HintPath>..\packages\FluentAssertions.3.0.107\lib\net45\FluentAssertions.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentAssertions.Core">
+      <HintPath>..\packages\FluentAssertions.3.0.107\lib\net45\FluentAssertions.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Domain\BreakTemplates\Break\Features\Edit\ClashingBreaksValidationOnUpdate.cs" />
+    <Compile Include="Domain\BreakTemplates\Break\Features\New\ClashingBreaksValidationOnNewBreak.cs" />
+    <Compile Include="Domain\HR\Employees\Events\Created\EmployeeCreatedEventSpecification.cs" />
+    <Compile Include="Domain\HR\Employees\Events\Created\EmployeeCreatedFixture.cs" />
+    <Compile Include="Domain\HR\Employees\Events\Created\Creates_an_employee_record_in_the_plannedsupply_domain.cs" />
+    <Compile Include="Domain\HR\Employees\Events\Removed\EmployeeRemovedEventFixture.cs" />
+    <Compile Include="Domain\HR\Employees\Events\Removed\event_handler_will.cs" />
+    <Compile Include="Domain\OperationsCalendar\Features\Edit\UpdateOperationsCalendarFixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\Features\Edit\UpdateOperationsCalendarRequestHelper.cs" />
+    <Compile Include="Domain\OperationsCalendar\Features\Edit\Update_operations_calendar_should_commit_changes.cs" />
+    <Compile Include="Domain\OperationsCalendar\Features\GetAll\GetAllFixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\Features\GetAll\Should_correctly_maps_the_field.cs" />
+    <Compile Include="Domain\OperationsCalendar\Features\GetAll\Should_order_all_operations_calendars_by.cs" />
+    <Compile Include="Domain\OperationsCalendar\Features\GetAll\Should_return.cs" />
+    <Compile Include="Domain\OperationsCalendar\Features\New\NewOperationsCalendarFixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\Features\New\NewOperationsCalendarRequestHelper.cs" />
+    <Compile Include="Domain\OperationsCalendar\Features\GetByIdAndDateRange\GetByIdAndDateRangeFixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\Features\GetByIdAndDateRange\Should_correctly_maps_the_field.cs" />
+    <Compile Include="Domain\OperationsCalendar\Features\New\New_operations_caledar_will_publish_an_operation_calendar_created_event.cs" />
+    <Compile Include="Domain\OperationsCalendar\Features\New\New_operations_calendar_will_commit_changes.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\Features\Edit\Get_update_shift_calendar_request_should.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\Features\Edit\Update_shift_calendar_will_publish_a_shift_calendar_updated_event.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\Features\GetDetailsById\Fixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\Features\GetDetailsById\RequestHelper.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\Features\GetDetailsById\returns.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\Features\GetDetailsById\Specification.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\Features\New\New_shift_calendar_will_publish_a_shift_calendar_created_event.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\Features\Publish\PublishEventShiftCalendarFixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\Features\Publish\PublishEventShiftCalendarFixtureOld.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\Features\Publish\publish_shift_calendar_will_publish_a_shift_information.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\Features\Publish\PublishDatesShiftCalendarValidation.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\Features\Publish\GetPublishShiftCalendarRequest\GetPublishCalendarDetailsByIdFixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\Features\Publish\GetPublishShiftCalendarRequest\GetPublishCalendarDetailsByIdSpecification.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\Features\Publish\GetPublishShiftCalendarRequest\PublishCalendarIdentityRequestHelper.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\Features\Publish\GetPublishShiftCalendarRequest\returns.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\Features\Publish\PublishDatesShiftCalendarFixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\Features\Publish\PublishDatesShiftCalendarRequestHelper.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\Features\Publish\PublishShiftCalendarValidationForErrorMessages.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\Features\Publish\PublishShiftCalendarValidationForErrorMessagesFixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\Features\Publish\Publish_shift_calendar_will_publish_a_shift_calendar_publish_event.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\Features\Remove\RemoveShiftCalendarFixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\Features\Remove\Remove_shift_calendar_will_publish_a_shift_calendar_removed_event.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\Fields\CalendarName\A_shift_calendar_name_is_included_in_shift_calendar_events.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\Fields\EndDate\EndDateSanitisation.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\Fields\EndDate\EndDateShouldBeMandatory.cs" />
+    <Compile Include="Helpers\SpecificationTemplates\ForDomainLogic\MandatoryDateFieldSpecification.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\Fields\StartDate\StartDateShouldBeMandatory.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\Fields\StartDate\StartDateSanitisation.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\Features\Edit\Update_shift_calendar_pattern_will_publish_a_shift_calendar_pattern_updated_event.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\Features\GetDetailsById\GetShiftCalendarPatternFixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\Features\GetDetailsById\should_return.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\Features\GetDetailsById\GetShiftCalendarPatternSpecification.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\Features\New\New_shift_calendar_pattern_will_publish_auto_reordered_events.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\Features\New\New_shift_calendar_pattern_will_publish_a_shift_calendar_created_event.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\Features\Remove\RemoveShiftCalendarPatternFixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\Features\Remove\Remove_shift_calendar_pattern_should.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\Features\Remove\Remove_shift_calendar_pattern_will_publish_a_shift_calendar_pattern_removed_event.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\Features\ReorderShiftCalendarPatternSpecifiction.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\Features\Remove\Remove_shift_calendar_pattern_will_publish_auto_reordered_events.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\Features\Reorder\ReorderShiftCalendarPatternFixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\Features\Reorder\Reorder_shift_calendar_pattern_will.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\Features\Reorder\Reorder_shift_calendar_pattern_will_publish_shift_calendar_pattern_reordered_events.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\Fields\NumberOfResources\A_default_number_of_resources_is_not_supplied_to_force_user_entry.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\Fields\NumberOfResources\A_shift_calendar_pattern_number_of_resources_should_be_mandatory.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ResourceAllocation\Features\Create\AllocateResourceFixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ResourceAllocation\Features\Create\should_add.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ResourceAllocation\Features\Queries\GetByCalendar\GetResourceAllocationsFixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ResourceAllocation\Features\Queries\GetByCalendar\GetResourceAllocationsSpecification.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ResourceAllocation\Features\Queries\GetByCalendar\Should_return.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ResourceAllocation\Features\Queries\GetByPattern\GetResourceAllocationsFixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ResourceAllocation\Features\Queries\GetByPattern\GetResourceAllocationsSpecification.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ResourceAllocation\Features\Queries\GetByPattern\Should_return.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ResourceAllocation\Features\Remove\PlannedSupplyRemovedEventFixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ResourceAllocation\Features\Remove\remove_will.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ResourceAllocation\Fields\Created_Date\get_by_pattern_will.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ResourceAllocation\Fields\EmployeeId\get_by_calendar_will.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ResourceAllocation\Fields\EmployeeId\get_by_pattern_will.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\AggregateRoot\FindOrCreate\command_will.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\AggregateRoot\FindOrCreate\Fixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\AggregateRoot\FindOrCreate\RequestHelper.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\AggregateRoot\FindOrCreate\Specification.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Features\EditAll\ClashingShiftValidationOnEditAll.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Features\EditAll\CommandWill.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Features\EditAll\EditAllShiftOccurrences_should.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Features\EditAll\EditSingleShiftOccurrenceRequestHelper.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Features\EditAll\GetEditAllShiftOccurrences_should.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Features\Edit\ClashingShiftValidationOnUpdate.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Features\Edit\EditSingleShiftOccurrenceFixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Features\Edit\EditSingleShiftOccurrenceRequestHelper.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Features\Edit\EditSingleShiftOccurrence_Should_Commite_Changes.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Features\Edit\EditSingleShiftOccurrence_will.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Features\Edit\GetEditSingleShiftOccurrence_should.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Features\GetRemoveRequest\correctly_maps_the_fields.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Features\GetAllDetails\GetAllOccurrencesDetailsFixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Features\GetAllDetails\GetAllOccurrencesDetailsSpecification.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Features\GetAllDetails\returns.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Features\GetShiftDetailsByStartDate\ShouldCorrectlyReturn.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Features\GetSingleDetails\GetSingleOccurenceDetailsRequestHelper.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Features\GetSingleDetails\GetSingleOccurrenceDetailsFixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Features\GetSingleDetails\GetSingleOccurrenceDetailsSpecification.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Features\GetSingleDetails\returns.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Features\NewFromTemplate\ClashingShiftValidationOnNewFromTemplate.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Features\NewFromTemplate\NewShiftOccurrenceFromShiftTemplate_will.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Features\New\ClashingShiftValidationOnCreate.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Features\ShiftOccurrencesFixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Features\EditAll\EditAllShiftOccurrencesFixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Features\GetRemoveRequest\GetRemoveRequestFixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Features\GetRemoveRequest\returns.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Features\NewFromTemplate\NewShiftOccurrenceFromShiftTemplateFixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Features\NewFromTemplate\NewShiftOccurrenceFromShiftTemplateRequestHelper.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Features\NewFromTemplate\NewShiftOccurrenceFromShiftTemplate_should_commit_changes.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Features\New\NewShiftOccurrenceFixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Features\New\NewShiftOccurrenceRequestHelper.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Features\New\NewShiftOccurrence_will.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Features\New\NewShiftOccurrence_should_commit_changes.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Fields\Colour\colour_picker_defualt_value.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Fields\Colour\get_all_occurrences_details_will.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Fields\Colour\get_single_occurrence_details_will.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Fields\Colour\Is_valid.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Fields\Duration\duration_should_be_mandatory.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Fields\Duration\get_all_occurrences_details_will.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Fields\Duration\get_single_occurrence_details_will.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Fields\Duration\Is_valid.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Fields\ShiftTitle\A_shift_title_should_be_mandatory.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Fields\ShiftTitle\get_all_occurrences_details_will.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Fields\ShiftTitle\get_single_occurrence_details_will.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Fields\StartDate\get_single_occurrence_details_will.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Fields\StartTime\get_all_occurrences_details_will.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Fields\StartTime\get_single_occurrence_details_will.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Fields\StartTime\Is_valid.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Fields\StartTime\Start_time_should_be_mandatory.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Features\RemoveAll\RemoveAllShiftOccurrenceFixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Features\RemoveAll\RemoveAllShiftOccurrenceRequestHelper.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Features\RemoveAll\Remove_shift_occurrence_should.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Features\Remove\RemoveShiftOccurrenceRequestHelper.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Features\Remove\RemoveShiftOccurrenceFixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\Features\Remove\Remove_shift_occurrence_should.cs" />
+    <Compile Include="Domain\BreakTemplates\Features\Edit\GetUpdateBreakTemplateRequest.cs" />
+    <Compile Include="Domain\BreakTemplates\Features\Edit\UpdateBreakTeamplateFixture.cs" />
+    <Compile Include="Domain\BreakTemplates\Features\Edit\UpdateBreakTemplateRequestHelper.cs" />
+    <Compile Include="Domain\BreakTemplates\Features\Edit\UpdateBreakTemplate_should_commit_changes.cs" />
+    <Compile Include="Domain\BreakTemplates\Features\New\GetNewBreakTemplateRequest_should.cs" />
+    <Compile Include="Domain\BreakTemplates\Features\New\NewBreakTemplateFixture.cs" />
+    <Compile Include="Domain\BreakTemplates\Features\New\NewBreakTemplateRequestHelper.cs" />
+    <Compile Include="Domain\BreakTemplates\Features\New\NewBreakTemplate_should_commit_changes.cs" />
+    <Compile Include="Domain\BreakTemplates\Features\Queries\GetAllEligibleForShiftTemplate\GetAllBreakTemplatesForShiftTemplateFixture.cs" />
+    <Compile Include="Domain\BreakTemplates\Features\Queries\GetAll\GetAllBreakTemplatesFixture.cs" />
+    <Compile Include="Domain\BreakTemplates\Features\Queries\GetAll\GetAllBreakTemplates_should_correctly_maps_the_field.cs" />
+    <Compile Include="Domain\BreakTemplates\Features\Queries\GetAll\GetAllBreakTemplates_should_order_all_shift_break_templates_by.cs" />
+    <Compile Include="Domain\BreakTemplates\Features\Queries\GetAll\GetAllBreakTemplates_should_return.cs" />
+    <Compile Include="Domain\BreakTemplates\Features\Queries\GetById\GetBreakTemplateByIdFixture.cs" />
+    <Compile Include="Domain\BreakTemplates\Features\Queries\GetById\GetBreakTemplateById_should_maps_the_field.cs" />
+    <Compile Include="Domain\BreakTemplates\Features\Remove\RemoveBreakTemplate_should.cs" />
+    <Compile Include="Domain\BreakTemplates\Fields\TemplateName\TemplateName_can_be_specified_for_a_break_template.cs" />
+    <Compile Include="Domain\BreakTemplates\Fields\TemplateName\TemplateName_for_a_break_template.cs" />
+    <Compile Include="Domain\BreakTemplates\Fields\TemplateName\TemplateName_should_be_mandatory.cs" />
+    <Compile Include="Domain\BreakTemplates\Fields\TemplateName\TemplateName_should_be_restricted_to_the_maximum_number_of_characters.cs" />
+    <Compile Include="Domain\BreakTemplates\Fields\TemplateName\TemplateName_should_be_unique.cs" />
+    <Compile Include="Domain\BreakTemplates\Break\Features\Edit\GetUpdateBreakRequest_should.cs" />
+    <Compile Include="Domain\BreakTemplates\Break\Features\Edit\UpdateBreakFixture.cs" />
+    <Compile Include="Domain\BreakTemplates\Break\Features\Edit\UpdateBreakRequestHelper.cs" />
+    <Compile Include="Domain\BreakTemplates\Break\Features\Edit\UpdateBreak_should_Commit_changes.cs" />
+    <Compile Include="Domain\BreakTemplates\Break\Features\Edit\Update_break_fixture_should.cs" />
+    <Compile Include="Domain\BreakTemplates\Break\Features\New\GetNewBreakRequest_should.cs" />
+    <Compile Include="Domain\BreakTemplates\Break\Features\New\NewBreakFixture.cs" />
+    <Compile Include="Domain\BreakTemplates\Break\Features\New\NewBreakRequestHelper.cs" />
+    <Compile Include="Domain\BreakTemplates\Break\Features\New\NewBreak_should_commit_changes.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Features\ApplyFromTemplateForAll\command_will.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Features\ApplyFromTemplateForAll\Fixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Features\ApplyFromTemplateForAll\should_commit_changes.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Features\ApplyFromTemplate\ApplyShiftBreaksFromBreakTemplateFixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Features\ApplyFromTemplate\ApplyShiftBreaksFromBreakTemplateRequestHelper.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Features\ApplyFromTemplate\command_will.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Features\ApplyFromTemplate\should_commit_changes.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Features\EditShiftBreakForAll\command_will.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Features\EditShiftBreakForAll\Fixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Features\EditShiftBreakForAll\should_commit_changes.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Features\EditShiftBreak\ClashingBreakValidation.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Features\EditShiftBreak\command_will.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Features\NewShiftBreakForAll\commandWill.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Features\NewShiftBreakForAll\Fixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Features\NewShiftBreakForAll\should_commit_changes.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Features\NewShiftBreak\ClashingBreakValidation.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Features\NewShiftBreak\commandWill.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Features\RemoveShiftBreakForAll\command_will.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Features\RemoveShiftBreakForAll\Fixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Features\RemoveShiftBreakForAll\should_commit_changes.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Features\RemoveShiftBreak\command_will.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Features\RemoveShiftBreak\RemoveShiftBreakFixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Features\RemoveShiftBreak\RemoveShiftBreakRequestHelper.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Features\RemoveShiftBreak\should_commit_changes.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Features\GetAll\GetAllShiftBreaksRequestHelper.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Features\GetAll\GetAllShiftBreaksFixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Features\GetAll\GetAllShiftBreaksSpecification.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Features\GetAll\returns.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Features\GetApplyFromTemplateRequest\Fixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Features\GetApplyFromTemplateRequest\returns.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Features\GetNewRequest\Fixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Features\GetNewRequest\returns.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Features\EditShiftBreak\EditShiftBreakFixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Features\EditShiftBreak\EditShiftBreakRequestHelper.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Features\EditShiftBreak\should_commit_changes.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Features\NewShiftBreak\NewShiftBreakFixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Features\NewShiftBreak\NewShiftBreakRequestHelper.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Features\NewShiftBreak\should_commit_changes.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Fields\duration\DurationShouldBeMandatory.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Fields\duration\IsValid.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Fields\is_paid\get_all_shift_breaks_will.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Fields\duration\get_all_shift_breaks_will.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Fields\offset\get_all_shift_breaks_will.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Fields\offset\IsValid.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\Fields\offset\OffsetShouldBeMandatory.cs" />
+    <Compile Include="Domain\ShiftTemplates\Features\ShiftDetails\GetAllEligibleForShiftTemplate\GetAllEligibleShiftBreakTemplateForAShiftTemplate.cs" />
+    <Compile Include="Domain\BreakTemplates\Break\Features\Queries\GetAll\GetDetailsOfAllBreaksFixture.cs" />
+    <Compile Include="Domain\BreakTemplates\Break\Features\Queries\GetAll\GetDetailsOfAllBreaks_should_map.cs" />
+    <Compile Include="Domain\BreakTemplates\Break\Features\Queries\GetAll\GetDetailsOfAllBreaks_should_order.cs" />
+    <Compile Include="Domain\BreakTemplates\Break\Features\Queries\GetAll\GetDetailsOfAllBreaks_should_return.cs" />
+    <Compile Include="Domain\BreakTemplates\Break\Features\Remove\GetRemoveBreakRequest_should.cs" />
+    <Compile Include="Domain\BreakTemplates\Break\Features\Remove\RemoveBreakFixture.cs" />
+    <Compile Include="Domain\BreakTemplates\Break\Features\Remove\RemoveBreakRequestHelper.cs" />
+    <Compile Include="Domain\BreakTemplates\Break\Features\Remove\RemoveBreak_should.cs" />
+    <Compile Include="Domain\BreakTemplates\Break\Fields\duration\Duration_should_be_mandatory.cs" />
+    <Compile Include="Domain\BreakTemplates\Break\Fields\duration\Duration_should_be_valid_when_both_hours_and_minutes_are_valid.cs" />
+    <Compile Include="Domain\BreakTemplates\Break\Fields\duration\Duration_should_be_valid_when_hours_must_be_between_zero_and_twenty_four.cs" />
+    <Compile Include="Domain\BreakTemplates\Break\Fields\duration\Duration_should_be_valid_when_minutes_must_be_between_zero_and_fifty_nine.cs" />
+    <Compile Include="Domain\BreakTemplates\Break\Fields\duration\Duration_should_be_valid_when_the_value_is_between_one_minute_and_twenty_four_hours.cs" />
+    <Compile Include="Domain\BreakTemplates\Break\Fields\duration\The_value_of_duration_is_mapped_to_the_duration_field.cs" />
+    <Compile Include="Domain\BreakTemplates\Break\Fields\is_paid\The_value_of_is_paid_is_mapped_to_the_is_paid_field.cs" />
+    <Compile Include="Domain\BreakTemplates\Break\Fields\off_set_in_seconds\Off_set_should_be_mandatory.cs" />
+    <Compile Include="Domain\BreakTemplates\Break\Fields\off_set_in_seconds\Off_set_should_be_valid_when_both_hours_and_minutes_are_valid.cs" />
+    <Compile Include="Domain\BreakTemplates\Break\Fields\off_set_in_seconds\Off_set_should_be_valid_when_hours_must_be_between_zero_and_twenty_four.cs" />
+    <Compile Include="Domain\BreakTemplates\Break\Fields\off_set_in_seconds\Off_set_should_be_valid_when_minutes_must_be_between_zero_and_fifty_nine.cs" />
+    <Compile Include="Domain\BreakTemplates\Break\Fields\off_set_in_seconds\Off_set_should_be_valid_when_the_value_is_between_zero_and_twenty_four_hours.cs" />
+    <Compile Include="Domain\BreakTemplates\Break\Fields\off_set_in_seconds\The_value_of_off_set_is_mapped_to_the_off_set_field.cs" />
+    <Compile Include="Domain\ShiftTemplates\Features\Remove\RemoveFixture.cs" />
+    <Compile Include="Domain\ShiftTemplates\Features\Remove\RemoveRequestHelper.cs" />
+    <Compile Include="Domain\OperationsCalendar\Features\Remove\Remove_operations_calendar_should.cs" />
+    <Compile Include="Domain\ShiftTemplates\Features\Remove\Remove_will.cs" />
+    <Compile Include="Domain\OperationsCalendar\Fields\CalendarName\An_operations_calendar_name_should_be_restricted_to_the_maximum_number_of_characters.cs" />
+    <Compile Include="Domain\OperationsCalendar\Fields\CalendarName\An_operations_calendar_name_should_be_mandatory.cs" />
+    <Compile Include="Domain\OperationsCalendar\Fields\CalendarName\A_name_can_be_specified_for_an_operations_calendar.cs" />
+    <Compile Include="Domain\OperationsCalendar\Fields\CalendarName\A_default_name_for_an_operations_calendar_is_not_supplied_to_force_user_entry.cs" />
+    <Compile Include="Domain\OperationsCalendar\Fields\CalendarName\An_operations_calendar_name_should_be_unique.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\Features\Edit\UpdateShiftCalendarFixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\Features\Edit\UpdateShiftCalendarRequestHelper.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\Features\Edit\Update_shift_calendar_should_commit_changes.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\Features\New\NewShiftCalendarFixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\Features\New\NewShiftCalendarRequestHelper.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\Features\New\New_shift_calendar_should_commit_changes.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\Features\Remove\Remove_shift_calendar_should.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\Fields\CalendarName\A_default_name_for_a_shift_calendar_is_not_supplied_to_force_user_entry.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\Fields\CalendarName\A_name_can_be_specified_for_a_shift_calendar.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\Fields\CalendarName\A_shift_calendar_name_should_be_mandatory.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\Fields\CalendarName\A_shift_calendar_name_should_be_restricted_to_the_maximum_number_of_characters.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\Fields\CalendarName\A_shift_calendar_name_should_be_unique.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\Features\Edit\UpdateShiftCalendarPatternFixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\Features\Edit\UpdateShiftCalendarPatternRequestHelper.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\Features\Edit\Update_shift_calendar_pattern_should_commit_changes.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\Features\New\NewShiftCalendarPatternFixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\Features\New\NewShiftCalendarPatternRequestHelper.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\Features\New\NewShiftCalendarPattern_should_commit_changes.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\Features\Queries\GetDetailsOfAllShiftCalendarPatterns\GetDetailsOfAllShiftCalendarPatternsFixture.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\Features\Queries\GetDetailsOfAllShiftCalendarPatterns\Should_correctly_maps_the_field.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\Features\Queries\GetDetailsOfAllShiftCalendarPatterns\Should_order_all_shift_calendar_patterns_by.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\Features\Queries\GetDetailsOfAllShiftCalendarPatterns\Should_return.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\Fields\Name\A_default_name_for_a_shift_calendar_pattern_is_not_supplied_to_force_user_entry.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\Fields\Name\A_name_can_be_specified_for_a_shift_calendar_pattern.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\Fields\Name\A_shift_calendar_pattern_name_should_be_mandatory.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\Fields\Name\A_shift_calendar_pattern_name_should_be_restricted_to_the_maximum_number_of_characters.cs" />
+    <Compile Include="Domain\OperationsCalendar\ShiftCalendar\ShiftCalendarPatterns\Fields\Name\A_shift_calendar_pattern_name_should_be_unique.cs" />
+    <Compile Include="Domain\ShiftTemplates\Features\Edit\UpdateShiftTemplateFixture.cs" />
+    <Compile Include="Domain\ShiftTemplates\Features\Edit\UpdateShiftTemplateRequestHelper.cs" />
+    <Compile Include="Domain\ShiftTemplates\Features\Edit\Update_will.cs" />
+    <Compile Include="Domain\ShiftTemplates\Features\Remove\Remove_shift_template_should.cs" />
+    <Compile Include="Domain\ShiftTemplates\Features\ShiftDetails\GetAllEligibleForShiftTemplate\GetAllEligibleShiftBreakTemplatesForAShiftTemplateFixture.cs" />
+    <Compile Include="Domain\ShiftTemplates\Features\ShiftDetails\GetAll\Correctly_maps_the_fields.cs" />
+    <Compile Include="Domain\ShiftTemplates\Features\ShiftDetails\GetAll\GetAllFixture.cs" />
+    <Compile Include="Domain\ShiftTemplates\Features\ShiftDetails\GetAll\Returns.cs" />
+    <Compile Include="Domain\ShiftTemplates\Features\New\NewShiftTemplatesFixture.cs" />
+    <Compile Include="Domain\ShiftTemplates\Features\New\ShiftTemplatesRequestHelper.cs" />
+    <Compile Include="Domain\ShiftTemplates\Features\New\New_shift_template_will.cs" />
+    <Compile Include="Domain\ShiftTemplates\Fields\Colour\colour_picker_defualt_value.cs" />
+    <Compile Include="Domain\ShiftTemplates\Fields\Colour\Is_valid.cs" />
+    <Compile Include="Domain\ShiftTemplates\Fields\Colour\validate_colour_field.cs" />
+    <Compile Include="Domain\ShiftTemplates\Fields\Duration\Is_valid.cs" />
+    <Compile Include="Domain\ShiftTemplates\Fields\StartTime\Is_valid.cs" />
+    <Compile Include="Helpers\Domain\HR\Employee\DependencyConfiguration.cs" />
+    <Compile Include="Helpers\Domain\HR\Employee\FakeEmployeeRepository.cs" />
+    <Compile Include="Helpers\Domain\PlannedSupply\OperationsCalendars\ShiftCalendars\ShiftCalendarIdentityHelper.cs" />
+    <Compile Include="Helpers\Domain\PlannedSupply\OperationsCalendars\ShiftCalendars\ShiftCalendarPatterns\ResourceAllocations\DependencyConfiguration.cs" />
+    <Compile Include="Helpers\Domain\PlannedSupply\OperationsCalendars\ShiftCalendars\ShiftCalendarPatterns\ResourceAllocations\FakeResourceAllocationRepository.cs" />
+    <Compile Include="Helpers\Domain\PlannedSupply\OperationsCalendars\ShiftCalendars\ShiftCalendarPatterns\ResourceAllocations\ResourceAllocationBuilder.cs" />
+    <Compile Include="Helpers\Domain\PlannedSupply\OperationsCalendars\ShiftCalendars\ShiftCalendarPatterns\ResourceAllocations\ResourceAllocationHelper.cs" />
+    <Compile Include="Helpers\Domain\PlannedSupply\OperationsCalendars\ShiftCalendars\ShiftCalendarPatterns\ShiftCalendarPatternIdentityHelper.cs" />
+    <Compile Include="Helpers\Domain\PlannedSupply\OperationsCalendars\ShiftCalendars\ShiftCalendarPatterns\ShiftOccurrence\DependencyConfiguration.cs" />
+    <Compile Include="Helpers\Domain\PlannedSupply\OperationsCalendars\ShiftCalendars\ShiftCalendarPatterns\ShiftOccurrence\FakeShiftOccurrenceRepository.cs" />
+    <Compile Include="Helpers\Domain\PlannedSupply\OperationsCalendars\ShiftCalendars\ShiftCalendarPatterns\ShiftOccurrence\ShiftBreaks\DependencyConfiguration.cs" />
+    <Compile Include="Helpers\Domain\PlannedSupply\OperationsCalendars\ShiftCalendars\ShiftCalendarPatterns\ShiftOccurrence\ShiftOccurrenceBuilder.cs" />
+    <Compile Include="Helpers\Domain\PlannedSupply\OperationsCalendars\ShiftCalendars\ShiftCalendarPatterns\ShiftOccurrence\ShiftOccurrenceHelper.cs" />
+    <Compile Include="Helpers\Domain\ShiftBreakTemplates\DependencyConfiguration.cs" />
+    <Compile Include="Helpers\Domain\ShiftBreakTemplates\FakeShiftBreakTemplateRepository.cs" />
+    <Compile Include="Helpers\Domain\ShiftBreakTemplates\ShiftBreaks\DependencyConfiguration.cs" />
+    <Compile Include="Helpers\Domain\ShiftBreakTemplates\ShiftBreaks\FakeShiftBreakRepository.cs" />
+    <Compile Include="Helpers\Domain\ShiftBreakTemplates\ShiftBreaks\ShiftBreakBuilder.cs" />
+    <Compile Include="Helpers\Domain\ShiftBreakTemplates\ShiftBreaks\ShiftBreakHelper.cs" />
+    <Compile Include="Helpers\Domain\ShiftBreakTemplates\ShiftBreaks\ShiftBreakIdentityHelper.cs" />
+    <Compile Include="Helpers\Domain\ShiftBreakTemplates\ShiftBreakTemplateBuilder.cs" />
+    <Compile Include="Helpers\Domain\ShiftBreakTemplates\ShiftBreakTemplateHelper.cs" />
+    <Compile Include="Helpers\Domain\ShiftBreakTemplates\ShiftBreakTemplateIdentityHelper.cs" />
+    <Compile Include="Helpers\Domain\ShiftTemplates\ShiftTemplateIdentityHelper.cs" />
+    <Compile Include="Helpers\SpecificationTemplates\ForDomainLogic\CheckBatchOfViolationSpecification.cs" />
+    <Compile Include="Helpers\SpecificationTemplates\ForDomainLogic\CheckClashingshiftsBetweenPeerSpecification.cs" />
+    <Compile Include="Helpers\SpecificationTemplates\ForDomainLogic\CheckClashingBreakBetweenPeersSpecification.cs" />
+    <Compile Include="Helpers\SpecificationTemplates\ForDomainLogic\ColourPickerDefualtValueSpecification.cs" />
+    <Compile Include="Helpers\SpecificationTemplates\ForDomainLogic\ColourPickerRgbSpecification.cs" />
+    <Compile Include="Helpers\SpecificationTemplates\ForDomainLogic\DateOfPickerSanitisationSpecification.cs" />
+    <Compile Include="Helpers\SpecificationTemplates\ForDomainLogic\DurationInHoursAndMinutesSpecification.cs" />
+    <Compile Include="Helpers\SpecificationTemplates\ForDomainLogic\DurationSanitisationSpecification.cs" />
+    <Compile Include="Helpers\SpecificationTemplates\ForDomainLogic\MandatoryDurationFieldSpecification.cs" />
+    <Compile Include="Domain\ShiftTemplates\Fields\Duration\duration_should_be_mandatory.cs" />
+    <Compile Include="Domain\ShiftTemplates\Fields\ShiftTitle\A_shift_templates_should_be_restricted_to_the_maximum_number_of_characters.cs" />
+    <Compile Include="Domain\ShiftTemplates\Fields\ShiftTitle\A_shift_template_should_be_unique.cs" />
+    <Compile Include="Domain\ShiftTemplates\Fields\ShiftTitle\A_shift_title_should_be_mandatory.cs" />
+    <Compile Include="Domain\ShiftTemplates\Fields\StartTime\A_start_time_should_be_mandatory.cs" />
+    <Compile Include="Helpers\Domain\PlannedSupply\OperationsCalendars\DependencyConfiguration.cs" />
+    <Compile Include="Helpers\Domain\PlannedSupply\OperationsCalendars\FakeOperationsCalendarRepository.cs" />
+    <Compile Include="Helpers\Domain\PlannedSupply\OperationsCalendars\OperationsCalendarBuilder.cs" />
+    <Compile Include="Helpers\Domain\PlannedSupply\OperationsCalendars\OperationsCalendarHelper.cs" />
+    <Compile Include="Helpers\Domain\PlannedSupply\OperationsCalendars\ShiftCalendars\DependencyConfiguration.cs" />
+    <Compile Include="Helpers\Domain\PlannedSupply\OperationsCalendars\ShiftCalendars\FakeShiftCalendarRepository.cs" />
+    <Compile Include="Helpers\Domain\PlannedSupply\OperationsCalendars\ShiftCalendars\ShiftCalendarBuilder.cs" />
+    <Compile Include="Helpers\Domain\PlannedSupply\OperationsCalendars\ShiftCalendars\ShiftCalendarHelper.cs" />
+    <Compile Include="Helpers\Domain\PlannedSupply\OperationsCalendars\ShiftCalendars\ShiftCalendarPatterns\DependencyConfiguration.cs" />
+    <Compile Include="Helpers\Domain\PlannedSupply\OperationsCalendars\ShiftCalendars\ShiftCalendarPatterns\FakeShiftCalendarPatternRepository.cs" />
+    <Compile Include="Helpers\Domain\PlannedSupply\OperationsCalendars\ShiftCalendars\ShiftCalendarPatterns\ShiftCalendarPatternBuilder.cs" />
+    <Compile Include="Helpers\Domain\PlannedSupply\OperationsCalendars\ShiftCalendars\ShiftCalendarPatterns\ShiftCalendarPatternHelper.cs" />
+    <Compile Include="Helpers\Domain\ShiftTemplates\DependencyConfiguration.cs" />
+    <Compile Include="Helpers\Domain\ShiftTemplates\FakeShiftTemplateRepository.cs" />
+    <Compile Include="Helpers\Domain\ShiftTemplates\ShiftTemplateBuilder.cs" />
+    <Compile Include="Helpers\Domain\ShiftTemplates\ShiftTemplatehelper.cs" />
+    <Compile Include="Helpers\SpecificationTemplates\Base\PlannedSupplyResponseCommandSpecification.cs" />
+    <Compile Include="Helpers\SpecificationTemplates\Base\PlannedSupplySpecification.cs" />
+    <Compile Include="Helpers\SpecificationTemplates\ForDomainLogic\CommandCommitedChangesSpecification.cs" />
+    <Compile Include="Helpers\SpecificationTemplates\ForDomainLogic\FieldIsMappedCorrectlySpecification.cs" />
+    <Compile Include="Helpers\SpecificationTemplates\ForDomainLogic\MandatoryTextFieldSpecification.cs" />
+    <Compile Include="Helpers\SpecificationTemplates\ForDomainLogic\MandatoryTimeFieldSpecification.cs" />
+    <Compile Include="Helpers\SpecificationTemplates\ForDomainLogic\TextFieldDoesNotExceedDefaultMaximumNumberOfCharactersSpecification.cs" />
+    <Compile Include="Helpers\SpecificationTemplates\ForDomainLogic\TextFieldDoesNotExceedMaximumNumberOfCharactersSpecification.cs" />
+    <Compile Include="Helpers\SpecificationTemplates\ForDomainLogic\TwentyFourHourClockTimeSpecification.cs" />
+    <Compile Include="Helpers\SpecificationTemplates\ForDomainLogic\UniqueTextFieldSpecification.cs" />
+    <Compile Include="Infrastructure\PlannedSupplyUnitTestDependencyConfiguration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PlannedSupply.Domain\PlannedSupply.Domain.csproj">
+      <Project>{3fa9037b-a4b7-413d-863e-b91768e18a37}</Project>
+      <Name>PlannedSupply.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Worksuite\Core\src\Worksuite.Core\Worksuite.Core.csproj">
+      <Project>{1df54fed-2bc7-4317-b32e-53135723b267}</Project>
+      <Name>Worksuite.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Worksuite\Domains\Content\src\Services\Content.Services.csproj">
+      <Project>{55d6359c-7ea7-42dc-bc38-3f4b2b02eb99}</Project>
+      <Name>Content.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library\src\WorkSuite.Library.CodeStrutures\WorkSuite.Library.CodeStrutures.csproj">
+      <Project>{249be708-3014-4584-9e14-cb087e54916e}</Project>
+      <Name>WorkSuite.Library.CodeStrutures</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library\src\WorkSuite.Library.DomainTypes\WorkSuite.Library.DomainTypes.csproj">
+      <Project>{538c6f62-b398-41f1-917c-10659fdf6c78}</Project>
+      <Name>WorkSuite.Library.DomainTypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library\src\WorkSuite.Library.IO.Cryptography\WorkSuite.Library.IO.Cryptography.csproj">
+      <Project>{cdb719b5-36b2-4f45-9f00-118138eb18d0}</Project>
+      <Name>WorkSuite.Library.IO.Cryptography</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library\src\WorkSuite.Library.IO\WorkSuite.Library.IO.csproj">
+      <Project>{d56d4264-6c22-4dfa-9f46-0840b757a8e1}</Project>
+      <Name>WorkSuite.Library.IO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library\src\WorkSuite.Library.Ninject\WorkSuite.Library.Ninject.csproj">
+      <Project>{fa9854f9-6908-483a-ae63-9354249e74bc}</Project>
+      <Name>WorkSuite.Library.Ninject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library\src\WorkSuite.Library.Persistence.EF\WorkSuite.Library.Persistence.EF.csproj">
+      <Project>{422c302f-f4dd-4008-8f86-0124bea8de7b}</Project>
+      <Name>WorkSuite.Library.Persistence.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library\src\WorkSuite.Library.Persistence\WorkSuite.Library.Persistence.csproj">
+      <Project>{c55f23be-bc7a-4f70-81d3-af5d645fe831}</Project>
+      <Name>WorkSuite.Library.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library\src\WorkSuite.Library.Service.Specification\WorkSuite.Library.Service.Specification.csproj">
+      <Project>{e6053bb8-d527-4524-93df-19fe290cf90e}</Project>
+      <Name>WorkSuite.Library.Service.Specification</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library\testsrc\WorkSuite.Library.Asp.Net.Mvc.Server.Tests\WorkSuite.Library.Asp.Net.Mvc.Server.Tests.csproj">
+      <Project>{9F56A494-078D-4838-A54C-C1D7B4F9E5F4}</Project>
+      <Name>WorkSuite.Library.Asp.Net.Mvc.Server.Tests</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library\testsrc\WorkSuite.Library.DomainTypes.Tests\WorkSuite.Library.DomainTypes.Tests.csproj">
+      <Project>{499B053C-13F8-457C-9AC9-E1469C567770}</Project>
+      <Name>WorkSuite.Library.DomainTypes.Tests</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlannedSupply.Persistence\PlannedSupply.Persistence.csproj">
+      <Project>{f5f8687c-2ab8-4cda-a346-2b8eafcdcd73}</Project>
+      <Name>PlannedSupply.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlannedSupply.Services\PlannedSupply.Services.csproj">
+      <Project>{1e90397a-d33c-42f3-ae41-c1925820f3d8}</Project>
+      <Name>PlannedSupply.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Worksuite\Domains\HR\src\Services\HR.Services.csproj">
+      <Project>{3D42E5CB-8885-42A6-A018-1C0F1D369123}</Project>
+      <Name>HR.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

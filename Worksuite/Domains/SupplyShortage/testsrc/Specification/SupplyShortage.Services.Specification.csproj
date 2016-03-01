@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FC069F2D-0645-420E-BBA1-23AD436639CD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WTS.WorkSuite.SupplyShortage.Services</RootNamespace>
+    <AssemblyName>WTS.WorkSuite.SupplyShortage.Services.Specification</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ninject">
+      <HintPath>..\..\..\..\..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="..\..\..\..\..\Library\src\WorkSuite.Library.Domain.Specification\AFieldSpecification.cs">
+      <Link>LinkedLibraryFiles\AFieldSpecification.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\Library\src\WorkSuite.Library.Domain.Specification\CommandCommittedChangesSpecification.cs">
+      <Link>LinkedLibraryFiles\CommandCommittedChangesSpecification.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\Library\src\WorkSuite.Library.Domain.Specification\CommandPublishedEventSpecification.cs">
+      <Link>LinkedLibraryFiles\CommandPublishedEventSpecification.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\Library\src\WorkSuite.Library.Domain.Specification\MandatoryTextFieldSpecification.cs">
+      <Link>LinkedLibraryFiles\MandatoryTextFieldSpecification.cs</Link>
+    </Compile>
+    <Compile Include="Domain\Employee\eventHandlers\created\command_will.cs" />
+    <Compile Include="Domain\Employee\eventHandlers\created\EmployeeCreatedFixture.cs" />
+    <Compile Include="Domain\Employee\eventHandlers\created\employee_created_event_will.cs" />
+    <Compile Include="Domain\Employee\eventHandlers\removed\command_will.cs" />
+    <Compile Include="Domain\Employee\eventHandlers\removed\EmployeeRemovedFixture.cs" />
+    <Compile Include="Domain\Employee\eventHandlers\removed\employee_removed_event_will.cs" />
+    <Compile Include="Domain\Employee\Holiday\addHoliday\get\Fixture.cs" />
+    <Compile Include="Domain\Employee\Holiday\addHoliday\get\get_add_holiday_request_will.cs" />
+    <Compile Include="Domain\Employee\Holiday\addHoliday\post\AddHolidayRequestBuilder.cs" />
+    <Compile Include="Domain\Employee\Holiday\addHoliday\post\add_holiday_request_will.cs" />
+    <Compile Include="Domain\Employee\Holiday\addHoliday\post\Fixture.cs" />
+    <Compile Include="Domain\Employee\Holiday\removeHoliday\Fixture.cs" />
+    <Compile Include="Domain\Employee\Holiday\removeHoliday\RemoveHolidayRequestBuilder.cs" />
+    <Compile Include="Domain\Employee\Holiday\removeHoliday\remove_holiday_will.cs" />
+    <Compile Include="Domain\Employee\Sickness\addSickness\get\Fixture.cs" />
+    <Compile Include="Domain\Employee\Sickness\addSickness\get\get_add_sickness_request_will.cs" />
+    <Compile Include="Domain\Employee\Sickness\addSickness\post\Fixture.cs" />
+    <Compile Include="Domain\Employee\Sickness\addSickness\post\AddSicknessRequestBuilder.cs" />
+    <Compile Include="Domain\Employee\Sickness\addSickness\post\add_sickness_request_will.cs" />
+    <Compile Include="Domain\Employee\Sickness\removeSickness\Fixture.cs" />
+    <Compile Include="Domain\Employee\Sickness\removeSickness\RemoveSicknessRequestBuilder.cs" />
+    <Compile Include="Domain\Employee\Sickness\removeSickness\remove_sickness_will.cs" />
+    <Compile Include="Helpers\Domain\Employee\DependencyConfiguration.cs" />
+    <Compile Include="Helpers\Domain\Employee\EmployeeSupplyShortageBuilder.cs" />
+    <Compile Include="Helpers\Domain\Employee\EmployeeSupplyShortageHelper.cs" />
+    <Compile Include="Helpers\Domain\Employee\FakeEmployeeSupplyShortageRepository.cs" />
+    <Compile Include="Helpers\SpecificationTemplates\Base\SupplyShortagesTestBootstrap.cs" />
+    <Compile Include="Infrastructure\SupplyShortagesUnitTestDependencyConfiguration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.CodeStrutures\WorkSuite.Library.CodeStrutures.csproj">
+      <Project>{249be708-3014-4584-9e14-cb087e54916e}</Project>
+      <Name>WorkSuite.Library.CodeStrutures</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.DomainTypes\WorkSuite.Library.DomainTypes.csproj">
+      <Project>{538C6F62-B398-41F1-917C-10659FDF6C78}</Project>
+      <Name>WorkSuite.Library.DomainTypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.Ninject\WorkSuite.Library.Ninject.csproj">
+      <Project>{fa9854f9-6908-483a-ae63-9354249e74bc}</Project>
+      <Name>WorkSuite.Library.Ninject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.Persistence\WorkSuite.Library.Persistence.csproj">
+      <Project>{c55f23be-bc7a-4f70-81d3-af5d645fe831}</Project>
+      <Name>WorkSuite.Library.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.Service.Specification\WorkSuite.Library.Service.Specification.csproj">
+      <Project>{e6053bb8-d527-4524-93df-19fe290cf90e}</Project>
+      <Name>WorkSuite.Library.Service.Specification</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Core\src\Worksuite.Core\Worksuite.Core.csproj">
+      <Project>{1df54fed-2bc7-4317-b32e-53135723b267}</Project>
+      <Name>Worksuite.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\HR\src\Services\HR.Services.csproj">
+      <Project>{3D42E5CB-8885-42A6-A018-1C0F1D369123}</Project>
+      <Name>HR.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Domain\SupplyShortage.Domain.csproj">
+      <Project>{977b1e2b-403c-4f88-b33c-dffbbfd0295f}</Project>
+      <Name>SupplyShortage.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Persistence\SupplyShortage.Persistence.csproj">
+      <Project>{cc840eef-a77f-477a-97d8-cdb877c5cb6d}</Project>
+      <Name>SupplyShortage.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\SupplyShortage.Services.csproj">
+      <Project>{64491fba-1797-42c3-9420-c64de0fa00ff}</Project>
+      <Name>SupplyShortage.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LinkedLibraryFiles\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

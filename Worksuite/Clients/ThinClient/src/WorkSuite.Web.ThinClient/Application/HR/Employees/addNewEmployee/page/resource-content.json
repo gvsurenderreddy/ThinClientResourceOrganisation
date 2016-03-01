@@ -1,0 +1,13 @@
+﻿{
+    "add_new_employee_page_resource_title": {
+        "value": "Add new employee"
+    },
+
+    "add_new_employee_page_resource_save_and_add_another_employee": {
+        "value": "Save and add another new employee"
+    },
+
+    "add_new_employee_page_resource_save_and_edit_an_employee": {
+        "value": "Save and edit details"
+    }
+}

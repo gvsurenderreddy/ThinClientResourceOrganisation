@@ -1,0 +1,25 @@
+﻿@* Generator : MvcHelper GeneratePrettyNames : true *@
+@using Controls.Primitives
+@using Server.ShiftCalendars
+
+
+@helper For(IEnumerable<ShiftCalendarAction> actions)
+{
+
+    @* Display the menu if there are actions *@
+    if (@actions != null && @actions.Any())
+    {
+        <menu class="menu">
+            @foreach (var action in @actions)
+            {
+                @Action(action)
+            }
+        </menu>
+    }
+
+}
+
+@helper Action(ShiftCalendarAction action)
+{
+    <a data-action="@action.name" class="action @action.name @action.classes.AsHtmlClassString()" href="@action.url">@action.title</a>
+}

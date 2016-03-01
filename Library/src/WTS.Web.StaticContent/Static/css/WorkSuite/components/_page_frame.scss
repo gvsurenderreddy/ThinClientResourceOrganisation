@@ -1,0 +1,226 @@
+body {
+	@include body;
+}
+
+body.maintenance {
+	border: solid 3px #cc0000 !important;
+}
+
+// ---------- RESETS
+div, span, body, input, label, header, textarea, a, ul, li, h1, h2, h3, dl, dd, dt, section, article, nav, menu, fieldset {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin:0;
+	padding:0;
+	border:0;
+}
+
+// ---------- HEADER
+body > header {
+	overflow:hidden;
+	border-top: 5px solid $adminbar_background;
+	background-color:$titlebar_background;
+}
+
+.navigation-bar{
+	padding:$layoutgrid_lineheight*.5 $layoutgrid_page_gutter $layoutgrid_lineheight*.5 $layoutgrid_page_gutter;
+	overflow:hidden;
+	background-color:$navbar_background;
+}
+
+.admin-menu {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	clear:both;
+	float:right;
+	color:#ffffff;
+	font-size:10pt;
+}
+
+.admin-menu li {
+	display:block;
+	list-style-type:none;
+	margin:0 0 0 10px;
+	padding:0 0 0 10px;
+	float:left;
+	border-left:solid 1px #cccccc;
+}
+
+.admin-menu li.online {
+	background: url("../Images/traffic_lights_green.png") top right no-repeat;
+	padding-right:20px;
+	height:16px;
+}
+
+.admin-menu li.maintenance {
+	background: url("../Images/traffic_lights_red.png") top right no-repeat;
+	padding-right:20px;
+	height:16px;
+}
+
+.admin-menu li img {
+	display:block;
+	float:right;
+	margin-left:6px;
+}
+
+.admin-menu li a {
+	display:block;
+	margin:0 0 0 3px;
+	color:#ffFFFF;
+	text-decoration:none;
+	border-top:solid 3px #7d7d7d;
+}
+
+.admin-menu li a:hover {
+	display:block;
+	margin:0 0 0 3px;
+	color:#ffFFFF;
+	text-decoration:none;
+	border-top:solid 3px #ef9608;
+}
+
+.admin-menu li:first-child {
+	border:0;
+}
+
+.titlebar {
+	display:block;
+	clear:left;
+	border-top:$title_bar;
+	padding:$layoutgrid_lineheight*.5 $layoutgrid_page_gutter $layoutgrid_lineheight*.5 $layoutgrid_page_gutter;
+}
+
+
+h1 {
+	margin: 3px 0 0 50px;
+	padding: 0;
+	font-size: 14pt;
+	font-weight: 400 !important;
+	letter-spacing: -1px;
+}
+
+// ---------- breadcrumb
+
+.breadcrumb {
+	list-style: none outside none;
+}
+
+.breadcrumb li {
+	float:left;
+	margin: 0 10px 0 0;
+	position:relative;
+	z-index:1;
+}
+
+.breadcrumb li a {
+	color: #000000;
+	text-decoration: none;
+	font-size: 16px;
+	text-align: center;
+}
+
+// HOME
+.breadcrumb li:first-child a {
+	display: block;
+	height: 25px;
+	margin: 0 3px 0 0;
+	padding: 3px 3px 0 30px;
+	position: relative;
+	border: solid 1px #cccccc;
+	border-bottom-left-radius: 3px;
+	border-top-left-radius: 3px;
+	background: #ffffff url("../Images/header-icon-home.png") no-repeat 5px 2px;
+}
+
+.breadcrumb li:first-child a:after,
+.breadcrumb li:first-child a:before {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 100%;
+	width: 0;
+	height: 0;
+	border-style: solid;
+}
+
+.breadcrumb li:first-child a:after {
+	top: 0px;
+	border-color: transparent transparent transparent #ffffff;
+	border-width: 12px;
+}
+
+.breadcrumb li:first-child a:before {
+	top: -1px;
+	right:1px;
+	border-color: transparent transparent transparent #cccccc;
+	border-width: 13px;
+}
+
+.breadcrumb li:first-child a:hover {
+	background: #F9D59C url("../Images/header-icon-home-hover.png") no-repeat 5px 2px;
+}
+
+.breadcrumb li:first-child a:hover:after {
+	border-left-color: #F9D59C;
+}
+
+// LINKS
+.breadcrumb li:not(:first-child) a {
+	height: 24px;
+	padding: 4px 10px 0 10px;
+	display: block;
+	position:relative;
+}
+
+.breadcrumb li:not(:first-child) a:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 50%;
+	width: 100%;
+	background: #ffffff;
+	-webkit-transform: skew(45deg,0deg);
+	-moz-transform: skew(45deg,0deg);
+	-ms-transform: skew(45deg,0deg);
+	-o-transform: skew(45deg,0deg);
+	transform: skew(45deg,0deg);
+	border-left: solid 1px #cccccc;
+	border-top: solid 1px #cccccc;
+	border-right: solid 1px #cccccc;
+	z-index: -1;
+}
+
+.breadcrumb li:not(:first-child) a:after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 0;
+	height: 50%;
+	width: 100%;
+	background-color: #ffffff;
+	-webkit-transform: skew(-45deg,0deg);
+	-moz-transform: skew(-45deg,0deg);
+	-ms-transform: skew(-45deg,0deg);
+	-o-transform: skew(-45deg,0deg);
+	transform: skew(-45deg,0deg);
+	border-left: solid 1px #cccccc;
+	border-bottom: solid 1px #cccccc;
+	border-right: solid 1px #cccccc;
+	z-index: -1;
+}
+
+.breadcrumb li:not(:first-child) a:hover:after,
+.breadcrumb li:not(:first-child) a:hover:before {
+	background-color: #F9D59C;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+	border-top: solid 1px $signaturecolour_base;
+	padding: $layoutgrid_lineheight $layoutgrid_page_gutter $layoutgrid_lineheight $layoutgrid_page_gutter;
+	@include paragraph_text;
+}

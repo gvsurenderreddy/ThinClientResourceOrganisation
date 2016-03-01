@@ -1,0 +1,38 @@
+﻿@* Generator : MvcHelper GeneratePrettyNames : true *@
+
+@using Controls.Primitives
+@using Controls.Tiles
+@using Controls.ViewElements
+@using Server.Framework.ViewModels.SectionedTileGrid
+@using Server.Framework.ViewModels.TileGrids
+@using Server.Framework.ViewModels.Tiles
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels
+
+@helper For ( IsAViewElement element ) {    
+    @ViewElement.Unknown( )
+}
+
+@helper For( SectionedTileGrid tile_grid ) {
+    
+    <div class="sectioned-tile-grid @tile_grid.classes.AsHtmlClassString()">
+        @foreach ( var section in tile_grid.sections ) {
+        @TileGridSectionControl.Render( section )
+        }        
+    </div>
+}
+
+@helper For( TileGrid tile_grid ) {
+    var is_tile_grid_section = !string.IsNullOrWhiteSpace( tile_grid.title );
+    var tiles = tile_grid.tiles ?? new Tile[] { };
+    var classes = tile_grid.classes ?? new string[]{};
+
+    @( is_tile_grid_section ? @TileGridSectionControl.Render(tile_grid) : @TileGridControl.Render(tiles, classes))
+}
+
+@helper For( IEnumerable<Tile> tiles ) {
+    @TileGridControl.Render( tiles )
+}
+
+@helper For( Tile tile ) {
+    @TileControl.Render( tile )
+}

@@ -1,0 +1,44 @@
+﻿@* Generator : MvcHelper GeneratePrettyNames : true *@
+
+@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Controls.ViewElements
+@using WorkSuite.Library.Asp.Net.Mvc.Server.ColourPickerPalettes
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels
+
+
+@helper For(IsAViewElement element)
+{
+    @ViewElement.Unknown()
+}
+
+
+@helper For(ColourPickerPalette view_model)
+{
+    <div class="ColourPicker-Palette">
+        <div class="ColourPicker-Palette-Close">@view_model.close_button_title</div>
+        <div class="ColourPicker-Palette-Current">
+            <div class="current-colour-value" style="background-color:@view_model.current_colour_value;"></div>
+        </div>
+        <div class="ColourPicker-Palette-Common">
+            @foreach (var colour in view_model.accellerator_colour_values)
+            {
+                <div data-colour-value="@colour" style="background-color:@colour;"></div>
+            }
+        </div>
+        <div class="ColourPicker-Palette-Time">
+            <table>
+                @foreach (var entry in view_model.palette_entries)
+                {
+                    <tr>
+                        <td>@entry.title</td>
+                        @foreach (var colour_value in entry.colour_values)
+                        {
+                            <td>
+                                <div data-colour-value="@colour_value" style="background-color: @colour_value;"></div>
+                            </td>
+                        }
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+}

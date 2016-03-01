@@ -1,0 +1,19 @@
+﻿@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Controls.Reports;
+@model WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.Reports.Report
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>WorkSuite.Library.Asp.Net.Mvc.Presentation.Tests - Reports</title>
+</head>
+    <body>
+        <h1>WorkSuite.Library.Asp.Net.Mvc.Presentation.Tests - Reports</h1>
+        @Reports.For( Model as dynamic )
+    </body>
+</html>

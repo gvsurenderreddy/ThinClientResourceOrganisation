@@ -1,0 +1,38 @@
+// ---------- UTILITIES / VENDORS
+@import "../css/WorkSuite/utilities/_normalize";
+@import "../css/WorkSuite/utilities/_spectrum-colorpicker";
+
+// ---------- MODULES - MIXINS AND VARIABLES THAT DO NOT GENERATE CSS
+@import "../css/WorkSuite/primitives/_scaffolding";
+@import "../css/WorkSuite/branding/_base";
+@import "../css/WorkSuite/primitives/_common";
+@import "../css/WorkSuite/primitives/_tile_grids";
+@import "../css/WorkSuite/primitives/_buttons";
+@import "../css/WorkSuite/primitives/_controls";
+@import "../css/WorkSuite/primitives/_menus";
+@import "../css/WorkSuite/primitives/_headers";
+@import "../css/WorkSuite/primitives/_tiles";
+
+
+
+// ---------- PARTILES
+@import "../css/WorkSuite/components/_page_frame";
+@import "../css/WorkSuite/components/_page_layout";
+@import "../css/WorkSuite/components/_employee_list_grid";
+@import "../css/WorkSuite/components/_blocks";
+@import "../css/WorkSuite/components/_notifications";
+@import "../css/WorkSuite/components/_editors";
+@import "../css/WorkSuite/components/_controls";
+@import "../css/WorkSuite/components/_reports";
+//@import "../css/WorkSuite/components/_report_new";
+
+@import "../css/WorkSuite/components/_palettes";
+@import "../css/WorkSuite/components/_shift_calendar";
+@import "../css/WorkSuite/components/_shiftcalendar";
+@import "../css/WorkSuite/components/_headers";
+@import "../css/WorkSuite/components/_control_bars";
+@import "../css/WorkSuite/components/_colour_picker";
+@import "../css/WorkSuite/components/_break_templates";
+@import "../css/WorkSuite/components/_descriptionlist"; 
+@import "../css/WorkSuite/components/_tiles";
+@import "../css/WorkSuite/components/_tilegrid";

@@ -1,0 +1,14 @@
+﻿@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Controls.DetailsLists
+@using WTS.WorkSuite.Web.ThinClient.Application.HR.ReferenceData.Genders.Presentation.Page
+
+@{    
+    Layout = @"~/Views/Shared/Layouts/GlobalLayout.cshtml";
+    ViewBag.Title = Resources.page_title;
+    ViewBag.Id =  Resources.page_id;
+}
+
+@DetailsLists.For( Model as dynamic )
+
+@section dependencies {
+    require(['details_list'], function () { });
+}

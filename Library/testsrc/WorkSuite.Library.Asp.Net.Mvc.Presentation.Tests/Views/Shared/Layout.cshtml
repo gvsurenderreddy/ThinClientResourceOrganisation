@@ -1,0 +1,76 @@
+﻿@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Configuration.StaticContent
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.BreadCrumbNavigation.Model
+@using Controls = WorkSuite.Library.Asp.Net.Mvc.Presentation.Controls.SiteNavigation
+
+@{
+
+    @* Improve: change to use a text from resource file *@
+    var copy_write = "&copy; 2013 Working Time Solutions Ltd.";
+    var page_title = @ViewBag.Title;
+    var page_id = @ViewBag.Id;
+
+    var resource_id = Json.Encode(ViewBag.ResourceIdentity);
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta id="page-id" name="page-id" content="@page_id" />
+    <meta id="resource-id" name="resource-id" content="@Html.Raw(resource_id)" />
+    <!--[if lte IE 8]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="@Url.Content( StaticContent.get_url_for( "Static/css/WorkSuite.css"))" rel="stylesheet" />
+    @RenderSection("page_level_css", false)
+
+    <script src="@Url.Content( StaticContent.get_url_for( "Static/js/library/respond-js/respond.js"))"></script>
+
+
+    <title>@page_title</title>
+</head>
+<body>
+    <div id="content" class="@page_id">
+        <div id="notifications" class="">
+            <div id="notification-icon" class=""></div>
+        </div>
+        @RenderBody()
+    </div>
+    <footer>
+        @Html.Raw(copy_write)
+    </footer>
+
+    <!--
+        Load the application logic for the page
+
+        -->
+    <script src="@Url.Content( StaticContent.get_url_for( "Static/js/library/require-js/require.js"))"></script>
+    <script type="text/javascript">
+
+        (function (base_url) {
+            // configure the require.js dependencies and then load the behaviours that are
+            // needed for this page
+            requirejs.config({
+                baseUrl: base_url,
+                paths: {
+                    "dependencies": "Static/js/Infrastructure/dependency_config",
+                    "routes": '@Url.Content("/")' + "named-routes?callback=define",
+                    "workflow": '@Url.Content("/")' + "workflow?callback=define"
+                }
+            });
+
+            require(['dependencies'], function (config) {
+                requirejs.config(config);
+
+                require(['startup'], function () {
+                    @RenderSection( "dependencies", false )
+                });
+            });
+
+        }('@Url.Content( StaticContent.host() )'));
+
+    </script>
+
+</body>
+</html>

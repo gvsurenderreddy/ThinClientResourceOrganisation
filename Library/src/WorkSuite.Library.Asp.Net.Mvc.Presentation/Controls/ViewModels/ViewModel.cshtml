@@ -1,0 +1,92 @@
+﻿@* Generator : MvcHelper GeneratePrettyNames : true *@
+
+@using System.Web.UI.WebControls
+@using Controls.DetailsLists
+@using Controls.Editors
+@using Controls.Reports
+@using Controls.ContentHeaders
+@using Controls.ShiftCalendars
+@using Controls.ShiftCalendarsListers
+@using Controls.SimplePalette
+@using Controls.DateRangePalette
+@using Controls.DateRangeBar
+@using Controls.Table
+@using Controls.Tiles
+@using Controls.ViewElements
+@using Server.ContentHeaders
+@using Server.ShiftCalendars
+@using Server.ShiftCalendarsListers
+@using Server.Framework.ViewModels.DetailsLists
+@using Server.Framework.ViewModels.SectionedTileGrid
+@using Server.SimplePalettes
+@using Server.DateRangePalettes
+@using Server.DateRangeBars
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.Editors
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.Reports
+@using Table = Server.Framework.ViewModels.Tables.Table
+
+@helper For ( IsAViewElement element ) {
+
+        @ViewElement.Unknown()
+}
+
+@helper For( IEnumerable<IsAViewElement> view_elements ) {
+
+    foreach ( var element in view_elements ) {
+        
+        @For( element as dynamic )
+    }    
+}
+
+@helper For(ShiftCalendar shift_calendar) {
+    @ShiftCalendars.For(shift_calendar);
+}
+
+@helper For(ShiftCalendarsLister shift_calendars_lister) {
+    @ShiftCalendarsListers.For(shift_calendars_lister);
+}
+
+@helper For(ContentHeader content_header) {
+    @ContentHeaders.For(content_header);
+}
+
+@helper For(SimplePalette simple_palette)
+{
+    @SimplePalettes.For(simple_palette);
+}
+
+@helper For(DateRangePalette date_range_palette)
+{
+    @DateRangePalettes.For(date_range_palette);
+}
+
+@helper For(DateRangeBar date_range_bar)
+{
+    @DateRangeBars.For(date_range_bar);
+}
+
+@helper For( Report report  ) {
+
+    @Reports.For( report )     
+}
+
+@helper For( Editor editor  ) {
+
+    @Editors.For( editor )     
+}
+
+@helper For( DetailsList view_model ) {
+
+    @DetailsLists.For( view_model )
+}
+
+@helper For(SectionedTileGrid view_model)
+{
+    @Tiles.For(view_model)
+}
+
+@helper For(Table view_model)
+{
+    @Tables.For( view_model )
+}

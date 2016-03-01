@@ -1,0 +1,99 @@
+// MAIN HEADER
+.content-header h2 {
+	@include header;
+	padding-left: 0;
+	@include respond-to(tablet) {
+		float: inherit;
+		display:inline;
+	}
+}
+
+.content-header menu {
+	@include respond-to(tablet) {
+		display:inline;
+	}
+}
+
+.content-header menu a {
+	@include header_menu_link;
+	float: inherit;
+}
+
+.content-header menu a:hover {
+	@include header_menu_link_hover;
+}
+
+.content-header menu a:visited {
+	@include header_menu_link;
+}
+
+// SHIFT CALENDARS
+.shift-calendars-lister-header {
+	margin-bottom:6px;
+}
+
+.shift-calendars-lister-header h2 {
+	@include header;
+	@include respond-to(tablet) {
+		float: inherit;
+		display:inline;
+	}
+}
+
+.shift-calendars-lister-header menu {
+	@include respond-to(tablet) {
+		display:inline;
+	}
+}
+
+.shift-calendars-lister-header menu a {
+	@include header_menu_link;
+	float: inherit;
+}
+
+.shift-calendars-lister-header menu a:hover {
+	@include header_menu_link_hover;
+}
+
+.shift-calendars-lister-header menu a:visited {
+	@include header_menu_link;
+}
+
+// REPORT SUB HEADER
+.shift-calendar header,
+.workingtime-calendar header {
+	margin: 0 0 6px 0;
+}
+
+.shift-calendar h2,
+.workingtime-calendar h2 {
+	@include subheader;
+	margin: 0 0 3px 0;
+	@include respond-to(tablet) {
+		float: inherit;
+		display: inline;
+	}
+}
+
+.shift-calendar menu,
+.workingtime-calendar menu, {
+	@include respond-to(tablet) {
+		display: inline;
+	}
+}
+
+.shift-calendar menu a,
+.workingtime-calendar menu a {
+	@include subheader_menu_link;
+	float: inherit;
+}
+
+.shift-calendar menu a:hover,
+.workingtime-calendar menu a:hover {
+	@include subheader_menu_link_hover;
+}
+
+.shift-calendar menu a:visited
+.workingtime-calendarr menu a:visited {
+	@include subheader_menu_link;
+}

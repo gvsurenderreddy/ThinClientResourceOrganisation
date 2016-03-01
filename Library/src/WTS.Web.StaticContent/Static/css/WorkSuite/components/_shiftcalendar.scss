@@ -1,0 +1,159 @@
+.ShiftCalendar {
+    font-family: Calibri;
+	font-size: 9pt;
+    table-layout: fixed;
+	clear: left;
+    background-color: #ffffff;
+    margin: 0 0 $layoutgrid_lineheight $layoutgrid_page_gutter;
+	width: 98.18453%;
+	@include border_box_sizing;
+    @include respond-to(tablet) {
+		clear: none !important;
+		padding-top: 12px;
+	}
+}
+
+.ShiftCalendar td,
+.ShiftCalendar th {
+    box-shadow: 0 0 0 1px #eeeeee inset;
+    border-collapse: collapse;
+}
+
+.ShiftCalendar_Day,
+.ShiftCalendar_Date {
+	display: block;
+}
+
+.ShiftCalendar_Weekend {
+    background-color: #dddddd;
+}
+
+@include respond-to(desktop) {
+    .ShiftCalendar_Day abbr:before {
+        content: attr(title);
+        font-size: 8pt;
+    }
+    .ShiftCalendar_Day abbr span {
+        display: none;
+    }
+}
+
+.ShiftCalendar_Label {
+	background-color: $basecolour_verybright;
+	color: #555555;
+	border-color:  $basecolour_verybright;
+	text-align: right;
+	width: 23.52941%;
+}
+
+.ShiftCalendar_Label_Resources span {
+	color: #000000;
+}
+
+
+.ShiftCalendar_Week .ShiftCalendar_ShiftBlock {
+    width: 10.58823%;
+}
+
+.ShiftCalendar_Month .ShiftCalendar_ShiftBlock {
+    width: 2.64705%;
+}
+
+.ShiftCalendar_Week .ShiftCalendar_Previous,
+.ShiftCalendar_Week .ShiftCalendar_Next {
+	width: 1.17647% !important;
+}
+
+.ShiftCalendar_Month .ShiftCalendar_Previous,
+.ShiftCalendar_Month .ShiftCalendar_Next {
+	width: 1.17647% !important;
+}
+
+.ShiftCalendar_Week .ShiftCalendar_Previous,
+.ShiftCalendar_Month .ShiftCalendar_Previous {
+    background-image: url('../Images/shift-block-previous.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.ShiftCalendar_Week .ShiftCalendar_Next,
+.ShiftCalendar_Month .ShiftCalendar_Next {
+    background-image: url('../Images/shift-block-next.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.ShiftCalendar_ShiftBlock_Title {
+	font-size: 8pt;
+	margin: 0 0 6px 0;
+	text-shadow: 1px 0px 4px #ffffff, -1px 0px 4px #ffffff, 1px 0px 4px #ffffff, -1px 0px 4px #ffffff;
+    word-wrap: break-word;
+}
+
+.ShiftCalendar_Week .ShiftCalendar_Timeline {
+    background-color: gray;
+    background-image: linear-gradient(90deg, rgb(204,204,204) 50%, rgb(173,173,173) 50%);
+    background-size: 1.19047%;
+	box-shadow: 0 0 0 0 #eeeeee inset !important;
+    height: 6px;
+	margin :0;
+	padding: 0;
+}
+
+.ShiftCalendar_Month .ShiftCalendar_Timeline {
+    background-color: gray;
+    background-image: linear-gradient(90deg, rgb(204,204,204) 50%, rgb(173,173,173) 50%);
+    background-size: 1.78571%;
+	box-shadow: 0 0 0 0 #eeeeee inset !important;
+    height: 6px;
+	margin :0;
+	padding: 0;
+}
+
+.ShiftCalendar_Timeline .ShiftCalendar_Timeline_Duration {
+	height: 6px;
+	float: left;
+	margin :0;
+	padding :0;
+    display: block;
+}
+
+.ShiftCalendar_Timeline_WorkingTime {
+	background-color: #000000;
+	color: #ffffff;
+	font-size: 8pt;
+}
+
+.ShiftCalendar_Timeline_PaidBreak {
+	background-color: transparent;
+}
+
+.ShiftCalendar_Timeline_UnpaidBreak {
+	border-bottom: solid 2px;
+	height: 4px !important;
+}
+
+@-webkit-keyframes blink {
+   50% { border-color: #cccccc; } 
+}
+
+@-moz-keyframes blink {
+   50% { border-color: #cccccc; } 
+}
+
+@-o-keyframes blink {
+   50% { border-color: #cccccc; } 
+}
+
+@keyframes blink { 
+   50% { border-color: #cccccc; } 
+}
+
+//INTERACTION
+.ShiftCalendar_ShiftBlock_Selected {
+	border: dashed 2px #555555;
+	-webkit-animation: blink .8s step-end alternate infinite; /* Safari 4+ */
+    -moz-animation:    blink .8s step-end alternate infinite; /* Fx 5+ */
+    -o-animation:      blink .8s step-end alternate infinite; /* Opera 12+ */
+	animation:         blink .8s step-end alternate infinite; /* IE 10+ */
+	padding-top: 0px;
+}

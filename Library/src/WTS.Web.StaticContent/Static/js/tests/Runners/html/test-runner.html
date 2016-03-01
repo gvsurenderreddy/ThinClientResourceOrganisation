@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>QUnit Example</title>
+    <link href="../css/qunit/qunit.css" rel="stylesheet" />
+</head>
+<body>
+    <!--Markup placeholder for test results-->
+    <h1 id="qunit-header">Tests</h1>
+    <h2 id="qunit-banner"></h2>
+    <div id="qunit-testrunner-toolbar"></div>
+    <h2 id="qunit-userAgent"></h2>
+    <ol id="qunit-tests"></ol>
+    <div id="qunit-fixture">
+    </div>
+    <!--JS Resources for testing-->
+    <script src="../../../library/QUnit/qunit.js"></script>
+    <script src="../../../library/require-js/require.js"></script>
+
+    <!--Test initialise-->
+    <script type="text/javascript">
+        require(['/Static/js/Infrastructure/dependency_config.js'], function (config) {
+
+            //Stub the route factory
+            config.baseUrl = "/";
+            config.paths.route_repository = "Static/js/tests/Utilities/fake_route_repository";
+
+
+            requirejs.config(config);
+
+            require(['/Static/js/tests/specifications/route_builder_tests.js'], function () { });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+/* --------------------------------- */
+.ColourPicker-Toggle {
+	background-color: #cccccc;
+	display: block;
+	float: left;
+	width: 46px;
+	border: solid 1px #999999;
+	position: relative;
+	margin-bottom: 6px;
+	@include respond-to(tablet) {
+		margin-bottom: 0px;
+	}
+}
+
+.ColourPicker-Toggle div {
+	margin: 8px 0 8px 5px;
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	border: solid 1px #555555;
+}
+
+.ColourPicker-Toggle div:after {
+	content:"";
+	width: 0;
+	height: 0;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 8px solid #000;
+	position:absolute;
+	left:27px;
+	display:block;
+	top:14px;
+}
+
+.ColourPicker-Palette {
+	display: none;
+	width: 170px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #cccccc;
+	z-index: 99999;
+	border:solid 1px #999999;
+	-moz-box-shadow: 3px 3px 3px #555555;
+	-webkit-box-shadow: 3px 3px 3px #555555;
+	box-shadow: 3px 3px 3px #555555;
+	margin: 0 0 12px 0;
+}
+
+.ColourPicker-Palette-Close {
+	float: right;
+	margin: 4px;
+	cursor: pointer;
+	@include button_secondary;
+}
+
+
+// CURRENT COLOUR
+.ColourPicker-Palette-Current {
+	border-bottom: solid 1px #999999;
+	-moz-box-shadow: 0px 1px 1px #ffffff;
+	-webkit-box-shadow: 0px 1px 1px #ffffff;
+	box-shadow: 0px 1px 1px #ffffff;
+	clear: left;
+	padding: 6px 3px 6px 3px;
+}
+
+.ColourPicker-Palette-Current div {
+	width: 16px;
+	height: 16px;
+	margin: 2px;
+	display: inline-block;
+	border: solid 1px #555555;
+}
+
+// COMMON COLOURS
+.ColourPicker-Palette-Common{
+	border-bottom: solid 1px #999999;
+	-moz-box-shadow: 0px 1px 1px #ffffff;
+	-webkit-box-shadow: 0px 1px 1px #ffffff;
+	box-shadow: 0px 1px 1px #ffffff;
+	overflow: hidden;
+	padding: 6px 3px 6px 3px;
+	width:100%;
+}
+                
+.ColourPicker-Palette-Common div {
+	float: left;
+	width: 16px;
+	height: 16px;
+	margin: 2px;
+	display: inline-block;
+	border: solid 1px #555555;
+	cursor: pointer;
+}
+
+.ColourPicker-Palette-Time {
+	clear: both;
+	padding: 6px 3px 6px 3px;
+}
+
+.ColourPicker-Palette-Time tr,
+.ColourPicker-Palette-Time td,
+.ColourPicker-Palette-Time th {
+	 border-collapse: collapse;
+	border: 3px solid #cccccc;
+	vertical-align: bottom;
+	text-align: right;
+}
+
+.ColourPicker-Palette-Time td div {
+	width: 16px;
+	height: 16px;
+	border: solid 1px #555555;
+	cursor: pointer;
+}
+
+.ColourPicker-Palette-Time tr td:nth-child(1) {
+	width: 80px;
+	font-size:9pt;
+}

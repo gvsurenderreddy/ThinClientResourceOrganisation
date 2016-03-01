@@ -1,0 +1,28 @@
+.Tile {
+	@include Tile;
+}
+
+.Tile:hover {
+	@include Tile_Hover;
+}
+
+.Tile:hover .Tile_Title {
+	@include Tile_Hover;
+}
+
+.Tile_Primary {
+	@include Tile_Primary;
+}
+
+.Tile_Secondary {
+	@include Tile_Secondary;
+}
+
+.Tile_Special {
+	@include Tile_Special;
+}
+
+.Tile_Title {
+	@include titletext;
+    padding: $layoutgrid_lineheight 8% $layoutgrid_lineheight 8%;
+}

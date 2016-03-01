@@ -1,0 +1,25 @@
+﻿@model WorkSuite.Library.Asp.Net.Mvc.Presentation.Tests.Controllers.Controls.ViewModelsModel
+@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Controls.ViewModels;
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>WorkSuite.Library.Asp.Net.Mvc.Presentation.Tests - ViewModel</title>
+</head>
+<body>
+    <h1>WorkSuite.Library.Asp.Net.Mvc.Presentation.Tests - ViewModel</h1>
+    @ViewModel.For( Model.unknown_element )
+    @ViewModel.For( Model.report )
+    @ViewModel.For( Model.editor )
+    @ViewModel.For( Model.page_navigation )
+    
+    <h2>Elements</h2>
+    @ViewModel.For( Model.elements )
+</body>
+</html>

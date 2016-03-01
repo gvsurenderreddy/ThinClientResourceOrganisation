@@ -1,0 +1,425 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{468F0B44-D85C-4B73-AF2E-CA31223DCE64}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WorkSuite.Library.Asp.Net.Mvc.Presentation</RootNamespace>
+    <AssemblyName>WorkSuite.Library.Asp.Net.Mvc.Presentation</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Humanizer, Version=1.28.0.0, Culture=neutral, PublicKeyToken=979442b78dfc278e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Humanizer.1.28.0\lib\portable-win+net40+sl50+wp8+wpa81\Humanizer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorGenerator.Templating, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\RazorGenerator.Templating.2.2.3\lib\net40\RazorGenerator.Templating.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Microsoft.AspNet.Mvc.5.2.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Microsoft.AspNet.Razor.3.2.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Components\Subsystems\Routing\1\CreateRouteUrlRequest.cs" />
+    <Compile Include="Components\TileGrids\1\TileGridComponent.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TileGridComponent.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\TileGrids\1\TileGridSectionViewModel.cs" />
+    <Compile Include="Components\TileGrids\1\TileGridSectionViewModelBuilder.cs" />
+    <Compile Include="Components\TileGrids\1\TileGridViewModel.cs" />
+    <Compile Include="Components\TileGrids\1\TileGridViewModelBuilder.cs" />
+    <Compile Include="Components\Tiles\1\TileCallToActionModifiers.cs" />
+    <Compile Include="Components\Tiles\1\TileComponent.generated.cs">
+      <DependentUpon>TileComponent.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Components\Tiles\1\TileViewModel.cs" />
+    <Compile Include="Components\Tiles\1\TileViewModelBuilder.cs" />
+    <Compile Include="Components\ViewComponents\1\IComponentViewModel.cs" />
+    <Compile Include="Components\ViewComponents\1\ViewModelComponent.generated.cs">
+      <DependentUpon>ViewModelComponent.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Configuration\StaticContent\IconStringExtensions.cs" />
+    <Compile Include="Configuration\StaticContent\StaticContent.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StaticContent.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Configuration\StaticContent\StaticContentExtensions.cs" />
+    <Compile Include="Controls\ColourPickerPalettes\ColourPickerPalettes.generated.cs">
+      <DependentUpon>ColourPickerPalettes.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Controls\DateRangeBar\DateRangeBars.generated.cs">
+      <DependentUpon>DateRangeBars.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Controls\DateRangePalette\DateRangePalettes.generated.cs">
+      <DependentUpon>DateRangePalettes.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Controls\ContentHeaders\ContentHeaders.generated.cs">
+      <DependentUpon>ContentHeaders.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Controls\ContentHeaders\ContentHeaderActions.generated.cs">
+      <DependentUpon>ContentHeaderActions.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Controls\DetailsLists\DetailsLists.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DetailsLists.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Editors\EditorActions.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EditorActions.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Editors\EditorFields.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EditorFields.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Editors\Editors.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Editors.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Primitives\ClassExtensions.cs" />
+    <Compile Include="Controls\Reports\ReportActions.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportActions.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Reports\ReportFields.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportFields.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Reports\Reports.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reports.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ShiftCalendarsListers\ShiftCalendarsListers.generated.cs">
+      <DependentUpon>ShiftCalendarsListers.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Controls\ShiftCalendarsListers\ShiftCalendarsListerActions.generated.cs">
+      <DependentUpon>ShiftCalendarsListerActions.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Controls\ShiftCalendars\ShiftCalendarActions.generated.cs">
+      <DependentUpon>ShiftCalendarActions.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Controls\ShiftCalendars\ShiftCalendars.generated.cs">
+      <DependentUpon>ShiftCalendars.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Controls\ShiftPatterns\ShiftPatterns.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShiftPatterns.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SimplePalette\SimplePaletteActions.generated.cs">
+      <DependentUpon>SimplePaletteActions.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Controls\SimplePalette\SimplePalettes.generated.cs">
+      <DependentUpon>SimplePalettes.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Controls\SiteNavigation\BreadCrumbNavigation.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BreadCrumbNavigation.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Table\Tables.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Tables.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Tiles\TileGridSectionControl.generated.cs">
+      <DependentUpon>TileGridSectionControl.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Controls\Tiles\TileGridControl.generated.cs">
+      <DependentUpon>TileGridControl.cshtml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Controls\Tiles\TileControl.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TileControl.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Tiles\Tiles.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Tiles.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ViewElements\ViewElement.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ViewElement.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ViewModels\ViewModel.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ViewModel.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SampleTemplate.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleTemplate.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\JsonExtensions.cs" />
+    <Compile Include="Utilities\WorkflowHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Components\TileGrids\1\TileGridComponent.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>TileGridComponent.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Components\Tiles\1\TileComponent.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>TileComponent.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Components\ViewComponents\1\ViewModelComponent.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ViewModelComponent.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Controls\ColourPickerPalettes\ColourPickerPalettes.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ColourPickerPalettes.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Controls\DateRangeBar\DateRangeBars.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>DateRangeBars.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Controls\DateRangePalette\DateRangePalettes.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>DateRangePalettes.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Controls\ContentHeaders\ContentHeaders.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ContentHeaders.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Controls\ContentHeaders\ContentHeaderActions.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ContentHeaderActions.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Controls\ShiftCalendarsListers\ShiftCalendarsListers.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ShiftCalendarsListers.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Controls\ShiftCalendarsListers\ShiftCalendarsListerActions.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ShiftCalendarsListerActions.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Controls\ShiftCalendars\ShiftCalendarActions.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ShiftCalendarActions.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Controls\ShiftCalendars\ShiftCalendars.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ShiftCalendars.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Controls\ShiftPatterns\ShiftPatterns.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ShiftPatterns.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Controls\SimplePalette\SimplePaletteActions.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>SimplePaletteActions.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Controls\SimplePalette\SimplePalettes.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>SimplePalettes.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Controls\SiteNavigation\BreadCrumbNavigation.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>BreadCrumbNavigation.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Controls\DetailsLists\DetailsLists.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>DetailsLists.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Controls\Editors\EditorActions.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>EditorActions.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Controls\Editors\EditorFields.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>EditorFields.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Controls\Editors\Editors.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Editors.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Controls\Reports\ReportActions.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ReportActions.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Controls\Reports\ReportFields.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ReportFields.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Controls\Reports\Reports.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Reports.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Controls\Table\Tables.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Tables.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Controls\Tiles\TileGridSectionControl.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>TileGridSectionControl.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Controls\Tiles\TileGridControl.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>TileGridControl.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Controls\Tiles\TileControl.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>TileControl.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Controls\Tiles\Tiles.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Tiles.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Controls\ViewElements\ViewElement.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ViewElement.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Configuration\StaticContent\StaticContent.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>StaticContent.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Controls\ViewModels\ViewModel.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ViewModel.generated.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="SampleTemplate.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>SampleTemplate.generated.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\PlannedSupply.Services\PlannedSupply.Services.csproj">
+      <Project>{1E90397A-D33C-42F3-AE41-C1925820F3D8}</Project>
+      <Name>PlannedSupply.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WorkSuite.Library.Asp.Net.Mvc.Server\WorkSuite.Library.Asp.Net.Mvc.Server.csproj">
+      <Project>{b8e420e6-c270-44a9-aa9f-a1418975bd39}</Project>
+      <Name>WorkSuite.Library.Asp.Net.Mvc.Server</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WorkSuite.Library.CodeStrutures\WorkSuite.Library.CodeStrutures.csproj">
+      <Project>{249BE708-3014-4584-9E14-CB087E54916E}</Project>
+      <Name>WorkSuite.Library.CodeStrutures</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WorkSuite.Library.DomainTypes\WorkSuite.Library.DomainTypes.csproj">
+      <Project>{538c6f62-b398-41f1-917c-10659fdf6c78}</Project>
+      <Name>WorkSuite.Library.DomainTypes</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Read me.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

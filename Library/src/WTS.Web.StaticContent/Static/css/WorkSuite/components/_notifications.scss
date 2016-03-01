@@ -1,0 +1,37 @@
+.notification-confirm {
+	display: block;
+	@include box-shadow;
+	margin: 0 $layoutgrid_page_gutter $layoutgrid_lineheight $layoutgrid_page_gutter;
+	border: solid 1px $page_notification_confirmation_border;
+	padding: $layoutgrid_lineheight $layoutgrid_column_gutter $layoutgrid_lineheight $layoutgrid_column_gutter;
+	background: $page_notification_confirmation_background;
+	@include titletext;
+	color: $page_notification_confirmation_text;
+}
+
+.notification-confirm-icon {
+	background: $page_notification_confirmation_icon;
+	width: 16px;
+	height: 16px;
+	float: left;
+	margin-right: $layoutgrid_column_gutter;
+}
+
+.notification-warning {
+	display: block;
+	@include box-shadow;
+	margin: 0 $layoutgrid_page_gutter $layoutgrid_lineheight $layoutgrid_page_gutter;
+	border: solid 1px $page_notification_warning_border;
+	padding: $layoutgrid_lineheight $layoutgrid_column_gutter $layoutgrid_lineheight $layoutgrid_column_gutter;	
+	background: $page_notification_warning_background;
+	@include titletext;
+	color: $page_notification_warning_text;
+}
+
+.notification-warning-icon {
+	background: $page_notification_warning_icon;
+	width: 16px;
+	height: 16px;
+	float: left;
+	margin-right: $layoutgrid_column_gutter;
+}

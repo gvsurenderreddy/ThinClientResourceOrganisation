@@ -1,0 +1,901 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{80ACFD45-1301-4BBD-86DD-39634695C6E7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WTS.WorkSuite.HR.Services</RootNamespace>
+    <AssemblyName>WTS.WorkSuite.HR.Services.Specification</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentAssertions">
+      <HintPath>..\..\..\..\..\packages\FluentAssertions.3.0.107\lib\net45\FluentAssertions.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentAssertions.Core">
+      <HintPath>..\..\..\..\..\packages\FluentAssertions.3.0.107\lib\net45\FluentAssertions.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="..\..\..\..\..\Library\src\WorkSuite.Library.Domain.Specification\AFieldSpecification.cs">
+      <Link>LinkedLibraryFiles\AFieldSpecification.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\library\src\worksuite.library.domain.specification\CommandCommittedChangesSpecification.cs">
+      <Link>LinkedLibraryFiles\CommandCommittedChangesSpecification.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\Library\src\WorkSuite.Library.Domain.Specification\CommandPublishedEventSpecification.cs">
+      <Link>LinkedLibraryFiles\CommandPublishedEventSpecification.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\Library\src\WorkSuite.Library.Domain.Specification\IsAPersonsNameSpecification.cs">
+      <Link>LinkedLibraryFiles\IsAPersonsNameSpecification.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\library\src\worksuite.library.domain.specification\MandatoryTextFieldSpecification.cs">
+      <Link>LinkedLibraryFiles\MandatoryTextFieldSpecification.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\Library\src\WorkSuite.Library.Domain.Specification\TextFieldDoesNotExceedCertainNumberOfCharactersSpecification.cs">
+      <Link>LinkedLibraryFiles\TextFieldDoesNotExceedCertainNumberOfCharactersSpecification.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\Library\src\WorkSuite.Library.Domain.Specification\TextFieldDoesNotExceedDefaultMaximumNumberOfCharactersSpecification.cs">
+      <Link>LinkedLibraryFiles\TextFieldDoesNotExceedDefaultMaximumNumberOfCharactersSpecification.cs</Link>
+    </Compile>
+    <Compile Include="Domain\DocumentStore\Documents\Features\GetById\Correctly_maps_the_fields.cs" />
+    <Compile Include="Domain\DocumentStore\Documents\Features\GetById\GetByIdFixture.cs" />
+    <Compile Include="Domain\DocumentStore\Documents\Features\GetById\Returns.cs" />
+    <Compile Include="Domain\DocumentStore\Documents\Features\New\NewDocumentFixture.cs" />
+    <Compile Include="Domain\DocumentStore\Documents\Features\New\NewDocumentRequestHelper.cs" />
+    <Compile Include="Domain\DocumentStore\Documents\Features\New\NewDocument_will.cs" />
+    <Compile Include="Domain\DocumentStore\Documents\Features\Remove\RemoveDocumentFixture.cs" />
+    <Compile Include="Domain\DocumentStore\Documents\Features\Remove\RemoveDocumentRequestHelper.cs" />
+    <Compile Include="Domain\DocumentStore\Documents\Features\Remove\RemoveDocument_will.cs" />
+    <Compile Include="Domain\DocumentStore\Documents\Fields\ContentType\is_mandatory.cs" />
+    <Compile Include="Domain\DocumentStore\Documents\Fields\ContentType\does_not_have_leading_and_trailing_whitespace.cs" />
+    <Compile Include="Domain\DocumentStore\Documents\Fields\Name\A_name_is_mandatory.cs" />
+    <Compile Include="Domain\DocumentStore\Documents\Fields\Name\does_not_have_leading_and_trailing_whitespace.cs" />
+    <Compile Include="Domain\HR\Employees\addEmployee\get\fields\employee_reference\is_returned_empty.cs" />
+    <Compile Include="Domain\HR\Employees\addEmployee\get\fields\forename\is_returned_empty.cs" />
+    <Compile Include="Domain\HR\Employees\addEmployee\get\fields\surname\is_returned_empty.cs" />
+    <Compile Include="Domain\HR\Employees\addEmployee\get\specification.cs" />
+    <Compile Include="Domain\HR\Employees\addEmployee\get\fixture.cs" />
+    <Compile Include="Domain\HR\Employees\addEmployee\post\fields\forename\can_be_specified.cs" />
+    <Compile Include="Domain\HR\Employees\addEmployee\post\fields\forename\is_included_in_event.cs" />
+    <Compile Include="Domain\HR\Employees\addEmployee\post\fields\employee_reference\can_be_specified.cs" />
+    <Compile Include="Domain\HR\Employees\addEmployee\post\fields\employee_reference\is_included_in_event.cs" />
+    <Compile Include="Domain\HR\Employees\addEmployee\post\fields\surname\can_be_specified.cs" />
+    <Compile Include="Domain\HR\Employees\addEmployee\post\fields\surname\does_not_exceed_default_max_characters.cs" />
+    <Compile Include="Domain\HR\Employees\addEmployee\post\fields\surname\is_a_valid_persons_name.cs" />
+    <Compile Include="Domain\HR\Employees\addEmployee\post\fields\surname\is_included_in_event.cs" />
+    <Compile Include="Domain\HR\Employees\addEmployee\post\fields\surname\is_mandatory.cs" />
+    <Compile Include="Domain\HR\Employees\addEmployee\post\fields\forename\does_not_exceed_default_max_characters.cs" />
+    <Compile Include="Domain\HR\Employees\addEmployee\post\fields\forename\is_a_valid_persons_name.cs" />
+    <Compile Include="Domain\HR\Employees\addEmployee\post\fields\forename\is_mandatory.cs" />
+    <Compile Include="Domain\HR\Employees\addEmployee\post\fields\employee_reference\does_not_exceed_default_max_characters.cs" />
+    <Compile Include="Domain\HR\Employees\addEmployee\post\fields\employee_reference\is_mandatory.cs" />
+    <Compile Include="Domain\HR\Employees\addEmployee\post\fields\employee_reference\is_unique.cs" />
+    <Compile Include="Domain\HR\Employees\addEmployee\post\fields\ethnic_origin\defaults_to_not_specified.cs" />
+    <Compile Include="Domain\HR\Employees\addEmployee\post\fields\gender\defaults_to_not_specified.cs" />
+    <Compile Include="Domain\HR\Employees\addEmployee\post\fields\image_id\defaults_to_null_id.cs" />
+    <Compile Include="Domain\HR\Employees\addEmployee\post\fields\marital_status\defaults_to_not_specified.cs" />
+    <Compile Include="Domain\HR\Employees\addEmployee\post\fields\nationality\defaults_to_not_specified.cs" />
+    <Compile Include="Domain\HR\Employees\addEmployee\post\fields\title\defaults_to_not_specified.cs" />
+    <Compile Include="Domain\HR\Employees\addEmployee\post\fixture.cs" />
+    <Compile Include="Domain\HR\Employees\addEmployee\post\request_helper.cs" />
+    <Compile Include="Domain\HR\Employees\addEmployee\post\specification.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Features\New\DependencyConfiguration.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Features\ReorderAddressWorkSuiteSpecification.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Features\Update\DependencyConfiguration.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Features\Update\UpdateAddressRequestHelper.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Features\Update\UpdateAddressFixture.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Address_has_a_unique_house_number_and_postcode.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Features\Reorder\Reorder_address_will.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Fields\Country\Country_is_restricted_to_the_default_maximum_number_of_charactes.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Fields\Country\Country_is_stripped_of_leading_and_trainling_whitespace.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Fields\Country\Country_can_be_specified_when_adding_an_address.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Fields\Country\Country_can_be_specified_when_editing_an_address.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Fields\County\County_is_restricted_to_the_default_maximum_number_of_charactes.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Fields\County\County_is_stripped_of_leading_and_trainling_whitespace.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Fields\County\County_can_be_specified_when_adding_an_address.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Fields\County\County_can_be_specified_when_editing_an_address.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Fields\Line1\Line1_is_stripped_of_leading_and_trainling_whitespace.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Fields\Line1\Line1_can_be_specified_when_adding_an_address.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Fields\Line1\Line1_can_be_specified_when_editing_an_address.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Fields\Line2\Line2_is_stripped_of_leading_and_trainling_whitespace.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Fields\Line2\Line2_can_be_specified_when_adding_an_address.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Fields\Line2\Line2_can_be_specified_when_editing_an_address.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Fields\Line3\Line3_is_stripped_of_leading_and_trainling_whitespace.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Fields\Line3\Line3_is_restricted_to_the_default_maximum_number_of_charactes.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Fields\Line3\Line3_can_be_specified_when_adding_an_address.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Fields\Line3\Line3_can_be_specified_when_editing_an_address.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Fields\NumberOrName\NumberOrName_is_mandatory.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Fields\Line1\Line1_is_restricted_to_the_default_maximum_number_of_charactes.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Fields\Line2\Line2_is_restricted_to_the_default_maximum_number_of_charactes.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Fields\NumberOrName\NumberOrName_is_mapped_between_the_request_and_entity_correctly.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Fields\NumberOrName\NumberOrName_can_be_specified_when_adding_an_address.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Fields\NumberOrName\NumberOrName_can_be_specified_when_editing_an_address.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Fields\Postcode\Postcode_can_be_specified_when_editing_an_address.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Fields\Postcode\Postcode_can_be_specified_when_adding_an_address.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Fields\Postcode\Postcode_is_converted_to_uppercase.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Fields\Postcode\Postcode_is_stripped_of_leading_and_trainling_whitespace.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Fields\Postcode\Postcode_is_restricted_to_a_maximum_number_of_character.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Fields\Postcode\Postcode_is_mandatory.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Features\ById\Correctly_maps_the_fields.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Features\ById\Returns.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Features\GetAll\Correctly_maps_the_fields.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Features\New\NewAddressFixture.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Features\New\NewAddressRequestHelper.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Features\New\NewAddress_will.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Fields\NumberOrName\NumberOrName_is_restricted_to_the_default_maximum_number_of_charactes.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Features\Remove\RemoveAddress_will.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Fields\Postcode\Posscode_is_restricted_in_the_characters_allowed.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Features\New\The_default_fields_are_not_supplied.cs" />
+    <Compile Include="Domain\HR\Employees\Addresses\Features\Update\Update_will.cs" />
+    <Compile Include="Domain\HR\Employees\ContactDetails\Features\ById\ByIdFixture.cs" />
+    <Compile Include="Domain\HR\Employees\ContactDetails\Features\ById\Correctly_maps_the_fields.cs" />
+    <Compile Include="Domain\HR\Employees\ContactDetails\Features\ById\Returns.cs" />
+    <Compile Include="Domain\HR\Employees\ContactDetails\Fields\Mobile\A_mobile_can_be_edited_via_the_employees_contact_details.cs" />
+    <Compile Include="Domain\HR\Employees\ContactDetails\Fields\Mobile\A_mobile_has_a_maximum_number_of_charactes.cs" />
+    <Compile Include="Domain\HR\Employees\ContactDetails\Fields\Mobile\The_characters_allowed_in_a_mobile_are_restricted.cs" />
+    <Compile Include="Domain\HR\Employees\ContactDetails\Fields\Other\An_other_can_be_edited_via_the_employees_contact_details.cs" />
+    <Compile Include="Domain\HR\Employees\ContactDetails\Fields\Other\An_other_has_a_maximum_number_of_charactes.cs" />
+    <Compile Include="Domain\HR\Employees\ContactDetails\Features\Update\GetUpdateRequestCommand\Correctly_maps_the_fields.cs" />
+    <Compile Include="Domain\HR\Employees\ContactDetails\Features\Update\GetUpdateRequestCommand\GetUpdateRequestWorkSuiteWill.cs" />
+    <Compile Include="Domain\HR\Employees\ContactDetails\Features\Update\GetUpdateRequestCommand\IsAGetUpdateRequestWorkSuiteSpecification.cs" />
+    <Compile Include="Domain\HR\Employees\ContactDetails\Features\Update\UpdateCommand\UpdateFixture.cs" />
+    <Compile Include="Domain\HR\Employees\ContactDetails\Features\Update\UpdateCommand\UpdateRequestHelper.cs" />
+    <Compile Include="Domain\HR\Employees\ContactDetails\Features\Update\UpdateCommand\Update_will.cs" />
+    <Compile Include="Domain\HR\Employees\ContactDetails\Fields\Email\An_email_can_be_edited_via_the_employees_contact_details.cs" />
+    <Compile Include="Domain\HR\Employees\ContactDetails\Fields\Email\An_email_has_a_maximum_number_of_charactes.cs" />
+    <Compile Include="Domain\HR\Employees\ContactDetails\Fields\Email\GetById\Correctly_maps_the_fields.cs" />
+    <Compile Include="Domain\HR\Employees\ContactDetails\Fields\Email\Update\An_email_does_not_have_space_at_the_start_and_end.cs" />
+    <Compile Include="Domain\HR\Employees\ContactDetails\Fields\Email\Update\An_email_is_stored_as_lower_case.cs" />
+    <Compile Include="Domain\HR\Employees\ContactDetails\Fields\Email\Update\An_email_does_not_have_at_sign_at_the_start_or_the_end.cs" />
+    <Compile Include="Domain\HR\Employees\ContactDetails\Fields\Email\Update\An_email_does_not_have_dot_at_the_start_or_the_end.cs" />
+    <Compile Include="Domain\HR\Employees\ContactDetails\Fields\Email\Update\An_email_does_not_match_the_simple_pattern.cs" />
+    <Compile Include="Domain\HR\Employees\EmergencyContacts\Features\ReorderEmergencyContactWorkSuiteSpecification.cs" />
+    <Compile Include="Domain\HR\Employees\EmergencyContacts\Features\Reorder\Reorder_emergency_contact_will.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeDocuments\Features\GetAll\Correctly_maps_the_fields.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeDocuments\Features\GetAll\GetAllFixture.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeDocuments\Features\GetAll\Returns.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeDocuments\Features\New\NewEmployeeDocumentFixture.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeDocuments\Features\New\NewEmployeeDocumentRequestHelper.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeDocuments\Features\New\NewEmployeeDocument_will.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeDocuments\Features\Remove\RemoveDocumentFixture.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeDocuments\Features\Remove\RemoveEmployeeDocument_will.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeDocuments\Fields\Md5_hash\does_not_have_leading_and_trailing_whitespace.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeDocuments\Fields\ContentType\does_not_have_leading_and_trailing_whitespace.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeDocuments\Fields\Description\is_mandatory.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeDocuments\Fields\Description\does_not_have_leading_and_trailing_whitespace.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeDocuments\Fields\Name\A_name_is_mandatory.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeDocuments\Fields\Name\does_not_have_leading_and_trailing_whitespace.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeImage\Features\Remove\Remove_will.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeImage\Features\Edit\UpdateFixture.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeImage\Features\Edit\UpdateRequestHelper.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeImage\Features\Edit\Update_will.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeQualifications\Features\GetAll\GetAllFixture.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeQualifications\Features\GetAll\Returns.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeQualifications\Features\GetAll\Correctly_maps_the_fields.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeQualifications\Features\New\NewEmployeeQualificationFixture.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeQualifications\Features\New\NewEmployeeQualificationRequestHelper.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeQualifications\Features\New\NewEmployeeQualification_will.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeQualifications\Features\Remove\RemoveEmployeeQualificationFixture.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeQualifications\Features\Remove\RemoveEmployeeQualification_will.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeQualifications\Features\Remove\Remove_employee_qualification_will_publish_employee_qualification_removed_events.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeQualifications\Fields\Qualification\qualification_is_mandatory.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeQualifications\Fields\Qualification\employee_qualification_can_be_set.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeQualifications\Fields\Qualification\Qualification_can_be_specified_when_adding_an_qualification_to_an_employee.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeSkills\Features\GetAll\Correctly_maps_the_fields.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeSkills\Features\GetAll\GetAllFixture.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeSkills\Features\GetAll\Returns.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeSkills\Features\New\Adding_a_new_skill_to_an_employee_will_publish_auto_reordered_events.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeSkills\Features\New\NewEmployeeSkillFixture.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeSkills\Features\New\NewEmployeeSkillRequestHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domain\HR\Employees\EmployeeSkills\Features\New\NewEmployeeSkill_will.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeSkills\Features\Remove\RemoveEmployeeSkillFixture.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeSkills\Features\Remove\RemoveEmployeeSkill_will.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeSkills\Features\Remove\Remove_employee_skill_will_publish_employee_skill_removed_events.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeSkills\Features\Remove\Removing_a_skill_from_an_employee_will_publish_auto_reordered_events.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeSkills\Features\ReorderEmployeeSkillWorkSuiteSpecification.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeSkills\Features\Reorder\ReorderEmployeeSkillFixture.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeSkills\Features\Reorder\Reorder_employee_skill_will.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeSkills\Features\Reorder\Reorder_employee_skill_will_publish_employee_skill_reordered_event.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeSkills\Fields\Skill\skill_is_mandatory.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeSkills\Fields\Skill\employee_skill_can_be_set.cs" />
+    <Compile Include="Domain\HR\Employees\EmploymentDetails\Features\Edit\UpdateEmploymentDetailsRequestHelper.cs" />
+    <Compile Include="Domain\HR\Employees\EmploymentDetails\Features\Edit\UpdateEmploymentDetails_will.cs" />
+    <Compile Include="Domain\HR\Employees\EmploymentDetails\Features\Edit\UpdateEmploymentDetailsFixture.cs" />
+    <Compile Include="Domain\HR\Employees\EmploymentDetails\Features\GetById\Returns.cs" />
+    <Compile Include="Domain\HR\Employees\EmploymentDetails\Features\GetById\Correctly_maps_the_fields.cs" />
+    <Compile Include="Domain\HR\Employees\EmploymentDetails\Fields\EmployeeReference\Employee_reference_is_included_in_employee_events.cs" />
+    <Compile Include="Domain\HR\Employees\EmploymentDetails\Fields\EmployeeReference\Employee_reference_is_mandatory.cs" />
+    <Compile Include="Domain\HR\Employees\EmploymentDetails\Fields\EmployeeReference\Employee_reference_has_maximum_number_of_characters.cs" />
+    <Compile Include="Domain\HR\Employees\EmploymentDetails\Fields\EmployeeReference\Employee_reference_is_unique.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeImage\Fields\ImageId\image_can_be_updated.cs" />
+    <Compile Include="Domain\HR\Employees\EmploymentDetails\Fields\job_title_id\Job_title_is_included_in_employee_events.cs" />
+    <Compile Include="Domain\HR\Employees\EmploymentDetails\Fields\location_id\Location_is_included_in_employee_events.cs" />
+    <Compile Include="Domain\HR\Employees\Notes\addNote\get\fields\note\is_returned_empty.cs" />
+    <Compile Include="Domain\HR\Employees\Notes\addNote\get\fixture.cs" />
+    <Compile Include="Domain\HR\Employees\Notes\addNote\get\specification.cs" />
+    <Compile Include="Domain\HR\Employees\Notes\Remove\DependencyConfiguration.cs" />
+    <Compile Include="Domain\HR\Employees\Notes\Remove\RemoveNoteFixture.cs" />
+    <Compile Include="Domain\HR\Employees\Notes\Remove\RemoveNoteRequestHelper.cs" />
+    <Compile Include="Domain\HR\Employees\Notes\Update\DependencyConfiguration.cs" />
+    <Compile Include="Domain\HR\Employees\Notes\Update\UpdateNoteFixture.cs" />
+    <Compile Include="Domain\HR\Employees\Notes\Update\UpdateNoteRequestHelper.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\date_of_birth\DateOfBirthValidation.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\date_of_birth\Date_of_birth_is_included_in_employee_events.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\EthnicOrigin\An_ethnic_origin_can_be_edited_via_the_employees_personal_details.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\EthnicOrigin\An_ethnic_origin_can_be_set_to_not_specified.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\EthnicOrigin\Ethnic_origin_is_included_in_employee_events.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\EthnicOrigin\Setting_the_title_to_an_ethnic_origin_that_is_hidden_is_not_allowed.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\Forename\Forename_is_included_in_employee_events.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\Gender\A_gender_can_be_edited_via_the_employees_personal_details.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\Gender\A_gender_can_be_set_to_not_specified.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\Gender\Gender_is_included_in_employee_events.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\Gender\Setting_the_gender_to_a_gender_that_is_hidden_is_not_allowed.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\MaritalStatus\A_marital_status_can_be_edited_via_the_employees_personal_details.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\MaritalStatus\A_marital_status_can_be_set_to_not_specified.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\MaritalStatus\Marital_status_is_included_in_employee_events.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\MaritalStatus\Setting_the_marital_status_to_a_marital_status_that_is_hidden_is_not_allowed.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\Nationality\A_nationality_can_be_edited_via_the_employees_personal_details.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\Nationality\A_nationality_can_be_set_to_not_specified.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\Nationality\Nationality_is_included_in_employee_events.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\Nationality\Setting_the_title_to_a_nationality_that_is_hidden_is_not_allowed.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\Othernames\Othername_is_included_in_employee_events.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\PlaceOfBirth\Place_of_birth_is_included_in_employee_events.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\Surname\Surname_is_included_in_employee_events.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\Titles\Title_is_included_in_employee_events.cs" />
+    <Compile Include="Domain\HR\ReferenceData\EthnicOrigins\Features\Edit\GetUpdateEthnicOriginRequest_will.cs" />
+    <Compile Include="Domain\HR\ReferenceData\EthnicOrigins\Features\Edit\UpdateEthnicOriginEventFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\EthnicOrigins\Features\Edit\UpdateEthnicOrigin_will.cs" />
+    <Compile Include="Domain\HR\ReferenceData\EthnicOrigins\Features\Edit\UpdateEthnicOriginFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\EthnicOrigins\Features\Edit\UpdateEthnicOriginRequestHelper.cs" />
+    <Compile Include="Domain\HR\ReferenceData\EthnicOrigins\Features\New\NewEthnicOriginFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\EthnicOrigins\Features\New\NewEthnicOriginRequestBuilder.cs" />
+    <Compile Include="Domain\HR\ReferenceData\EthnicOrigins\Features\New\NewEthnicOrigin_will.cs" />
+    <Compile Include="Domain\HR\ReferenceData\EthnicOrigins\Features\Queries\GetDetailsOfAllEthnicOrigins\Correctly_maps_description_for_an_ethnic_origin.cs" />
+    <Compile Include="Domain\HR\ReferenceData\EthnicOrigins\Features\Queries\GetDetailsOfAllEthnicOrigins\GetDetailsOfAllEthnicOriginsFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\EthnicOrigins\Features\Queries\GetDetailsOfAllEthnicOrigins\Correctly_maps_is_hidden_for_an_ethnic_origin.cs" />
+    <Compile Include="Domain\HR\ReferenceData\EthnicOrigins\Features\Queries\GetDetailsOfAllEthnicOrigins\Return_all_ethnic_origins.cs" />
+    <Compile Include="Domain\HR\ReferenceData\EthnicOrigins\Features\Queries\GetDetailsOfASpecificEthnicOrigin\GetDetailsOfASepecificEthnicOriginHelper.cs" />
+    <Compile Include="Domain\HR\ReferenceData\EthnicOrigins\Features\Queries\GetDetailsOfASpecificEthnicOrigin\GetDetailsOfASpecificEthnicOriginFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\EthnicOrigins\Features\Queries\GetDetailsOfASpecificEthnicOrigin\Returns_the_correct_ethnic_origin.cs" />
+    <Compile Include="Domain\HR\ReferenceData\EthnicOrigins\Features\Queries\GetDetailsOfASpecificEthnicOrigin\Correctly_maps_is_hidden_for_an_ethnic_origin.cs" />
+    <Compile Include="Domain\HR\ReferenceData\EthnicOrigins\Features\Queries\GetDetailsOfASpecificEthnicOrigin\Correctly_maps_description_for_an_ethnic_origin.cs" />
+    <Compile Include="Domain\HR\ReferenceData\EthnicOrigins\Features\Remove\RemoveEthnicOriginFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\EthnicOrigins\Features\Remove\RemoveEthnicOriginRequestHelper.cs" />
+    <Compile Include="Domain\HR\ReferenceData\EthnicOrigins\Features\Remove\RemoveEthnicOrigin_will.cs" />
+    <Compile Include="Domain\HR\ReferenceData\EthnicOrigins\Fields\Description\A_default_description_for_an_ethnic_origin_is_not_supplied_to_force_user_entry.cs" />
+    <Compile Include="Domain\HR\ReferenceData\EthnicOrigins\Fields\Description\A_description_can_be_specified_when_adding_an_ethnic_origin.cs" />
+    <Compile Include="Domain\HR\ReferenceData\EthnicOrigins\Fields\Description\A_description_for_an_ethnic_origin_can_not_be_duplicated_is_validated_on_create.cs" />
+    <Compile Include="Domain\HR\ReferenceData\EthnicOrigins\Fields\Description\A_description_for_an_ethnic_origin_is_mandatory_on_create.cs" />
+    <Compile Include="Domain\HR\ReferenceData\EthnicOrigins\Fields\Description\The_description_for_an_ethnic_origin_is_sanatised_when_creating.cs" />
+    <Compile Include="Domain\HR\ReferenceData\EthnicOrigins\Fields\Description\A_description_for_an_ethnic_origin_can_not_be_duplicated_is_validated_on_update.cs" />
+    <Compile Include="Domain\HR\ReferenceData\EthnicOrigins\Fields\Description\The_description_for_an_ethnic_origin_is_sanatised_when_getting_an_update_request.cs" />
+    <Compile Include="Domain\HR\ReferenceData\EthnicOrigins\Fields\Description\The_description_for_an_ethnic_origin_is_sanatised_when_updating.cs" />
+    <Compile Include="Domain\HR\ReferenceData\EthnicOrigins\Fields\Description\A_description_for_an_ethnic_origin_is_mandatory_on_update.cs" />
+    <Compile Include="Domain\HR\ReferenceData\EthnicOrigins\Fields\Description\Description_is_restricted_to_the_default_maximum_number_of_characters.cs" />
+    <Compile Include="Domain\HR\ReferenceData\EthnicOrigins\Fields\Is_Hidden\Is_Hidden_can_be_specified_when_adding_an_ethnic_origin.cs" />
+    <Compile Include="Domain\HR\ReferenceData\EthnicOrigins\Fields\Is_Hidden\Is_Hidden_for_a_Title_defaults_to_false_for_an_ethnic_origin.cs" />
+    <Compile Include="Domain\HR\ReferenceData\ExtensionMethods\Get_description_value_or_default_value_if_null.cs" />
+    <Compile Include="Domain\HR\ReferenceData\ExtensionMethods\Get_id_value_or_default_value_if_null.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Genders\Description\A_description_for_a_Gender_is_mandatory_on_update.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Genders\Description\Description_is_restricted_to_the_default_maximum_number_of_characters.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Genders\Edit\UpdateGenderEventFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Generic\Description\A_description_is_mandatory_on_update.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Generic\Description\Description_is_restricted_to_the_default_maximum_number_of_characters_on_create.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Generic\Description\Description_is_restricted_to_the_default_maximum_number_of_characters_on_update.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Generic\Edit\ReferenceDataUpdatedEventSpecification.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Generic\Edit\UpdateReferenceDataEventFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\JobTitles\description\A_default_description_for_a_Job_Title_is_not_supplied_to_force_user_entry.cs" />
+    <Compile Include="Domain\HR\ReferenceData\JobTitles\description\A_description_can_be_specified_when_adding_a_job_title.cs" />
+    <Compile Include="Domain\HR\ReferenceData\JobTitles\description\A_description_for_a_Job_Title_can_not_be_duplicated_is_validated.cs" />
+    <Compile Include="Domain\HR\ReferenceData\JobTitles\description\A_description_for_a_Job_Title_is_mandatory.cs" />
+    <Compile Include="Domain\HR\ReferenceData\JobTitles\description\Description_for_a_Job_Title_is_restricted_to_the_default_maximum_number_of_characters.cs" />
+    <Compile Include="Domain\HR\ReferenceData\JobTitles\description\The_description_for_a_Job_Title_is_sanatised.cs" />
+    <Compile Include="Domain\HR\ReferenceData\JobTitles\Edit\GetUpdateJobTitleRequest_will.cs" />
+    <Compile Include="Domain\HR\ReferenceData\JobTitles\Edit\UpdateJobTitleEventFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\JobTitles\Edit\UpdateJobTitleFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\JobTitles\Edit\UpdateJobTitleRequestHelper.cs" />
+    <Compile Include="Domain\HR\ReferenceData\JobTitles\Edit\UpdateJobTitle_will.cs" />
+    <Compile Include="Domain\HR\ReferenceData\JobTitles\is_hidden\Is_Hidden_can_be_specified_when_adding_a_job_title.cs" />
+    <Compile Include="Domain\HR\ReferenceData\JobTitles\is_hidden\Is_Hidden_for_a_Title_defaults_to_false_for_a_job_title.cs" />
+    <Compile Include="Domain\HR\ReferenceData\JobTitles\New\NewJobTitleFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\JobTitles\New\NewJobTitleRequestHelper.cs" />
+    <Compile Include="Domain\HR\ReferenceData\JobTitles\New\NewJobTitle_will.cs" />
+    <Compile Include="Domain\HR\ReferenceData\JobTitles\Queries\GetDetailsOfAllJobTitles\Correctly_maps_description_for_a_job_title.cs" />
+    <Compile Include="Domain\HR\ReferenceData\JobTitles\Queries\GetDetailsOfAllJobTitles\Correctly_maps_is_hidden_for_a_job_title.cs" />
+    <Compile Include="Domain\HR\ReferenceData\JobTitles\Queries\GetDetailsOfAllJobTitles\GetDetailsOfAllJobTitlesFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\JobTitles\Queries\GetDetailsOfAllJobTitles\Return_all_job_titles.cs" />
+    <Compile Include="Domain\HR\ReferenceData\JobTitles\Remove\RemoveJobTitleFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\JobTitles\Remove\RemoveJobTitleRequestHelper.cs" />
+    <Compile Include="Domain\HR\ReferenceData\JobTitles\Remove\Remove_Job_Title_will.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Locations\description\A_default_description_for_a_Location_is_not_supplied_to_force_user_entry.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Locations\description\A_description_can_be_specified_when_adding_a_location.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Locations\description\A_description_for_a_Location_can_not_be_duplicated_is_validated.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Locations\description\A_description_for_a_Location_is_mandatory.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Locations\description\Description_for_a_Location_is_restricted_to_the_default_maximum_number_of_characters.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Locations\description\The_description_for_a_Location_is_sanatised.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Locations\Edit\GetUpdateLocationRequest_will.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Locations\Edit\UpdateLocationEventFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Locations\Edit\UpdateLocationFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Locations\Edit\UpdateLocationRequestHelper.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Locations\Edit\UpdateLocation_will.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Locations\is_hidden\Is_Hidden_can_be_specified_when_adding_a_location.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Locations\is_hidden\Is_Hidden_for_a_location_defaults_to_false_for_a_location.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Locations\New\NewLocationFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Locations\New\NewLocationRequestHelper.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Locations\New\NewLocation_will.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Locations\Queries\GetDetailsOfAllLocations\Correctly_maps_description_for_a_location.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Locations\Queries\GetDetailsOfAllLocations\Correctly_maps_is_hidden_for_a_location.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Locations\Queries\GetDetailsOfAllLocations\GetDetailsOfAllLocationsFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Locations\Queries\GetDetailsOfAllLocations\Return_all_locations.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Locations\Remove\RemoveLocationFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Locations\Remove\RemoveLocationRequestHelper.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Locations\Remove\Remove_Location_will.cs" />
+    <Compile Include="Domain\HR\ReferenceData\MaritalStatuses\Features\Edit\GetUpdateMaritalStatusRequest_will.cs" />
+    <Compile Include="Domain\HR\ReferenceData\MaritalStatuses\Features\Edit\UpdateMaritalStatusEventFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\MaritalStatuses\Features\Edit\UpdateMaritalStatusRequestHelper.cs" />
+    <Compile Include="Domain\HR\ReferenceData\MaritalStatuses\Features\Edit\UpdateMaritalStatusFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\MaritalStatuses\Features\Edit\Update_will.cs" />
+    <Compile Include="Domain\HR\ReferenceData\MaritalStatuses\Features\New\NewMaritalStatusRequestBuilder.cs" />
+    <Compile Include="Domain\HR\ReferenceData\MaritalStatuses\Features\New\NewMaritalStatusFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\MaritalStatuses\Features\New\NewMaritalStatus_will.cs" />
+    <Compile Include="Domain\HR\ReferenceData\MaritalStatuses\Features\Queries\GetDetailsOfAllMaritalStatuses\Correctly_maps_description_for_a_MaritalStatus.cs" />
+    <Compile Include="Domain\HR\ReferenceData\MaritalStatuses\Features\Queries\GetDetailsOfAllMaritalStatuses\Correctly_maps_is_hidden_for_a_MaritalStatus.cs" />
+    <Compile Include="Domain\HR\ReferenceData\MaritalStatuses\Features\Queries\GetDetailsOfAllMaritalStatuses\GetDetailsOfAllMaritalStatusesFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\MaritalStatuses\Features\Queries\GetDetailsOfAllMaritalStatuses\Return_all_MaritalStatuses.cs" />
+    <Compile Include="Domain\HR\ReferenceData\MaritalStatuses\Features\Queries\GetDetailsOfASpecificMaritalStatus\Correctly_maps_description_for_a_maritalStatus.cs" />
+    <Compile Include="Domain\HR\ReferenceData\MaritalStatuses\Features\Queries\GetDetailsOfASpecificMaritalStatus\Correctly_maps_is_hidden_for_a_maritalStatus.cs" />
+    <Compile Include="Domain\HR\ReferenceData\MaritalStatuses\Features\Queries\GetDetailsOfASpecificMaritalStatus\GetDetailsOfASpecificMaritalStatusFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\MaritalStatuses\Features\Queries\GetDetailsOfASpecificMaritalStatus\GetDetailsOfASpecificMaritalStatusHelper.cs" />
+    <Compile Include="Domain\HR\ReferenceData\MaritalStatuses\Features\Queries\GetDetailsOfASpecificMaritalStatus\Returns_the_correct_maritalStatus.cs" />
+    <Compile Include="Domain\HR\ReferenceData\MaritalStatuses\Features\Remove\RemoveMaritalStatusFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\MaritalStatuses\Features\Remove\RemoveMaritalStatusRequestHelper.cs" />
+    <Compile Include="Domain\HR\ReferenceData\MaritalStatuses\Features\Remove\Remove_will.cs" />
+    <Compile Include="Domain\HR\ReferenceData\MaritalStatuses\Fields\Description\A_default_description_for_a_marital_status_is_not_supplied_to_force_user_entry.cs" />
+    <Compile Include="Domain\HR\ReferenceData\MaritalStatuses\Fields\Description\A_description_can_be_specified_when_adding_a_marital_status.cs" />
+    <Compile Include="Domain\HR\ReferenceData\MaritalStatuses\Fields\Description\A_description_for_a_marital_status_can_not_be_duplicated_is_validated_on_create.cs" />
+    <Compile Include="Domain\HR\ReferenceData\MaritalStatuses\Fields\Description\A_description_for_a_marital_status_can_not_be_duplicated_is_validated_on_update.cs" />
+    <Compile Include="Domain\HR\ReferenceData\MaritalStatuses\Fields\Description\A_description_for_a_marital_status_is_mandatory_on_create.cs" />
+    <Compile Include="Domain\HR\ReferenceData\MaritalStatuses\Fields\Description\The_description_for_a_marital_status_is_sanatised_when_creating.cs" />
+    <Compile Include="Domain\HR\ReferenceData\MaritalStatuses\Fields\Description\The_description_for_a_marital_status_is_sanatised_when_getting_an_update_request.cs" />
+    <Compile Include="Domain\HR\ReferenceData\MaritalStatuses\Fields\Description\The_description_for_a_marital_status_is_sanatised_when_updating.cs" />
+    <Compile Include="Domain\HR\ReferenceData\MaritalStatuses\Fields\Description\A_description_for_a_marital_status_is_mandatory_on_update.cs" />
+    <Compile Include="Domain\HR\ReferenceData\MaritalStatuses\Fields\Description\Description_is_restricted_to_the_default_maximum_number_of_characters.cs" />
+    <Compile Include="Domain\HR\ReferenceData\MaritalStatuses\Fields\Is_Hidden\Is_Hidden_can_be_specified_when_adding_a_marital_status.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domain\HR\ReferenceData\MaritalStatuses\Fields\Is_Hidden\Is_Hidden_defaults_to_false_for_a_marital_status.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domain\HR\ReferenceData\Nationalities\Features\Edit\GetUpdateNationalityRequest_will.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Nationalities\Features\Edit\UpdateNationalityEventFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Nationalities\Features\Edit\UpdateNationality_will.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Nationalities\Features\Edit\UpdateNationalityFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Nationalities\Features\Edit\UpdateNationalityRequestHelper.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Nationalities\Features\New\NewNationalityRequestBuilder.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Nationalities\Features\New\NewNationalityFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Nationalities\Features\New\NewNationality_will.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Nationalities\Features\Queries\GetDetailsOfAllNationalities\Correctly_maps_description_for_a_nationality.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Nationalities\Features\Queries\GetDetailsOfAllNationalities\Correctly_maps_is_hidden_for_a_nationality.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Nationalities\Features\Queries\GetDetailsOfAllNationalities\GetDetailsOfAllNationalitiesFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Nationalities\Features\Queries\GetDetailsOfAllNationalities\Return_all_nationalities.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Nationalities\Features\Queries\GetDetailsOfASpecificNationality\Correctly_maps_description_for_a_nationality.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Nationalities\Features\Queries\GetDetailsOfASpecificNationality\GetDetailsOfASpecificNationalityHelper.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Nationalities\Features\Queries\GetDetailsOfASpecificNationality\GetDetailsOfASpecificNationalityFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Nationalities\Features\Queries\GetDetailsOfASpecificNationality\Correctly_maps_is_hidden_for_a_nationality.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Nationalities\Features\Queries\GetDetailsOfASpecificNationality\Returns_the_correct_nationality.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Nationalities\Features\Remove\RemoveNationalityFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Nationalities\Features\Remove\RemoveNationalityRequestHelper.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Nationalities\Features\Remove\RemoveNationality_will.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Nationalities\Fields\Description\A_default_description_for_a_nationality_is_not_supplied_to_force_user_entry.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Nationalities\Fields\Description\A_description_can_be_specified_when_adding_a_nationality.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Nationalities\Fields\Description\A_description_for_a_nationality_can_not_be_duplicated_is_validated_on_create.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Nationalities\Fields\Description\A_description_for_a_nationality_is_mandatory_on_create.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Nationalities\Fields\Description\The_description_for_a_nationality_is_sanatised_when_creating.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Nationalities\Fields\Description\A_description_for_a_nationality_can_not_be_duplicated_is_validated_on_update.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Nationalities\Fields\Description\The_description_for_a_nationality_is_sanatised_when_getting_an_update_request.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Nationalities\Fields\Description\The_description_for_a_nationality_is_sanatised_when_updating.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Nationalities\Fields\Description\A_description_for_a_nationality_is_mandatory_on_update.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Nationalities\Fields\Description\Description_is_restricted_to_the_default_maximum_number_of_characters.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Nationalities\Fields\Is_Hidden\Is_Hidden_can_be_specified_when_adding_a_nationality.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Nationalities\Fields\Is_Hidden\Is_Hidden_for_a_Title_defaults_to_false_for_a_nationality.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Qualifications\Features\Edit\UpdateQualificationEventFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Qualifications\Fields\Description\A_description_for_a_qualification_is_mandatory_on_update.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Qualifications\Fields\Description\Description_is_restricted_to_the_default_maximum_number_of_characters.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Relationships\Description\A_description_for_a_Relationship_is_mandatory_on_update.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Relationships\Description\Description_is_restricted_to_the_default_maximum_number_of_characters.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Relationships\Edit\UpdateRelationshipEventFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Relationships\Queries\GetDetailsOfEligibleRelationships\GetEligibleRelationshipsFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Relationships\Queries\GetDetailsOfEligibleRelationships\Returns.cs" />
+    <Compile Include="Domain\HR\Employees\EmergencyContacts\Features\Remove\RemoveEmergencyContact_will.cs" />
+    <Compile Include="Domain\HR\Employees\EmergencyContacts\Features\Update\UpdateFixture.cs" />
+    <Compile Include="Domain\HR\Employees\EmergencyContacts\Features\Update\UpdateRequestHelper.cs" />
+    <Compile Include="Domain\HR\Employees\EmergencyContacts\Fields\PrimaryPhoneNumber\primary_phone_number_is_mandatory.cs" />
+    <Compile Include="Domain\HR\Employees\EmergencyContacts\Fields\PrimaryPhoneNumber\does_not_have_a_space_at_the_start_and_end.cs" />
+    <Compile Include="Domain\HR\Employees\EmergencyContacts\Fields\PrimaryPhoneNumber\has_a_maximum_number_of_characters.cs" />
+    <Compile Include="Domain\HR\Employees\EmergencyContacts\Fields\OtherPhoneNumber\does_not_have_a_space_at_the_start_and_end.cs" />
+    <Compile Include="Domain\HR\Employees\EmergencyContacts\Fields\OtherPhoneNumber\has_a_maximum_number_of_characters.cs" />
+    <Compile Include="Domain\HR\Employees\EmergencyContacts\Fields\Name\A_name_is_mandatory.cs" />
+    <Compile Include="Domain\HR\Employees\EmergencyContacts\Fields\Name\does_not_have_a_space_at_the_start_and_end.cs" />
+    <Compile Include="Domain\HR\Employees\EmergencyContacts\Fields\Name\has_a_maximum_number_of_characters.cs" />
+    <Compile Include="Domain\HR\Employees\EmergencyContacts\Features\GetAll\Correctly_maps_the_fields.cs" />
+    <Compile Include="Domain\HR\Employees\EmergencyContacts\Features\GetAll\GetAllFixture.cs" />
+    <Compile Include="Domain\HR\Employees\EmergencyContacts\Features\GetAll\Returns.cs" />
+    <Compile Include="Domain\HR\Employees\EmergencyContacts\Features\GetById\Correctly_maps_the_fields.cs" />
+    <Compile Include="Domain\HR\Employees\EmergencyContacts\Features\GetById\Returns.cs" />
+    <Compile Include="Domain\HR\Employees\EmergencyContacts\Features\New\NewEmergencyContactFixture.cs" />
+    <Compile Include="Domain\HR\Employees\EmergencyContacts\Features\New\NewEmergencyContactRequestHelper.cs" />
+    <Compile Include="Domain\HR\Employees\EmergencyContacts\Features\New\NewEmergencyContact_will.cs" />
+    <Compile Include="Domain\HR\Employees\EmergencyContacts\Features\Update\Update_will.cs" />
+    <Compile Include="Domain\HR\Employees\EmergencyContacts\Fields\Relationship\emergency_contacts_relationship_can_be_set.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domain\HR\Employees\EmployeeDetails\EmployeeSummary\correctly_returns_the_employee_name.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeDetails\EmployeeSummary\EmployeeSummaryFixture.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\date_of_birth\DateOfBirthIsValid.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\date_of_birth\A_dateofbirth_can_be_edited_via_the_employees_personal_details.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeDetails\GetAll\Correctly_maps_the_fields.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeDetails\GetAll\GetAllFixture.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeDetails\GetAll\Ordering.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\Forename\A_forename_is_mandatory.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\Forename\The_characters_allowed_in_a_forename_are_restricted.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\Forename\A_forename_has_a_maximum_number_of_charactes.cs" />
+    <Compile Include="Domain\HR\Employees\EmployeeDetails\GetAll\Returns.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\Forename\A_forename_can_be_editied_via_the_employees_personal_details.cs" />
+    <Compile Include="Domain\HR\Employees\Notes\GetAll\Correctly_maps_the_fields.cs" />
+    <Compile Include="Domain\HR\Employees\Notes\GetAll\GetAllFixture.cs" />
+    <Compile Include="Domain\HR\Employees\Notes\GetAll\Returns.cs" />
+    <Compile Include="Domain\HR\Employees\Notes\GetById\Correctly_maps_the_fields.cs" />
+    <Compile Include="Domain\HR\Employees\Notes\GetById\Returns.cs" />
+    <Compile Include="Domain\HR\Employees\Notes\New\A_note_does_not_have_space_at_the_start_and_end.cs" />
+    <Compile Include="Domain\HR\Employees\Notes\New\A_Note_is_mandatory.cs" />
+    <Compile Include="Domain\HR\Employees\Notes\New\NewNoteFixture.cs" />
+    <Compile Include="Domain\HR\Employees\Notes\New\NewNoteRequestHelper.cs" />
+    <Compile Include="Domain\HR\Employees\Notes\New\NewNote_will.cs" />
+    <Compile Include="Domain\HR\Employees\Notes\Remove\RemoveNote_will.cs" />
+    <Compile Include="Domain\HR\Employees\Notes\Update\A_note_does_not_have_space_at_the_start_and_end.cs" />
+    <Compile Include="Domain\HR\Employees\Notes\Update\Update_will.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\Othernames\An_othername_can_be_edited_via_the_employees_personal_details.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\Othernames\An_othername_has_a_maximum_number_of_charactes.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\Othernames\The_characters_allowed_in_a_othername_are_restricted.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Features\ById\ByIdFixture.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Features\ById\Correctly_maps_the_fields.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Features\ById\Returns.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Features\Update\GetUpdateRequestCommand\Correctly_maps_the_fields.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Features\Update\GetUpdateRequestCommand\IsAGetUpdateRequestWorkSuiteSpecification.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Features\Update\GetUpdateRequestCommand\GetUpdateRequestWorkSuiteWill.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Features\Update\UpdateCommand\UpdateFixture.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Features\Update\UpdateCommand\UpdateRequestHelper.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Features\Update\UpdateCommand\Update_will.cs" />
+    <Compile Include="Domain\HR\Employees\ContactDetails\Fields\Phone_number\A_phone_can_be_edited_via_the_employees_contact_details.cs" />
+    <Compile Include="Domain\HR\Employees\ContactDetails\Fields\Phone_number\A_phone_has_a_maximum_number_of_charactes.cs" />
+    <Compile Include="Domain\HR\Employees\ContactDetails\Fields\Phone_number\The_characters_allowed_in_a_phone_are_restricted.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\PlaceOfBirth\A_place_of_birth_has_a_maximum_number_of_charactes.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\PlaceOfBirth\A_place_of_birth_can_be_edited_via_the_employees_personal_details.cs" />
+    <Compile Include="Domain\HR\Employees\Remove\RemoveEmployeeFixture.cs" />
+    <Compile Include="Domain\HR\Employees\Remove\RemoveRequestHelper.cs" />
+    <Compile Include="Domain\HR\Employees\Remove\Remove_will.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\Surname\A_surname_can_be_editied_via_the_employees_personal_details.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\Surname\A_surname_has_a_maximum_number_of_charactes.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\Surname\The_characters_allowed_in_a_surname_are_restricted.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\Surname\A_surname_is_mandatory.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\Titles\A_title_can_be_set_to_not_specified.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\Titles\A_title_can_be_edited_via_the_employees_personal_details.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\Titles\Setting_the_title_to_a_title_that_is_hidden_is_not_allowed.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Genders\Description\A_default_description_for_a_Gender_is_not_supplied_to_force_user_entry.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Genders\Description\A_description_can_be_specified_when_adding_a_gender.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Genders\Description\A_description_for_a_Gender_can_not_be_duplicated_is_validated_on_create.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Genders\Description\A_description_for_a_Gender_can_not_be_duplicated_is_validated_on_update.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Genders\Description\A_description_for_a_Gender_is_mandatory_on_create.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Genders\Description\The_description_for_a_Gender_is_sanatised_when_creating.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Genders\Description\The_description_for_a_Gender_is_sanatised_when_getting_an_update_request.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Genders\Description\The_description_for_a_Gender_is_sanatised_when_updating.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Genders\Edit\GetUpdateRequest_will.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Genders\Edit\UpdateGenderRequestHelper.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Genders\Edit\UpdateGenderFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Genders\Edit\Update_will.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Genders\Is_Hidden\Is_Hidden_can_be_specified_when_adding_a_gender.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Genders\Is_Hidden\Is_Hidden_defaults_to_false_for_a_gender.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Genders\New\NewGenderRequestBuilder.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Genders\New\NewGenderFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Genders\New\NewGender_will.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Genders\Queries\GetDetailsOfAllGenders\Correctly_maps_description_for_a_gender.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Genders\Queries\GetDetailsOfAllGenders\Correctly_maps_is_hidden_for_a_gender.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Genders\Queries\GetDetailsOfAllGenders\GetDetailsOfAllGendersFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Genders\Queries\GetDetailsOfASpecificGender\Correctly_maps_description_for_a_gender.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Genders\Queries\GetDetailsOfASpecificGender\Correctly_maps_is_hidden_for_a_gender.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Genders\Queries\GetDetailsOfASpecificGender\GetDetailsOfASpecificGenderFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Genders\Queries\GetDetailsOfASpecificGender\GetDetailsOfASpecificGenderBuilder.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Genders\Queries\GetDetailsOfASpecificGender\Returns_the_correct_gender.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Genders\Remove\RemoveGenderRequestHelper.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Genders\Remove\RemoveGenderFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Genders\Remove\Remove_will.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Generic\Queries\GetDetailsOfAllReferenceData\GetDetailsOfAllReferenceDataFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Genders\Queries\GetDetailsOfAllGenders\Return_all_genders.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Generic\Description\A_default_description_is_not_supplied_to_force_user_entry.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Generic\Description\A_description_can_be_specified_when_adding_a_new_entry.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Generic\Description\A_description_can_not_be_duplicated_is_validated_on_create.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Generic\Queries\GetDetailsOfAllReferenceData\Correctly_maps_is_hidden.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Generic\Queries\GetDetailsOfASpecificReferenceData\Correctly_maps_description.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Generic\Queries\GetDetailsOfASpecificReferenceData\Correctly_maps_is_hidden.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Generic\Queries\GetDetailsOfASpecificReferenceData\GetDetailsOfASpecificReferenceDataFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Generic\Queries\GetDetailsOfASpecificReferenceData\GetDetailsOfASpecificReferenceDataRequestBuilder.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Relationships\Description\A_default_description_for_a_Relationship_is_not_supplied_to_force_user_entry.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Relationships\Description\A_description_can_be_specified_when_adding_a_relationship.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Relationships\Description\A_description_for_a_Relationship_can_not_be_duplicated_is_validated_on_update.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Relationships\Description\A_description_for_a_Relationship_can_not_be_duplicated_is_validated_on_create.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Relationships\Description\A_description_for_a_Relationship_is_mandatory_on_create.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Relationships\Description\The_description_for_a_Relationship_is_sanatised_when_getting_an_update_request.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Relationships\Description\The_description_for_a_Relationship_is_sanatised_when_updating.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Relationships\Description\The_description_for_a_Relationship_is_sanitised_when_creating.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Relationships\Edit\GetUpdateRequest_will.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Relationships\Edit\UpdateRelationshipFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Relationships\Edit\UpdateRelationshipRequestHelper.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Relationships\Edit\Update_will.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Relationships\Is_Hidden\Is_Hidden_can_be_specified_when_adding_a_relationship.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Relationships\Is_Hidden\Is_Hidden_defaults_to_false_for_a_relationship.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Relationships\New\NewRelationshipFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Relationships\New\NewRelationshipRequestBuilder.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Relationships\New\NewRelationship_will.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Relationships\Queries\GetDetailsOfAllRelationships\Correctly_maps_description_for_a_relationship.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Relationships\Queries\GetDetailsOfAllRelationships\Correctly_maps_is_hidden_for_a_relationship.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Relationships\Queries\GetDetailsOfAllRelationships\GetDetailsOfAllRelationshipsFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Relationships\Queries\GetDetailsOfAllRelationships\Return_all_relationships.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Relationships\Queries\GetDetailsOfASpecificRelationship\Correctly_maps_description_for_a_relationship.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Relationships\Queries\GetDetailsOfASpecificRelationship\Correctly_maps_is_hidden_for_a_relationship.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Relationships\Queries\GetDetailsOfASpecificRelationship\GetDetailsOfASpecificRelationshipHelper.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Relationships\Queries\GetDetailsOfASpecificRelationship\GetDetailsOfASpecificRelationshipFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Relationships\Queries\GetDetailsOfASpecificRelationship\Returns_the_correct_relationship.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Relationships\Remove\RemoveRelationshipFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Relationships\Remove\RemoveRelationshipRequestHelper.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Relationships\Remove\Remove_will.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Skills\Features\Edit\GetUpdateSkillRequest_will.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Skills\Features\Edit\UpdateSkillEventFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Skills\Features\Edit\Update_will.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Skills\Features\Edit\UpdateSkillRequestHelper.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Skills\Features\Queries\GetDetailsOfAllSkills\Correctly_maps_description_for_a_skill.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Skills\Features\Queries\GetDetailsOfAllSkills\GetDetailsOfAllSkillsFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Skills\Features\Queries\GetDetailsOfAllSkills\Correctly_maps_is_hidden_for_a_skill.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Skills\Features\Queries\GetDetailsOfAllSkills\Return_all_skills.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Skills\Features\Queries\GetDetailsOfASpecificSkill\GetDetailsOfASpecificSkillHelper.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Skills\Features\Queries\GetDetailsOfASpecificSkill\GetDetailsOfASpecificSkillFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Skills\Features\Queries\GetDetailsOfASpecificSkill\Returns_the_correct_skill.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Skills\Features\Queries\GetDetailsOfASpecificSkill\Correctly_maps_description_for_a_skill.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Skills\Features\Queries\GetDetailsOfASpecificSkill\Correctly_maps_is_hidden_for_a_skill.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Skills\Features\Edit\UpdateSkillFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Skills\Features\Remove\RemoveSkillFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Skills\Features\Remove\RemoveSkillRequestHelper.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Skills\Features\Remove\Remove_will.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Skills\Fields\Description\A_description_can_be_specified_when_adding_a_skill.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Skills\Fields\Description\A_default_description_for_a_skill_is_not_supplied_to_force_user_entry.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Skills\Fields\Description\The_description_for_a_skill_is_sanatised_when_creating.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Skills\Fields\Description\A_description_for_a_skill_is_mandatory_on_create.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Skills\Features\New\NewSkillFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Skills\Features\New\NewSkillRequestBuilder.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Skills\Features\New\NewSkill_will.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Skills\Fields\Description\A_description_for_a_skill_can_not_be_duplicated_is_validated_on_create.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Skills\Fields\Description\A_description_for_a_skill_can_not_be_duplicated_is_validated_on_update.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Skills\Fields\Description\The_description_for_a_skill_is_sanatised_when_getting_an_update_request.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Skills\Fields\Description\The_description_for_a_skill_is_sanatised_when_updating.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Skills\Fields\Description\A_description_for_a_skill_is_mandatory_on_update.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Skills\Fields\Description\Description_is_restricted_to_the_default_maximum_number_of_characters.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Skills\Fields\Is_Hidden\Is_Hidden_can_be_specified_when_adding_a_skill.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Skills\Fields\Is_Hidden\Is_Hidden_for_a_Title_defaults_to_false_for_a_skill.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Titles\Description\A_description_for_a_Title_is_mandatory_on_update.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Titles\Description\Description_is_restricted_to_the_default_maximum_number_of_characters.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Titles\Edit\UpdateTitleEventFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Titles\Queries\GetDetailsOfAllTitles\Correctly_maps_is_hidden_for_a_title.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Titles\Queries\GetDetailsOfAllTitles\GetDetailsOfAllTitlesFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Titles\Queries\GetDetailsOfASpecificTitle\Correctly_maps_description_for_a_title.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Titles\Queries\GetDetailsOfASpecificTitle\Correctly_maps_is_hidden_for_a_title.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Titles\Queries\GetDetailsOfASpecificTitle\GetDetailsOfASpecificTitleFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Titles\Queries\GetDetailsOfASpecificTitle\GetDetailsOfASpecificTitleHelper.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Titles\Queries\GetDetailsOfASpecificTitle\Returns_the_correct_title.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Qualifications\Features\Edit\GetUpdateQualificationRequest_will.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Qualifications\Features\Edit\UpdateQualification_will.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Qualifications\Features\Edit\UpdateQualificationsFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Qualifications\Features\Edit\UpdateQualificationRequestHelper.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Qualifications\Features\New\NewQualificationFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Qualifications\Features\New\NewQualificationRequestBuilder.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Qualifications\Features\New\NewQualification_will.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Qualifications\Features\Queries\GetDetailsOfAllTrainings\GetDetailsOfAllQualificationsFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Qualifications\Features\Queries\GetDetailsOfAllTrainings\Return_all_qualifications.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Qualifications\Features\Queries\GetDetailsOfAllTrainings\Correctly_maps_description_for_a_qualification.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Qualifications\Features\Queries\GetDetailsOfAllTrainings\Correctly_maps_is_hidden_for_a_qualification.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Qualifications\Features\Queries\GetDetailsOfASpecificTraining\GetDetailsOfASpecificQualificationHelper.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Qualifications\Features\Queries\GetDetailsOfASpecificTraining\GetDetailsOfASpecificQualificationFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Qualifications\Features\Queries\GetDetailsOfASpecificTraining\Returns_the_correct_qualification.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Qualifications\Features\Queries\GetDetailsOfASpecificTraining\Correctly_maps_description_for_a_qualification.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Qualifications\Features\Queries\GetDetailsOfASpecificTraining\Correctly_maps_is_hidden_for_a_qualification.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Qualifications\Features\Remove\RemoveQualificationFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Qualifications\Features\Remove\RemoveQualificationRequestHelper.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Qualifications\Features\Remove\RemoveQualification_will.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Qualifications\Fields\Description\A_default_description_for_a_qualification_is_not_supplied_to_force_user_entry.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Qualifications\Fields\Description\A_description_can_be_specified_when_adding_a_qualification.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Qualifications\Fields\Description\A_description_for_a_qualification_can_not_be_duplicated_is_validated_on_create.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Qualifications\Fields\Description\A_description_for_a_qualification_is_mandatory_on_create.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Qualifications\Fields\Description\The_description_for_a_qualification_is_sanatised_when_creating.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Qualifications\Fields\Description\A_description_for_a_qualification_can_not_be_duplicated_is_validated_on_update.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Qualifications\Fields\Description\The_description_for_a_qualification_is_sanatised_when_getting_an_update_request.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Qualifications\Fields\Description\The_description_for_a_qualification_is_sanatised_when_updating.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Qualifications\Fields\Is_Hidden\Is_Hidden_can_be_specified_when_adding_a_qualification.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Qualifications\Fields\Is_Hidden\Is_Hidden_for_a_Title_defaults_to_false_for_a_qualification.cs" />
+    <Compile Include="Helpers\Domain\DocumentStore\Documents\DependencyConfiguration.cs" />
+    <Compile Include="Helpers\Domain\DocumentStore\Documents\DocumentBuilder.cs" />
+    <Compile Include="Helpers\Domain\DocumentStore\Documents\DocumentHelper.cs" />
+    <Compile Include="Helpers\Domain\DocumentStore\Documents\FakeDocumentRepository.cs" />
+    <Compile Include="Helpers\Domain\HR\Employees\EmergencyContacts\DependencyConfiguration.cs" />
+    <Compile Include="Helpers\Domain\HR\Employees\EmergencyContacts\EmergencyContactBuilder.cs" />
+    <Compile Include="Helpers\Domain\HR\Employees\EmployeeDocuments\DependencyConfiguration.cs" />
+    <Compile Include="Helpers\Domain\HR\Employees\EmployeeDocuments\DocumentIdentityHelper.cs" />
+    <Compile Include="Helpers\Domain\HR\Employees\EmployeeDocuments\EmployeeDocumentBuilder.cs" />
+    <Compile Include="Helpers\Domain\HR\Employees\EmployeeIdentityHelper.cs" />
+    <Compile Include="Helpers\Domain\HR\Employees\EmployeeQualifications\DependencyConfiguration.cs" />
+    <Compile Include="Helpers\Domain\HR\Employees\EmployeeQualifications\EmployeeQualificationBuilder.cs" />
+    <Compile Include="Helpers\Domain\HR\Employees\EmployeeSkills\DependencyConfiguration.cs" />
+    <Compile Include="Helpers\Domain\HR\Employees\EmployeeSkills\EmployeeSkillBuilder.cs" />
+    <Compile Include="Domain\HR\Employees\EmploymentDetails\Features\Edit\DependencyConfiguration.cs" />
+    <Compile Include="Helpers\Domain\HR\Employees\Notes\NoteIdentityHelper.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\EthnicOrigins\DependencyConfiguration.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\EthnicOrigins\EthnicOriginBuilder.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\EthnicOrigins\EthnicOriginHelper.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\EthnicOrigins\FakeEthnicOriginRepository.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\JobTitles\DependencyConfiguration.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\JobTitles\FakeJobTitleRepository.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\JobTitles\JobTitleBuilder.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\JobTitles\JobTitleHelper.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\Locations\DependencyConfiguration.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\Locations\FakeLocationRepository.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\Locations\LocationBuilder.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\Locations\LocationHelper.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\MaritalStatuses\DependencyConfiguration.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\MaritalStatuses\FakeMaritalStatusRepository.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\MaritalStatuses\MaritalStatusBuilder.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\MaritalStatuses\MaritalStatusHelper.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\Genders\DependencyConfiguration.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\Genders\FakeGenderRepository.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\Genders\GenderBuilder.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\Genders\TitleHelper.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Generic\Base\Fixtures\IsAQueryForAnEntityFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Generic\Base\Fixtures\IsAQueryForASetFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Titles\Description\The_description_for_a_Title_is_sanatised_when_creating.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Generic\Description\The_description_is_sanatised_when_creating.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Generic\Description\A_description_is_mandatory_on_create.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Generic\Description\A_description_can_not_be_duplicated_is_validated_on_update.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Titles\Description\The_description_for_a_Title_is_sanatised_when_updating.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Generic\Description\The_description_is_sanatised_when_updating.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Generic\Edit\GetUpdateRequest_will.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Generic\Edit\UpdateRefereceDataFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Generic\Edit\UpdateReferenceDataRequestBuilder.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Generic\Queries\GetDetailsOfAllReferenceData\Correctly_maps_description.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Generic\Queries\GetDetailsOfASpecificReferenceData\Returns_the_correct_entity.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Generic\Is_Hidden\Is_Hidden_can_be_specified_when_adding_a_new_entry.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Generic\Is_Hidden\Is_Hidden_defaults_to_false.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Generic\New\NewReferenceDataRequestHelper.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Generic\New\NewReferenceDataFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Generic\Remove\RemoveReferenceDataFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Generic\Remove\RemoveReferenceDataRequestBuilder.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Titles\Description\A_default_description_for_a_Title_is_not_supplied_to_force_user_entry.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Titles\Description\A_description_for_a_Tile_can_not_be_duplicated_is_validated_on_create.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Titles\Description\A_description_for_a_Title_is_mandatory_on_create.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Titles\Description\A_description_can_be_specified_when_adding_a_title.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Titles\Description\A_description_for_a_Tile_can_not_be_duplicated_is_validated_on_update.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Titles\Description\The_description_for_a_Title_is_sanatised_when_getting_an_update_request.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Generic\Description\The_description_is_sanatised_when_getting_an_update_request.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Titles\Queries\GetDetailsOfAllTitles\Correctly_maps_description_for_a_title.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Titles\Queries\GetDetailsOfAllTitles\Return_all_titles.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Titles\Is_Hidden\Is_Hidden_can_be_specified_when_adding_a_title.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Titles\Is_Hidden\Is_Hidden_defaults_to_false_for_a_title.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Titles\New\NewTitleFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Titles\New\NewTitleRequestBuilder.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Titles\New\NewTitle_will.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Titles\Remove\RemoveTitleFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Titles\Remove\Remove_will.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Titles\Remove\RemoveTitleRequestHelper.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Titles\Edit\GetUpdateRequest_will.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Titles\Edit\UpdateTitleFixture.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Titles\Edit\UpdateTitleRequestHelper.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Titles\Edit\Update_will.cs" />
+    <Compile Include="Helpers\Domain\HR\Employees\Addresses\AddressBuilder.cs" />
+    <Compile Include="Helpers\Domain\HR\Employees\Addresses\DependencyConfiguration.cs" />
+    <Compile Include="Helpers\Domain\HR\Employees\ContactDetails\DependencyConfiguration.cs" />
+    <Compile Include="Helpers\Domain\HR\Employees\DependencyConfiguration.cs" />
+    <Compile Include="Helpers\Domain\HR\Employees\EmployeeBuilder.cs" />
+    <Compile Include="Helpers\Domain\HR\Employees\EmployeeHelper.cs" />
+    <Compile Include="Helpers\Domain\HR\Employees\FakeEmployeeRepository.cs" />
+    <Compile Include="Helpers\Domain\HR\Employees\Notes\DependencyConfiguration.cs" />
+    <Compile Include="Helpers\Domain\HR\Employees\Notes\NoteBuilder.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\Generic\FakeReferenceDataRepository.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\Generic\ReferenceDataBuilder.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\Generic\ReferenceDataHelper.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\Nationalities\DependencyConfiguration.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\Nationalities\FakeNationalityRepository.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\Nationalities\NationalityBuilder.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\Nationalities\NationalityHelper.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\Qualifications\QualificationIdentityHelper.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\Relationships\DependencyConfiguration.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\Relationships\FakeRelationshipRepository.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\Relationships\RelationshipBuilder.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\Relationships\RelationshipHelper.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\Skills\DependencyConfiguration.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\Skills\FakeSkillRepository.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\Skills\SkillBuilder.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\Skills\SkillHelper.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\Skills\SkillIdentityHelper.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\Titles\DependencyConfiguration.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\Titles\FakeTitleRepository.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\Titles\TitleBuilder.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\Titles\TitleHelper.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\Qualifications\DependencyConfiguration.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\Qualifications\FakeQualificationRepository.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\Qualifications\QualificationBuilder.cs" />
+    <Compile Include="Helpers\Domain\HR\ReferenceTemplate\Qualifications\QualificationHelper.cs" />
+    <Compile Include="Helpers\SpecificationTemplates\Base\HRActArrangeAssertResponseCommandSpecification.cs" />
+    <Compile Include="Helpers\SpecificationTemplates\Base\HRResponseCommandSpecification.cs" />
+    <Compile Include="Helpers\SpecificationTemplates\Base\HRSpecification.cs" />
+    <Compile Include="Helpers\SpecificationTemplates\Base\HRTestBootstrap.cs" />
+    <Compile Include="Helpers\SpecificationTemplates\ForDomainLogic\CommandCommitedChangesSpecification.cs" />
+    <Compile Include="Helpers\SpecificationTemplates\ForDomainLogic\IsAMobileSpecification.cs" />
+    <Compile Include="Helpers\SpecificationTemplates\ForDomainLogic\IsEmailSpecification.cs" />
+    <Compile Include="Helpers\SpecificationTemplates\ForDomainLogic\FieldIsUpdatedSpecification.cs" />
+    <Compile Include="Helpers\SpecificationTemplates\ForDomainLogic\IsAPersonsNameSpecification.cs" />
+    <Compile Include="Helpers\SpecificationTemplates\ForDomainLogic\FieldIsMappedCorrectlySpecification.cs" />
+    <Compile Include="Domain\HR\ReferenceData\Generic\Queries\GetDetailsOfAllReferenceData\Return_all_entires.cs" />
+    <Compile Include="Helpers\SpecificationTemplates\ForDomainLogic\IsAPhoneSpecification.cs" />
+    <Compile Include="Helpers\SpecificationTemplates\ForDomainLogic\IsAPostCodeSpecification.cs" />
+    <Compile Include="Helpers\SpecificationTemplates\ForDomainLogic\PostCodeTextFieldDoesNotExceedDefaultMaximumNumberOfCharactersSpecification.cs" />
+    <Compile Include="Helpers\SpecificationTemplates\ForDomainLogic\TextFieldDoesNotExceedDefaultMaximumNumberOfCharactersSpecification.cs" />
+    <Compile Include="Helpers\SpecificationTemplates\ForDomainLogic\TextFieldHasLeadingAndTrailingWhitespaceStrippedSpecification.cs" />
+    <Compile Include="Helpers\SpecificationTemplates\ForDomainLogic\TextFieldOnlyContainsAlphabeticCharactersSpecification.cs" />
+    <Compile Include="Helpers\SpecificationTemplates\ForDomainLogic\TextFieldDoesNotExceedMaximumNumberOfCharactersSpecification.cs" />
+    <Compile Include="Helpers\SpecificationTemplates\ForDomainLogic\UniqueTextFieldSpecification.cs" />
+    <Compile Include="Helpers\SpecificationTemplates\ForDomainLogic\MandatoryTextFieldSpecification.cs" />
+    <Compile Include="Infrastructure\HRUnitTestDependencyConfiguration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Helpers\Domain\DocumentStore\Documents\Testing.docx" />
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Core\src\Worksuite.Core\Worksuite.Core.csproj">
+      <Project>{1df54fed-2bc7-4317-b32e-53135723b267}</Project>
+      <Name>Worksuite.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Content\src\Services\Content.Services.csproj">
+      <Project>{55d6359c-7ea7-42dc-bc38-3f4b2b02eb99}</Project>
+      <Name>Content.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.CodeStrutures\WorkSuite.Library.CodeStrutures.csproj">
+      <Project>{249BE708-3014-4584-9E14-CB087E54916E}</Project>
+      <Name>WorkSuite.Library.CodeStrutures</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.DomainTypes\WorkSuite.Library.DomainTypes.csproj">
+      <Project>{538c6f62-b398-41f1-917c-10659fdf6c78}</Project>
+      <Name>WorkSuite.Library.DomainTypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.IO.Cryptography\WorkSuite.Library.IO.Cryptography.csproj">
+      <Project>{cdb719b5-36b2-4f45-9f00-118138eb18d0}</Project>
+      <Name>WorkSuite.Library.IO.Cryptography</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.IO\WorkSuite.Library.IO.csproj">
+      <Project>{d56d4264-6c22-4dfa-9f46-0840b757a8e1}</Project>
+      <Name>WorkSuite.Library.IO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.Ninject\WorkSuite.Library.Ninject.csproj">
+      <Project>{FA9854F9-6908-483A-AE63-9354249E74BC}</Project>
+      <Name>WorkSuite.Library.Ninject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.Persistence.EF\WorkSuite.Library.Persistence.EF.csproj">
+      <Project>{422C302F-F4DD-4008-8F86-0124BEA8DE7B}</Project>
+      <Name>WorkSuite.Library.Persistence.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.Persistence\WorkSuite.Library.Persistence.csproj">
+      <Project>{C55F23BE-BC7A-4F70-81D3-AF5D645FE831}</Project>
+      <Name>WorkSuite.Library.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.Service.Specification\WorkSuite.Library.Service.Specification.csproj">
+      <Project>{E6053BB8-D527-4524-93DF-19FE290CF90E}</Project>
+      <Name>WorkSuite.Library.Service.Specification</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Domain\HR.Domain.csproj">
+      <Project>{8AE9FE51-65BF-4A09-90B6-5B559434BF84}</Project>
+      <Name>HR.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Persistence\HR.Persistence.csproj">
+      <Project>{30E54F69-6055-4747-AFD7-D85E7C7F55A0}</Project>
+      <Name>HR.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\HR.Services.csproj">
+      <Project>{3D42E5CB-8885-42A6-A018-1C0F1D369123}</Project>
+      <Name>HR.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LinkedLibraryFiles\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

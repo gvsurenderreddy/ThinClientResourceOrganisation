@@ -1,0 +1,147 @@
+// ---------- BUTTONS
+$primary_call_to_action_background_light: #746ABE;
+$primary_call_to_action_background_dark: #170692;
+
+@mixin button_primary {
+	color: #ffffff;
+	font-size: 10pt;
+	text-shadow: 1px 1px 0px rgba(23,6,146,0.5);
+	-moz-box-shadow: 0px 0px 2px rgba(0,0,0,0.4);
+	-webkit-box-shadow: 0px 0px 2px rgba(0,0,0,0.4);
+	border: solid 1px #170692;
+	margin-bottom: 6px; 
+	padding: 5px;
+	letter-spacing: -.3px;
+	text-decoration: none;
+	//background: url(submitpdot.png) 0 0 no-repeat;
+	
+	background: $primary_call_to_action_background_light; /* Old browsers */
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 50%, from($primary_call_to_action_background_light), to($primary_call_to_action_background_dark)); /* Chrome,Safari4+ */
+	background-image: -webkit-linear-gradient(top, $primary_call_to_action_background_light, $primary_call_to_action_background_dark); /* Chrome10+,Safari5.1+ */
+	background-image:    -moz-linear-gradient(top, $primary_call_to_action_background_light, $primary_call_to_action_background_dark); /* FF3.6+ */
+	background-image:     -ms-linear-gradient(top, $primary_call_to_action_background_light, $primary_call_to_action_background_dark); /* IE10+ */
+	background-image:      -o-linear-gradient(top, $primary_call_to_action_background_light, $primary_call_to_action_background_dark);  /* Opera 11.10+ */
+	background: linear-gradient(to bottom,  $primary_call_to_action_background_light 20%, $primary_call_to_action_background_dark 100%); /* W3C */
+	filter: unquote("progid:DXImageTransform.Microsoft.gradient(startColorstr='")
+	+ ie-hex-str($primary_call_to_action_background_light)
+	+ unquote("', endColorstr='")
+	+ ie-hex-str($primary_call_to_action_background_dark)
+	+ unquote("',GradientType=0)"); /* IE6-9 */
+}
+
+@mixin button_primary_hover {
+	background: #170692;
+	background-image: none;
+	color: #ffffff;
+}
+
+@mixin button_primary_active {
+	background: #cccccc;
+	background-image: none;
+}
+
+@mixin button_primary_disabled {
+	background-color: #cccccc;
+	background-image: none;
+	border: solid 1px #bbbbbb;
+	color: #999999 !important;
+	text-shadow:1px 1px 0px rgba(255,255,255,0.5);
+	-moz-box-shadow:1px 1px 0px rgba(255,255,255,0.5);
+	-webkit-box-shadow:1px 1px 0px rgba(255,255,255,0.5);
+}
+
+$secondary_call_to_action_background_light: #E1E1E1;
+$secondary_call_to_action_background_dark: #AFAFAF;
+
+@mixin button_secondary {
+	color:#000000;
+	font-size: 10pt;
+	text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 0px 2px rgba(0,0,0,0.2);
+	-webkit-box-shadow: 0px 0px 2px rgba(0,0,0,0.2);
+	border: solid 1px #999999;
+	padding: 5px;
+	letter-spacing: -.3px;
+	text-decoration: none;
+	
+	text-shadow: 1px 1px 0px rgba(200,200,200,0.5);
+	-moz-box-shadow: 0px 0px 2px rgba(0,0,0,0.4);
+	-webkit-box-shadow: 0px 0px 2px rgba(0,0,0,0.4);
+
+	background-color: $secondary_call_to_action_background_light; /* Old browsers */
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 50%, from($secondary_call_to_action_background_light), to($secondary_call_to_action_background_dark)); /* Chrome,Safari4+ */
+	background-image: -webkit-linear-gradient(top, $secondary_call_to_action_background_light, $secondary_call_to_action_background_dark); /* Chrome10+,Safari5.1+ */
+	background-image:    -moz-linear-gradient(top, $secondary_call_to_action_background_light, $secondary_call_to_action_background_dark); /* FF3.6+ */
+	background-image:     -ms-linear-gradient(top, $secondary_call_to_action_background_light, $secondary_call_to_action_background_dark); /* IE10+ */
+	background-image:      -o-linear-gradient(top, $secondary_call_to_action_background_light, $secondary_call_to_action_background_dark);  /* Opera 11.10+ */
+	background: linear-gradient(to bottom,  $secondary_call_to_action_background_light 20%, $secondary_call_to_action_background_dark 100%); /* W3C */
+	filter: unquote("progid:DXImageTransform.Microsoft.gradient(startColorstr='")
+	+ ie-hex-str($secondary_call_to_action_background_light)
+	+ unquote("', endColorstr='")
+	+ ie-hex-str($secondary_call_to_action_background_dark)
+	+ unquote("',GradientType=0)"); /* IE6-9 */
+}
+
+@mixin button_secondary_hover {
+	background-color: $basecolour_bright;
+	background-image: none;
+	color: #000000;
+}
+
+@mixin button_secondary_active {
+	background-color: $basecolour_bright;
+	background-image: none;
+}
+
+@mixin button_secondary_disabled {
+	background-color: #cccccc;
+	background-image: none;
+	border: solid 1px #bbbbbb;
+	color: #999999 !important;
+	text-shadow: 1px 1px 0px rgba(255,255,255,0.5);
+	-moz-box-shadow: 1px 1px 0px rgba(255,255,255,0.5);
+	-webkit-box-shadow: 1px 1px 0px rgba(255,255,255,0.5);
+}
+
+// ---------- CONTROL BAR TOGGLES
+@mixin toggle_unselected {
+	color: #191919;
+	border: 1px solid #999999;
+	letter-spacing: -.6px;
+	
+	text-shadow: 1px 1px 0px rgba(200,200,200,0.5);
+	-moz-box-shadow: 0px 0px 2px rgba(0,0,0,0.4);
+	-webkit-box-shadow: 0px 0px 2px rgba(0,0,0,0.4);
+
+	background-color: #E1E1E1; /* Old browsers */
+	background: -webkit-gradient(linear, 0% 0%, 0% 50%, from(#E1E1E1), to(#746ABE)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #E1E1E1, #AFAFAF); /* Chrome10+,Safari5.1+ */
+	background:    -moz-linear-gradient(top, #E1E1E1, #AFAFAF); /* FF3.6+ */
+	background:     -ms-linear-gradient(top, #E1E1E1, #AFAFAF); /* IE10+ */
+	background:      -o-linear-gradient(top, #E1E1E1, #AFAFAF);  /* Opera 11.10+ */
+	background: linear-gradient(to bottom,  #E1E1E1 20%,#AFAFAF 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E1E1E1', endColorstr='#AFAFAF',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin toggle_hover {
+	border: 1px solid #999999;
+	background-color: #cccccc;
+}
+
+@mixin toggle_selected {
+	border:1px solid #999999;
+	background-color: #ffffff;
+}
+
+@mixin submit-remove {
+	border-radius: 50%;
+	width: 30px;
+	background-color: #ff0000;
+	content: "x";
+}
+
+// ---------- LINKS
+@mixin report_link_disabled {
+	cursor: default;
+	color: #cccccc;
+}

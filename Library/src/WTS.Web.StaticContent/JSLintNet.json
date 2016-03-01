@@ -1,0 +1,28 @@
+﻿{
+  "output": "Error",
+  "ignore": [],
+  "options": {
+    "predef": {},
+    "ass": true,
+    "bitwise": true,
+    "browser": true,
+    "closure": false,
+    "continue": true,
+    "debug": false,
+    "eqeq": false,
+    "evil": false,
+    "forin": false,
+    "newcap": true,
+    "nomen": false,
+    "plusplus": true,
+    "regexp": false,
+    "unparam": false,
+    "sloppy": true,
+    "sub": false,
+    "todo": true,
+    "vars": true,
+    "white": true
+  },
+  "runOnSave": true,
+  "runOnBuild": true
+}

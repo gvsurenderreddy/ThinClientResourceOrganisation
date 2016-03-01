@@ -1,0 +1,17 @@
+﻿@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Configuration.StaticContent
+@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Controls.Editors
+@model WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.Editors.Editor
+
+@{
+    Layout = @"~/Views/Shared/Layout.cshtml";
+    ViewBag.Title = "Colour Picker Mock";
+    ViewBag.Id = "ColourPickerMock";
+}
+
+<h1>WorkSuite.Library.Asp.Net.Mvc.Presentation.Tests - Colour Picker Mock</h1>
+@Editors.For(Model as dynamic)
+
+@section dependencies {
+    require(['color_picker_startup'], function(){ });
+    require(['new'], function () { });
+}

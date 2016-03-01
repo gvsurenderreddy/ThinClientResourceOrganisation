@@ -1,0 +1,26 @@
+﻿@* Generator : MvcHelper GeneratePrettyNames : true *@
+
+@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Controls.ViewElements
+@using WorkSuite.Library.Asp.Net.Mvc.Server.DateRangeBars
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels
+
+
+@helper For(IsAViewElement element)
+{
+
+    @ViewElement.Unknown()
+}
+
+
+@helper For(DateRangeBar view_model)
+{
+    <div class="control-bar">
+        <div id="date_range">
+            <button class="action" id="back"></button>
+            <button class="action" id="forward"></button>
+            <button id="today" class="action secondary-action">Go to today</button>
+            <span id="date">@view_model.date_range_string</span>
+        </div>
+    </div>
+
+}

@@ -1,0 +1,98 @@
+﻿@using WorkSuite.Confgiuration.Web.ThinClient.Application.Management.Service.Status.Presentation
+@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Configuration.StaticContent
+
+@{
+    var get_service_status = DependencyResolver.Current.GetService<GetServiceStatusPresentationMetadata>(  );
+    
+    @* Improve: change to use a text from resource file *@
+    var copy_write = "&copy; 2013 Working Time Solutions Ltd.";
+    var home_page = @Url.RouteUrl(WorkSuite.Confgiuration.Web.ThinClient.Application.Security.Users.Home.Resources.page_id);
+    var page_title = @ViewBag.Title;
+    var page_id = @ViewBag.Id;
+    var service_status = get_service_status.execute(  );
+}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+        <meta name="page-id" content="@page_id" />
+        <!--[if lte IE 8]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    
+        <link href="@Url.Content( StaticContent.get_url_for( "Static/css/Configuration.css"))" rel="stylesheet" />
+
+        <!--
+            Patch older browsers.
+        
+            The development strategy is to develop to current standard and just patch 
+            older browsers.  The idea being that as we stop supporting older browsers 
+            all we have to do is remove the shims that we have added rather than have
+            to remove application logic that we implemented to specifically target 
+            older browsers.
+            -->
+        <script src="@Url.Content( StaticContent.get_url_for( "Static/js/library/respond-js/respond.js"))"></script>
+
+        
+        <title>@page_title</title>
+    </head>
+     
+<body class="@service_status.border_class" >
+    <header>
+        <div class="navigation-bar">
+            <menu>
+                <ul class="admin-menu">
+                    <li class="@service_status.description_class">Status: @service_status.description</li>
+                </ul>
+            </menu>
+        </div>        
+        <div class="titlebar">
+            <nav>
+                @* to do: Home needs to come from a resource file *@
+                <a href="@home_page" class="breadcrumb">Home</a>
+            </nav>
+            <h1>@page_title</h1>
+        </div>
+    </header>    
+    <div id="content">
+        <div id="notifications" class="">
+            <div id="notification-icon" class=""></div>
+        </div>                
+        @RenderBody()
+    </div>
+    <footer>
+        @Html.Raw(copy_write)
+    </footer>
+    
+    <!--
+        Load the application logic for the page
+
+        -->   
+    <script src="@Url.Content( StaticContent.get_url_for( "Static/js/library/require-js/require.js"))"></script>        
+    <script type="text/javascript">
+
+        (function() {
+            // configure the require.js dependencies and then load the behaviours that are 
+            // needed for this page
+            requirejs.config({
+                baseUrl: '@Url.Content( StaticContent.host() )',
+                paths: {
+                    "dependencies": "Static/js/Infrastructure/dependency_config",
+                }
+            });
+
+            require(['dependencies'], function (config) {
+                requirejs.config(config);
+
+                require(['startup'], function () { 
+                    @RenderSection( "dependencies", false )
+                });
+            });
+
+        }());
+    
+    </script>
+   
+</body>
+</html>

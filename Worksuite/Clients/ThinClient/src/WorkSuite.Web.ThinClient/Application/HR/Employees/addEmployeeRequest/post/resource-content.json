@@ -1,0 +1,25 @@
+﻿{
+    "add_employee_request_post_resource_employee_reference_is_mandatory": {
+        "value": "Please enter an employee reference."
+    },
+
+    "add_employee_request_post_resource_employee_reference_is_not_unique": {
+        "value": "An employee with this reference already exists. Please enter a different reference."
+    },
+
+    "add_employee_request_post_resource_employee_forename_is_mandatory": {
+        "value": "Please enter a Forename."
+    },
+
+    "add_employee_request_post_resource_employee_surname_is_mandatory": {
+        "value": "Please enter a Surname."
+    },
+
+    "add_employee_request_post_resource_success_message": {
+        "value": "You have successfully added a new employee."
+    },
+
+    "add_employee_request_post_resource_error_message": {
+        "value": "Warning! The new employee could not be added. Please correct the details indicated below then save again."
+    }
+}

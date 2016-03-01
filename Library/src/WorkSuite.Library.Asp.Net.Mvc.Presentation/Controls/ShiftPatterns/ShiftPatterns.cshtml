@@ -1,0 +1,78 @@
+﻿@* Generator : MvcHelper GeneratePrettyNames : true *@
+
+@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Controls.ViewElements
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels
+@using WorkSuite.Library.Asp.Net.Mvc.Server.ShiftPatterns
+@using WTS.WorkSuite.Library.DomainTypes.Date
+
+
+@helper For(IsAViewElement element)
+{
+
+    @ViewElement.Unknown()
+}
+
+
+@helper For(ShiftPatternGrid grid)
+{
+    <table class="@grid.grid_classes">
+        <thead>
+            @render_grid_header(grid.days)
+        </thead>
+        <tbody>
+            @foreach (var pattern in grid.shift_patterns)
+            {
+                @render_shift_pattern(pattern)
+            }
+        </tbody>
+    </table>
+}
+
+
+@helper render_grid_header(IEnumerable<DateTime> days)
+{
+    <tr>
+        <th class="shift-block-label"></th>
+        <th class="shift-block previous"></th>
+        @foreach (var day in days)
+        {
+            <th class="shift-block @(day.IsAWeekendDay() ? "shift-block-weekend" : null)">
+                <span class="shift-block-day">
+                    <abbr title="@day.AbbreviatedDayOfWeek()"><span>@day.AbbreviatedDayOfWeek()[0]</span></abbr>
+                </span>
+                <span class="shift-block-date">@day.Day</span>
+            </th>
+        }
+        <th class="shift-block next"></th>
+    </tr>
+}
+
+
+@helper render_shift_pattern(ShiftPattern shift_pattern)
+{
+    <tr data-operations-calendar-id="@shift_pattern.operations_calendar_id" data-shift-calendar-id="@shift_pattern.shift_calendar_id" data-shift-calendar-pattern-id="@shift_pattern.shift_calendar_pattern_id">
+        <td class="row-label">
+            <span class="row-label-pattern">@shift_pattern.name</span>
+            <div class="row-label-resources">Resources: <span>@shift_pattern.resource_allocation_actual_against_projected</span></div>
+        </td>
+        <td class="shift-block previous" style="background-color:rgb(@shift_pattern.previous_occurrence_colour);"></td>
+        @foreach (var block in shift_pattern.time_blocks)
+        {
+            @render_day_block(block)
+        }
+        <td class="shift-block next" style="background-color:rgb(@shift_pattern.next_occurrence_colour);"></td>
+    </tr>
+}
+
+@helper render_day_block(TimeBlock block)
+{
+    <td data-block-content-type="@block.content_type" data-block-date="@block.date.ToClientSideDateString()" class="shift-block" style="background-color:rgb(@block.content_rgb_colour);">
+        <div class="shift-block-title">@block.content_description</div>
+        <div class="timeline">
+            @foreach (var segment in block.time_segments)
+            {
+                <span style="width: @(segment.percentage_of_day)%;" class="timeline-period @segment.type"></span>
+            }
+        </div>
+    </td>
+}

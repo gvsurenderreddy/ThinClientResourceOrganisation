@@ -1,0 +1,262 @@
+.shift-calendar table{
+    table-layout: fixed;
+	clear: left;
+    border-top: solid 1px #cccccc;
+    // %%%% FOR CONTINIOUS TIMELINE
+    /*
+    //border: solid 1px #cccccc !important;
+	*/
+    @include respond-to(tablet) {
+		clear: none !important;
+		padding-top: 12px;
+	}
+}
+
+.shift-calendar td::selection {
+  background: transparent;
+}
+.shift-calendar td::-moz-selection {
+  background: transparent;
+}
+.shift-calendar td::-webkit-selection {
+  background: transparent;
+}
+
+.shift-calendar-summary-weekly,
+.shift-calendar table {
+    font-family: Calibri;
+	font-size: 9pt;
+    border: solid 1px $basecolour_bright;
+	border-collapse: inherit !important;
+    // %%%% FOR CONTINIOUS TIMELINE
+	/*
+    //border: solid 1px $basecolour_bright;
+	//border-collapse: inherit !important;
+	*/
+    background-color: #ffffff;
+	@include border_box_sizing;
+	//clear: left;
+}
+
+.shift-calendar-summary-weekly {
+	margin: 0 0 $layoutgrid_lineheight 0;
+	border: solid 1px $basecolour_dark;
+	width: 100%;
+}
+
+.shift-calendar table {
+    margin: 0 0 $layoutgrid_lineheight $layoutgrid_page_gutter;
+	width: 98.18453%;
+}
+
+.shift-calendar-summary-weekly tr,
+.shift-calendar-summary-weekly td,
+.shift-calendar-summary-weekly th,
+.shift-calendar tr,
+.shift-calendar td,
+.shift-calendar th {
+    border-collapse: collapse;
+    border: 1px solid #eeeeee;
+    // %%%% FOR CONTINIOUS TIMELINE
+	/*
+    //border: 1px solid #eeeeee;
+    */
+    vertical-align: bottom;
+	text-align: center;
+}
+
+ // %%%% FOR CONTINIOUS TIMELINE
+
+/*
+    .shift-calendar td,
+    .shift-calendar th {
+    // OUTLINE COULD BE USED AS AN ALTERNATIVE
+        //outline:#000000 solid 1px;
+        box-shadow: 0 0 0 1px #eeeeee inset;
+}
+*/
+.shift-calendar-summary-weekly .shift-block {
+    width: 10.28571%;
+}
+
+.shift-calendar .shift-block {
+    width: 10.58823%;
+	overflow: hidden;
+}
+
+.shift-calendar-28day .shift-block {
+    width: 2.64705%;
+}
+
+.shift-calendar-InternationalFixed .shift-block-day {
+    display: none !important;
+}
+
+.shift-calendar .shift-block.previous,
+.shift-calendar .shift-block.next {
+	width: 1.17647% !important;
+}
+
+.shift-calendar-summary-weekly .shift-block.previous {
+	width: 0.42857%;
+}
+
+.shift-calendar-summary-weekly .shift-block.next {
+	width: 1.85714%;
+}
+
+.shift-calendar-summary-weekly .row-label {
+	background-color: $basecolour_dark;
+	color: #ffffff;
+	border-color: $basecolour_dark !important;
+	text-align: right !important;
+	width: 25.71428% !important;
+}
+
+.shift-calendar .row-label {
+	background-color: $basecolour_verybright;
+	border-color:  $basecolour_verybright !important;
+	text-align: right !important;
+	width: 23.52941% !important;
+}
+
+
+.shift-calendar .pattern-resources,
+.shift-calendar .row-label-resources {
+	color: #555555;
+}
+
+.shift-calendar .pattern-resources span,
+.shift-calendar .row-label-resources span {
+	color: #000000;
+}
+
+.shift-calendar .shift-block.previous {
+    background-image: url('../Images/shift-block-previous.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.shift-calendar .shift-block.next {
+    background-image: url('../Images/shift-block-next.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.shift-calendar .shift-block-day,
+.shift-calendar .shift-block-date {
+	clear: left;
+	display: block;
+}
+
+.shift-block-weekend {
+    background-color: #dddddd;
+}
+
+@include respond-to(desktop) {
+    .shift-calendar .shift-block-day abbr:before {
+        content: attr(title);
+        font-size: 8pt;
+    }
+    .shift-calendar .shift-block-day abbr span {
+        display:none;
+    }
+}
+
+
+.shift-calendar .shift-block .previous {
+    background-image: url('../Images/shift-block-previous.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.shift-calendar .shift-block .next {
+    background-image:url('../Images/shift-block-next.png');
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+}
+
+.shift-calendar .shift-block-detail {
+	text-align: left;
+	margin: 0 0 2px 2px;
+}
+
+.shift-calendar .shift-block-title {
+	font-size: 8pt;
+	margin: 0 0 6px 0;
+	text-shadow: 1px 0px 4px #ffffff, -1px 0px 4px #ffffff, 1px 0px 4px #ffffff, -1px 0px 4px #ffffff;
+	//Padding causing table to expant over 100%
+    //padding: 0 3px;
+    word-wrap: break-word;
+}
+
+// TIME LINE
+.shift-calendar .timeline {
+    background: url(../Images/shift-block-timeline-weekly-background.jpg) 0 0 repeat-y;
+    background-size: 100% 100%;
+    // %%%% FOR CONTINIOUS TIMELINE
+	/*
+    background-color: gray;
+    background-image: linear-gradient(90deg, rgb(204,204,204) 50%, rgb(153,153,153) 50%);
+    background-size: 1.19047%;
+	box-shadow: 0 0 0 0 #eeeeee inset !important;
+    */
+    height: 6px;
+	margin :0;
+	padding: 0;
+}
+
+.shift-calendar .timeline span {
+	height:6px;
+	float:left;
+	margin:0;
+	padding:0;
+    display:block;
+}
+
+.shift-calendar .timeline .workingtime {
+	background-color: #000000;
+	color: #ffffff;
+	font-size: 8pt;
+}
+
+.shift-calendar .timeline .paidbreak {
+	background-color: transparent;
+}
+
+.shift-calendar .timeline .unpaidbreak {
+	border-bottom: solid 2px;
+	height: 4px !important;
+}
+
+@-webkit-keyframes blink {
+   50% { border-color: #cccccc; } 
+}
+
+@-moz-keyframes blink {
+   50% { border-color: #cccccc; } 
+}
+
+@-o-keyframes blink {
+   50% { border-color: #cccccc; } 
+}
+
+@keyframes blink { 
+   50% { border-color: #cccccc; } 
+}
+
+//INTERACTION
+.shift-calendar .shift-block-selected {
+	border:dashed 2px #555555;
+	-webkit-animation: blink .8s step-end alternate infinite; /* Safari 4+ */
+    -moz-animation:    blink .8s step-end alternate infinite; /* Fx 5+ */
+    -o-animation:      blink .8s step-end alternate infinite; /* Opera 12+ */
+	animation:         blink .8s step-end alternate infinite; /* IE 10+ */
+	padding-top: 0px;
+}
+
+.shift-calendar .shift-block-selected .timeline,
+.shift-calendar .shift-block-selected .timeline span {
+	height: 4px;
+}
+

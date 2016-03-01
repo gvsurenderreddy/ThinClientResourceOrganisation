@@ -1,0 +1,395 @@
+﻿@* Generator : MvcHelper GeneratePrettyNames : true *@
+
+@using System.Web.Mvc
+@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Controls.ColourPickerPalettes
+@using WorkSuite.Library.Asp.Net.Mvc.Server.ColourPickerPalettes
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.Primitives.Fields.DateRequestField
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.Primitives.Fields.DocumentField
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.Primitives.Fields.DurationRequestField
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.Primitives.Fields.RGBColourField
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.Primitives.Fields.RGBColourRequestField
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.Primitives.Fields.StringField
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.Primitives.Fields.TimeRequestField
+@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Controls.Primitives
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.Primitives.Fields
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.Primitives.Fields.BooleanField
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.Primitives.Fields.FreeTextField
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.Primitives.Fields.HiddenField
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.Primitives.Fields.ImageField
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.Primitives.Fields.LookupField
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.Primitives.Fields.ReadOnlyField
+
+@helper For(IEnumerable<Field> fields)
+{
+    if (fields != null && fields.Any())
+    {
+
+        foreach (Field field in fields)
+        {
+            @Input(field as dynamic)
+        }
+    }
+}
+
+@* Fallback - if we have a AReport type that we do not have an edit control for
+
+    done: check with Tim about what we should display in this case
+
+        What we need to do is:
+            * report a page level error
+                    e.g. "To be decided"
+
+            * put a message where the value should have been
+                    e.g. Can not present the information correctly.
+
+*@
+@helper Input(Field field)
+{}
+
+@helper Input(AStringReportField field)
+{
+
+    <div class="editor-controlset editor-inputtext">
+        @ErrorLable(field)
+        @HelpText(field)
+        @TitleLable(field, "editor-label")
+
+        <input id="@field.id"
+               name="@field.property_name"
+               type="text"
+               value="@field.value"
+               class="@(field.is_required ? "editor-input-required" : null) @field.classes.AsHtmlClassString()" />
+    </div>
+}
+
+@helper Input(ABooleanReportField field)
+{
+
+    @* Html Checkboxes [ Sigh !!!!!!!! :'( ]
+
+        Apparently if a checkbox is unchecked no value is sent back when posting back to the
+        server.  This then get set to false if being applied to a bool and probably null if
+        being applied to a nullable bool property.
+
+        If the checked attribute is present then the checkbox is presented as checked regardless of
+        what value the attribute is set to.  If the checked attribute is not present it is presented
+        as not checked. So we set the checked attribute base on the value of the field.
+    *@
+
+    <div class="editor-controlset editor-checkbox">
+        @ErrorLable(field)
+        @HelpText(field)
+        @TitleLable(field, "editor-label")
+
+        <div class="editor-input-checkbox-wrapper">
+            <input id="@field.id"
+                   name="@field.property_name"
+                   type="checkbox"
+                   value="true"
+                   @(field.value ? "checked" : null)
+                   class="@(field.is_required ? "editor-input-required" : null)" />
+        </div>
+    </div>
+}
+
+@helper Input(AHiddenField field)
+{
+    <input id="@field.id"
+           name="@field.property_name"
+           type="hidden"
+           value="@field.value" />
+}
+
+@helper Input(AReadOnlyField field)
+{
+    string display_string = string.IsNullOrWhiteSpace(field.readonly_display_value) ? field.value : field.readonly_display_value;
+    string value_string = field.value;
+    <div class="editor-controlset">
+        @ErrorLable(field)
+        @HelpText(field)
+        @TitleLable(field, "editor-label")
+
+            <div class="editor-text">@display_string</div>
+            @*Backing hidden field*@
+            <input name="@field.property_name"
+                   type="hidden"
+                   value="@value_string" />
+    </div>
+}
+
+@helper Input(AnImageField field)
+{
+    <div class="editor-controlset editor-fileupload">
+        <div class="editor-label-errorwrapper hidden">
+            <label for="data" class="editor-label-error"></label>
+        </div>
+        @HelpText(field)
+        @TitleLable(field, "editor-label")
+
+        <input id="data"
+               name="data"
+               type="file"
+               accept="image/*"
+               class="editor-imageupload" />
+
+        <div class="editor-picture-wrapper">
+            <img src="@field.url" alt="0" width="120" />
+            <input id="@field.id"
+                   name="@(field.property_name)"
+                   type="hidden"
+                   value="@field.value" />
+        </div>
+    </div>
+
+}
+
+@helper Input(ALookupField field)
+{
+    <div class="editor-controlset editor-select">
+        @ErrorLable(field)
+        @HelpText(field)
+        @TitleLable(field, "editor-label")
+
+        @if (field.lookup_values.Any())
+        {
+            <select id="@field.id"
+                    name="@field.property_name"
+                    class="@(field.is_required ? "editor-input-required" : null)">
+
+                @* to do: need to handle the id not being in the list and the list being empty *@
+
+                @foreach (var entry in field.lookup_values)
+                {
+                    <option value="@entry.id" @identify_if_selected_option(field, entry.id)>@entry.description</option>
+                }
+            </select>
+
+        }
+        else
+        {
+            <div class="editor-text">No details available</div>
+            <input type="hidden" disabled id="@field.id" name="@field.property_name" />
+        }
+    </div>
+}
+
+@helper Input(AFreeTextStringReportField field)
+{
+    <div class="editor-controlset editor-textarea">
+        @ErrorLable(field)
+        @HelpText(field)
+        @TitleLable(field, "editor-label")
+
+        <textarea id="@field.id" name="@field.property_name" type="text" class="editor-input-textarea @(field.is_required ? "editor-input-required" : null)">@field.value</textarea>
+    </div>
+}
+
+@helper Input(WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.Primitives.Fields.CalendarAffected.ACalendarAffectedField field)
+{
+    <div class="editor-controlset">
+                    <label class="editor-label"> Calendars affected </label>
+                    <div class="editor-text">
+                        <dl>
+                            @foreach (var calander_field in field.value)
+                            {
+                                <dt class="DescriptionList-Title">@calander_field.name</dt>
+                                <dd class="DescriptionList-Value">Occurrences @calander_field.count</dd>
+                            }
+                        </dl>
+                    </div>
+                </div>
+}
+
+
+@helper Input(ADateRequestField field)
+{
+    <div class="editor-controlset editor-date">
+        @ErrorLable(field)
+        @HelpText(field)
+        @TitleLable(field, "editor-label")
+        <div class="editor-input-date-wrapper">
+            <!--This hidden field must always be disabled for this control to work-->
+            <input type="hidden" name="@field.property_name" id="@field.id" disabled="disabled">
+            <input type="text" class="editor-input-daydate " placeholder="DD" value="@(field.value.day)" name="@(field.property_name).day" id="_Day">
+            <span>/</span>
+            <input type="text" class="editor-input-monthdate " placeholder="MM" value="@(field.value.month)" name="@(field.property_name).month" id="_Month">
+            <span>/</span>
+            <input type="text" class="editor-input-yeardate " placeholder="YYYY" value="@(field.value.year)" name="@(field.property_name).year" id="_Year">
+        </div>
+    </div>
+
+}
+
+@helper Input(ARgbColourField field)
+{
+    <div class="editor-controlset editor-colour">
+        @ErrorLable(field)
+        @HelpText(field)
+        @TitleLable(field, "editor-label")
+        <div class="editor-colour-wrapper">
+            <div class="editor-colour-block" style="background-color: rgb(@string.Format("{0},{1},{2}",@field.value.R,@field.value.G,@field.value.B))">
+            </div>
+        </div>
+    </div>
+}
+
+@helper Input(ARgbColourRequestField field)
+{
+    <div class="editor-controlset editor-ColourPicker">
+        @ErrorLable(field)
+        @HelpText(field)
+        @TitleLable(field, "editor-label")
+        <div class="ColourPicker-Wrapper">
+            <input class="colour-value-r @(field.is_required ? "editor-input-required" : null)" id="@(field.id)_R" name="@(field.property_name).R" type="hidden" value="@field.value.R" />
+            <input class="colour-value-g @(field.is_required ? "editor-input-required" : null)" id="@(field.id)_G" name="@(field.property_name).G" type="hidden" value="@field.value.G" />
+            <input class="colour-value-b @(field.is_required ? "editor-input-required" : null)" id="@(field.id)_B" name="@(field.property_name).B" type="hidden" value="@field.value.B" />
+            <div class="ColourPicker-Toggle"><div class="current-colour-value" style="background-color:@field.value.ToString();"></div></div>
+            @ColourPickerPalettes.For(field.complementary_view_element as ColourPickerPalette)
+        </div>
+    </div>
+}
+
+@helper Input(ATimeRequestField field)
+{
+    <div class="editor-controlset editor-time">
+        @ErrorLable(field)
+        @HelpText(field)
+        @TitleLable(field, "editor-label")
+        <div class="editor-input-time-wrapper">
+            <input disabled="disabled" type="hidden" id="@field.id" name="@field.property_name" />
+
+            <input id="@(field.id)_Hour"
+                   name="@(field.property_name).hours"
+                   type="text"
+                   value="@(field.value.hours)"
+                   placeholder="hh"
+                   maxlength="2"
+                   class="editor-input-time-hours @(field.is_required ? "editor-input-required" : null)" />
+
+            <span></span>
+
+            <input id="@(field.id)_Minute"
+                   name="@(field.property_name).minutes"
+                   type="text"
+                   value="@(field.value.minutes)"
+                   placeholder="mm"
+                   maxlength="2"
+                   class="editor-input-time-minutes @(field.is_required ? "editor-input-required" : null)" />
+        </div>
+    </div>
+}
+
+@helper Input(ADurationRequestField field)
+{
+    <div class="editor-controlset editor-duration">
+        @ErrorLable(field)
+        @HelpText(field)
+        @TitleLable(field, "editor-label")
+        <div class="editor-input-duration-wrapper">
+            <input disabled="disabled" type="hidden" id="@field.id" name="@field.property_name" />
+
+            <input id="@(field.id)_Hour"
+                   name="@(field.property_name).hours"
+                   type="text"
+                   value="@(field.value.hours)"
+                   placeholder="hh"
+                   maxlength="2"
+                   class="editor-input-duration-hours @(field.is_required ? "editor-input-required" : null)" />
+
+            <span>Hours</span>
+
+            <input id="@(field.id)_Minute"
+                   name="@(field.property_name).minutes"
+                   type="text"
+                   value="@(field.value.minutes)"
+                   placeholder="mm"
+                   maxlength="2"
+                   class="editor-input-duration-minutes @(field.is_required ? "editor-input-required" : null)" />
+
+            <span>Minutes</span>
+        </div>
+    </div>
+}
+
+@helper Input(ADocumentField field)
+{
+    <div class="editor-controlset editor-fileupload">
+        <div class="editor-label-errorwrapper hidden">
+            <label for="data" class="editor-label-error"></label>
+        </div>
+        @HelpText(field)
+        @TitleLable(field, "editor-label")
+
+        <input id="data"
+               name="data"
+               type="file"
+               class="editor-fileupload @(field.is_required ? "editor-input-required" : null)" />
+    </div>
+
+}
+
+@helper TitleLable(Field field, string element_class)
+{
+    <label id="@field.id-title"
+           for="@field.id"
+           class="@element_class">
+        @Title(field)
+    </label>
+}
+
+@helper ErrorLable(Field field)
+{
+    @* to do: To display the warnings message remove -hidden from the class  *@
+
+    <div class="editor-label-errorwrapper hidden">
+        <label for="@field.id"
+               class="editor-label-error">
+        </label>
+    </div>
+}
+
+@helper HelpText(Field field)
+{
+
+    if (!String.IsNullOrWhiteSpace(field.help))
+    {
+        <div class="editor-label-hoverhelp">
+            <div class="editor-label-hoverhelp-icon"></div>
+            <div class="editor-label-help-wrapper">
+                <label class="editor-label-help @field.property_name">@field.help</label>
+            </div>
+        </div>
+    }
+}
+
+@functions {
+
+    // to do: look to see if these would be better off somewhere more accessible
+
+    private static MvcHtmlString Title(Field field)
+    {
+        return MvcHtmlString.Create(
+            string.Format(
+                "{0} {1}",
+                field.title,
+                identify_if_required_field(field)));
+    }
+
+    private static string identify_if_required_field(Field field)
+    {
+        return field.is_required
+                   ? "<span class='editor-optreq'>(Required)</span>"
+                   : string.Empty;
+    }
+
+    private static string identify_if_selected_option(ALookupField field, string option_value)
+    {
+
+        return field.value.ToString() == option_value
+            ? "selected"
+            : string.Empty
+            ;
+
+    }
+
+}

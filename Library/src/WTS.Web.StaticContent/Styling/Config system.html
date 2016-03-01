@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<head>
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+<link href="../Static/css/configuration.css" rel="stylesheet" />
+</head>
+<body class="maintenance">
+    <header>
+        <div class="navigation-bar">
+            <menu>
+                <ul class="admin-menu">
+                    <li>Service: Company name</li>
+                    <li class="maintenance">Status: Online</li>
+                    <!--li>Status: Offline (Paused)<img src="configuration-status-paused"></li>
+                    <li>Status: Offline (Stopped)<img src="configuration-status-stopped"></li-->
+                </ul>
+            </menu>
+        </div>
+        <div class="titlebar">
+            <nav>
+                <a href="" class="breadcrumb">Home</a>
+            </nav>
+            <h1>System configuation</h1>
+        </div>
+    </header>
+    <div id="content">
+        <div class="notification-warning"><div class="notification-warning-icon"></div>Lorem iposum</div>
+        <div class="notification-confirm"><div class="notification-confirm-icon"></div>Lorem iposum</div>
+        <article class="report">
+            <h2>Service status</h2>
+            <menu>
+                <a href="/employee/1/contact-details-editor" class="action edit-report" id="employee-contact-details-editor">Edit</a>
+            </menu>
+            <dl>
+                <dt>Current status</dt>
+                <dd>Online</dd>
+                <dt>Tested</dt>
+                <dd>Yes</dd>
+            </dl>
+            <input type="submit" class="action save-edits" value="Test service" name="save-edits">
+        </article>
+        <form class="editor">
+            <fieldset>
+                <legend class="editor-title">Edit service status</legend>
+                <div class="editor-controlset editor-radio">
+                    <label class="editor-label">Edit service status<span class="editor-optreq">(Required)</span></label>
+                    <div class="editor-input-checkbox-wrapper">
+                        <input type="checkbox" name="checkbox" class="editor-input-radio editor-input-required">
+                    </div>
+                </div>
+                <div class="editor-controlset">
+                    <input type="submit" class="action save-edits" value="Save" name="save-edits">
+                    <input type="submit" class="action cancel-edits" value="Cancel" name="cancel-edits">
+                </div>
+            </fieldset>
+        </form>
+
+        <form class="editor">
+            <fieldset>
+                <legend class="editor-title">Edit service status</legend>
+                <div class="editor-controlset editor-radio">
+                    <label class="editor-label">Edit service status<span class="editor-optreq">(Required)</span></label>
+                    <div class="editor-label-errorwrapper">
+                        <label class="editor-label-error" for="[xxxxx]">Lorem ipsum.</label>
+                    </div>
+                    <div class="editor-input-checkbox-wrapper">
+                        <input type="checkbox" name="checkbox" class="editor-input-radio editor-input-error">
+                    </div>
+                </div>
+                <div class="editor-controlset">
+                    <input type="submit" class="action save-edits" value="Save" name="save-edits">
+                    <input type="submit" class="action cancel-edits" value="Cancel" name="cancel-edits">
+                </div>
+            </fieldset>
+        </form>
+
+        <article class="report">
+            <h2>Database details</h2>
+            <menu>
+                <a href="/employee/1/contact-details-editor" class="action edit-report" id="employee-contact-details-editor">edit</a>
+            </menu>
+            <dl>
+                <dt>Connection string</dt>
+                <dd>[URL]</dd>
+            </dl>
+        </article>
+
+
+        <form class="editor">
+            <fieldset>
+                <legend class="editor-title">Edit database details</legend>
+                <div class="editor-controlset editor-inputtext">
+                    <div class="editor-label-errorwrapper hidden">
+                        <label class="editor-label-error" for="forename">This information is required.</label>
+                    </div>
+                    <label class="editor-label" for="forename" id="forename-title">Connection string <span class="editor-optreq">(Required)</span></label>
+                    <input type="text" class=" editor-input-required" value="" name="forename" id="forename">
+                </div>
+                <div class="editor-controlset">
+                    <input type="submit" class="action save-edits" value="Save" name="save-edits">
+                    <input type="submit" class="action cancel-edits" value="Cancel" name="cancel-edits">
+                </div>
+            </fieldset>
+        </form>
+
+
+    </div>
+    <footer>
+        &copy; 2013 Working Time Solutions Ltd.
+    </footer>
+</body>
+</html>

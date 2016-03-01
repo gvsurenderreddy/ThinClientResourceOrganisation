@@ -1,0 +1,17 @@
+﻿@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Controls.ViewModels
+@using WTS.WorkSuite.Web.ThinClient.Application.HR.Employees.Remove.Presentation.Page
+
+@model WTS.WorkSuite.Web.ThinClient.Application.HR.Employees.EmployeeIdentityViewModel
+
+@{    
+    Layout = @"~/Views/Shared/Layouts/GlobalLayout.cshtml";
+    ViewBag.Title = Resources.page_title;
+    ViewBag.Id = Resources.page_id;
+    ViewBag.ResourceIdentity = Model.identity;
+}
+
+@ViewModel.For(Model.view_elements)
+
+@section dependencies {
+    require(['remove'], function () { });
+}

@@ -1,0 +1,107 @@
+﻿@using System.Collections.Specialized
+@using Newtonsoft.Json
+@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Configuration.StaticContent
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.BreadCrumbNavigation.Model
+@using Controls = WorkSuite.Library.Asp.Net.Mvc.Presentation.Controls.SiteNavigation
+
+@{
+    var breadcrumb_builder = DependencyResolver.Current.GetService<IBreadCrumbNavigationBuilder>();
+
+    @* Improve: change to use a text from resource file *@
+    var copy_write = "&copy; 2013 Working Time Solutions Ltd.";
+    var page_title = @ViewBag.Title;
+    var page_id = @ViewBag.Id;
+
+    var crumbs = breadcrumb_builder.get_navigation_path_for((string)page_id);
+    var resource_id = JsonConvert.SerializeObject(ViewBag.ResourceIdentity);
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+    <!-- 
+        page-id & resouce-id
+        
+        page-id is the identity of the current page.  It can be used to look up the root for the page in the rout repository
+        resource-id is the identity of the resource that the page is displaying.  It generally contains all the values that are needed for page route's parameters.
+
+      -->
+    <meta id="page-id" name="page-id" content="@page_id" />
+    <meta id="resource-id" name="resource-id" content='@Html.Raw(resource_id)' />
+    <!--[if lte IE 8]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="@Url.Content( StaticContent.get_url_for( "Static/css/WorkSuite.css"))" rel="stylesheet" />
+    @RenderSection("page_level_css", false)
+    <!--
+        Patch older browsers.
+
+        The development strategy is to develop to current standard and just patch
+        older browsers.  The idea being that as we stop supporting older browsers
+        all we have to do is remove the shims that we have added rather than have
+        to remove application logic that we implemented to specifically target
+        older browsers.
+        -->
+    <script src="@Url.Content( StaticContent.get_url_for( "Static/js/library/respond-js/respond.js"))"></script>
+
+
+    <title>@page_title</title>
+</head>
+<body>
+    <header>
+        <div class="titlebar">
+            @Controls.BreadCrumbNavigation.For(crumbs)
+            <h1>@page_title</h1>
+        </div>
+    </header>
+    <div id="content" class="@page_id">
+        <div id="notifications" class="">
+            <div id="notification-icon" class=""></div>
+        </div>
+        @RenderBody()
+    </div>
+    <footer>
+        @Html.Raw(copy_write)
+    </footer>
+
+    <!--
+        Load the application logic for the page
+
+        -->
+    <script src="@Url.Content( StaticContent.get_url_for( "Static/js/library/require-js/require.js"))"></script>
+    <script src="@Url.Content( StaticContent.get_url_for( "Static/js/Infrastructure/module-paths.1.js" ))"></script>
+    <script src="~/application-boot-module-definition"></script>
+    <script type="text/javascript">
+        //Improve: We really shouldn't be touching the global object.
+        var thin_client_base_url = "@Url.Content("~/")";
+
+        (function (base_url) {
+            // configure the require.js dependencies and then load the behaviours that are
+            // needed for this page
+            requirejs.config({
+                baseUrl: base_url,
+                paths: {
+                    "dependencies": "Static/js/Infrastructure/dependency_config",
+                    "routes": '@Url.Content("~/")' + "named-routes?callback=define",
+                    "workflow": '@Url.Content("~/")' + "workflow?callback=define"
+                }
+            });
+
+            require(['dependencies'], function (config) {
+                requirejs.config(config);
+
+                require(['startup'], function () {
+                    @RenderSection( "dependencies", false )
+                });
+            });
+
+        }('@Url.Content( StaticContent.host() )'));
+
+    </script>
+
+    @RenderSection( "page_start", false )
+
+</body>
+</html>

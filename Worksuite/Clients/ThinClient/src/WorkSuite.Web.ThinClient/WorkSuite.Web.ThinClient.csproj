@@ -1,0 +1,1432 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7D77B7BD-CF76-4AEE-841B-6AADB0B4E10C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WTS.WorkSuite.Web.ThinClient</RootNamespace>
+    <AssemblyName>WTS.WorkSuite.Web.ThinClient</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>true</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentAssertions, Version=3.0.107.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\packages\FluentAssertions.3.0.107\lib\net45\FluentAssertions.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentAssertions.Core">
+      <HintPath>..\..\..\..\..\packages\FluentAssertions.3.0.107\lib\net45\FluentAssertions.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Humanizer, Version=1.28.0.0, Culture=neutral, PublicKeyToken=979442b78dfc278e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\packages\Humanizer.1.28.0\lib\portable-win+net40+sl50+wp8+wpa81\Humanizer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Extensions.Conventions, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\packages\Ninject.Extensions.Conventions.3.2.0.0\lib\net45-full\Ninject.Extensions.Conventions.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\packages\Ninject.Web.Common.3.2.2.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\packages\Ninject.MVC3.3.2.1.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.0\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.0\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\packages\Microsoft.AspNet.Mvc.5.2.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\packages\Microsoft.AspNet.Razor.3.2.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\packages\WebActivatorEx.2.0.5\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Application\DocumentStore\Documents\Presentation\DocumentPresenter.cs" />
+    <Compile Include="Application\DocumentStore\Documents\Presentation\Resources.cs" />
+    <Compile Include="Application\DocumentStore\Documents\Presentation\RouteConfiguration.cs" />
+    <Compile Include="Application\DocumentStore\Images\Presentation\ImagePresenter.cs" />
+    <Compile Include="Application\DocumentStore\Images\Presentation\Resources.cs" />
+    <Compile Include="Application\DocumentStore\Images\Presentation\RouteConfiguration.cs" />
+    <Compile Include="Application\Home\Get\HomePageViewModelBuilder.cs" />
+    <Compile Include="Application\HR\Employees\addEmployeeRequest\editor\EditorDefinition.cs" />
+    <Compile Include="Application\HR\Employees\addEmployeeRequest\editor\Resources.cs" />
+    <Compile Include="Application\HR\Employees\addEmployeeRequest\post\Controller.cs" />
+    <Compile Include="Application\HR\Employees\addEmployeeRequest\post\Policy.cs" />
+    <Compile Include="Application\HR\Employees\addEmployeeRequest\post\Resources.cs" />
+    <Compile Include="Application\HR\Employees\addEmployeeRequest\post\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\Addresses\Presentation\ReorderEditor\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\Addresses\Presentation\ReorderEditor\ReorderAddressEditorPresenter.cs" />
+    <Compile Include="Application\HR\Employees\Addresses\Presentation\ReorderEditor\Resources.cs" />
+    <Compile Include="Application\HR\Employees\Addresses\Presentation\ReorderEditor\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\ContactDetailsAndAddresses\Page\ContactDetailsAndAddressesPresenter.cs" />
+    <Compile Include="Application\HR\Employees\ContactDetailsAndAddresses\Page\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\ContactDetailsAndAddresses\Page\Resources.cs" />
+    <Compile Include="Application\HR\Employees\ContactDetailsAndAddresses\Page\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\ContactDetails\Presentation\Editor\ContactDetailsEditorPresenter.cs" />
+    <Compile Include="Application\HR\Employees\ContactDetails\Presentation\Editor\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\ContactDetails\Presentation\Editor\Resources.cs" />
+    <Compile Include="Application\HR\Employees\ContactDetails\Presentation\Editor\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\ContactDetails\Presentation\Report\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\ContactDetails\Presentation\Report\Resources.cs" />
+    <Compile Include="Application\HR\Employees\ContactDetails\Commands\Update\Resources.cs" />
+    <Compile Include="Application\HR\Employees\ContactDetails\Commands\Update\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\ContactDetails\Commands\Update\UpdateContactDetailsController.cs" />
+    <Compile Include="Application\HR\Employees\Addresses\Commands\Create\CreateAddressController.cs" />
+    <Compile Include="Application\HR\Employees\Addresses\Commands\Create\Resources.cs" />
+    <Compile Include="Application\HR\Employees\Addresses\Commands\Create\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\Addresses\Presentation\Editor\AddressEditorPresenter.cs" />
+    <Compile Include="Application\HR\Employees\Addresses\Presentation\Editor\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\Addresses\Presentation\Editor\Resources.cs" />
+    <Compile Include="Application\HR\Employees\Addresses\Presentation\Editor\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\Addresses\Presentation\List\AddressListPresenter.cs" />
+    <Compile Include="Application\HR\Employees\Addresses\Presentation\List\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\Addresses\Presentation\List\Resources.cs" />
+    <Compile Include="Application\HR\Employees\Addresses\Presentation\List\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\Addresses\Presentation\New\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\Addresses\Presentation\New\NewAddressPresenter.cs" />
+    <Compile Include="Application\HR\Employees\Addresses\Presentation\New\Resources.cs" />
+    <Compile Include="Application\HR\Employees\Addresses\Presentation\New\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\Addresses\Commands\Remove\RemoveAddressController.cs" />
+    <Compile Include="Application\HR\Employees\Addresses\Commands\Remove\Resources.cs" />
+    <Compile Include="Application\HR\Employees\Addresses\Commands\Remove\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\Addresses\Commands\Reorder\ReorderAddressController.cs" />
+    <Compile Include="Application\HR\Employees\Addresses\Commands\Reorder\Resources.cs" />
+    <Compile Include="Application\HR\Employees\Addresses\Commands\Reorder\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\Addresses\Presentation\Report\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\Addresses\Presentation\Report\Resources.cs" />
+    <Compile Include="Application\HR\Employees\Addresses\Commands\Update\Resources.cs" />
+    <Compile Include="Application\HR\Employees\Addresses\Commands\Update\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\Addresses\Commands\Update\UpdateAddressController.cs" />
+    <Compile Include="Application\HR\Employees\EmergencyContacts\Commands\Create\CreateEmergencyContactController.cs" />
+    <Compile Include="Application\HR\Employees\EmergencyContacts\Commands\Create\Resources.cs" />
+    <Compile Include="Application\HR\Employees\EmergencyContacts\Commands\Create\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmergencyContacts\Commands\Remove\RemoveEmergencyContactController.cs" />
+    <Compile Include="Application\HR\Employees\EmergencyContacts\Commands\Remove\Resources.cs" />
+    <Compile Include="Application\HR\Employees\EmergencyContacts\Commands\Remove\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmergencyContacts\Commands\Reorder\ReorderEmergencyContactController.cs" />
+    <Compile Include="Application\HR\Employees\EmergencyContacts\Commands\Reorder\Resources.cs" />
+    <Compile Include="Application\HR\Employees\EmergencyContacts\Commands\Reorder\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmergencyContacts\Commands\Update\Resources.cs" />
+    <Compile Include="Application\HR\Employees\EmergencyContacts\Commands\Update\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmergencyContacts\Commands\Update\UpdateEmergencyContactController.cs" />
+    <Compile Include="Application\HR\Employees\EmergencyContacts\Presentation\Editor\EmergencyContactEditorPresenter.cs" />
+    <Compile Include="Application\HR\Employees\EmergencyContacts\Presentation\Editor\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmergencyContacts\Presentation\Editor\Resources.cs" />
+    <Compile Include="Application\HR\Employees\EmergencyContacts\Presentation\Editor\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmergencyContacts\Presentation\List\EmergencyContactsListPresenter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Application\HR\Employees\EmergencyContacts\Presentation\List\MetadataConfiguration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Application\HR\Employees\EmergencyContacts\Presentation\List\Resources.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Application\HR\Employees\EmergencyContacts\Presentation\List\RouteConfiguration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Application\HR\Employees\EmergencyContacts\Presentation\New\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmergencyContacts\Presentation\New\NewEmergencyContactPresenter.cs" />
+    <Compile Include="Application\HR\Employees\EmergencyContacts\Presentation\New\Resources.cs" />
+    <Compile Include="Application\HR\Employees\EmergencyContacts\Presentation\New\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmergencyContacts\Presentation\Page\EmergencyContactsPresenter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Application\HR\Employees\EmergencyContacts\Presentation\Page\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmergencyContacts\Presentation\Page\Resources.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Application\HR\Employees\EmergencyContacts\Presentation\Page\RouteConfiguration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Application\HR\Employees\EmergencyContacts\Presentation\ReorderEditor\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmergencyContacts\Presentation\ReorderEditor\ReorderEmergencyContactEditorPresenter.cs" />
+    <Compile Include="Application\HR\Employees\EmergencyContacts\Presentation\ReorderEditor\Resources.cs" />
+    <Compile Include="Application\HR\Employees\EmergencyContacts\Presentation\ReorderEditor\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmergencyContacts\Presentation\Report\MetadataConfiguration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Application\HR\Employees\EmergencyContacts\Presentation\Report\Resources.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Application\HR\Employees\EmployeeIdentityViewModel.cs" />
+    <Compile Include="Application\HR\employee\Holidays\addHoliday\editor\AddHolidayEditorDefinition.cs" />
+    <Compile Include="Application\HR\employee\Holidays\addHoliday\editor\AddHolidayEditorPresenter.cs" />
+    <Compile Include="Application\HR\employee\Holidays\addHoliday\editor\Resources.cs" />
+    <Compile Include="Application\HR\employee\Holidays\addHoliday\editor\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\employee\Holidays\addHoliday\post\NewHolidayPostController.cs" />
+    <Compile Include="Application\HR\employee\Holidays\addHoliday\post\Policy.cs" />
+    <Compile Include="Application\HR\employee\Holidays\addHoliday\post\Resources.cs" />
+    <Compile Include="Application\HR\employee\Holidays\addHoliday\post\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\employee\Holidays\removeHoliday\post\Policy.cs" />
+    <Compile Include="Application\HR\employee\Holidays\removeHoliday\post\RemoveHolidayController.cs" />
+    <Compile Include="Application\HR\employee\Holidays\removeHoliday\post\Resources.cs" />
+    <Compile Include="Application\HR\employee\Holidays\removeHoliday\post\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\employee\Holidays\viewHolidays\get\PageIdentity.cs" />
+    <Compile Include="Application\HR\employee\Holidays\viewHolidays\get\Resources.cs" />
+    <Compile Include="Application\HR\employee\Holidays\viewHolidays\get\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\employee\Holidays\viewHolidays\get\ViewHolidaysPageDefinition.cs" />
+    <Compile Include="Application\HR\employee\Holidays\viewHolidays\get\ViewHolidaysPagePresenter.cs" />
+    <Compile Include="Application\HR\Employees\viewEmployees\get\ViewEmployeesPageViewModelBuilder.cs" />
+    <Compile Include="Application\HR\employee\details\Get\EmployeeDetailsPagePresenter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Application\HR\employee\details\Get\EmployeeDetailsPageDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Application\HR\employee\details\Get\EmployeeDetailsOptionsViewModelBuilder.cs" />
+    <Compile Include="Application\HR\employee\details\Get\Resources.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Application\HR\employee\details\Get\RouteConfiguration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Application\HR\Employees\EmployeeDetails\SummaryReport\MetadataConfiguration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Application\HR\Employees\EmployeeDetails\SummaryReport\Resources.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Application\HR\Employees\EmployeeDetails\ViewModel\EmployeeDetailsViewModelBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Application\HR\Employees\EmployeeDocuments\Commands\Create\CreateEmployeeDocumentController.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeDocuments\Commands\Create\Resources.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeDocuments\Commands\Create\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeDocuments\Commands\Remove\RemoveEmployeeDocumentController.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeDocuments\Commands\Remove\Resources.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeDocuments\Commands\Remove\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeDocuments\Presentation\List\EmployeeDocumentsListPresenter.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeDocuments\Presentation\List\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeDocuments\Presentation\List\Resources.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeDocuments\Presentation\List\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeDocuments\Presentation\New\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeDocuments\Presentation\New\NewEmployeeDocumentPresenter.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeDocuments\Presentation\New\Resources.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeDocuments\Presentation\New\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeDocuments\Presentation\Page\EmployeeDocumentsPresenter.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeDocuments\Presentation\Page\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeDocuments\Presentation\Page\Resources.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeDocuments\Presentation\Page\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeDocuments\Presentation\Report\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeDocuments\Presentation\Report\Resources.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeImage\Commands\Remove\RemoveEmployeeImageController.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeImage\Commands\Remove\Resources.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeImage\Commands\Remove\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeImage\Commands\Update\Resources.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeImage\Commands\Update\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeImage\Commands\Update\UpdateEmployeeImageController.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeImage\Presentation\Editor\EmployeeImageEditorPresenter.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeImage\Presentation\Editor\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeImage\Presentation\Editor\Resources.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeImage\Presentation\Editor\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeImage\Presentation\Report\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeImage\Presentation\Report\Resources.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeQualifications\Commands\Create\CreateEmployeeQualificationController.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeQualifications\Commands\Create\Resources.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeQualifications\Commands\Create\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeQualifications\Commands\Remove\RemoveEmployeeQualificationController.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeQualifications\Commands\Remove\Resources.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeQualifications\Commands\Remove\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeQualifications\Presentation\List\EmployeeQualificationsListPresenter.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeQualifications\Presentation\List\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeQualifications\Presentation\List\Resources.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeQualifications\Presentation\List\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeQualifications\Presentation\New\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeQualifications\Presentation\New\NewEmployeeQualificationPresenter.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeQualifications\Presentation\New\Resources.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeQualifications\Presentation\New\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeQualifications\Presentation\Page\EmployeeQualificationsPresenter.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeQualifications\Presentation\Page\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeQualifications\Presentation\Page\Resources.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeQualifications\Presentation\Page\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeQualifications\Presentation\Report\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeQualifications\Presentation\Report\Resources.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeSkills\Commands\Create\CreateEmployeeSkillController.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeSkills\Commands\Create\Resources.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeSkills\Commands\Create\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeSkills\Commands\Remove\RemoveEmployeeSkillController.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeSkills\Commands\Remove\Resources.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeSkills\Commands\Remove\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeSkills\Commands\Reorder\ReorderEmployeeSkillController.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeSkills\Commands\Reorder\Resources.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeSkills\Commands\Reorder\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeSkills\Presentation\List\EmployeeSkillsListPresenter.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeSkills\Presentation\List\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeSkills\Presentation\List\Resources.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeSkills\Presentation\List\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeSkills\Presentation\New\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeSkills\Presentation\New\NewEmployeeSkillPresenter.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeSkills\Presentation\New\Resources.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeSkills\Presentation\New\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeSkills\Presentation\Page\EmployeeSkillsPresenter.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeSkills\Presentation\Page\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeSkills\Presentation\Page\Resources.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeSkills\Presentation\Page\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeSkills\Presentation\ReorderEditor\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeSkills\Presentation\ReorderEditor\ReorderEmployeeSkillEditorPresenter.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeSkills\Presentation\ReorderEditor\Resources.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeSkills\Presentation\ReorderEditor\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeSkills\Presentation\Report\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmployeeSkills\Presentation\Report\Resources.cs" />
+    <Compile Include="Application\HR\Employees\EmploymentDetails\Commands\Update\Resources.cs" />
+    <Compile Include="Application\HR\Employees\EmploymentDetails\Commands\Update\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmploymentDetails\Commands\Update\UpdateEmploymentDetailsController.cs" />
+    <Compile Include="Application\HR\Employees\EmploymentDetails\EmploymentDetailsResources.cs" />
+    <Compile Include="Application\HR\Employees\EmploymentDetails\Presentation\Editor\EmploymentDetailsEditorPresenter.cs" />
+    <Compile Include="Application\HR\Employees\EmploymentDetails\Presentation\Editor\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmploymentDetails\Presentation\Editor\Resources.cs" />
+    <Compile Include="Application\HR\Employees\EmploymentDetails\Presentation\Editor\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmploymentDetails\Presentation\Page\EmploymentDetailsPresenter.cs" />
+    <Compile Include="Application\HR\Employees\EmploymentDetails\Presentation\Page\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmploymentDetails\Presentation\Page\Resources.cs" />
+    <Compile Include="Application\HR\Employees\EmploymentDetails\Presentation\Page\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmploymentDetails\Presentation\Report\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\EmploymentDetails\Presentation\Report\Resources.cs" />
+    <Compile Include="Application\HR\Employees\EmploymentDetails\Presentation\ViewModel\EmploymentDetailsViewModelBuilder.cs" />
+    <Compile Include="Application\HR\Employees\addNewEmployee\page\AddNewEmployeePageDefinition.cs" />
+    <Compile Include="Application\HR\Employees\addNewEmployee\get\AddNewEmployeePagePresenter.cs" />
+    <Compile Include="Application\HR\Employees\addNewEmployee\page\Resources.cs" />
+    <Compile Include="Application\HR\Employees\addNewEmployee\get\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\Notes\Commands\Create\CreateNoteController.cs" />
+    <Compile Include="Application\HR\Employees\Notes\Commands\Create\Resources.cs" />
+    <Compile Include="Application\HR\Employees\Notes\Commands\Create\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\Notes\Presentation\Editor\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\Notes\Presentation\Editor\NoteEditorPresenter.cs" />
+    <Compile Include="Application\HR\Employees\Notes\Presentation\Editor\Resources.cs" />
+    <Compile Include="Application\HR\Employees\Notes\Presentation\Editor\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\Notes\Presentation\List\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\Notes\Presentation\List\NotesListPresenter.cs" />
+    <Compile Include="Application\HR\Employees\Notes\Presentation\List\Resources.cs" />
+    <Compile Include="Application\HR\Employees\Notes\Presentation\List\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\Notes\Presentation\New\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\Notes\Presentation\New\NewNotesPresenter.cs" />
+    <Compile Include="Application\HR\Employees\Notes\Presentation\New\Resources.cs" />
+    <Compile Include="Application\HR\Employees\Notes\Presentation\New\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\Notes\Presentation\Page\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\Notes\Presentation\Page\NotesPresenter.cs" />
+    <Compile Include="Application\HR\Employees\Notes\Presentation\Page\Resources.cs" />
+    <Compile Include="Application\HR\Employees\Notes\Presentation\Page\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\Notes\Commands\Remove\RemoveNoteController.cs" />
+    <Compile Include="Application\HR\Employees\Notes\Commands\Remove\Resources.cs" />
+    <Compile Include="Application\HR\Employees\Notes\Commands\Remove\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\Notes\Presentation\Report\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\Notes\Presentation\Report\Resources.cs" />
+    <Compile Include="Application\HR\Employees\Notes\Commands\Update\Resources.cs" />
+    <Compile Include="Application\HR\Employees\Notes\Commands\Update\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\Notes\Commands\Update\UpdateNoteController.cs" />
+    <Compile Include="Application\HR\Employees\PersonalDetailsAndPicture\Page\MetadataConfiguration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Application\HR\Employees\PersonalDetailsAndPicture\Page\PersonalDetailsAndPicturePresenter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Application\HR\Employees\PersonalDetailsAndPicture\Page\Resources.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Application\HR\Employees\PersonalDetailsAndPicture\Page\RouteConfiguration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Application\HR\Employees\Remove\Presentation\Editor\Resources.cs" />
+    <Compile Include="Application\HR\employee\Notes\notes\get\NotesPageIdentity.cs" />
+    <Compile Include="Application\HR\employee\Notes\notes\get\NotesPagePresenter.cs" />
+    <Compile Include="Application\HR\employee\Notes\notes\get\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\employee\Notes\notes\page\NotesPageDefinition.cs" />
+    <Compile Include="Application\HR\employee\Notes\notes\page\Resources.cs" />
+    <Compile Include="Application\HR\employee\Sickness\addSickness\editor\AddSicknessEditorPresenter.cs" />
+    <Compile Include="Application\HR\employee\Sickness\addSickness\editor\AddSicknessEditorDefinition.cs" />
+    <Compile Include="Application\HR\employee\Sickness\addSickness\editor\Resources.cs" />
+    <Compile Include="Application\HR\employee\Sickness\addSickness\editor\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\employee\Sickness\addSickness\post\AddSicknessPostController.cs" />
+    <Compile Include="Application\HR\employee\Sickness\addSickness\post\Policy.cs" />
+    <Compile Include="Application\HR\employee\Sickness\addSickness\post\Resources.cs" />
+    <Compile Include="Application\HR\employee\Sickness\addSickness\post\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\employee\Sickness\removeSickness\post\Policy.cs" />
+    <Compile Include="Application\HR\employee\Sickness\removeSickness\post\RemoveSicknessController.cs" />
+    <Compile Include="Application\HR\employee\Sickness\removeSickness\post\Resources.cs" />
+    <Compile Include="Application\HR\employee\Sickness\removeSickness\post\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\employee\Sickness\viewSickness\get\PageIdentity.cs" />
+    <Compile Include="Application\HR\employee\Sickness\viewSickness\get\Resources.cs" />
+    <Compile Include="Application\HR\employee\Sickness\viewSickness\get\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\employee\Sickness\viewSickness\get\ViewSicknessPageDefinition.cs" />
+    <Compile Include="Application\HR\employee\Sickness\viewSickness\get\ViewSicknessPagePresenter.cs" />
+    <Compile Include="Application\HR\employee\Sickness\viewSickness\list\SicknessListDefinition.cs" />
+    <Compile Include="Application\HR\employee\Sickness\viewSickness\list\Resources.cs" />
+    <Compile Include="Application\HR\employee\Sickness\viewSickness\report\SicknessReportDefinition.cs" />
+    <Compile Include="Application\HR\employee\Sickness\viewSickness\report\Resources.cs" />
+    <Compile Include="Application\HR\employee\ViewSchedules\viewSchedules\get\Resources.cs" />
+    <Compile Include="Application\HR\employee\ViewSchedules\viewSchedules\Presentation\Page\ViewEmployeeSchedulePresenter.cs" />
+    <Compile Include="Application\HR\employee\ViewSchedules\viewSchedules\Presentation\Page\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\employee\ViewSchedules\viewSchedules\Presentation\Page\Resources.cs" />
+    <Compile Include="Application\HR\employee\ViewSchedules\viewSchedules\Presentation\Page\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\employee\Holidays\viewHolidays\list\HolidayListDefinition.cs" />
+    <Compile Include="Application\HR\employee\Holidays\viewHolidays\list\Resources.cs" />
+    <Compile Include="Application\HR\employee\Holidays\viewHolidays\report\HolidayReportDefinition.cs" />
+    <Compile Include="Application\HR\employee\Holidays\viewHolidays\report\Resources.cs" />
+    <Compile Include="Application\HR\employee\ViewSchedules\viewSchedules\Presentation\Page\ViewScheduleTableViewModelBuilder.cs" />
+    <Compile Include="Application\HR\ReferenceData\JobTitles\Commands\Create\CreateJobTitleController.cs" />
+    <Compile Include="Application\HR\ReferenceData\JobTitles\Commands\Create\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\JobTitles\Commands\Create\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\JobTitles\Commands\Remove\RemoveJobTitleController.cs" />
+    <Compile Include="Application\HR\ReferenceData\JobTitles\Commands\Remove\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\JobTitles\Commands\Remove\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\JobTitles\Commands\Update\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\JobTitles\Commands\Update\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\JobTitles\Commands\Update\UpdateJobTitleController.cs" />
+    <Compile Include="Application\HR\ReferenceData\JobTitles\Presentation\Editor\JobTitleEditorPresenter.cs" />
+    <Compile Include="Application\HR\ReferenceData\JobTitles\Presentation\Editor\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\JobTitles\Presentation\Editor\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\JobTitles\Presentation\Editor\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\JobTitles\Presentation\List\JobTitleListPresenter.cs" />
+    <Compile Include="Application\HR\ReferenceData\JobTitles\Presentation\List\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\JobTitles\Presentation\List\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\JobTitles\Presentation\List\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\JobTitles\Presentation\New\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\JobTitles\Presentation\New\NewJobTitlePresenter.cs" />
+    <Compile Include="Application\HR\ReferenceData\JobTitles\Presentation\New\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\JobTitles\Presentation\New\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\JobTitles\Presentation\Page\ConfigureJobTitlesPresenter.cs" />
+    <Compile Include="Application\HR\ReferenceData\JobTitles\Presentation\Page\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\JobTitles\Presentation\Page\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\JobTitles\Presentation\Page\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\JobTitles\Presentation\Report\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\JobTitles\Presentation\Report\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Locations\Commands\Create\CreateLocationController.cs" />
+    <Compile Include="Application\HR\ReferenceData\Locations\Commands\Create\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Locations\Commands\Create\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Locations\Commands\Remove\RemoveLocationController.cs" />
+    <Compile Include="Application\HR\ReferenceData\Locations\Commands\Remove\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Locations\Commands\Remove\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Locations\Commands\Update\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Locations\Commands\Update\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Locations\Commands\Update\UpdateLocationController.cs" />
+    <Compile Include="Application\HR\ReferenceData\Locations\Presentation\Editor\LocationEditorPresenter.cs" />
+    <Compile Include="Application\HR\ReferenceData\Locations\Presentation\Editor\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Locations\Presentation\Editor\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Locations\Presentation\Editor\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Locations\Presentation\List\LocationListPresenter.cs" />
+    <Compile Include="Application\HR\ReferenceData\Locations\Presentation\List\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Locations\Presentation\List\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Locations\Presentation\List\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Locations\Presentation\New\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Locations\Presentation\New\NewLocationPresenter.cs" />
+    <Compile Include="Application\HR\ReferenceData\Locations\Presentation\New\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Locations\Presentation\New\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Locations\Presentation\Page\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Locations\Presentation\Page\ConfigureLocationsPresenter.cs" />
+    <Compile Include="Application\HR\ReferenceData\Locations\Presentation\Page\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Locations\Presentation\Page\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Locations\Presentation\Report\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Locations\Presentation\Report\Resources.cs" />
+    <Compile Include="Application\HR\setupMenus\Get\SetupMenusPageViewModelBuilder.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\AllSOccurrencesDetails\Report\Config.cs" />
+    <Compile Include="Application\PS\OCalendar\UpdateOCalendarRequest\Editor\MetadataConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\UpdateOCalendarRequest\get\OperationsCalendarDetailsEditorPresenter.cs" />
+    <Compile Include="Application\PS\OCalendar\UpdateOCalendarRequest\Editor\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\UpdateOCalendarRequest\get\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendars\AddOCalendarRequest\post\CreateOperationsCalendarController.cs" />
+    <Compile Include="Application\PS\OCalendars\AddOCalendarRequest\post\Resources.cs" />
+    <Compile Include="Application\PS\OCalendars\AddOCalendarRequest\post\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendars\AddOCalendarRequest\Editor\MetadataConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendars\AddOCalendarRequest\Editor\Resources.cs" />
+    <Compile Include="Application\PS\OCalendars\AddNewOCalendar\Page\MetadataConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendars\AddNewOCalendar\get\NewOperationsCalendarPresenter.cs" />
+    <Compile Include="Application\PS\OCalendars\AddNewOCalendar\Page\Resources.cs" />
+    <Compile Include="Application\PS\OCalendars\AddNewOCalendar\get\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\OperationalCalendarIdentityViewModel.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\PublishSCalendarRequest\post\PublishShiftCalendarController.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\PublishSCalendarRequest\post\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\PublishSCalendarRequest\post\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\Allocations\AddAllocationRequest\post\ConfirmAllocationController.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\Allocations\AddAllocationRequest\post\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\Allocations\AddAllocationRequest\post\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\Allocation\RemoveAllocationRequest\post\RemoveResourceAllocationController.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\Allocation\RemoveAllocationRequest\post\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\Allocation\RemoveAllocationRequest\post\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\Allocations\AddAllocationRequest\editor\ConfirmAllocationEditorDefinition.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\Allocations\AddAllocationRequest\editor\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\Allocations\ConfirmAllocation\get\ConfirmAllocationPagePresenter.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\Allocations\ConfirmAllocation\Page\ConfirmAllocationPageDefinition.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\Allocations\ConfirmAllocation\Page\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\Allocations\ConfirmAllocation\get\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\ChooseResource\Page\AllResourcesPageViewModelBuilder.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\ReorderPatternRequest\editor\ReorderShiftCalendarPatternDetailsDisplay.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\ViewPattern\Page\ShiftCalendarPatternsPageDefinition.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\ViewPattern\get\ShiftCalendarPatternsPagePresenter.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\ViewPattern\Page\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\ViewPattern\get\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Patterns\PatternDetailedList\PatternDetail\ShiftCalendarPatternListReportDetails.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\PatternDetails\report\MetadataConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\PatternDetails\report\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\Allocations\AllocationDetailedList\detail\AllocatedResourcesReportDefinition.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\Allocations\AllocationDetailedList\detail\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\Allocations\AllocationDetailedList\list\AllocatedResourcesListDefinition.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\Allocations\AllocationDetailedList\list\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\ChooseResource\Page\AllResourcesPageDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\ChooseResource\Page\Resources.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\ChooseResource\get\AllResourcesPagePresenter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\ChooseResource\get\RouteConfiguration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\UpdateAllSOccurrencesRequest\post\EditAllOccurrencesController.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\UpdateAllSOccurrencesRequest\post\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\UpdateAllSOccurrencesRequest\post\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\UpdateAllSOccurrencesRequest\Editor\MetadataConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\UpdateAllSOccurrencesRequest\Editor\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\UpdateAllSOccurrencesRequest\get\Presenter.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\UpdateAllSOccurrencesRequest\get\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\EditAllSOccurrences\Page\MetadataConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\EditAllSOccurrences\get\Presenter.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\EditAllSOccurrences\Page\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\EditAllSOccurrences\get\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\AllSOccurrencesDetails\Report\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\UpdateSOccurrenceRequest\post\EditSingleShiftOccurrenceController.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\UpdateSOccurrenceRequest\post\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\UpdateSOccurrenceRequest\post\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\UpdateSOccurrenceRequest\Editor\MetadataConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\UpdateSOccurrenceRequest\get\Presenter.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\UpdateSOccurrenceRequest\Editor\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\UpdateSOccurrenceRequest\get\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\EditSOccurrence\get\EditSingleShiftOccurrencePresenter.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\EditSOccurrence\Page\MetadataConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\EditSOccurrence\Page\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\EditSOccurrence\get\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\SOccurrenceDetails\Report\MetadataConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\SOccurrenceDetails\Report\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrences\AddSOccurrenceRequest\post\CreateShiftOccurrenceController.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrences\AddSOccurrenceRequest\post\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrences\AddSOccurrenceRequest\post\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrences\AddSOccurrenceRequest\Editor\MetadataConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrences\AddSOccurrenceRequest\Editor\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrences\AddSOccurrence\Page\MetadataConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrences\AddSOccurrence\get\NewShiftOccurrencePresenter.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrences\AddSOccurrence\Page\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrences\AddSOccurrence\get\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrences\AddSOccurrenceFromTemplateRequest\post\Controller.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrences\AddSOccurrenceFromTemplateRequest\post\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrences\AddSOccurrenceFromTemplateRequest\post\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\ShiftOccurrenceIdentityViewModel.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\TimeBlockIdentityViewModel.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\RemoveAllSOccurrencesRequest\post\RemoveAllOccurrenceController.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\RemoveAllSOccurrencesRequest\post\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\RemoveAllSOccurrencesRequest\post\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\RemoveAllSOccurrencesRequest\Editor\MetadataConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\RemoveAllSOccurrencesRequest\Editor\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\RemoveAllSOccurrences\Page\MetadataConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\RemoveAllSOccurrences\get\RemoveAllShiftOccurrencePresenter.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\RemoveAllSOccurrences\Page\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\RemoveAllSOccurrences\get\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\RemoveSOccurrenceRequest\post\RemoveShiftOccurrenceController.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\RemoveSOccurrenceRequest\post\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\RemoveSOccurrenceRequest\post\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\RemoveSOccurrenceRequest\Editor\MetadataConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\RemoveSOccurrenceRequest\Editor\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\RemoveSOccurrence\get\RemoveShiftOccurrencePagePresenter.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\RemoveSOccurrence\page\MetadataConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\RemoveSOccurrence\page\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\RemoveSOccurrence\get\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\Breaks\ApplyFromTemplateRequest\post\Controller.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\Breaks\ApplyFromTemplateRequest\post\RConfig.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\Breaks\ApplyFromTemplateRequest\post\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\Break\UpdateRequest\post\Controller.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\Break\UpdateRequest\post\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\Break\UpdateRequest\post\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\Breaks\AddRequest\post\Controller.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\Breaks\AddRequest\post\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\Breaks\AddRequest\post\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\Break\RemoveRequest\post\Controller.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\Break\RemoveRequest\post\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\Break\RemoveRequest\post\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\Break\UpdateRequest\Editor\MetaConfig.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\Break\UpdateRequest\get\Presenter.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\Break\UpdateRequest\Editor\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\Break\UpdateRequest\get\RouteConfig.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\Breaks\DetailedList\List\MetadataConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\Breaks\DetailedList\List\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\Breaks\AddRequest\editor\MetaConfig.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\Breaks\AddRequest\get\Presenter.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\Breaks\AddRequest\editor\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\Breaks\AddRequest\get\RouteConfig.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\Break\RemoveRequest\editor\MetaConfig.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\Break\RemoveRequest\get\Presenter.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\Break\RemoveRequest\editor\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\Break\RemoveRequest\get\RouteConfig.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\Breaks\DetailedList\item\MC.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\Breaks\DetailedList\item\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\Breaks\ApplyFromTemplateRequest\Editor\MC.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\Breaks\ApplyFromTemplateRequest\get\P.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\Breaks\ApplyFromTemplateRequest\Editor\R.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\Breaks\ApplyFromTemplateRequest\get\RC.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\Types\RemoveRequest.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\Types\EditRequest.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\Types\NewRequest.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\Types\ApplyRequest.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\All\Types\Details.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\Breaks\ApplyFromTemplateRequest\post\Controller.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\Breaks\ApplyFromTemplateRequest\post\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\Breaks\ApplyFromTemplateRequest\post\RConfig.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\Break\RemoveRequest\post\Controller.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\Break\RemoveRequest\post\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\Break\RemoveRequest\post\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\Break\UpdateRequest\post\Controller.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\Break\UpdateRequest\post\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\Break\UpdateRequest\post\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\Breaks\AddRequest\post\Controller.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\Breaks\AddRequest\post\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\Breaks\AddRequest\post\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\Break\RemoveRequest\editor\MetaConfig.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\Break\RemoveRequest\get\Presenter.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\Break\RemoveRequest\editor\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\Break\RemoveRequest\get\RouteConfig.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\Break\UpdateRequest\editor\MetaConfig.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\Break\UpdateRequest\get\Presenter.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\Break\UpdateRequest\editor\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\Break\UpdateRequest\get\RouteConfig.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\Breaks\AddRequest\editor\MetaConfig.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\Breaks\AddRequest\get\Presenter.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\Breaks\AddRequest\editor\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\Breaks\AddRequest\get\RouteConfig.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\Breaks\ApplyFromTemplateRequest\editor\MC.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\Breaks\ApplyFromTemplateRequest\get\P.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\Breaks\ApplyFromTemplateRequest\editor\R.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\Breaks\DetailedList\List\MetadataConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\Breaks\DetailedList\List\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\Breaks\DetailedList\Detail\MC.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\Breaks\DetailedList\Detail\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\SOccurrence\Single\Breaks\ApplyFromTemplateRequest\get\RC.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\PatternDetails\report\ShiftCalendarPatternReportDetails.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\PublishSCalendar\Page\MetadataConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\PublishSCalendar\Page\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\PublishSCalendar\get\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\PublishSCalendar\get\ShiftCalendarPublishEditorPresenter.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\SCalendarDetails\Report\MetadataConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\SCalendarDetails\Report\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\ShiftModifier\ShiftPalette\MetadataConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\ShiftModifier\ShiftPalette\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\ShiftModifier\get\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\ShiftModifier\get\ShiftTimeAllocationPalettePresenter.cs" />
+    <Compile Include="Application\PS\OCalendar\WhiteSpaceModifier\WhiteSpacePalette\WhiteSpacePaletteDetails.cs" />
+    <Compile Include="Application\PS\OCalendar\WhiteSpaceModifier\get\WhiteSpaceTimeAllocationPalettePresenter.cs" />
+    <Compile Include="Application\PS\OCalendar\WhiteSpaceModifier\WhiteSpacePalette\MetadataConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\WhiteSpaceModifier\WhiteSpacePalette\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\WhiteSpaceModifier\get\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\OCTitle\ContentHeader\MetadataConfigurations.cs" />
+    <Compile Include="Application\PS\OCalendar\OCTitle\ContentHeader\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\DateRangeSkipper\DateRangeBar\MetadataConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\DateRangeChooser\DateRangePalette\Component\DateRangePaletteRequest.cs" />
+    <Compile Include="Application\PS\OCalendar\DateRangeChooser\DateRangePalette\Component\MetadataConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\DateRangeChooser\DateRangePalette\Component\DateRangePalettePresenter.cs" />
+    <Compile Include="Application\PS\OCalendar\DateRangeChooser\DateRangePalette\Component\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\DateRangeChooser\DateRangePalette\Component\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\PlannedSupply\Page\MetadataConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\PlannedSupply\get\PlannedSupplyPresenter.cs" />
+    <Compile Include="Application\PS\OCalendar\PlannedSupply\Page\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\PlannedSupply\get\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendars\AddSCalendarRequest\post\CreateShiftCalendarController.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendars\AddSCalendarRequest\post\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendars\AddSCalendarRequest\post\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\RemoveSCalendarRequest\post\RemoveShiftCalendarController.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\RemoveSCalendarRequest\post\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\RemoveSCalendarRequest\post\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\UpdateSCalendarRequest\post\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\UpdateSCalendarRequest\post\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\UpdateSCalendarRequest\post\UpdateShiftCalendarController.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\RemovePatternRequest\post\RemovePatternController.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\RemovePatternRequest\post\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\RemovePatternRequest\post\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\ReorderPatternRequest\post\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\ReorderPatternRequest\post\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\ReorderPatternRequest\post\ReorderPatternController.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\UpdatePatternRequest\editor\UpdatePatternDefinition.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\UpdatePatternRequest\get\UpdatePatternPresenter.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\UpdatePatternRequest\editor\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\UpdatePatternRequest\get\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\RemovePatternRequest\editor\RemovePatternDefinition.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\RemovePatternRequest\get\RemovePatternPresenter.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\RemovePatternRequest\editor\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\RemovePatternRequest\get\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\ReorderPatternRequest\editor\ReorderPatternDefinition.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\ReorderPatternRequest\get\ReorderPatternPresenter.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\ReorderPatternRequest\editor\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\ReorderPatternRequest\get\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendars\SCalendarDetailedList\SCalendarDetail\MetadataConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Patterns\AddPatternRequest\post\NewPatternController.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Patterns\AddPatternRequest\post\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Patterns\AddPatternRequest\post\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\UpdatePatternRequest\post\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\UpdatePatternRequest\post\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Pattern\UpdatePatternRequest\post\UpdatePatternController.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Patterns\PatternDetailedList\DetailedList\MetadataConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Patterns\PatternDetailedList\DetailedList\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Patterns\AddPatternRequest\editor\NewPatternDefinition.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Patterns\AddPatternRequest\get\NewPatternPresenter.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Patterns\AddPatternRequest\editor\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Patterns\AddPatternRequest\get\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\ViewSCalendar\get\Presenter.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\ViewSCalendar\Page\MetadataConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\ViewSCalendar\Page\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\ViewSCalendar\get\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Patterns\PatternDetailedList\PatternDetail\MetadataConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\Patterns\PatternDetailedList\PatternDetail\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\UpdateSCalendarRequest\Editor\MetadataConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\UpdateSCalendarRequest\Editor\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\UpdateSCalendarRequest\get\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\UpdateSCalendarRequest\get\ShiftCalendarDetailsEditorPresenter.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendars\SCalendarDetailedList\DetailedList\MetadataConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendars\SCalendarDetailedList\DetailedList\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendars\AddSCalendarRequest\Editor\MetadataConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendars\AddSCalendarRequest\get\NewShiftCalendarPresenter.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendars\AddSCalendarRequest\Editor\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendars\AddSCalendarRequest\get\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\RemoveSCalendarRequest\Editor\MetadataConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\RemoveSCalendarRequest\get\RemoveShiftCalendarPresenter.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\RemoveSCalendarRequest\Editor\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\RemoveSCalendarRequest\get\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendars\SCalendarDetailedList\SCalendarDetail\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\DateRangeChooser\DateRangePalette\MetadataConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\OCDetails\SimplePalette\MetadataConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\OCDetails\SimplePalette\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\ViewModel\OperationsCalendarDetailsViewModelBuilder.cs" />
+    <Compile Include="Application\PS\OCalendars\ViewOCalendars\Page\MetadataConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendars\ViewOCalendars\Page\Resources.cs" />
+    <Compile Include="Application\PS\OCalendars\ViewOCalendars\get\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendars\ViewOCalendars\get\ViewOperationsCalendarsPresenter.cs" />
+    <Compile Include="Application\HR\Employees\PersonalDetails\Presentation\Editor\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\PersonalDetails\Presentation\Editor\PersonalDetailsEditorPresenter.cs" />
+    <Compile Include="Application\HR\Employees\PersonalDetails\Presentation\Editor\Resources.cs" />
+    <Compile Include="Application\HR\Employees\PersonalDetails\Presentation\Editor\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\PersonalDetails\Presentation\Report\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\PersonalDetails\Presentation\Report\Resources.cs" />
+    <Compile Include="Application\HR\Employees\PersonalDetails\PersonalDetailsResources.cs" />
+    <Compile Include="Application\HR\Employees\PersonalDetails\Commands\Update\Resources.cs" />
+    <Compile Include="Application\HR\Employees\PersonalDetails\Commands\Update\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\PersonalDetails\Commands\Update\UpdatePersonalDetailsController.cs" />
+    <Compile Include="Application\HR\Employees\Remove\Presentation\Editor\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\Remove\Commands\Delete\Resources.cs" />
+    <Compile Include="Application\HR\Employees\Remove\Commands\Delete\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\Remove\Presentation\Page\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\Remove\Presentation\Page\RemoveEmployeePresenter.cs" />
+    <Compile Include="Application\HR\Employees\Remove\Presentation\Page\Resources.cs" />
+    <Compile Include="Application\HR\Employees\Remove\Presentation\Page\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\Remove\Commands\Delete\DeleteEmployeeController.cs" />
+    <Compile Include="Application\HR\Employees\viewEmployees\get\ViewEmployeesPageDefinition.cs" />
+    <Compile Include="Application\HR\Employees\viewEmployees\get\Resources.cs" />
+    <Compile Include="Application\HR\Employees\viewEmployees\get\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\Employees\viewEmployees\get\ViewEmployeesPagePresenter.cs" />
+    <Compile Include="Application\HR\ReferenceData\EthnicOrigins\Commands\Create\CreateEthnicOriginController.cs" />
+    <Compile Include="Application\HR\ReferenceData\EthnicOrigins\Commands\Create\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\EthnicOrigins\Commands\Create\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\EthnicOrigins\Commands\Remove\RemoveEthnicOriginController.cs" />
+    <Compile Include="Application\HR\ReferenceData\EthnicOrigins\Commands\Remove\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\EthnicOrigins\Commands\Remove\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\EthnicOrigins\Commands\Update\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\EthnicOrigins\Commands\Update\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\EthnicOrigins\Commands\Update\UpdateEthnicOriginController.cs" />
+    <Compile Include="Application\HR\ReferenceData\EthnicOrigins\Presentation\Editor\EthnicOriginEditorPresenter.cs" />
+    <Compile Include="Application\HR\ReferenceData\EthnicOrigins\Presentation\Editor\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\EthnicOrigins\Presentation\Editor\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\EthnicOrigins\Presentation\Editor\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\EthnicOrigins\Presentation\List\EthnicOriginListPresenter.cs" />
+    <Compile Include="Application\HR\ReferenceData\EthnicOrigins\Presentation\List\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\EthnicOrigins\Presentation\List\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\EthnicOrigins\Presentation\List\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\EthnicOrigins\Presentation\New\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\EthnicOrigins\Presentation\New\NewEthnicOriginPresenter.cs" />
+    <Compile Include="Application\HR\ReferenceData\EthnicOrigins\Presentation\New\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\EthnicOrigins\Presentation\New\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\EthnicOrigins\Presentation\Page\ConfigureEthnicOriginsPresenter.cs" />
+    <Compile Include="Application\HR\ReferenceData\EthnicOrigins\Presentation\Page\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\EthnicOrigins\Presentation\Page\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\EthnicOrigins\Presentation\Page\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\EthnicOrigins\Presentation\Report\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\EthnicOrigins\Presentation\Report\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Genders\Commands\Create\CreateGenderController.cs" />
+    <Compile Include="Application\HR\ReferenceData\Genders\Commands\Create\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Genders\Commands\Create\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Genders\Commands\Remove\RemoveGenderController.cs" />
+    <Compile Include="Application\HR\ReferenceData\Genders\Commands\Remove\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Genders\Commands\Remove\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Genders\Commands\Update\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Genders\Commands\Update\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Genders\Commands\Update\UpdateGenderController.cs" />
+    <Compile Include="Application\HR\ReferenceData\Genders\Presentation\Editor\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Genders\Presentation\Editor\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Genders\Presentation\Editor\GenderEditorPresenter.cs" />
+    <Compile Include="Application\HR\ReferenceData\Genders\Presentation\Editor\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Genders\Presentation\List\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Genders\Presentation\List\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Genders\Presentation\List\GenderListPresenter.cs" />
+    <Compile Include="Application\HR\ReferenceData\Genders\Presentation\List\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Genders\Presentation\New\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Genders\Presentation\New\NewGenderPresenter.cs" />
+    <Compile Include="Application\HR\ReferenceData\Genders\Presentation\New\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Genders\Presentation\New\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Genders\Presentation\Page\ConfigureGendersPresenter.cs" />
+    <Compile Include="Application\HR\ReferenceData\Genders\Presentation\Page\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Genders\Presentation\Page\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Genders\Presentation\Page\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Genders\Presentation\Report\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Genders\Presentation\Report\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\MaritalStatuses\Commands\Create\CreateMaritalStatusController.cs" />
+    <Compile Include="Application\HR\ReferenceData\MaritalStatuses\Commands\Create\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\MaritalStatuses\Commands\Create\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\MaritalStatuses\Commands\Remove\RemoveMaritalStatusController.cs" />
+    <Compile Include="Application\HR\ReferenceData\MaritalStatuses\Commands\Remove\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\MaritalStatuses\Commands\Remove\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\MaritalStatuses\Commands\Update\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\MaritalStatuses\Commands\Update\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\MaritalStatuses\Commands\Update\UpdateMaritalStatusController.cs" />
+    <Compile Include="Application\HR\ReferenceData\MaritalStatuses\Presentation\Editor\MaritalStatusEditorPresenter.cs" />
+    <Compile Include="Application\HR\ReferenceData\MaritalStatuses\Presentation\Editor\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\MaritalStatuses\Presentation\Editor\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\MaritalStatuses\Presentation\Editor\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\MaritalStatuses\Presentation\List\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\MaritalStatuses\Presentation\List\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\MaritalStatuses\Presentation\List\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\MaritalStatuses\Presentation\List\MaritalStatusListPresenter.cs" />
+    <Compile Include="Application\HR\ReferenceData\MaritalStatuses\Presentation\New\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\MaritalStatuses\Presentation\New\NewMaritalStatusPresenter.cs" />
+    <Compile Include="Application\HR\ReferenceData\MaritalStatuses\Presentation\New\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\MaritalStatuses\Presentation\New\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\MaritalStatuses\Presentation\Page\ConfigureMaritalStatusesPresenter.cs" />
+    <Compile Include="Application\HR\ReferenceData\MaritalStatuses\Presentation\Page\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\MaritalStatuses\Presentation\Page\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\MaritalStatuses\Presentation\Page\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\MaritalStatuses\Presentation\Report\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\MaritalStatuses\Presentation\Report\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Nationalities\Commands\Create\CreateNationalityController.cs" />
+    <Compile Include="Application\HR\ReferenceData\Nationalities\Commands\Create\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Nationalities\Commands\Create\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Nationalities\Commands\Remove\RemoveNationalityController.cs" />
+    <Compile Include="Application\HR\ReferenceData\Nationalities\Commands\Remove\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Nationalities\Commands\Remove\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Nationalities\Commands\Update\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Nationalities\Commands\Update\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Nationalities\Commands\Update\UpdateNationalityController.cs" />
+    <Compile Include="Application\HR\ReferenceData\Nationalities\Presentation\Editor\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Nationalities\Presentation\Editor\NationalityEditorPresenter.cs" />
+    <Compile Include="Application\HR\ReferenceData\Nationalities\Presentation\Editor\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Nationalities\Presentation\Editor\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Nationalities\Presentation\List\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Nationalities\Presentation\List\NationalityListPresenter.cs" />
+    <Compile Include="Application\HR\ReferenceData\Nationalities\Presentation\List\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Nationalities\Presentation\List\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Nationalities\Presentation\New\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Nationalities\Presentation\New\NewNationalityPresenter.cs" />
+    <Compile Include="Application\HR\ReferenceData\Nationalities\Presentation\New\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Nationalities\Presentation\New\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Nationalities\Presentation\Page\ConfigureNationalitiesPresenter.cs" />
+    <Compile Include="Application\HR\ReferenceData\Nationalities\Presentation\Page\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Nationalities\Presentation\Page\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Nationalities\Presentation\Page\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Nationalities\Presentation\Report\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Nationalities\Presentation\Report\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Qualifications\Commands\Update\UpdateQualificationController.cs" />
+    <Compile Include="Application\HR\ReferenceData\Relationships\Commands\Create\CreateRelationshipController.cs" />
+    <Compile Include="Application\HR\ReferenceData\Relationships\Commands\Create\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Relationships\Commands\Create\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Relationships\Commands\Remove\RemoveRelationshipController.cs" />
+    <Compile Include="Application\HR\ReferenceData\Relationships\Commands\Remove\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Relationships\Commands\Remove\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Relationships\Commands\Update\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Relationships\Commands\Update\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Relationships\Commands\Update\UpdateRelationshipController.cs" />
+    <Compile Include="Application\HR\ReferenceData\Relationships\Presentation\Editor\RelationshipEditorPresenter.cs" />
+    <Compile Include="Application\HR\ReferenceData\Relationships\Presentation\Editor\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Relationships\Presentation\Editor\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Relationships\Presentation\Editor\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Relationships\Presentation\List\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Relationships\Presentation\List\RelationshipListPresenter.cs" />
+    <Compile Include="Application\HR\ReferenceData\Relationships\Presentation\List\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Relationships\Presentation\List\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Relationships\Presentation\New\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Relationships\Presentation\New\NewRelationshipPresenter.cs" />
+    <Compile Include="Application\HR\ReferenceData\Relationships\Presentation\New\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Relationships\Presentation\New\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Relationships\Presentation\Page\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Relationships\Presentation\Page\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Relationships\Presentation\Page\ConfigureRelationshipsPresenter.cs" />
+    <Compile Include="Application\HR\ReferenceData\Relationships\Presentation\Page\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Relationships\Presentation\Report\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Relationships\Presentation\Report\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Skills\Commands\Create\CreateSkillController.cs" />
+    <Compile Include="Application\HR\ReferenceData\Skills\Commands\Create\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Skills\Commands\Create\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Skills\Commands\Remove\RemoveSkillController.cs" />
+    <Compile Include="Application\HR\ReferenceData\Skills\Commands\Remove\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Skills\Commands\Remove\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Skills\Commands\Update\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Skills\Commands\Update\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Skills\Commands\Update\UpdateSkillController.cs" />
+    <Compile Include="Application\HR\ReferenceData\Skills\Presentation\Editor\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Skills\Presentation\Editor\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Skills\Presentation\Editor\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Skills\Presentation\Editor\SkillEditorPresenter.cs" />
+    <Compile Include="Application\HR\ReferenceData\Skills\Presentation\List\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Skills\Presentation\List\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Skills\Presentation\List\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Skills\Presentation\List\SkillListPresenter.cs" />
+    <Compile Include="Application\HR\ReferenceData\Skills\Presentation\New\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Skills\Presentation\New\NewSkillPresenter.cs" />
+    <Compile Include="Application\HR\ReferenceData\Skills\Presentation\New\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Skills\Presentation\New\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Skills\Presentation\Page\ConfigureSkillsPresenter.cs" />
+    <Compile Include="Application\HR\ReferenceData\Skills\Presentation\Page\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Skills\Presentation\Page\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Skills\Presentation\Page\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Skills\Presentation\Report\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Skills\Presentation\Report\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Titles\Commands\Create\CreateTitleController.cs" />
+    <Compile Include="Application\HR\ReferenceData\Titles\Commands\Create\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Titles\Commands\Create\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Titles\Presentation\Editor\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Titles\Presentation\Editor\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Titles\Presentation\Editor\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Titles\Presentation\Editor\TitleEditorPresenter.cs" />
+    <Compile Include="Application\HR\ReferenceData\Titles\Presentation\List\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Titles\Presentation\List\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Titles\Presentation\List\TitleListPresenter.cs" />
+    <Compile Include="Application\HR\ReferenceData\Titles\Presentation\New\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Titles\Presentation\Page\ConfigureTitlesPresenter.cs" />
+    <Compile Include="Application\HR\ReferenceData\Titles\Presentation\List\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Titles\Presentation\New\NewTitlePresenter.cs" />
+    <Compile Include="Application\HR\ReferenceData\Titles\Presentation\Page\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Titles\Presentation\Page\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Titles\Presentation\Page\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Titles\Presentation\New\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Titles\Presentation\New\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Titles\Commands\Remove\RemoveTitleController.cs" />
+    <Compile Include="Application\HR\ReferenceData\Titles\Commands\Remove\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Titles\Commands\Remove\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Titles\Presentation\Report\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Titles\Presentation\Report\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Titles\Commands\Update\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Titles\Commands\Update\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Titles\Commands\Update\UpdateTitleController.cs" />
+    <Compile Include="Application\HR\ReferenceData\Qualifications\Commands\Create\CreateQualificationController.cs" />
+    <Compile Include="Application\HR\ReferenceData\Qualifications\Commands\Create\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Qualifications\Commands\Create\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Qualifications\Commands\Remove\RemoveQualificationController.cs" />
+    <Compile Include="Application\HR\ReferenceData\Qualifications\Commands\Remove\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Qualifications\Commands\Remove\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Qualifications\Commands\Update\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Qualifications\Commands\Update\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Qualifications\Presentation\Editor\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Qualifications\Presentation\Editor\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Qualifications\Presentation\Editor\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Qualifications\Presentation\Editor\QualificationEditorPresenter.cs" />
+    <Compile Include="Application\HR\ReferenceData\Qualifications\Presentation\List\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Qualifications\Presentation\List\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Qualifications\Presentation\List\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Qualifications\Presentation\List\QualificationListPresenter.cs" />
+    <Compile Include="Application\HR\ReferenceData\Qualifications\Presentation\New\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Qualifications\Presentation\New\NewQualificationPresenter.cs" />
+    <Compile Include="Application\HR\ReferenceData\Qualifications\Presentation\New\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Qualifications\Presentation\New\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Qualifications\Presentation\Page\ConfigureQualificationsController.cs" />
+    <Compile Include="Application\HR\ReferenceData\Qualifications\Presentation\Page\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Qualifications\Presentation\Page\Resources.cs" />
+    <Compile Include="Application\HR\ReferenceData\Qualifications\Presentation\Page\RouteConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Qualifications\Presentation\Report\MetadataConfiguration.cs" />
+    <Compile Include="Application\HR\ReferenceData\Qualifications\Presentation\Report\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\RemoveOCalendarRequest\Editor\MetadataConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\RemoveOCalendarRequest\get\RemoveOperationsCalendarPresenter.cs" />
+    <Compile Include="Application\PS\OCalendar\RemoveOCalendarRequest\Editor\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\RemoveOCalendarRequest\get\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\RemoveOCalendarRequest\post\RemoveOperationsCalendarController.cs" />
+    <Compile Include="Application\PS\OCalendar\RemoveOCalendarRequest\post\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\RemoveOCalendarRequest\post\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\UpdateOCalendarRequest\post\Resources.cs" />
+    <Compile Include="Application\PS\OCalendar\UpdateOCalendarRequest\post\RouteConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\UpdateOCalendarRequest\post\UpdateOperationsCalendarController.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Commands\Create\CreateBreakTemplateController.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Commands\Create\Resources.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Commands\Create\RouteConfiguration.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Commands\Remove\Resources.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Commands\Remove\RouteConfiguration.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Commands\Update\Resources.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Commands\Update\RouteConfiguration.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Commands\Update\UpdateBreakTemplateController.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Presentation\RemoveEditor\MetadataConfiguration.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Presentation\RemoveEditor\RemoveBreakTemplatePresenter.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Presentation\RemoveEditor\Resources.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Presentation\RemoveEditor\RouteConfiguration.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Presentation\ViewSelf\ContentHeader\MetadataConfiguration.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Commands\Remove\RemoveBreakTemplateController.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Presentation\ViewSelf\Page\MetadataConfiguration.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Presentation\ViewSelf\Page\Resources.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Presentation\ViewSelf\Page\RouteConfiguration.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Presentation\ViewSelf\Page\BreakTemplateViewSelfPresenter.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Presentation\ViewSelf\BreakTemplateViewModelBuilder.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Presentation\EditEditor\MetadataConfiguration.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Presentation\EditEditor\Resources.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Presentation\EditEditor\RouteConfiguration.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Presentation\EditEditor\BreakTemplateDetailsEditorPresenter.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Presentation\New\Editor\MetadataConfiguration.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Presentation\New\Editor\Resources.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Presentation\New\Page\MetadataConfiguration.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Presentation\New\Page\NewBreakTemplatePresenter.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Presentation\New\Page\Resources.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Presentation\New\Page\RouteConfiguration.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Presentation\ViewAll\Page\MetadataConfiguration.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Presentation\ViewAll\Page\Resources.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Presentation\ViewAll\Page\RouteConfiguration.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Presentation\ViewAll\Page\BreakTemplatesViewAllPresenter.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Breaks\Commands\Create\CreateBreakController.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Breaks\Commands\Create\Resources.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Breaks\Commands\Create\RouteConfiguration.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Breaks\Commands\Remove\RemoveBreakController.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Breaks\Commands\Remove\Resources.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Breaks\Commands\Remove\RouteConfiguration.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Breaks\Commands\Update\Resources.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Breaks\Commands\Update\RouteConfiguration.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Breaks\Commands\Update\UpdateBreakController.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Breaks\Presentation\Edit\MetadataConfiguration.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Breaks\Presentation\Edit\Resources.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Breaks\Presentation\Edit\RouteConfiguration.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Breaks\Presentation\Edit\BreakEditorPresenter.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Breaks\Presentation\List\MetadataConfiguration.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Breaks\Presentation\List\Resources.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Breaks\Presentation\List\RouteConfiguration.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Breaks\Presentation\List\BreakListPresenter.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Breaks\Presentation\New\MetadataConfiguration.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Breaks\Presentation\New\NewBreakPresenter.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Breaks\Presentation\New\Resources.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Breaks\Presentation\New\RouteConfiguration.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Breaks\Presentation\Report\MetadataConfiguration.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\Breaks\Presentation\Report\Resources.cs" />
+    <Compile Include="Application\SetupOptions\BreakTemplates\BreakTemplateIdentityViewModel.cs" />
+    <Compile Include="Application\SetupOptions\ShiftTemplates\Commands\New\Command\Create\CreateShiftTemplateController.cs" />
+    <Compile Include="Application\SetupOptions\ShiftTemplates\Commands\New\Command\Create\Resources.cs" />
+    <Compile Include="Application\SetupOptions\ShiftTemplates\Commands\New\Command\Create\RouteConfiguration.cs" />
+    <Compile Include="Application\SetupOptions\ShiftTemplates\Commands\Remove\RemoveShiftTemplateController.cs" />
+    <Compile Include="Application\SetupOptions\ShiftTemplates\Commands\Remove\Resources.cs" />
+    <Compile Include="Application\SetupOptions\ShiftTemplates\Commands\Remove\RouteConfiguration.cs" />
+    <Compile Include="Application\SetupOptions\ShiftTemplates\Commands\Update\Command\Update\Resource.cs" />
+    <Compile Include="Application\SetupOptions\ShiftTemplates\Commands\Update\Command\Update\RouteConfiguration.cs" />
+    <Compile Include="Application\SetupOptions\ShiftTemplates\Commands\Update\Command\Update\UpdateShifteTemplateDetailsController.cs" />
+    <Compile Include="Application\SetupOptions\ShiftTemplates\Presentation\EditOrRemove\EditEditor\MetadataConfiguration.cs" />
+    <Compile Include="Application\SetupOptions\ShiftTemplates\Presentation\EditOrRemove\EditEditor\Resources.cs" />
+    <Compile Include="Application\SetupOptions\ShiftTemplates\Presentation\EditOrRemove\Page\MetadataConfiguration.cs" />
+    <Compile Include="Application\SetupOptions\ShiftTemplates\Presentation\EditOrRemove\Page\Resources.cs" />
+    <Compile Include="Application\SetupOptions\ShiftTemplates\Presentation\EditOrRemove\Page\RouteConfiguration.cs" />
+    <Compile Include="Application\SetupOptions\ShiftTemplates\Presentation\EditOrRemove\Page\ShiftTemplatePresenter.cs" />
+    <Compile Include="Application\SetupOptions\ShiftTemplates\Presentation\EditOrRemove\ViewModel\EditOrRemoveShiftTemplateDetailsViewModelBuilder.cs" />
+    <Compile Include="Application\SetupOptions\ShiftTemplates\Presentation\EditOrRemove\ViewModel\RemoveShiftTemplateRequestEditorBuilder.cs" />
+    <Compile Include="Application\SetupOptions\ShiftTemplates\Presentation\EditOrRemove\ViewModel\UpdateShiftTemplateRequestEditorBuilder.cs" />
+    <Compile Include="Application\SetupOptions\ShiftTemplates\Presentation\New\Editor\MetadataConfiguration.cs" />
+    <Compile Include="Application\SetupOptions\ShiftTemplates\Presentation\New\Editor\Resources.cs" />
+    <Compile Include="Application\SetupOptions\ShiftTemplates\Presentation\New\Page\MetadataConfiguration.cs" />
+    <Compile Include="Application\SetupOptions\ShiftTemplates\Presentation\New\Page\Resources.cs" />
+    <Compile Include="Application\SetupOptions\ShiftTemplates\Presentation\New\Page\RouteConfiguration.cs" />
+    <Compile Include="Application\SetupOptions\ShiftTemplates\Presentation\New\Page\NewShiftTemplatePresenter.cs" />
+    <Compile Include="Application\SetupOptions\ShiftTemplates\Presentation\EditOrRemove\RemoveEditor\MetadataConfiguration.cs" />
+    <Compile Include="Application\SetupOptions\ShiftTemplates\Presentation\EditOrRemove\RemoveEditor\Resources.cs" />
+    <Compile Include="Application\SetupOptions\ShiftTemplates\Presentation\View\Page\MetadataConfiguration.cs" />
+    <Compile Include="Application\SetupOptions\ShiftTemplates\Presentation\View\Page\Resources.cs" />
+    <Compile Include="Application\SetupOptions\ShiftTemplates\Presentation\View\Page\RouteConfiguration.cs" />
+    <Compile Include="Application\SetupOptions\ShiftTemplates\Presentation\View\Page\ViewShiftTemplatesPresenter.cs" />
+    <Compile Include="Application\HR\setupMenus\Get\SetupMenusPagePresenter.cs" />
+    <Compile Include="Application\HR\setupMenus\Get\SetupMenusPageDefinition.cs" />
+    <Compile Include="Application\HR\setupMenus\Get\Resources.cs" />
+    <Compile Include="Application\HR\setupMenus\Get\RouteConfiguration.cs" />
+    <Compile Include="Application\Home\Get\HomePageDefinition.cs" />
+    <Compile Include="Application\Home\Get\Resources.cs" />
+    <Compile Include="Application\Home\Get\RouteConfiguration.cs" />
+    <Compile Include="Application\Home\Get\HomePagePresenter.cs" />
+    <Compile Include="App_Start\BuildViewModelMetadata.cs" />
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
+    <Compile Include="Components\FieldSetValidationResponses\Configuration\BuildFieldSetValidationResponsePolicyDefinitionsInAssembly.cs" />
+    <Compile Include="Components\FieldSetValidationResponses\Configuration\FieldSetValidationResponsePolicyDefinitionBuilder.cs" />
+    <Compile Include="Components\FieldSetValidationResponses\Configuration\IFieldSetValidationResponsePolicyDefinitionBuilder.cs" />
+    <Compile Include="Components\FieldSetValidationResponses\FieldSetValidationResponseBuilder.cs" />
+    <Compile Include="Components\FieldSetValidationResponses\FieldSetValidationResponseDefinitionBuilder.cs" />
+    <Compile Include="Components\FieldSetValidationResponses\FieldSetValidationResponseDefinitionRepository.cs" />
+    <Compile Include="Components\Infrastructure\DependencyConfiguration\FieldSetValidationResponseConfiguration.cs" />
+    <Compile Include="Components\Infrastructure\DependencyConfiguration\ShiftTimeAllocationPaletteConfiguration.cs" />
+    <Compile Include="Components\Infrastructure\DependencyConfiguration\WhiteSpaceTimeAllocationPaletteConfiguration.cs" />
+    <Compile Include="Components\Infrastructure\ShiftTimeAllocationPaletteBuilderFactory\DependencyResolverShiftTimeAllocationPaletteBuilderFactory.cs" />
+    <Compile Include="Components\Infrastructure\WhiteSpaceTimeAllocationPaletteBuilderFactory\DependencyResolverWhiteSpaceTimeAllocationPaletteBuilderFactory.cs" />
+    <Compile Include="Components\ShiftTimeAllocationPalettes\Dynamic\BuildDynamicShiftTimeAllocationPaletteFromStaticDefinition.cs" />
+    <Compile Include="Components\ShiftTimeAllocationPalettes\Dynamic\StaticDefinitions\Actions\DynamicShiftTimeAllocationPaletteActionsStaticDefintionBuilder.cs" />
+    <Compile Include="Components\ShiftTimeAllocationPalettes\Dynamic\StaticDefinitions\Actions\DynamicShiftTimeAllocationPaletteActionStaticDefinitionBuilder.cs" />
+    <Compile Include="Components\ShiftTimeAllocationPalettes\Dynamic\StaticDefinitions\Actions\DynamicShiftTimeAllocationPaletteActionStaticDefintion.cs" />
+    <Compile Include="Components\ShiftTimeAllocationPalettes\Dynamic\StaticDefinitions\Configuration\BuildAllShiftTimeAllocationPaletteDefinitionsDefinedInAssembly.cs" />
+    <Compile Include="Components\ShiftTimeAllocationPalettes\Dynamic\StaticDefinitions\Configuration\IShiftTimeAllocationPaletteDefinitionsBuilder.cs" />
+    <Compile Include="Components\ShiftTimeAllocationPalettes\Dynamic\StaticDefinitions\Configuration\ShiftTimeAllocationPaletteDefinitionsBuilder.cs" />
+    <Compile Include="Components\ShiftTimeAllocationPalettes\Dynamic\StaticDefinitions\DynamicShiftTimeAllocationPaletteStaticDefinitionRepository.cs" />
+    <Compile Include="Components\ShiftTimeAllocationPalettes\Dynamic\StaticDefinitions\Model\DynamicShiftTimeAllocationPaletteModelStaticDefinition.cs" />
+    <Compile Include="Components\ShiftTimeAllocationPalettes\Dynamic\StaticDefinitions\Model\DynamicShiftTimeAllocationPaletteModelStaticDefinitionBuilder.cs" />
+    <Compile Include="Components\ShiftTimeAllocationPalettes\ShiftTimeAllocationPalette.cs" />
+    <Compile Include="Components\WhiteSpaceTimeAllocationPalettes\Dynamic\BuildDynamicWhiteSpaceTimeAllocationPaletteFromStaticDefinition.cs" />
+    <Compile Include="Components\WhiteSpaceTimeAllocationPalettes\Dynamic\StaticDefinitions\Actions\DynamicWhiteSpaceTimeAllocationPaletteActionsStaticDefintionBuilder.cs" />
+    <Compile Include="Components\WhiteSpaceTimeAllocationPalettes\Dynamic\StaticDefinitions\Actions\DynamicWhiteSpaceTimeAllocationPaletteActionStaticDefinitionBuilder.cs" />
+    <Compile Include="Components\WhiteSpaceTimeAllocationPalettes\Dynamic\StaticDefinitions\Actions\DynamicWhiteSpaceTimeAllocationPaletteActionStaticDefintion.cs" />
+    <Compile Include="Components\WhiteSpaceTimeAllocationPalettes\Dynamic\StaticDefinitions\Configuration\BuildAllWhiteSpaceTimeAllocationPaletteDefinitions.cs" />
+    <Compile Include="Components\WhiteSpaceTimeAllocationPalettes\Dynamic\StaticDefinitions\Configuration\IWhiteSpaceTimeAllocationPaletteDefinitionsBuilder.cs" />
+    <Compile Include="Components\WhiteSpaceTimeAllocationPalettes\Dynamic\StaticDefinitions\Configuration\WhiteSpaceTimeAllocationPaletteDefinitionsBuilder.cs" />
+    <Compile Include="Components\WhiteSpaceTimeAllocationPalettes\Dynamic\StaticDefinitions\Model\DynamicWhiteSpaceTimeAllocationPaletteModelStaticDefinition.cs" />
+    <Compile Include="Components\WhiteSpaceTimeAllocationPalettes\Dynamic\StaticDefinitions\Model\DynamicWhiteSpaceTimeAllocationPaletteModelStaticDefinitionBuilder.cs" />
+    <Compile Include="Components\WhiteSpaceTimeAllocationPalettes\Dynamic\StaticDefinitions\DynamicWhiteSpaceTimeAllocationPaletteStaticDefinitionRepository.cs" />
+    <Compile Include="Components\WhiteSpaceTimeAllocationPalettes\WhiteSpaceTimeAllocationPalette.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Content\ContentDependencyConfiguration.cs" />
+    <Compile Include="Infrastructure\DependencyConfiguration\RouteConfiguration.cs" />
+    <Compile Include="Infrastructure\DependencyConfiguration\ThinClientConfiguration.cs" />
+    <Compile Include="Infrastructure\EntityIdentityViewModel.cs" />
+    <Compile Include="Infrastructure\JavascriptBootstrapper\ApplicationBootModuleDefintionPresenter.cs" />
+    <Compile Include="Infrastructure\JavascriptBootstrapper\Resources.cs" />
+    <Compile Include="Infrastructure\JavascriptBootstrapper\RouteConfiguration.cs" />
+    <Compile Include="Infrastructure\Content\ThinclientJsonContentFileLocation.cs" />
+    <Compile Include="Infrastructure\NamedRouteMetadata\Presentation\NamedRouteMetadataPresenter.cs" />
+    <Compile Include="Infrastructure\NamedRouteMetadata\Presentation\Resources.cs" />
+    <Compile Include="Infrastructure\NamedRouteMetadata\Presentation\RouteConfiguration.cs" />
+    <Compile Include="Infrastructure\ServicesImplementedInTheThinClient.cs" />
+    <Compile Include="Infrastructure\WorkflowMetadata\Presentation\WorkflowMetadataPresenter.cs" />
+    <Compile Include="Infrastructure\WorkflowMetadata\Presentation\Resources.cs" />
+    <Compile Include="Infrastructure\WorkflowMetadata\Presentation\RouteConfiguration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\PublishSCalendarRequest\Editor\MetadataConfiguration.cs" />
+    <Compile Include="Application\PS\OCalendar\SCalendar\PublishSCalendarRequest\Editor\Resources.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Content Include="Application\Home\Get\home-page.js" />
+    <Content Include="Application\HR\setupMenus\Get\setup-menus-page.js" />
+    <Content Include="Application\PS\OCalendars\OCalendarItems\table\README.txt" />
+    <Content Include="Application\PS\OCalendar\SCalendar\Pattern\AllResources\Table\README.txt" />
+    <Content Include="Global.asax" />
+    <Content Include="Infrastructure\JavascriptBootstrapper\application-boot.js" />
+    <Content Include="Views\HR\Employees\EmergencyContacts\Page.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Application\PS\OCalendar\SCalendar\Pattern\ChooseResource\Page\AllResourcesPage.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Core\src\Worksuite.Core\Worksuite.Core.csproj">
+      <Project>{1df54fed-2bc7-4317-b32e-53135723b267}</Project>
+      <Name>Worksuite.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Domains\Content\src\Services\Content.Services.csproj">
+      <Project>{55d6359c-7ea7-42dc-bc38-3f4b2b02eb99}</Project>
+      <Name>Content.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.Asp.Net.Mvc.Presentation\WorkSuite.Library.Asp.Net.Mvc.Presentation.csproj">
+      <Project>{468f0b44-d85c-4b73-af2e-ca31223dce64}</Project>
+      <Name>WorkSuite.Library.Asp.Net.Mvc.Presentation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.Asp.Net.Mvc.Server\WorkSuite.Library.Asp.Net.Mvc.Server.csproj">
+      <Project>{B8E420E6-C270-44A9-AA9F-A1418975BD39}</Project>
+      <Name>WorkSuite.Library.Asp.Net.Mvc.Server</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.CodeStrutures\WorkSuite.Library.CodeStrutures.csproj">
+      <Project>{249BE708-3014-4584-9E14-CB087E54916E}</Project>
+      <Name>WorkSuite.Library.CodeStrutures</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.DomainTypes\WorkSuite.Library.DomainTypes.csproj">
+      <Project>{538c6f62-b398-41f1-917c-10659fdf6c78}</Project>
+      <Name>WorkSuite.Library.DomainTypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.IO.Cryptography\WorkSuite.Library.IO.Cryptography.csproj">
+      <Project>{cdb719b5-36b2-4f45-9f00-118138eb18d0}</Project>
+      <Name>WorkSuite.Library.IO.Cryptography</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.IO\WorkSuite.Library.IO.csproj">
+      <Project>{d56d4264-6c22-4dfa-9f46-0840b757a8e1}</Project>
+      <Name>WorkSuite.Library.IO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.Ninject\WorkSuite.Library.Ninject.csproj">
+      <Project>{FA9854F9-6908-483A-AE63-9354249E74BC}</Project>
+      <Name>WorkSuite.Library.Ninject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.Persistence\WorkSuite.Library.Persistence.csproj">
+      <Project>{C55F23BE-BC7A-4F70-81D3-AF5D645FE831}</Project>
+      <Name>WorkSuite.Library.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\PlannedSupply.Persistence\PlannedSupply.Persistence.csproj">
+      <Project>{F5F8687C-2AB8-4CDA-A346-2B8EAFCDCD73}</Project>
+      <Name>PlannedSupply.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\PlannedSupply.Services\PlannedSupply.Services.csproj">
+      <Project>{1e90397a-d33c-42f3-ae41-c1925820f3d8}</Project>
+      <Name>PlannedSupply.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Domains\HR\src\Services\HR.Services.csproj">
+      <Project>{3D42E5CB-8885-42A6-A018-1C0F1D369123}</Project>
+      <Name>HR.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Domains\SupplyShortage\src\Services\SupplyShortage.Services.csproj">
+      <Project>{64491FBA-1797-42C3-9420-C64DE0FA00FF}</Project>
+      <Name>SupplyShortage.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Integration\src\WorkSuite.Services.Integration\WorkSuite.Services.Integration.csproj">
+      <Project>{60B26944-DB9B-4514-B8EB-B4A0C809801C}</Project>
+      <Name>WorkSuite.Services.Integration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Persistence\src\WorkSuite.Persistence.EF\WorkSuite.Persistence.EF.csproj">
+      <Project>{28ecb242-41d7-4a1f-8fc5-56853334ff29}</Project>
+      <Name>WorkSuite.Persistence.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ThinClient.Query.Services\ThinClient.Query.Services.csproj">
+      <Project>{88633F01-0B3E-4C75-8D8D-641211E2455D}</Project>
+      <Name>ThinClient.Query.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Layouts\GlobalLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Application\Home\Get\HomePage.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Views\DetailsList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\HR\Employees\PersonalDetailsAndPicture\Page.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\HR\Employees\PersonalDetails\Report.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\HR\ReferenceData\Titles\Page.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Views\Editor.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Views\Report.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Application\Web.config" />
+    <Content Include="Application\HR\Employees\addNewEmployee\page\AddNewEmployeePageView.cshtml" />
+    <Content Include="Application\HR\Employees\viewEmployees\get\ViewEmployeesPageView.cshtml" />
+    <Content Include="Application\HR\employee\details\Get\EmployeeDetailsPage.cshtml" />
+    <Content Include="Application\HR\employee\Holidays\viewHolidays\get\ViewHolidaysPageView.cshtml" />
+    <Content Include="Application\HR\employee\ViewSchedules\viewSchedules\Presentation\Page\ViewSchedulePageView.cshtml" />
+    <Content Include="Application\HR\employee\Sickness\viewSickness\get\ViewSicknessPageView.cshtml" />
+    <Content Include="Application\HR\employee\Holidays\addHoliday\editor\resource-content.json" />
+    <Content Include="Properties\content_store_build\content_store.build">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Application\HR\employee\Holidays\addHoliday\post\resource-content.json" />
+    <Content Include="Application\HR\employee\Holidays\viewHolidays\get\resource-content.json" />
+    <Content Include="Application\HR\employee\Holidays\viewHolidays\report\resource-content.json" />
+    <Content Include="Application\HR\employee\Holidays\viewHolidays\list\resource-content.json" />
+    <Content Include="Application\HR\employee\Sickness\addSickness\editor\resource-content.json" />
+    <Content Include="Application\HR\employee\Sickness\addSickness\post\resource-content.json" />
+    <Content Include="Application\HR\employee\Sickness\viewSickness\get\resource-content.json" />
+    <Content Include="Application\HR\employee\Sickness\viewSickness\list\resource-content.json" />
+    <Content Include="Application\HR\employee\Sickness\viewSickness\report\resource-content.json" />
+    <Content Include="Application\HR\employee\Sickness\removeSickness\post\resource-content.json" />
+    <Content Include="Application\HR\employee\Holidays\removeHoliday\post\resource-content.json" />
+    <Content Include="Application\HR\Employees\addEmployeeRequest\editor\resource-content.json" />
+    <Content Include="Application\HR\Employees\addEmployeeRequest\post\resource-content.json" />
+    <Content Include="Application\resource-content.json" />
+    <Content Include="Application\HR\Employees\addNewEmployee\page\resource-content.json" />
+    <Content Include="Application\HR\employee\Notes\notes\page\resource-content.json" />
+    <Content Include="Application\HR\employee\Notes\notes\page\NotesPageView.cshtml" />
+    <None Include="Properties\PublishProfiles\WebInternal.pubxml" />
+    <Content Include="Views\HR\Employees\Notes\Page.cshtml" />
+    <Content Include="Views\HR\ReferenceData\Genders\Page.cshtml" />
+    <Content Include="Views\HR\Employees\Remove\Page.cshtml" />
+    <Content Include="Views\HR\ReferenceData\Relationships\Page.cshtml" />
+    <Content Include="Views\HR\Employees\EmploymentDetails\Report.cshtml" />
+    <Content Include="Views\HR\Employees\EmploymentDetails\Page.cshtml" />
+    <Content Include="Views\HR\ReferenceData\Skills\Page.cshtml" />
+    <Content Include="Views\HR\ReferenceData\Qualifications\Page.cshtml" />
+    <Content Include="Views\HR\Employees\EmployeeDocuments\Page.cshtml" />
+    <Content Include="Views\HR\ReferenceData\Nationalities\Page.cshtml" />
+    <Content Include="Views\HR\ReferenceData\MaritalStatuses\Page.cshtml" />
+    <Content Include="Views\HR\ReferenceData\EthnicOriginals\Page.cshtml" />
+    <Content Include="Views\HR\Employees\EmployeeSkills\Page.cshtml" />
+    <Content Include="Views\HR\Employees\EmployeeQualifications\Page.cshtml" />
+    <Content Include="Views\Operations\OperationalCalendars\New\Page.cshtml" />
+    <Content Include="Views\Operations\OperationalCalendars\View\Page.cshtml" />
+    <Content Include="Views\Operations\OperationalCalendars\PlannedSupply\View\Page.cshtml" />
+    <Content Include="Views\SetupOptions\ShiftTemplates\New\Page.cshtml" />
+    <Content Include="Views\SetupOptions\ShiftTemplates\View\Page.cshtml" />
+    <Content Include="Views\SetupOptions\ShiftTemplates\EditOrRemove\Page.cshtml" />
+    <Content Include="Views\Operations\OperationalCalendars\PlannedSupply\ShiftCalendar\Page.cshtml" />
+    <Content Include="Views\Shared\Views\DateRangePalette.cshtml" />
+    <Content Include="Views\SetupOptions\BreakTemplates\New\Page.cshtml" />
+    <Content Include="Views\Shared\Views\WhiteSpaceTimeAllocationPalette.cshtml" />
+    <Content Include="Views\SetupOptions\BreakTemplates\ViewAll\Page.cshtml" />
+    <Content Include="Views\SetupOptions\BreakTemplates\ViewSelf\Page.cshtml" />
+    <Content Include="Views\Shared\Views\ShiftTimeAllocationPalette.cshtml" />
+    <Content Include="Views\Operations\OperationalCalendars\PlannedSupply\ShiftOccurrence\Remove\Page.cshtml" />
+    <Content Include="Views\Operations\OperationalCalendars\PlannedSupply\ShiftOccurrence\New\Page.cshtml" />
+    <Content Include="Views\Operations\OperationalCalendars\PlannedSupply\ShiftOccurrence\RemoveAll\Page.cshtml" />
+    <Content Include="Views\HR\Employees\ContactDetailsAndAddresses\Page.cshtml" />
+    <Content Include="Views\HR\ReferenceData\JobTitles\Page.cshtml" />
+    <Content Include="Views\HR\ReferenceData\Locations\Page.cshtml" />
+    <Content Include="Views\Operations\OperationalCalendars\PlannedSupply\ShiftOccurrence\EditAll\Page.cshtml" />
+    <Content Include="Views\Operations\OperationalCalendars\PlannedSupply\ShiftOccurrence\Edit\Page.cshtml" />
+    <Content Include="Application\HR\setupMenus\Get\SetupMenusPage.cshtml" />
+    <Content Include="Application\PS\OCalendar\SCalendar\Pattern\ViewPattern\Page\ShiftCalendarPatternsPage.cshtml" />
+    <Content Include="Views\Operations\OperationalCalendars\PlannedSupply\Publish\Page.cshtml" />
+    <Content Include="Application\PS\OCalendar\SCalendar\Pattern\Allocations\ConfirmAllocation\Page\ConfirmAllocationPage.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Application\DocumentStore\Images\Presentation\employee_blank.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Application\HR\Employees\EmployeeDetails\Page\" />
+    <Folder Include="Application\HR\employee\Note\" />
+    <Folder Include="Components\ShiftTimeAllocationPalettes\Dynamic\StaticDefinitions\Fields\" />
+    <Folder Include="Components\WhiteSpaceTimeAllocationPalettes\Dynamic\StaticDefinitions\Fields\" />
+    <Folder Include="Views\ConfirmAllocation\" />
+    <Folder Include="Views\Operations\OperationalCalendars\PlannedSupply\ShiftCalendarPattern\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Import Project="Properties\content_store_build\content_store.build" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

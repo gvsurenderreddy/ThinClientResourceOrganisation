@@ -1,0 +1,637 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link href="../Static/css/Configuration.css" rel="stylesheet" />
+
+    <title>Form element templates - Configuration Styling</title>
+</head>
+<body>
+<header>
+	<div class="navigation-bar">
+		<menu>
+			<ul class="admin-menu">
+				<li>Service: Company name</li>
+				<li>Status: Online, Offline (Paused), Offline (Failed) </li>
+			</ul>
+		</menu>
+	</div>
+	<div class="titlebar">
+		<nav>
+			<a href="" class="breadcrumb">Home</a>
+		</nav>
+		<h1>Form element templates - Configuration Styling</h1>
+	</div>
+</header>
+<div id="content">
+	<div class="notification-warning"><div class="notification-warning-icon"></div>Lorem iposum</div>
+	<form data-type="editor" action="" data-report="" id="submit-employee-personal-details-edit" class="editor">
+		<fieldset>
+<!-- textbox -->
+			<div class="editor-controlset editor-inputtext">
+				<div class="editor-label-wrapper hidden">
+					<label for="textbox" class="editor-label-error"></label>
+				</div>
+				<label name="textbox" class="editor-label">Label </label>
+				<input type="text" name="textbox" class="editor-input-inputtext" />
+			</div>
+
+<!-- textbox required -->	
+			<div class="editor-controlset editor-inputtext">
+				<div class="editor-label-wrapper hidden">
+					<label for="textboxrequired" class="editor-label-error"></label>
+				</div>
+				<label for="textboxrequired" class="editor-label">Label <span class="editor-optreq">(Required)</span></label>
+				<input type="text" name="textboxrequired" class="editor-input-inputtext editor-input-required" />
+				<br style="clear:both;">
+			</div>
+			
+<!-- textbox focus -->
+			<div class="editor-controlset editor-inputtext">
+				<div class="editor-label-wrapper hidden">
+					<label for="textboxfocus" class="editor-label-error"></label>
+				</div>
+				<label for="textboxfocus" class="editor-label">Label </label>
+				<input type="text" name="textboxfocus" class="editor-input-inputtext editor-input-focus" />
+			</div>
+
+<!-- textbox help -->
+			<div class="editor-controlset editor-inputtext">
+				<div class="editor-label-help-wrapper">
+					<label for="textboxhelp" class="editor-label-help">Lorem ipsum.</label>
+				</div>
+				<label for="textboxhelp"  class="editor-label">Label </label>
+				<input type="text" name="textboxhelp" class="editor-input-inputtext" />
+			</div>
+
+<!-- textbox hoverhelp -->
+			<div class="editor-controlset editor-inputtext">
+				<div class="editor-label-hoverhelp"><div class="editor-label-hoverhelp-icon"></div>
+					<div class="editor-label-help-wrapper">
+						<label class="editor-label-help">Lorem ipsum.</label>
+					</div>
+				</div>
+				<label for="textboxhoverhelp" class="editor-label">Label</label>			
+				<input type="text" name="textboxhoverhelp" class="editor-input-inputtext" />
+			</div>
+			
+<!-- textbox error -->
+			<div class="editor-controlset editor-inputtext">
+				<div class="editor-label-errorwrapper">
+					<label for="textboxerror" class="editor-label-error">Lorem ipsum.</label>
+				</div>
+				<label for="textboxerror"  class="editor-label">Label </label>
+				<input type="text" name="textboxerror" class="editor-input-inputtext editor-input-error" />
+			</div>
+			
+<!-- select -->
+			<div class="editor-controlset editor-select">
+				<label for="select" class="editor-label">Label</label>
+				<select name="select" class="editor-input-select" >
+					<option value="Mr">Mr</option>
+					<option value="Mrs">Mrs</option>
+					<option value="Miss">Miss</option>
+					<option value="The ever living">The ever living</option>
+				</select>
+			</div>
+
+<!-- select required -->
+			<div class="editor-controlset editor-select">	
+				<div class="editor-label-errorwrapper hidden">
+					<label for="selectrequired" class="editor-label-error">Lorem ipsum.</label>
+				</div>
+				<label for="selectrequired" class="editor-label">Label <span class="editor-optreq">(Required)</span></label>
+				<select name="selectrequired" class="editor-input-select editor-input-required">
+                    <option value="Miss" selected="selected" disabled="disabled">Please select an option</option>
+                    <option value="Mr">Mr</option>
+					<option value="Mrs">Mrs</option>
+				</select>
+			</div>
+
+<!-- select focus -->
+			<div class="editor-controlset editor-select">
+				<div class="editor-label-errorwrapper hidden">
+					<label for="selectfocus" class="editor-label-error">Lorem ipsum.</label>
+				</div>
+				<label for="selectfocus" class="editor-label">Label </label>
+				<select name="selectfocus" class="editor-input-select editor-input-focus">
+					<option value="Mr">Mr</option>
+					<option value="Mrs">Mrs</option>
+					<option value="Miss">Miss</option>
+					<option value="The ever living">The ever living</option>
+				</select>
+			</div>
+
+<!-- select help -->
+			<div class="editor-controlset editor-select">
+				<div class="editor-label-help-wrapper">
+					<label for="selecthelp" class="editor-label-help">Lorem ipsum.</label>
+				</div>
+				<label for="selecthelp" class="editor-label">Label</label>
+				<select name="selecthelp" class="editor-input-select">
+					<option value="Mr">Mr</option>
+					<option value="Mrs">Mrs</option>
+					<option value="Miss">Miss</option>
+					<option value="The ever living">The ever living</option>
+				</select>
+			</div>
+<!-- select help -->
+			<div class="editor-controlset editor-select">
+				<div class="editor-label-hoverhelp"><div class="editor-label-hoverhelp-icon"></div>
+					<div class="editor-label-help-wrapper">
+						<label class="editor-label-help">Lorem ipsum.</label>
+					</div>
+				</div>
+				<label for="selecthoverhelp" class="editor-label">Label</label>
+				<select name="selecthoverhelp" class="editor-input-select">
+					<option value="Mr">Mr</option>
+					<option value="Mrs">Mrs</option>
+					<option value="Miss">Miss</option>
+					<option value="The ever living">The ever living</option>
+				</select>
+			</div>							
+<!-- select error -->
+			<div class="editor-controlset editor-select">
+				<div class="editor-label-errorwrapper">
+					<label for="selecterror" class="editor-label-error">Lorem ipsum.</label>
+				</div>
+				<label for="selecterror" class="editor-label">Label</label>
+				<select name="selecterror" class="editor-input-select editor-input-error">
+					<option value="Mr">Mr</option>
+					<option value="Mrs">Mrs</option>
+					<option value="Miss">Miss</option>
+					<option value="The ever living">The ever living</option>
+				</select>
+			</div>
+
+<!-- checkbox -->
+			<div class="editor-controlset editor-checkbox">       
+				<div class="editor-label-errorwrapper hidden">
+					<label for="checkbox" class="editor-label-error">Lorem ipsum.</label>
+				</div>
+				<label for="checkbox" class="editor-label">Label</label> 
+				<div class="editor-input-checkbox-wrapper">
+					<input type="checkbox" name="checkbox" class="editor-input-checkbox">
+				</div>
+			</div>
+			
+<!-- checkbox required -->
+			<div class="editor-controlset editor-checkbox">       
+				<div class="editor-label-errorwrapper hidden">
+					<label for="checkboxrequired" class="editor-label-error">Lorem ipsum.</label>
+				</div>
+				<label for="checkboxrequired" class="editor-label">Label <span class="editor-optreq">(Required)</span></label> 
+				<div class="editor-input-checkbox-wrapper">
+					<input type="checkbox" name="checkboxrequired" class="editor-input-checkbox editor-input-required">
+				</div>
+			</div>
+			
+<!-- checkbox focus -->
+			<div class="editor-controlset editor-checkbox">        
+				<div class="editor-label-errorwrapper hidden">
+					<label for="checkboxfocus" class="editor-label-error">Lorem ipsum.</label>
+				</div>
+				<label for="checkboxfocus" class="editor-label">Label</label>
+				<div class="editor-input-checkbox-wrapper">
+					<input type="checkbox" name="checkboxfocus" class="editor-input-checkbox editor-input-focus">
+				</div>
+			</div>
+
+<!-- checkbox help -->
+			<div class="editor-controlset editor-checkbox">       
+				<div class="editor-label-help-wrapper">
+					<label for="checkboxhelp" class="editor-label-help">Lorem ipsum.</label>
+				</div>
+				<label for="checkboxhelp" class="editor-label">Label</label> 
+				<div class="editor-input-checkbox-wrapper">
+					<input type="checkbox" name="checkboxhelp" class="editor-input-checkbox">
+				</div>
+			</div>
+			
+<!-- checkbox hoverhelp -->
+			<div class="editor-controlset editor-checkbox">       
+				<div class="editor-label-hoverhelp"><div class="editor-label-hoverhelp-icon"></div>
+					<div class="editor-label-help-wrapper">
+						<label class="editor-label-help">Lorem ipsum.</label>
+					</div>
+				</div>
+				<label for="checkboxhoverhelp" class="editor-label">Label</label> 
+				<div class="editor-input-checkbox-wrapper">
+					<input type="checkbox" name="checkboxhoverhelp" class="editor-input-checkbox">
+				</div>
+			</div>
+			
+<!-- checkbox error -->
+			<div class="editor-controlset editor-checkbox">      
+				<div class="editor-label-errorwrapper">
+					<label for="[xxxxx]" class="editor-label-error">Lorem ipsum.</label>
+				</div>
+				<label for="[xxxxx]" class="editor-label">Label</label>  
+				<div class="editor-input-checkbox-wrapper">
+					<input type="checkbox" name="[xxxxx]" class="editor-input-error">
+				</div>
+			</div>
+			
+<!-- radio -->
+			<div class="editor-controlset editor-radio">       
+				<div class="editor-label-errorwrapper hidden">
+					<label for="radio" class="editor-label-error ">Lorem ipsum.</label>
+				</div>
+				<label for="radio" class="editor-label">Label</label> 
+				<div class="editor-input-radio-wrapper">
+					<input type="radio" name="radio" class="editor-input-radio editor-input-required">
+				</div>
+			</div>
+
+<!-- radio required -->
+			<div class="editor-controlset editor-radio">       
+				<div class="editor-label-errorwrapper hidden">
+					<label for="radiorequired" class="editor-label-error">Lorem ipsum.</label>
+				</div>
+				<label for="radiorequired" class="editor-label">Label <span class="editor-optreq">(Required)</span></label> 
+				<div class="editor-input-radio-wrapper">
+					<input type="radio" name="radiorequired" class="editor-input-radio editor-input-required">
+				</div>
+			</div>
+
+<!-- radio focus -->
+			<div class="editor-controlset editor-radio">      
+				<div class="editor-label-errorwrapper hidden">
+					<label for="radiofocus" class="editor-label-error">Lorem ipsum.</label>
+				</div>
+				<label for="radiofocus" class="editor-label">Label</label>  
+				<div class="editor-input-radio-wrapper">
+					<input type="radio" name="radiofocus" class="editor-input-radio editor-input-focus">
+				</div>
+			</div>
+			
+<!-- radio help -->
+			<div class="editor-controlset editor-radio">       
+				<div class="editor-label-help-wrapper">
+					<label for="radiohelp" class="editor-label-help">Lorem ipsum.</label>
+				</div>
+				<label for="radiohelp" class="editor-label">Label</label> 
+				<div class="editor-input-radio-wrapper">
+					<input type="radio" name="radiohelp" class="editor-input-radio">
+				</div>
+			</div>
+
+<!-- radio hoverhelp -->
+			<div class="editor-controlset editor-radio">       
+				<div class="editor-label-hoverhelp"><div class="editor-label-hoverhelp-icon"></div>
+					<div class="editor-label-help-wrapper">
+						<label class="editor-label-help">Lorem ipsum.</label>
+					</div>
+				</div>
+				<label for="radiohoverhelp" class="editor-label">Label</label> 
+				<div class="editor-input-radio-wrapper">
+					<input type="radio" name="radiohoverhelp" class="editor-input-radio">
+				</div>
+			</div>
+			
+<!-- radio error -->
+			<div class="editor-controlset editor-radio">       
+				<div class="editor-label-errorwrapper">
+					<label for="radioerror" class="editor-label-error">Lorem ipsum.</label>
+				</div>
+				<label for="radioerror" class="editor-label">Label</label> 
+				<div class="editor-input-radio-wrapper">
+					<input type="radio" name="radioerror" class="editor-input-radio editor-input-error">
+				</div>
+			</div>
+
+<!-- Date of birth picker -->
+			<div class="editor-controlset editor-dateofbirth">       
+				<div class="editor-label-errorwrapper hidden">
+					<label class="editor-label-error">Lorem ipsum.</label>
+				</div>
+				<label class="editor-label">Label</label> 
+				<div class="editor-input-dateofbirth-wrapper">
+					<input type="text"class="editor-input-dayofbirth" placeholder="dd"><span>/</span><input type="text" class="editor-input-monthofbirth" placeholder="mm"><span>/</span><input type="text" class="editor-input-yearofbirth" placeholder="yyyy" >
+				</div>
+			</div>
+
+<!-- Date of birth picker required -->
+			<div class="editor-controlset editor-dateofbirth">      
+				<div class="editor-label-errorwrapper hidden">
+					<label class="editor-label-error">Lorem ipsum.</label>
+				</div>
+				<label class="editor-label">Label <span class="editor-optreq">(Required)</span></label>  
+				<div class="editor-input-dateofbirth-wrapper">
+					<input type="text" class="editor-input-dayofbirth editor-input-required" placeholder="dd"><span>/</span><input type="text" class="editor-input-monthofbirth editor-input-required" placeholder="mm"><span>/</span><input type="text" class="editor-input-yearofbirth editor-input-required" placeholder="yyyy">
+				</div>
+			</div>
+			
+<!-- Date of birth picker focus -->
+			<div class="editor-controlset editor-dateofbirth">        
+				<div class="editor-label-errorwrapper hidden">
+					<label for="[xxxxx]" class="editor-label-error">Lorem ipsum.</label>
+				</div>
+				<label for="[xxxxx]" class="editor-label">Label</label>
+				<div class="editor-input-dateofbirth-wrapper">
+					<input type="text" class="editor-input-dayofbirth editor-input-focus" placeholder="dd"><span>/</span><input type="text" class="editor-input-monthofbirth" placeholder="mm"><span>/</span><input type="text" class="editor-input-yearofbirth" placeholder="yyyy">
+				</div>
+			</div>
+
+<!-- Date of birth picker help -->
+			<div class="editor-controlset editor-dateofbirth">       
+				<div class="editor-label-help-wrapper">
+					<label for="[xxxxx]" class="editor-label-help">Lorem ipsum.</label>
+				</div>
+				<label for="[xxxxx]" class="editor-label">Label</label> 
+				<div class="editor-input-dateofbirth-wrapper">
+					<input type="text"class="editor-input-dayofbirth" placeholder="dd"><span>/</span><input type="text" class="editor-input-monthofbirth" placeholder="mm"><span>/</span><input type="text" class="editor-input-yearofbirth" placeholder="yyyy">
+				</div>
+			</div>
+
+<!-- Date of birth picker hover help -->
+			<div class="editor-controlset editor-dateofbirth">       
+				<div class="editor-label-hoverhelp"><div class="editor-label-hoverhelp-icon"></div>
+					<div class="editor-label-help-wrapper">
+						<label class="editor-label-help">Lorem ipsum.</label>
+					</div>
+				</div>
+				<label class="editor-label">Label</label> 
+				<div class="editor-input-dateofbirth-wrapper">
+					<input type="text" class="editor-input-dayofbirth" placeholder="dd"><span>/</span><input type="text" class="editor-input-monthofbirth" placeholder="mm"><span>/</span><input type="text" class="editor-input-yearofbirth" placeholder="yyyy">
+				</div>
+			</div>
+			
+<!-- Date of birth picker error -->
+			<div class="editor-controlset editor-dateofbirth">       
+				<div class="editor-label-errorwrapper">
+					<label class="editor-label-error">Lorem ipsum.</label>
+				</div>
+				<label class="editor-label">Label</label> 
+				<div class="editor-input-dateofbirth-wrapper">
+					<input type="text"class="editor-input-dayofbirth editor-input-error" placeholder="dd"><span>/</span><input type="text" class="editor-input-monthofbirth editor-input-error" placeholder="mm"><span>/</span><input type="text" class="editor-input-yearofbirth editor-input-error" placeholder="yyyy">
+				</div>
+			</div>
+			
+<!-- textarea -->
+			<div class="editor-controlset editor-textarea">
+				<div class="editor-label-wrapper hidden">
+					<label for="textbox" class="editor-label-error"></label>
+				</div>
+				<label name="textbox" class="editor-label">Label </label>
+				<textarea name="textbox" class="editor-input-textarea"></textarea>
+			</div>
+
+<!-- textarea required -->	
+			<div class="editor-controlset editor-textarea">
+				<div class="editor-label-wrapper hidden">
+					<label for="textboxrequired" class="editor-label-error"></label>
+				</div>
+				<label for="textboxrequired" class="editor-label">Label <span class="editor-optreq">(Required)</span></label>
+				<textarea name="textboxrequired" class="editor-input-textarea editor-input-required"></textarea>
+				<br style="clear:both;">
+			</div>
+			
+<!-- textarea focus -->
+			<div class="editor-controlset editor-textarea">
+				<div class="editor-label-wrapper hidden">
+					<label for="textboxfocus" class="editor-label-error"></label>
+				</div>
+				<label for="textboxfocus" class="editor-label">Label </label>
+				<textarea name="textboxfocus" class="editor-input-textarea editor-input-focus"></textarea>
+			</div>
+
+<!-- textarea help -->
+			<div class="editor-controlset editor-textarea">
+				<div class="editor-label-help-wrapper">
+					<label for="textboxhelp" class="editor-label-help">Lorem ipsum.</label>
+				</div>
+				<label for="textboxhelp"  class="editor-label">Label </label>
+				<textarea name="textboxhelp" class="editor-input-textarea"></textarea>
+			</div>
+
+<!-- textarea hoverhelp -->
+			<div class="editor-controlset editor-textarea">
+				<div class="editor-label-hoverhelp"><div class="editor-label-hoverhelp-icon"></div>
+					<div class="editor-label-help-wrapper">
+						<label class="editor-label-help">Lorem ipsum.</label>
+					</div>
+				</div>
+				<label for="textboxhoverhelp"  class="editor-label">Label</label>			
+				<textarea name="textboxhoverhelp" class="editor-input-textarea"></textarea>
+			</div>
+
+<!-- fileupload -->
+			<div class="editor-controlset editor-fileupload">
+				<div class="editor-label-wrapper hidden">
+					<label for="fileupload" class="editor-label-error"></label>
+				</div>
+				<label name="fileupload" class="editor-label">Label </label>
+				<input type="file" accept="image/*" name="fileupload" class="editor-input-fileupload" />
+			</div>
+
+<!-- fileupload required -->	
+			<div class="editor-controlset editor-fileupload">
+				<div class="editor-label-wrapper hidden">
+					<label for="fileuploadrequired" class="editor-label-error"></label>
+				</div>
+				<label for="fileuploadrequired" class="editor-label">Label <span class="editor-optreq">(Required)</span></label>
+				<input type="file" accept="image/*" name="fileuploadrequired" class="editor-input-fileupload editor-input-required" />
+				<br style="clear:both;">
+			</div>
+			
+<!-- fileupload focus -->
+			<div class="editor-controlset editor-fileupload">
+				<div class="editor-label-wrapper hidden">
+					<label for="fileuploadfocus" class="editor-label-error"></label>
+				</div>
+				<label for="fileuploadfocus" class="editor-label">Label </label>
+				<input type="file" accept="image/*" name="fileuploadfocus" class="editor-input-fileupload editor-input-focus" />
+			</div>
+
+<!-- fileupload help -->
+			<div class="editor-controlset editor-fileupload">
+				<div class="editor-label-help-wrapper">
+					<label for="fileuploadhelp" class="editor-label-help">Lorem ipsum.</label>
+				</div>
+				<label for="fileuploadhelp"  class="editor-label">Label </label>
+				<input type="file" accept="image/*" name="fileuploadhelp" class="editor-input-fileupload" />
+			</div>
+
+<!-- fileupload hoverhelp -->
+			<div class="editor-controlset editor-fileupload">
+				<div class="editor-label-hoverhelp"><div class="editor-label-hoverhelp-icon"></div>
+					<div class="editor-label-help-wrapper">
+						<label class="editor-label-help">Lorem ipsum.</label>
+					</div>
+				</div>
+				<label for="fileuploadhelp" class="editor-label">Label</label>			
+				<input type="file" accept="image/*" name="fileuploadhoverhelp" class="editor-input-fileupload" />
+			</div>
+			
+<!-- fileupload error -->
+			<div class="editor-controlset editor-fileupload">
+				<div class="editor-label-errorwrapper">
+					<label for="fileuploaderror" class="editor-label-error">Lorem ipsum.</label>
+				</div>
+				<label for="fileuploaderror"  class="editor-label">Label </label>
+				<input type="file" accept="image/*" name="fileuploaderror" class="editor-input-fileupload editor-input-error" />
+			</div>
+
+<!-- checkbox -->
+			<div class="editor-controlset editor-splitbutton">     
+				<div class="editor-label-errorwrapper hidden">
+					<label for="checkbox" class="editor-label-error">Lorem ipsum.</label>
+				</div>
+				<label for="checkbox" class="editor-label">Label</label> 
+				<div class="editor-input-splitbutton-wrapper">
+					<ul class="editor-input-splitbutton">
+						<li>
+							<a href="#" class="cancel-edits">Save</a>           
+							<ul>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Save and choose another item</a></li>
+								<li><a href="#">Save and return to the main menu</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+<!-- checkbox required -->
+			<div class="editor-controlset editor-splitbutton">    
+				<div class="editor-label-errorwrapper hidden">
+					<label for="checkboxrequired" class="editor-label-error">Lorem ipsum.</label>
+				</div>
+				<label for="checkboxrequired" class="editor-label">Label <span class="editor-optreq">(Required)</span></label> 
+				<div class="editor-input-splitbutton-wrapper">
+					<ul class="editor-input-splitbutton">
+						<li>
+							<a href="#" class="cancel-edits">Save</a>           
+							<ul>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Save and choose another item</a></li>
+								<li><a href="#">Save and return to the main menu</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+<!-- checkbox focus -->
+			<div class="editor-controlset editor-splitbutton">      
+				<div class="editor-label-errorwrapper hidden">
+					<label for="checkboxfocus" class="editor-label-error">Lorem ipsum.</label>
+				</div>
+				<label for="checkboxfocus" class="editor-label">Label</label>
+				<div class="editor-input-splitbutton-wrapper">
+					<ul class="editor-input-splitbutton">
+						<li>
+							<a href="#" class="cancel-edits">Save</a>           
+							<ul>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Save and choose another item</a></li>
+								<li><a href="#">Save and return to the main menu</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+<!-- checkbox help -->
+			<div class="editor-controlset editor-splitbutton">     
+				<div class="editor-label-help-wrapper">
+					<label for="checkboxhelp" class="editor-label-help">Lorem ipsum.</label>
+				</div>
+				<label for="checkboxhelp" class="editor-label">Label</label> 
+				<div class="editor-input-splitbutton-wrapper">
+					<ul class="editor-input-splitbutton">
+						<li>
+							<a href="#" class="cancel-edits">Save</a>           
+							<ul>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Save and choose another item</a></li>
+								<li><a href="#">Save and return to the main menu</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+<!-- checkbox hoverhelp -->
+			<div class="editor-controlset editor-splitbutton">    
+				<div class="editor-label-hoverhelp"><div class="editor-label-hoverhelp-icon"></div>
+					<div class="editor-label-help-wrapper">
+						<label class="editor-label-help">Lorem ipsum.</label>
+					</div>
+				</div>
+				<label for="checkboxhoverhelp" class="editor-label">Label</label> 
+				<div class="editor-input-splitbutton-wrapper">
+					<ul class="editor-input-splitbutton">
+						<li>
+							<a href="#" class="cancel-edits">Save</a>           
+							<ul>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Save and choose another item</a></li>
+								<li><a href="#">Save and return to the main menu</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+<!-- checkbox error -->
+			<div class="editor-controlset editor-splitbutton">    
+				<div class="editor-label-errorwrapper">
+					<label for="[xxxxx]" class="editor-label-error">Lorem ipsum.</label>
+				</div>
+				<label for="[xxxxx]" class="editor-label">Label</label>  
+				<div class="editor-input-splitbutton-wrapper">
+					<ul class="editor-input-splitbutton">
+						<li>
+							<a href="#" class="cancel-edits">Save</a>           
+							<ul>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Save and choose another item</a></li>
+								<li><a href="#">Save and return to the main menu</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="editor-controlset editor-splitbutton">
+				<label for="textboxhelp"  class="editor-label">Label </label>
+				<div class="editor-input-splitbutton-wrapper">
+					<ul class="editor-input-splitbutton">
+						<li>
+							<a href="#" class="cancel-edits">Save</a>           
+							<ul>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Save and choose another item</a></li>
+								<li><a href="#">Save and return to the main menu</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		    <br/><br/><hr style="clear:both"/>
+			<!-- Picture -->
+			<div class="editor-controlset editor-imageupload">
+				<div class="editor-label-wrapper hidden">
+					<label for="fileupload" class="editor-label-error"></label>
+				</div>
+				<label name="fileupload" class="editor-label">Label </label>
+				<input type="file" accept="image/*" name="fileupload" class="editor-input-fileupload" />
+				<label name="fileupload" class="editor-label">Label </label>
+				<div class="editor-picture-wrapper">
+					<img src="Images/employee_blank.png" width="60" height="72">
+					<a href="">Reset to default</a>
+				</div>
+			</div>
+			
+			<br/><br/><hr style="clear:both"/>
+
+		</fieldset>
+	</form>
+</div>
+<footer>
+&copy; 2013 Working Time Solutions Ltd.
+</footer>
+</body>
+</html>

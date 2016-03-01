@@ -1,0 +1,30 @@
+﻿@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Components.Tiles._1
+@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Utilities
+
+@model IEnumerable<TileViewModel>
+
+@{
+    // done: dependency injection configuration needs to be sorted out.
+    // done: create a test fixture gloabal layout that can be used for each controls fixture.
+    // done: hook the styles up, this would allow an automated browser test to check that the componets were properly styled after deployment.
+
+    Layout = "~/Tests/html/shared/QUnitTestLayout.cshtml";
+    ViewBag.Title = "Tile Tests";    
+}
+    
+@foreach ( var view_model in Model ) {
+@TileComponent.Render( view_model )    
+}
+
+@section page_boot_scripts {
+    
+}
+
+@section test_scripts {
+
+    <script>
+        view_model = @Html.Raw(Model.ToJson())
+    </script>
+
+   <script src="~/Tests/html/component-system/components/tiles/tile-call-to-action-modifier-tests.js"></script>
+}

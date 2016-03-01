@@ -1,0 +1,21 @@
+﻿{
+    "add_employee_request_editor_resource_title": {
+        "value": "New employee details"
+    },
+
+    "add_employee_request_editor_resource_employee_reference_field_label": {
+        "value": "Employee reference"
+    },
+
+    "add_employee_request_editor_resource_employee_reference_field_help": {
+        "value": "Please enter a unique employee reference."
+    },
+
+    "add_employee_request_editor_resource_forename_field_label": {
+        "value": "Forename"
+    },
+    
+    "add_employee_request_editor_resource_surname_field_label": {
+        "value": "Surname"
+    }    
+}

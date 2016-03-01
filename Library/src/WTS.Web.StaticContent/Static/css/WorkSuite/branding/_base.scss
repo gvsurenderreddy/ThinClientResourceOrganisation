@@ -1,0 +1,432 @@
+// Common 
+$body_background: none; //url("../Images/body_background.jpg");
+//$basefont: "Calibri", sans-serif;
+//$basefont: "arial", sans-serif;
+$basefont: "Lucida Grande", sans-serif;
+
+@mixin body {
+	font-family: $basefont;
+	background: $body_background;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0
+}
+
+// header
+$adminbar_background:#000000;
+$navbar_background:rgba(0, 0, 0, 0.6);
+$titlebar_background: #eeeeee;
+
+// ---------- COLOURS
+$signaturecolour_base: #F5C06b;
+$signaturecolour_dark: #EF9608;
+$signaturecolour_bright: #F9D59c;
+
+$calltoactioncolour_base: #746ABE;
+$calltoactioncolour_dark: #170692;
+$calltoactioncolour_bright: #A29BD3;
+
+$basecolour_verybright: #e1e1e1;
+$basecolour_bright: #afafaf;
+$basecolour_mid: #7d7d7d;
+$basecolour_dark: #4b4b4b;
+$basecolour_verydark: #191919;
+
+$confirmcolour_verybright: #eeffee;
+$confirmcolour_mid: #99d099;
+$confirmcolour_dark: #008a00;
+
+$warningcolour_verybright: #ffeeee;
+$warningcolour_mid: #c00000;
+$warningcolour_dark: #660000;
+
+$importantcolour_verybright: #ffffee;
+$importantcolour_mid: #aa9988;
+$importantcolour_dark: #333333;
+
+// ---------- NOTIFICATIONS
+$page_notification_confirmation_icon: url(../Images/page-notification-confirmation-background.png) 0 0 no-repeat;
+$page_notification_warning_icon: url(../Images/page-notification-warning-background.png) 0 0 no-repeat;
+
+$page_notification_important_background: $importantcolour_verybright;
+$page_notification_important_text: $importantcolour_dark;
+$page_notification_important_border: $importantcolour_mid;
+
+$page_notification_warning_background: $warningcolour_verybright;
+$page_notification_warning_text: $warningcolour_dark;
+$page_notification_warning_border: $warningcolour_mid;
+
+$page_notification_confirmation_background: $confirmcolour_verybright;
+$page_notification_confirmation_text: $confirmcolour_dark;
+$page_notification_confirmation_border: $confirmcolour_dark;
+
+// ---------- HEADER
+$title_bar: solid 1px $signaturecolour_base;
+
+@mixin breadcrumb {
+	background-image:url(../Images/header-icon-home.png);
+}
+
+// ---------- TYPOGRAPHY
+$branding_text_colour: #191919;
+
+@mixin titletext {
+	font-size: 12pt;
+	letter-spacing: -.2px;
+	color: #191919; 
+}
+
+
+@mixin text {
+	font-size: 10pt;
+	color: #191919; 
+}
+
+@mixin tabletext {
+	font-size: 9pt;
+	letter-spacing: 0;
+	color: #191919; 
+}
+
+@mixin subtext {
+	font-size: 8pt;
+	letter-spacing: 1px;
+	color: #191919; 
+}
+
+@mixin paragraph_text {
+	font-size:10pt;
+	letter-spacing: .2px;
+	color: #191919; 
+}
+
+@mixin labeltext {
+	font-size: 10pt;
+	letter-spacing: -.2px;
+	color: #ff0000;
+	font-weight:bold; 
+}
+
+// ---------- REPORTS
+$report_border: solid 1px $basecolour_bright;
+
+@mixin report {
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+@mixin report_before {
+	content: "";
+	position: absolute;
+	z-index: -2;
+	bottom: 15px;
+	left: 10px;
+	width: 50%;
+	height: 20%;
+	max-width: 300px;
+	-webkit-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 15px 10px rgba(0, 0, 0, 0.2);
+	-webkit-transform: rotate(-3deg);
+	-moz-transform: rotate(-3deg);
+	-ms-transform: rotate(-3deg);
+	-o-transform: rotate(-3deg);
+	transform: rotate(-3deg);
+}
+
+@mixin report_after {
+	content: "";
+	position: absolute;
+	z-index: -3;
+	bottom: 15px;
+	height: 20%;
+	width: 50%;
+	max-width: 300px;	
+	right: 10px;
+	left: auto;
+	-webkit-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 15px 10px rgba(0, 0, 0, 0.2);
+	-webkit-transform: rotate(3deg);
+	-moz-transform: rotate(3deg);
+	-ms-transform: rotate(3deg);
+	-o-transform: rotate(3deg);
+	transform: rotate(3deg);
+}
+
+
+@mixin report_hidden {
+	background:#e1e1e1 url(../Images/report-tab-hidden.png) top right no-repeat;
+}
+
+@mixin report_title {
+	font-size: 14pt;
+	letter-spacing: -.2px;
+	color: #4b4b4b;
+}
+
+@mixin report_subtitle {
+	color: #4b4b4b;
+	font-size:12pt;
+	letter-spacing: 0px;
+}
+
+@mixin report_title_links {
+	font-size: 12pt;
+}
+
+@mixin report_subtitle_links {
+	font-size:10pt;
+}
+
+@mixin branding_header {
+	color: #333333;
+	font-size: 14pt;
+}
+
+@mixin branding_subheader {
+	color: #333333;
+}
+
+@mixin branding_header_menu_link {
+	color: #333333;
+}
+
+@mixin branding_header_menu_link_hover {
+	color: #000000;
+}
+
+@mixin branding_subheader_menu_link {
+	color: #333333;
+}
+
+@mixin branding_subheader_menu_link_hover {
+	color: #000000;
+}
+
+@mixin report_link {
+	letter-spacing: 0px;
+	color: #4b4b4b;
+}
+
+@mixin report_link_hover {
+	color: #000000;
+}
+
+@mixin report_link_disabled {
+	color: #cccccc;
+}
+
+@mixin report_label {
+	color: #4b4b4b;
+	font-size: 10pt;
+	font-weight: bold;
+	letter-spacing: 0px;
+}
+
+@mixin report_text {
+	color: #4b4b4b;
+	font-size:10pt;
+	letter-spacing: 0px;
+}
+
+@mixin report_sidebartitle {
+	color: #4b4b4b;
+	font-size:12pt;
+	letter-spacing: -.2px;
+}
+
+.drop-shadow {
+	position: relative;
+	float: left;
+	width: 40%;
+	padding: 1em;
+	margin: 2em 10px 4em;
+	background: #fff;
+	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.drop-shadow:before,
+.drop-shadow:after {
+	content: "";
+	position: absolute;
+	z-index: -2;
+}
+
+.drop-shadow p {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+
+.lifted {
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+.lifted:before,
+.lifted:after {
+	bottom: 15px;
+	left: 10px;
+	width: 50%;
+	height: 20%;
+	max-width: 300px;
+	-webkit-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+	-moz-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+	box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+	-webkit-transform: rotate(-3deg);
+	-moz-transform: rotate(-3deg);
+	-ms-transform: rotate(-3deg);
+	-o-transform: rotate(-3deg);
+	transform: rotate(-3deg);
+}
+
+.lifted:after {
+	right: 10px;
+	left: auto;
+	-webkit-transform: rotate(3deg);
+	-moz-transform: rotate(3deg);
+	-ms-transform: rotate(3deg);
+	-o-transform: rotate(3deg);
+	transform: rotate(3deg);
+}
+
+// ---------- FORMS
+$control_border_colour:#cccccc;
+$control_border_colour_warning:#c00000;
+$control_border_colour_required:#ef9608;
+$control_border_colour_selected:#170692;
+
+$editor_border_colour: $signaturecolour_base;
+
+@mixin editor {
+	background-color: $signaturecolour_bright;
+	font-size:10pt;
+}
+
+@mixin editor_legend {
+	font-size: 14pt;
+	color: #4b4b4b;
+	font-weight: normal;
+	letter-spacing: -.2px;
+}
+
+@mixin editor_sublegend {
+	font-size: 12pt;
+	color: #4b4b4b;
+	font-size: 12pt;
+	font-weight: normal;
+	letter-spacing: 0px;
+}
+
+@mixin editor_labels {
+	color: #4b4b4b;
+	font-weight: bold; 
+	font-size: 10pt;
+	letter-spacing: 0px;
+}
+
+@mixin editor_fields {
+	color: #4b4b4b;
+	font-size: 10pt;
+	border: solid 1px $control_border_colour;
+	background-color: #FFFFFF;
+}
+
+@mixin editor_textarea {
+	height:$layoutgrid_lineheight * 8;
+}
+
+@mixin editor_text {
+	color: #4b4b4b;
+	font-size: 10pt;
+	word-wrap: break-word;
+}
+
+@mixin editor_link {
+	color: #4b4b4b;
+	font-size: 10pt;
+}
+
+@mixin editor_link_hover {
+	color: #000000;
+}
+
+// HELP
+@mixin help_style {
+	@include round_all_corners;
+	@include titletext;
+	background-color: $signaturecolour_dark;
+}
+
+// ---------- CONTROLS
+@mixin Buttons {
+	@include round_all_corners;
+	@include titletext;
+}
+
+$Button_Text_Colour: #333333;
+$Button_Border_Colour: #AFAFAF;
+
+$Button_Background_Colour_Light: #E1E1E1;
+$Button_Background_Colour_Base: #AFAFAF;
+$Button_Background_Colour_Dark: #AFAFAF;
+
+$Button_Background_Colour_Active: #E1E1E1;
+$Button_Background_Colour_Hover: #E1E1E1;
+
+$Button_Background_Colour_Disabled: #EEEEEE;
+$Button_Text_Colour_Disabled: #cccccc;
+$Button_Border_Colour_Disabled: #cccccc;
+
+$Button_Background_Colour_Selected: #EEEEEE;
+$Button_Text_Colour_Selected: #333333;
+$Button_Border_Colour_Selected: #cccccc;
+
+//PRIMARY
+$Button_Text_Colour_Primary: #FFFFFF;
+$Button_Background_Colour_Base_Primary: #453AA8;
+$Button_Border_Colour_Primary: #453AA8;
+
+$Button_Background_Colour_Light_Primary: #746ABE;
+$Button_Background_Colour_Dark_Primary: #170692;
+
+$Button_Background_Colour_Active_Primary: #746ABE;
+$Button_Background_Colour_Hover_Primary: #746ABE;
+
+$Button_Background_Colour_Selected_Primary: #D4D3E2;
+$Button_Text_Colour_Selected_Primary: #000000;
+$Button_Border_Colour_Selected_Primary: #BBBAC6;
+
+//SECONDARY
+$Button_Text_Colour_Secondary: #333333;
+$Button_Border_Colour_Secondary: #AFAFAF;
+
+$Button_Background_Colour_Light_Secondary: #E1E1E1;
+$Button_Background_Colour_Base_Secondary: #AFAFAF;
+$Button_Background_Colour_Dark_Secondary: #AFAFAF;
+
+$Button_Background_Colour_Active_Secondary: #E1E1E1;
+$Button_Background_Colour_Hover_Secondary: #E1E1E1;
+
+$Button_Background_Colour_Selected_Secondary: #EEEEEE;
+$Button_Text_Colour_Selected_Secondary: #333333;
+$Button_Border_Colour_Selected_Secondary: #cccccc;
+
+// ---------- PALLETS
+@mixin palette {
+	background: url(../Images/pallet-background.png) 0 0 repeat-x;
+	@include box_shadow;
+	border: solid 1px #EF9608;
+}
+
+// ---------- TILES
+$Tile_Hover_BackgroundColour: #746ABE;
+$Tile_Hover_TextColour: #FFFFFF;
+$Tile_Primary_BackgroundColour: #AFAFAF;
+$Tile_Secondary_BackgroundColour: #7D7D7D;
+$Tile_Special_BackgroundColour: #F9D59c;

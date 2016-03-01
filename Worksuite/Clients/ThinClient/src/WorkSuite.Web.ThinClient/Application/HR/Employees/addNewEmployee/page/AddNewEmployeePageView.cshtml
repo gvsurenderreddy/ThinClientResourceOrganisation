@@ -1,0 +1,17 @@
+﻿@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Controls.Editors
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Content
+@using WTS.WorkSuite.Web.ThinClient.Application.HR.Employees.addNewEmployee.page
+
+@{
+    var content_repository = System.Web.Mvc.DependencyResolver.Current.GetService<IContentRepository>();
+    
+    Layout = @"~/Views/Shared/Layouts/GlobalLayout.cshtml";
+    ViewBag.Title = content_repository.get_resource_value("add_new_employee_page_resource_title");
+    ViewBag.Id = Resources.page_id;
+}
+
+@Editors.For( Model as dynamic ) 
+
+@section dependencies {
+    require(['component_system'], function () { });
+}

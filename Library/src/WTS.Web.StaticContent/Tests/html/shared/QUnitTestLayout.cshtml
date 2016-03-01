@@ -1,0 +1,48 @@
+﻿
+@{
+    var page_title = @ViewBag.Title;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@page_title</title>
+    <link href="~/Static/js/library/QUnit/quint-1.15.0.css" rel="stylesheet" />
+    <link href="~/Static/css/WorkSuite.css" rel="stylesheet" />
+    @RenderSection( "header_scripts", false )
+
+</head>
+    <body>
+        <div id="qunit"></div>
+        <div id="qunit-fixture"></div>
+                
+        @RenderBody()
+        
+        <!--
+            We need to bootstrap the application by configuring requirejs.  We do this
+            by configuring requirejs with a set of module that contain the default paths
+            for the library modules and an application-boot module which is specific to
+            the application which is using the library.
+
+            The application-boot module is used to change any of the default paths and allow
+            any application specific paths to be defined.
+
+            There should also be an application-start script, (tile-semantics-tests.js) this
+            script should requrire the application-boot module and then insided that function
+            have a require that resolves any modules that are needed for the application logic.  This
+            ensure that requirejs is setup before any modules are resolved but also allows us to
+            change or add custom module definitions.
+        -->
+        <script src="~/Static/js/library/require-js/requirejs-2.1.14.js"></script>
+        <script src="~/Static/js/Infrastructure/module-paths.1.js"></script>
+        <script src="~/Tests/boot/application-boot-module-configuration.js"></script>
+              
+        @RenderSection( "page_boot_scripts", false )
+
+        <script src="~/Static/js/library/QUnit/qunit-1.15.0.js"></script>
+
+        <!-- Test scripts -->        
+        @RenderSection( "test_scripts", false )
+
+    </body>
+</html>

@@ -1,0 +1,16 @@
+﻿{
+    "add_sickness_editor_title": {
+        "value": "Add new sickness",
+        "description": ""
+    },
+
+    "add_sickness_editor_sickness_date_help_text": {
+        "value": "Please enter a valid date using the format (Day/Month/Year). Day and year fields should be entered as numerics, the month may be entered as characters or numerics.",
+        "description": ""
+    },
+
+    "add_sickness_editor_sickness_date_label": {
+        "value": "Date of sickness",
+        "description": ""
+    } 
+}

@@ -1,0 +1,19 @@
+﻿@* Generator : MvcHelper TypeVisibility : Internal *@
+@using Controls.Primitives
+@using Controls.Tiles
+@using Server.Framework.ViewModels.Tiles
+@using WTS.WorkSuite.Library.CodeStrutures.Behavioral
+
+@helper Render( IEnumerable<Tile> tiles, IEnumerable<string> classes = null ) {
+
+    Guard.IsNotNull(tiles, "tiles");
+
+    <ul class="tile-grid @classes.AsHtmlClassString(  )">
+        @foreach (var tile in tiles) {
+            <li>
+                @TileControl.Render(tile)
+            </li>
+        }
+    </ul>
+}
+

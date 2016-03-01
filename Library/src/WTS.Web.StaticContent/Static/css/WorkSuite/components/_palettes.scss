@@ -1,0 +1,220 @@
+// ---------- REPORTS
+.palette_list {
+	overflow: hidden;
+	margin: 0 $layoutgrid_page_gutter $layoutgrid_lineheight $layoutgrid_page_gutter;
+	padding: 0;
+	@include respond-to(tablet) {
+		float: left;
+		clear: left;
+		width: $layoutgrid_span3 - ($layoutgrid_page_gutter * 2);
+	}
+}
+
+.palette{
+	@include palette;
+	padding-top: 6px;
+	zoom: 1;
+	margin-bottom: 12px;
+	background-color: #ffffff;
+	position: relative;
+    overflow: hidden;
+}
+
+.palette:before {
+	@include liftcorner_shadow_before;
+}
+
+.palette:after {
+	@include liftcorner_shadow_after;
+}
+
+.palette h2 {
+	@include header;
+    width: 100%;
+}
+
+[data-component="simple-palette"] h3 {
+	@include subheader;
+}
+
+.ShiftDetials {
+    margin-bottom: 12px;
+    //overflow: hidden;
+}
+
+.ShiftDetials_Title {
+	@include subheader;
+
+}
+
+.palette menu {
+	padding:0 $layoutgrid_column_gutter 0 $layoutgrid_column_gutter;
+	clear: left;
+	overflow: hidden !important;
+}
+
+// ---------- CALENDAR
+ menu.Palette-DateRange-Toggle {
+    @include respond-to(desktop) {
+        margin: 0 $layoutgrid_column_gutter $layoutgrid_lineheight 0;
+        width: 70px;
+        float: right;
+        padding: 0;
+        clear: none;
+        overflow: visible !important;
+        font-size: 9pt;
+    }
+}
+
+ menu.Palette-DateRange-Toggle .action {
+    @include respond-to(desktop) {
+        clear:left;
+    }
+}
+
+.fc {
+	background-color: #ffffff;
+	padding: $layoutgrid_lineheight $layoutgrid_column_gutter 0 $layoutgrid_column_gutter;
+	margin: 0 0 $layoutgrid_lineheight $layoutgrid_column_gutter;
+    clear: left;
+    width: 100% - ($layoutgrid_column_gutter * 2);
+    @include respond-to(desktop) {
+        width: auto;
+        margin-right: 85px;
+    }
+}
+
+// MONTH HEADER
+.fc-header {
+	margin: 0 0.4% 0 0.4%  !important;
+	width: 99%;
+}
+
+.fc-header-center{
+	margin: 0;
+	padding: 0;
+	vertical-align: top;
+	width: 100%;
+}
+
+.fc-header-title{
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+.fc-header-title h2{
+	margin: 0;
+	padding: 0 0 6px 0;
+	display: block;
+	float: inherit;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 10pt;
+}
+
+.fc-header-left, .fc-header-right {
+	width:100px;
+}
+
+.fc-icon-left-single-arrow {
+	width: 0 !important; 
+	height: 0 !important; 
+    border-color: rgba(0, 0, 0, 0) #000000 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+    border-style: solid solid solid none;
+    border-width: 9px;
+	cursor: pointer;
+	padding:0;
+	display: block;
+}
+
+.fc-icon-right-single-arrow {
+	width: 0 !important; 
+	height: 0 !important; 
+    border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #000000;
+    border-style: solid none solid solid;
+    border-width: 9px;
+	cursor: pointer;
+	padding:0;
+	display:block;
+}
+
+#calendar th {
+	width: 14.28572% !important;
+}
+
+.fc-day{
+	text-align: center;
+	border: 1px solid #ffffff;
+	background-color: #FCF0DB;
+	vertical-align: middle;
+	font-size: 9pt;
+	cursor: pointer;
+}
+
+.fc-day:hover{
+	background-color: #EF9608 !important;
+	color: #ffffff;
+}
+
+.fc-day div{
+	height: 19px !important;
+    min-height: 19px !important;
+	padding-top:2px;
+}
+
+.fc-day-content div {
+ padding:0 !important;
+ margin:0 !important;
+ display:none !important;
+}
+
+.highlighted {
+	background-color: #F5C06B !important;
+	color: #000000 !important;
+}
+
+.fc-other-month {
+	background-color: #ffffff;
+	color: #cccccc;
+}
+
+.fc-day-header {
+	background-color: #EF9608;
+	color: #ffffff;
+	border: 1px solid #ffffff;
+	padding: 6px 0 0 0;
+	font-size: 9pt;
+	height: 16px !important;
+    min-height: 16px !important;
+}
+
+.palette form {
+	clear: left;
+}
+
+.palette .editor-label {
+	display: none !important;
+}
+
+.palette .editor-text {
+	margin:0 0 $layoutgrid_lineheight $layoutgrid_column_gutter;
+	border:0;
+	padding:0;
+	clear:both;
+	width: $layoutgrid_span12 - ( $layoutgrid_column_gutter * 2 );
+}
+
+.palette .editor-select select {
+	width: $layoutgrid_span12 - ( $layoutgrid_column_gutter*2 ) !important;
+}
+
+.palette .editor-select select {
+	width: $layoutgrid_span12 - ( $layoutgrid_column_gutter*2 ) !important;
+}
+
+// SHIFT PALLET
+.shift-palette form {
+	border-top: solid 1px #EF9608;
+	padding-top: 6px;
+}

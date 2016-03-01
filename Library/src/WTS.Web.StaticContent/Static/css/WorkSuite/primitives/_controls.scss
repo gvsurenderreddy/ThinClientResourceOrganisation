@@ -1,0 +1,96 @@
+// ---------- BUTTONS
+@mixin Button {
+	color: $Button_Text_Colour;
+	font-size: 10pt;
+	text-shadow:1px 1px 0px rgba(255,255,255,0.5);
+	-moz-box-shadow:1px 1px 0px rgba(255,255,255,0.5);
+	-webkit-box-shadow:1px 1px 0px rgba(255,255,255,0.5);
+	border: solid 1px $Button_Border_Colour;
+	margin-bottom: 6px; 
+	padding: 5px;
+	letter-spacing: -.3px;
+	text-decoration: none;
+    cursor: pointer;
+	background: $Button_Background_Colour_Light; /* Old browsers */
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 50%, from($Button_Background_Colour_Light), to($Button_Background_Colour_Dark)); /* Chrome,Safari4+ */
+	background-image: -webkit-linear-gradient(top, $Button_Background_Colour_Light, $Button_Background_Colour_Dark); /* Chrome10+,Safari5.1+ */
+	background-image:    -moz-linear-gradient(top, $Button_Background_Colour_Light, $Button_Background_Colour_Dark); /* FF3.6+ */
+	background-image:     -ms-linear-gradient(top, $Button_Background_Colour_Light, $Button_Background_Colour_Dark); /* IE10+ */
+	background-image:      -o-linear-gradient(top, $Button_Background_Colour_Light, $Button_Background_Colour_Dark);  /* Opera 11.10+ */
+	background: linear-gradient(to bottom,  $Button_Background_Colour_Light 20%, $Button_Background_Colour_Dark 100%); /* W3C */
+	filter: unquote("progid:DXImageTransform.Microsoft.gradient(startColorstr='")
+	+ ie-hex-str($Button_Background_Colour_Light)
+	+ unquote("', endColorstr='")
+	+ ie-hex-str($Button_Background_Colour_Dark)
+	+ unquote("',GradientType=0)"); /* IE6-9 */
+}
+
+@mixin Button_Hover {
+	background: $Button_Background_Colour_Hover;
+	background-image: none;
+}
+
+@mixin Button_Active {
+	background: $Button_Background_Colour_Active;
+	background-image: none;
+}
+ 
+@mixin Button_Disabled {
+	background: $Button_Background_Colour_Disabled;
+	background-image: none;
+	color: $Button_Text_Colour_Disabled;
+    cursor: default;
+    border: 1px solid $Button_Border_Colour_Disabled;
+	text-shadow:1px 1px 0px rgba(255,255,255,0.5);
+	-moz-box-shadow:1px 1px 0px rgba(255,255,255,0.5);
+	-webkit-box-shadow:1px 1px 0px rgba(255,255,255,0.5);
+}
+
+@mixin Button_Selected {
+	background: $Button_Background_Colour_Selected;
+    color: $Button_Text_Colour_Selected;
+	background-image: none;
+    border: 1px solid $Button_Border_Colour_Selected;
+	text-shadow:1px 1px 0px rgba(255,255,255,0.5);
+	-moz-box-shadow:1px 1px 0px rgba(255,255,255,0.5);
+	-webkit-box-shadow:1px 1px 0px rgba(255,255,255,0.5);
+}
+
+@mixin Button_Primary {
+	color: $Button_Text_Colour_Primary;
+	font-size: 10pt;
+	text-shadow: -1px -1px 1px rgba(0,0,0,0.4);
+	-moz-box-shadow: -1px -1px 1px rgba(0,0,0,0.4);
+	-webkit-box-shadow: -1px -1px 1px rgba(0,0,0,0.4);
+	border: solid 1px $Button_Border_Colour_Primary;
+	background: $Button_Background_Colour_Light_Primary; /* Old browsers */
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 50%, from($Button_Background_Colour_Light_Primary), to($Button_Background_Colour_Dark_Primary)); /* Chrome,Safari4+ */
+	background-image: -webkit-linear-gradient(top, $Button_Background_Colour_Light_Primary, $Button_Background_Colour_Dark_Primary); /* Chrome10+,Safari5.1+ */
+	background-image:    -moz-linear-gradient(top, $Button_Background_Colour_Light_Primary, $Button_Background_Colour_Dark_Primary); /* FF3.6+ */
+	background-image:     -ms-linear-gradient(top, $Button_Background_Colour_Light_Primary, $Button_Background_Colour_Dark_Primary); /* IE10+ */
+	background-image:      -o-linear-gradient(top, $Button_Background_Colour_Light_Primary, $Button_Background_Colour_Dark_Primary);  /* Opera 11.10+ */
+	background: linear-gradient(to bottom,  $Button_Background_Colour_Light_Primary 20%, $Button_Background_Colour_Dark_Primary 100%); /* W3C */
+	filter: unquote("progid:DXImageTransform.Microsoft.gradient(startColorstr='")
+	+ ie-hex-str($Button_Background_Colour_Light_Primary)
+	+ unquote("', endColorstr='")
+	+ ie-hex-str($Button_Background_Colour_Dark_Primary)
+	+ unquote("',GradientType=0)"); /* IE6-9 */
+}
+
+@mixin Button_Hover_Primary {
+	background: $Button_Background_Colour_Hover_Primary;
+	background-image: none;
+}
+
+@mixin Button_Active_Primary {
+	background: $Button_Background_Colour_Active_Primary;
+	background-image: none;
+}
+
+@mixin Button_Selected_Primary {
+	background: $Button_Background_Colour_Selected_Primary;
+    color: $Button_Text_Colour_Selected_Primary;
+	background-image: none;
+    border: 1px solid $Button_Border_Colour_Selected_Primary;
+}
+

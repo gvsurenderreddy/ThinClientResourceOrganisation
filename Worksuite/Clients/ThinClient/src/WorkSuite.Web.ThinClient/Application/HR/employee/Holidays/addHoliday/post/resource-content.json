@@ -1,0 +1,16 @@
+﻿{
+    "new_holiday_request_post_resource_invalid_holiday_date": {
+        "value": "Please enter a valid date using the format (Day/Month/Year). Day and year fields should be entered as numerics, the month may be entered as characters or numerics.",
+        "description": ""
+    },
+
+    "new_holiday_request_post_resource_page_level_error_message": {
+        "value": "Warning! The holiday you entered could not be saved. Please correct as indicated below then save again.",
+        "description": ""
+    },
+
+    "new_holiday_request_post_resource_page_level_success_message": {
+        "value": "You have successfully added a new holiday.",
+        "description": ""
+    }
+}

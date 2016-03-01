@@ -1,0 +1,14 @@
+﻿@using WorkSuite.Confgiuration.Web.ThinClient.Application.Configuration.Infrastructure.Page
+@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Controls.ViewModels
+
+@{
+    Layout = @"~/Views/Shared/Layouts/GlobalLayout.cshtml";
+    ViewBag.Title = Resources.page_title;
+    ViewBag.Id = Resources.page_id;
+}
+
+@ViewModel.For(Model as dynamic)
+
+@section dependencies {
+    require(['details'], function () { });
+}

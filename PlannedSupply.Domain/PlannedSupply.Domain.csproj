@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3FA9037B-A4B7-413D-863E-B91768E18A37}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WTS.WorkSuite.PlannedSupply</RootNamespace>
+    <AssemblyName>WTS.WorkSuite.PlannedSupply.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BreakTemplates\Break\Edit\ClashingUpdateBreaksValidationResualt .cs" />
+    <Compile Include="BreakTemplates\Break\New\ClashingNewBreaksValidationResualt.cs" />
+    <Compile Include="BreakTemplates\Break\Validator\ConvertBreaksToTimePeriod.cs" />
+    <Compile Include="BreakTemplates\Break\Validator\ConvertBreakRequest.cs" />
+    <Compile Include="Defaults\DefaultShiftColour.cs" />
+    <Compile Include="HR\Employee\RemovedEmployeePlannedSupplyWhenEmployeeRemoved.cs" />
+    <Compile Include="HR\Employee\CreateEmployeePlannedSupplyWhenEmployeeCreated.cs" />
+    <Compile Include="HR\Employee\DependencyConfiguration.cs" />
+    <Compile Include="Infrastructure\DomainConfiguration.cs" />
+    <Compile Include="OperationsCalendar\AggregateRoot\RemoveResourceAllocation.cs" />
+    <Compile Include="OperationsCalendar\AggregateRoot\RemoveResourceAllocationErrors.cs" />
+    <Compile Include="OperationsCalendar\Edit\UpdateOperationsCalendarDependencyConfiguration.cs" />
+    <Compile Include="OperationsCalendar\GetAll\GetAllOperationsCalendars.cs" />
+    <Compile Include="OperationsCalendar\GetAll\DependencyConfiguration.cs" />
+    <Compile Include="OperationsCalendar\GetOverRange\GetOperationsCalendarAggregateOverRange.cs" />
+    <Compile Include="OperationsCalendar\GetOverRange\DependencyConfiguration.cs" />
+    <Compile Include="OperationsCalendar\AggregateRoot\GetShiftCalendarPattern.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\GetDetailsById\DependencyConfiguration.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\GetDetailsById\GetShiftCalendarDetailsById.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\Publish\GetPublishShiftCalendarRequest.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\Publish\PublishCalendarDependencyConfiguration.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\Publish\PublishShiftCalendar.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\GetDetailsById\DependencyConfiguration.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\GetDetailsById\GetShiftCalendarPatternDetailsById.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\Reorder\DependencyConfiguration.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\Reorder\GetReorderShiftCalendarPatternRequest.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\Reorder\ReorderShiftCalendarPattern.cs" />
+    <Compile Include="OperationsCalendar\Mapper\IOperationalCalendarSummaryMapper.cs" />
+    <Compile Include="OperationsCalendar\Mapper\OperationalCalendarSummaryMapper.cs" />
+    <Compile Include="OperationsCalendar\Mapper\DependencyConfiguration.cs" />
+    <Compile Include="OperationsCalendar\New\CanAddNewOperationsCalendar.cs" />
+    <Compile Include="OperationsCalendar\New\GetNewOperationsCalendarRequest.cs" />
+    <Compile Include="OperationsCalendar\New\NewOperationsCalendar.cs" />
+    <Compile Include="OperationsCalendar\New\NewOperationsCalendarDependencyConfiguration.cs" />
+    <Compile Include="OperationsCalendar\Edit\CanUpdateOperationsCalendar.cs" />
+    <Compile Include="OperationsCalendar\Edit\GetUpdateOperationsCalendarRequest.cs" />
+    <Compile Include="OperationsCalendar\Edit\UpdateOperationsCalendar.cs" />
+    <Compile Include="OperationsCalendar\AggregateRoot\CreateTimeAllocationForOccurrenceRequest.cs" />
+    <Compile Include="OperationsCalendar\AggregateRoot\CreateTimeAllocationOccurrenceValidation.cs" />
+    <Compile Include="OperationsCalendar\AggregateRoot\FindOrCreate\FindOrCreateRequestValidator.cs" />
+    <Compile Include="OperationsCalendar\AggregateRoot\FindOrCreate\FindOrCreateAndReturnTimeAllocationRequest.cs" />
+    <Compile Include="OperationsCalendar\AggregateRoot\FindOrCreate\FindOrCreateTimeAllocationValidationErrors.cs" />
+    <Compile Include="OperationsCalendar\AggregateRoot\GetAllRelatedOccurrencesFromOccurrenceIdentity.cs" />
+    <Compile Include="OperationsCalendar\AggregateRoot\FindOrCreate\FindOrCreateAndReturnTimeAllocation.cs" />
+    <Compile Include="OperationsCalendar\AggregateRoot\ModifyTimeAllocationForOccurrence.cs" />
+    <Compile Include="OperationsCalendar\AggregateRoot\ModifyTimeAllocationForOccurrenceRequest.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ResourceAllocation\AllocateEmployeeToPattern\post\AllocateEmployeeToPatternRequestHandler.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ResourceAllocation\AllocateEmployeeToPattern\get\GetAllocateEmployeeToPatternRequest.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ResourceAllocation\RemoveAllocationFromPattern\get\GetRemoveAllocationFromPatternRequestHandler.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ResourceAllocation\Queries\GetByCalendar.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ResourceAllocation\Queries\GetByPattern.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ResourceAllocation\DependencyConfiguration.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ResourceAllocation\RemoveAllocationFromPattern\post\RemoveAllocationFromPatternRequestHandler.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ShiftOccurrence\EditAll\DependencyConfiguration.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ShiftOccurrence\EditAll\EditAllShiftOccurrences.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ShiftOccurrence\EditAll\GetEditAllShiftOccurrencesRequest.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ShiftOccurrence\Edit\DependencyConfiguration.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ShiftOccurrence\Edit\EditSingleShiftOccurrence.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ShiftOccurrence\Edit\GetEditSingleShiftOccurrenceRequest.cs" />
+    <Compile Include="OperationsCalendar\AggregateRoot\GetShiftOccurrencesFromAllShiftCalendars.cs" />
+    <Compile Include="OperationsCalendar\AggregateRoot\GetOccurrence.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ShiftOccurrence\GetAllDetails\DependencyConfiguration.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ShiftOccurrence\GetAllDetails\GetAllOccurrencesDetails.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ShiftOccurrence\GetSingleDetails\DependencyConfiguration.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ShiftOccurrence\GetSingleDetails\GetSingleOccurrenceDetails.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ShiftOccurrence\RemoveAll\DependencyConfiguration.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ShiftOccurrence\RemoveAll\GetRemoveAllShiftOccurrencesRequest.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ShiftOccurrence\RemoveAll\RemoveAllShiftOccurrences.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ShiftOccurrence\GetShiftDetailsByStartDate\DependencyConfiguration.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ShiftOccurrence\GetShiftDetailsByStartDate\GetShiftOccurrenceByStartDate.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ShiftOccurrence\NewFromTemplate\DependencyConfiguration.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ShiftOccurrence\NewFromTemplate\NewShiftOccurrenceFromShiftTemplate.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ShiftOccurrence\New\DependencyConfiguration.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ShiftOccurrence\New\GetNewShiftOccurrenceRequest.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ShiftOccurrence\New\NewShiftOccurrence.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ShiftOccurrence\Remove\DependencyConfiguration.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ShiftOccurrence\Remove\GetRemoveShiftOccurrenceRequest.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ShiftOccurrence\Remove\RemoveShiftOccurrence.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ShiftOccurrence\ShiftBreaks\ApplyFromTemplate\ApplyForAllOccurrences.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ShiftOccurrence\ShiftBreaks\ApplyFromTemplate\ApplyShiftBreaksFromBreakTemplate.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ShiftOccurrence\ShiftBreaks\ApplyFromTemplate\DependencyConfiguration.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ShiftOccurrence\ShiftBreaks\ApplyFromTemplate\GetApplyFromTemplateRequest.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ShiftOccurrence\ShiftBreaks\Edit\EditShiftBreakForAll.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ShiftOccurrence\ShiftBreaks\New\NewShiftBreakForAll.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ShiftOccurrence\ShiftBreaks\Remove\DependencyConfiguration.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ShiftOccurrence\ShiftBreaks\Remove\RemoveShiftBreakForAll.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ShiftOccurrence\ShiftBreaks\Remove\RemoveShiftBreak.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ShiftOccurrence\ShiftBreaks\Remove\GetRemoveShiftBreakRequest.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ShiftOccurrence\ShiftBreaks\GetAll\DependencyConfiguration.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ShiftOccurrence\ShiftBreaks\GetAll\GetAllShiftBreaks.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ShiftOccurrence\ShiftBreaks\Edit\DependencyConfiguration.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ShiftOccurrence\ShiftBreaks\Edit\GetEditShiftBreakRequest.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ShiftOccurrence\ShiftBreaks\Edit\EditShiftBreak.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ShiftOccurrence\ShiftBreaks\New\DependencyConfiguration.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ShiftOccurrence\ShiftBreaks\New\GetNewShiftBreakRequest.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\ShiftOccurrence\ShiftBreaks\New\NewShiftBreak.cs" />
+    <Compile Include="OperationsCalendar\Remove\GetRemoveOperationsCalendarRequest.cs" />
+    <Compile Include="OperationsCalendar\Remove\RemoveOperationsCalendar.cs" />
+    <Compile Include="OperationsCalendar\Remove\RemoveOperationsCalendarDependencyConfiguration.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\Edit\CanUpdateShiftCalendar.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\Edit\GetUpdateShiftCalendarRequest.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\Edit\UpdateShiftCalendar.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\Edit\UpdateShiftCalendarDependencyConfiguration.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\New\CanAddNewShiftCalendar.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\New\GetNewShiftCalendarRequest.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\New\NewShiftCalendar.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\New\NewShiftCalendarDependencyConfiguration.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\Remove\GetRemoveShiftCalendarRequest.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\Remove\RemoveShiftCalendar.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\Remove\RemoveShiftCalendarDependencyConfiguration.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\Edit\CanUpdateShiftCalendarPattern.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\Edit\GetUpdateShiftCalendarPatternRequest.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\Edit\UpdateShiftCalendarPattern.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\Edit\UpdateShiftCalendarPatternDependencyConfiguration.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\New\CanAddNewShiftCalendarPattern.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\New\GetNewShiftCalendarPatternRequest.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\New\NewShiftCalendarPattern.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\New\NewShiftCalendarPatternDependencyConfiguration.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\Queries\GetDetailsOfAllShiftCalendarPatterns\GetDetailsOfAllShiftCalendarPatterns.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\Queries\ShiftCalendarPatternQueryDependencyConfiguration.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\Remove\GetRemoveShiftCalendarPatternRequest.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\Remove\RemoveShiftCalendarPattern.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarPattern\Remove\RemoveShiftCalendarPatternDependencyConfiguration.cs" />
+    <Compile Include="OperationsCalendar\ShiftCalendar\ShiftCalendarValidator.cs" />
+    <Compile Include="OperationsCalendar\Validators\OperationsCalendarValidator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BreakTemplates\Edit\DependencyConfiguration.cs" />
+    <Compile Include="BreakTemplates\Edit\GetUpdateBreakTemplateRequest.cs" />
+    <Compile Include="BreakTemplates\Edit\UpdateBreakTemplate.cs" />
+    <Compile Include="BreakTemplates\Mapper\DependencyConfiguration.cs" />
+    <Compile Include="BreakTemplates\Mapper\IBreakTemplateDetailsMapper.cs" />
+    <Compile Include="BreakTemplates\Mapper\BreakTemplateDetailsMapper.cs" />
+    <Compile Include="BreakTemplates\New\DependencyConfiguration.cs" />
+    <Compile Include="BreakTemplates\New\GetNewBreakTemplateRequest.cs" />
+    <Compile Include="BreakTemplates\New\NewBreakTemplate.cs" />
+    <Compile Include="BreakTemplates\Queries\GetAllAssociatedShiftTemplates\DependencyConfiguration.cs" />
+    <Compile Include="BreakTemplates\Queries\GetAllAssociatedShiftTemplates\GetAllAssociatedShiftTemplatesForBreakTemplate.cs" />
+    <Compile Include="BreakTemplates\Queries\GetAllEligibleForShiftTemplate\DependencyConfiguration.cs" />
+    <Compile Include="BreakTemplates\Queries\GetAllEligibleForShiftTemplate\GetDetailsOfBreakTemplatesEligibleForShiftTemplate.cs" />
+    <Compile Include="BreakTemplates\Queries\GetAll\DependencyConfiguration.cs" />
+    <Compile Include="BreakTemplates\Queries\GetAll\GetAllBreakTemplatesDetails.cs" />
+    <Compile Include="BreakTemplates\Queries\GetById\DependencyConfiguration.cs" />
+    <Compile Include="BreakTemplates\Queries\GetById\GetBreakTemplateDetailsById.cs" />
+    <Compile Include="BreakTemplates\Remove\DependencyConfiguration.cs" />
+    <Compile Include="BreakTemplates\Remove\GetRemoveBreakTemplateRequest.cs" />
+    <Compile Include="BreakTemplates\Remove\RemoveBreakTemplate.cs" />
+    <Compile Include="BreakTemplates\Break\Edit\DependencyConfiguration.cs" />
+    <Compile Include="BreakTemplates\Break\Edit\GetUpdateBreakRequest.cs" />
+    <Compile Include="BreakTemplates\Break\Edit\UpdateBreak.cs" />
+    <Compile Include="BreakTemplates\Break\New\DependencyConfiguration.cs" />
+    <Compile Include="BreakTemplates\Break\New\GetNewBreakRequest.cs" />
+    <Compile Include="BreakTemplates\Break\New\NewBreak.cs" />
+    <Compile Include="BreakTemplates\Break\Queries\GetAll\GetDetailsOfAllBreaks.cs" />
+    <Compile Include="BreakTemplates\Break\Remove\DependencyConfiguration.cs" />
+    <Compile Include="BreakTemplates\Break\Remove\GetRemoveBreakRequest.cs" />
+    <Compile Include="BreakTemplates\Break\Remove\RemoveBreak.cs" />
+    <Compile Include="BreakTemplates\Break\Validator\BreakValidator.cs" />
+    <Compile Include="BreakTemplates\Validator\BreakTemplateValidator.cs" />
+    <Compile Include="ShiftTemplate\Edit\DependencyConfiguration.cs" />
+    <Compile Include="ShiftTemplate\Edit\UpdateShiftTemplate.cs" />
+    <Compile Include="ShiftTemplate\New\DependencyConfiguration.cs" />
+    <Compile Include="ShiftTemplate\New\GetNewShiftTemplatesRequest.cs" />
+    <Compile Include="ShiftTemplate\New\NewShiftTemplates.cs" />
+    <Compile Include="ShiftTemplate\Remove\DependencyConfiguration.cs" />
+    <Compile Include="ShiftTemplate\Remove\RemoveShiftTemplate.cs" />
+    <Compile Include="ShiftTemplate\Remove\GetRemoveShiftTemplateRequest.cs" />
+    <Compile Include="ShiftTemplate\ShiftDetails\GetAllDependencyConfiguration.cs" />
+    <Compile Include="ShiftTemplate\ShiftDetails\GetAll\DependencyConfiguration.cs" />
+    <Compile Include="ShiftTemplate\ShiftDetails\GetAll\GetAllShiftTemplateDetails.cs" />
+    <Compile Include="ShiftTemplate\ShiftDetails\Mapper\IShiftTemplatesDetailsMapper.cs" />
+    <Compile Include="ShiftTemplate\ShiftDetails\Mapper\ShiftTemplatesDetailsMapper.cs" />
+    <Compile Include="ShiftTemplate\Edit\GetShiftTemplateUpdateRequest.cs" />
+    <Compile Include="ShiftTemplate\ShiftTemplateRepositoryExtensions.cs" />
+    <Compile Include="ShiftTemplate\Validator\DurationValidationResponse.cs" />
+    <Compile Include="ShiftTemplate\Validator\ShiftValidator.cs" />
+    <Compile Include="ShiftTemplate\Validator\RgbColourValidationResponse.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Worksuite\Core\src\Worksuite.Core\Worksuite.Core.csproj">
+      <Project>{1df54fed-2bc7-4317-b32e-53135723b267}</Project>
+      <Name>Worksuite.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Worksuite\Domains\Content\src\Services\Content.Services.csproj">
+      <Project>{55d6359c-7ea7-42dc-bc38-3f4b2b02eb99}</Project>
+      <Name>Content.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library\src\WorkSuite.Library.CodeStrutures\WorkSuite.Library.CodeStrutures.csproj">
+      <Project>{249be708-3014-4584-9e14-cb087e54916e}</Project>
+      <Name>WorkSuite.Library.CodeStrutures</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library\src\WorkSuite.Library.DomainTypes\WorkSuite.Library.DomainTypes.csproj">
+      <Project>{538c6f62-b398-41f1-917c-10659fdf6c78}</Project>
+      <Name>WorkSuite.Library.DomainTypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library\src\WorkSuite.Library.IO.Cryptography\WorkSuite.Library.IO.Cryptography.csproj">
+      <Project>{cdb719b5-36b2-4f45-9f00-118138eb18d0}</Project>
+      <Name>WorkSuite.Library.IO.Cryptography</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library\src\WorkSuite.Library.IO\WorkSuite.Library.IO.csproj">
+      <Project>{d56d4264-6c22-4dfa-9f46-0840b757a8e1}</Project>
+      <Name>WorkSuite.Library.IO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library\src\WorkSuite.Library.Ninject\WorkSuite.Library.Ninject.csproj">
+      <Project>{fa9854f9-6908-483a-ae63-9354249e74bc}</Project>
+      <Name>WorkSuite.Library.Ninject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library\src\WorkSuite.Library.Persistence\WorkSuite.Library.Persistence.csproj">
+      <Project>{c55f23be-bc7a-4f70-81d3-af5d645fe831}</Project>
+      <Name>WorkSuite.Library.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlannedSupply.Persistence\PlannedSupply.Persistence.csproj">
+      <Project>{f5f8687c-2ab8-4cda-a346-2b8eafcdcd73}</Project>
+      <Name>PlannedSupply.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlannedSupply.Services\PlannedSupply.Services.csproj">
+      <Project>{1e90397a-d33c-42f3-ae41-c1925820f3d8}</Project>
+      <Name>PlannedSupply.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Worksuite\Domains\HR\src\Services\HR.Services.csproj">
+      <Project>{3D42E5CB-8885-42A6-A018-1C0F1D369123}</Project>
+      <Name>HR.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

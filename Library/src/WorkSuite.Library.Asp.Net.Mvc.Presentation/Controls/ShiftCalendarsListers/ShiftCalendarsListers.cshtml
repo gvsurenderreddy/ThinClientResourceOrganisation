@@ -1,0 +1,36 @@
+﻿@* Generator : MvcHelper GeneratePrettyNames : true *@
+
+@using Controls.Primitives
+@using Controls.ShiftCalendars
+@using Controls.ShiftCalendarsListers
+@using Controls.ViewElements
+@using Server.Framework.ViewModels
+@using Server.ShiftCalendars
+@using Server.ShiftCalendarsListers
+@* Fallback - if we have a AReport type that we do not have an edit control for
+*@
+@helper For(IsAViewElement element)
+{
+
+    @ViewElement.Unknown()
+}
+
+@* Editor for a report
+*@
+@helper For(ShiftCalendarsLister view_model)
+{
+
+    <section data-component="shift-calendars-lister" class="shift-calendars-lister">
+
+        <article class="shift-calendars-lister-header @view_model.classes.AsHtmlClassString()">
+            <h2>@view_model.title</h2>
+            @ShiftCalendarsListerActions.For(view_model.actions)
+        </article>
+
+        @foreach (var shift_calendar in @view_model.all_shift_calendars)
+        {
+            @ShiftCalendars.For(shift_calendar)
+        }
+    </section>
+
+}

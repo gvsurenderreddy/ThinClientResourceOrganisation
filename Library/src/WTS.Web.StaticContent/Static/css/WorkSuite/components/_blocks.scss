@@ -1,0 +1,100 @@
+// VERY BRIGHT
+.tile.configure-titles a,
+.tile.configure-genders a,
+.tile.configure-relationships a,
+.tile.configure-nationalities a,
+.tile.configure-marital-statuses a,
+.tile.configure-ethnic-origins a,
+.tile.employee-notes a,
+.tile.employee-employment-details a,
+.tile.employee-documents a,
+.tile.employee-skills a,
+.tile.employee-qualifications a,
+.tile.add-shift-template a,
+.tile.view-shift-templates a,
+.tile.add-break-template a,
+.tile.view-break-templates a,
+.tile.configure-predefined-options a {
+	background-color: $basecolour_verybright;
+	margin: 0 10px $layoutgrid_lineheight 0;
+	padding: $layoutgrid_lineheight 8.3% 0 8.3%;
+	word-wrap: break-word;
+	display: block;
+	width: 120px;
+	height: 100px;
+	text-decoration: none;
+	@include titletext;
+}
+
+// BRIGHT TILE
+.tile.add-new-employee a,
+.tile.view-employees a,
+.tile.configure-job-titles a,
+.tile.configure-locations a,
+.tile.configure-skills a,
+.tile.configure-qualifications a,
+.tile.employee-personal-details-and-picture a,
+.tile.view-employee-schedule a,
+.tile.employee-contact-numbers-and-addresses a,
+.tile.employee-emergency-contacts a,
+.tile.add-new-operations-calendar a,
+.tile.view-operations-calendars a {
+	background-color: $basecolour_bright;
+	margin: 0 10px $layoutgrid_lineheight 0;
+	padding: $layoutgrid_lineheight 8.3% 0 8.3%;
+	word-wrap: break-word;
+	display: block;
+	width: 120px;
+	height: 100px;
+	text-decoration: none;
+	@include titletext;
+}
+
+.tile.employee-remove-employee a,
+.tile.employee-holidays a ,
+.tile.employee-sickness a{
+	background-color: $signaturecolour_base;
+	margin: 0 10px $layoutgrid_lineheight 0;
+	padding: $layoutgrid_lineheight 8.3% 0 8.3%;
+	word-wrap: break-word;
+	display: block;
+	width: 120px;
+	height: 100px;
+	text-decoration: none;
+	@include titletext;
+}
+
+.tile.add-new-employee a:hover,
+.tile.view-employees a:hover,
+.tile.configure-titles a:hover,
+.tile.configure-genders a:hover,
+.tile.configure-relationships a:hover,
+.tile.configure-nationalities a:hover,
+.tile.configure-marital-statuses a:hover,
+.tile.configure-ethnic-origins a:hover,
+.tile.configure-job-titles a:hover,
+.tile.configure-locations a:hover,
+.tile.configure-skills a:hover,
+.tile.configure-qualifications a:hover,
+.tile.employee-personal-details-and-picture a:hover,
+.tile.view-employee-schedule a:hover,
+.tile.employee-contact-numbers-and-addresses a:hover,
+.tile.employee-emergency-contacts a:hover,
+.tile.employee-notes a:hover,
+.tile.employee-employment-details a:hover,
+.tile.employee-documents a:hover,
+.tile.employee-skills a:hover,
+.tile.employee-qualifications a:hover,
+.tile.employee-remove-employee a:hover,
+.tile.employee-holidays a:hover,
+.tile.employee-sickness a:hover,
+.tile.add-new-operations-calendar a:hover,
+.tile.view-operations-calendars a:hover,
+.tile.add-shift-template a:hover,
+.tile.view-shift-templates a:hover,
+.tile.add-break-template a:hover,
+.tile.view-break-templates a:hover,
+.tile.configure-predefined-options a:hover {
+	background-color: $calltoactioncolour_base;
+	color: #FFFFFF;
+}

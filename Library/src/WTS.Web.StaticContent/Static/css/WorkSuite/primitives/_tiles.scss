@@ -1,0 +1,29 @@
+@mixin Tile {
+    background-color: $Tile_Primary_BackgroundColour;
+	margin: 0;
+	padding: 0;
+	word-wrap: break-word;
+	display: block;
+	width: 120px;
+	height: 100px;
+	text-decoration: none;
+	@include titletext;
+}
+
+@mixin Tile_Hover {
+    background-color: $Tile_Hover_BackgroundColour;
+    color: $Tile_Hover_TextColour;
+    cursor: pointer;
+}
+
+@mixin Tile_Primary {
+    background-color: $Tile_Primary_BackgroundColour;
+}
+
+@mixin Tile_Secondary {
+    background-color:$Tile_Secondary_BackgroundColour;
+}
+
+@mixin Tile_Special {
+    background-color: $Tile_Special_BackgroundColour;
+}

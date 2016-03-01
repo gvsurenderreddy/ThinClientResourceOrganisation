@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6317043D-4A66-40A2-81B4-A1BA41D865BE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WTS.WorkSuite.Audit</RootNamespace>
+    <AssemblyName>WTS.WorkSuite.Audit.Services.Specification</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentAssertions">
+      <HintPath>..\..\..\..\..\packages\FluentAssertions.3.0.107\lib\net45\FluentAssertions.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentAssertions.Core">
+      <HintPath>..\..\..\..\..\packages\FluentAssertions.3.0.107\lib\net45\FluentAssertions.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="Domain\HR\Employees\AddressDetails\Events\Removed\EmployeeAddressDetailsRemovedEventFixture.cs" />
+    <Compile Include="Domain\HR\Employees\AddressDetails\Events\Removed\EmployeeAddressDetailsRemovedEventSpecification.cs" />
+    <Compile Include="Domain\HR\Employees\AddressDetails\Events\Removed\Removing_an_employee_address_details.cs" />
+    <Compile Include="Domain\HR\Employees\AddressDetails\Events\Reordered\EmployeeAddressReorderedEventFixture.cs" />
+    <Compile Include="Domain\HR\Employees\AddressDetails\Events\Reordered\EmployeeAddressReorderedEventSpecification.cs" />
+    <Compile Include="Domain\HR\Employees\AddressDetails\Events\Reordered\Reordering_an_employee_address.cs" />
+    <Compile Include="Domain\HR\Employees\AddressDetails\Events\Updated\EmployeeAddressDetailsUpdatedEventFixture.cs" />
+    <Compile Include="Domain\HR\Employees\AddressDetails\Events\Updated\EmployeeAddressDetailsUpdatedEventSpecification.cs" />
+    <Compile Include="Domain\HR\Employees\AddressDetails\Events\Updated\Updates_an_employee_address_details.cs" />
+    <Compile Include="Domain\HR\Employees\AddressDetails\Fields\country\Country_is_audited_in_the_address_details_audit_record.cs" />
+    <Compile Include="Domain\HR\Employees\AddressDetails\Fields\county\County_is_audited_in_the_address_details_audit_record.cs" />
+    <Compile Include="Domain\HR\Employees\AddressDetails\Fields\house_name_or_number\HouseNameOrNumber_is_audited_in_the_address_details_audit_record.cs" />
+    <Compile Include="Domain\HR\Employees\AddressDetails\Fields\line_one\LineOne_is_audited_in_the_address_details_audit_record.cs" />
+    <Compile Include="Domain\HR\Employees\AddressDetails\Fields\line_three\LineThree_is_audited_in_the_address_details_audit_record.cs" />
+    <Compile Include="Domain\HR\Employees\AddressDetails\Fields\line_two\LineTwo_is_audited_in_the_address_details_audit_record.cs" />
+    <Compile Include="Domain\HR\Employees\AddressDetails\Fields\postcode\Postcode_is_audited_in_the_address_details_audit_record.cs" />
+    <Compile Include="Domain\HR\Employees\AddressDetails\Fields\priority\Priority_is_audited_in_the_address_details_audit_record.cs" />
+    <Compile Include="Domain\HR\Employees\ContactDetails\Fields\email\Email_is_audited_in_the_contact_details_audit_record.cs" />
+    <Compile Include="Domain\HR\Employees\ContactDetails\Fields\mobile\Mobile_is_audited_in_the_contact_details_audit_record.cs" />
+    <Compile Include="Domain\HR\Employees\ContactDetails\Fields\other\Other_is_audited_in_the_contact_details_audit_record.cs" />
+    <Compile Include="Domain\HR\Employees\ContactDetails\Fields\phone_number\PhoneNumber_is_audited_in_the_contact_details_audit_record.cs" />
+    <Compile Include="Domain\HR\Employees\AddressDetails\Events\Created\Adds_an_employee_address_details_audit_record.cs" />
+    <Compile Include="Domain\HR\Employees\AddressDetails\Events\Created\EmployeeAddressDetailsCreatedEventFixture.cs" />
+    <Compile Include="Domain\HR\Employees\AddressDetails\Events\Created\EmployeeAddressDetailsCreatedEventSpecification.cs" />
+    <Compile Include="Domain\HR\Employees\ContactDetails\Events\Updated\Adds_an_employee_audit_record.cs" />
+    <Compile Include="Domain\HR\Employees\ContactDetails\Events\Updated\Adds_an_employee_created_audit_record_if_creating_the_audit_trail.cs" />
+    <Compile Include="Domain\HR\Employees\ContactDetails\Events\Updated\Adds_a_contact_details_audit_record_to_the_employee_audit_trail.cs" />
+    <Compile Include="Domain\HR\Employees\ContactDetails\Events\Updated\EmployeeContactDetailsUpdatedEventFixture.cs" />
+    <Compile Include="Domain\HR\Employees\ContactDetails\Events\Updated\EmployeeContactDetailsUpdatedEventSpecification.cs" />
+    <Compile Include="Domain\HR\Employees\DocumentDetails\Events\Removed\EmployeeDocumentDetailsRemovedEventFixture.cs" />
+    <Compile Include="Domain\HR\Employees\DocumentDetails\Events\Removed\EmployeeDocumentDetailsRemovedEventSpecification.cs" />
+    <Compile Include="Domain\HR\Employees\DocumentDetails\Events\Removed\Removing_an_employee_document_details.cs" />
+    <Compile Include="Domain\HR\Employees\DocumentDetails\Events\Uploaded\Adds_an_employee_document.cs" />
+    <Compile Include="Domain\HR\Employees\DocumentDetails\Events\Uploaded\EmployeeDocumentDetailsUploadedEventFixture.cs" />
+    <Compile Include="Domain\HR\Employees\DocumentDetails\Events\Uploaded\EmployeeDocumentDetailsUploadedEventSpecification.cs" />
+    <Compile Include="Domain\HR\Employees\DocumentDetails\Fields\description\Description_is_audited_in_the_document_details_audit_record.cs" />
+    <Compile Include="Domain\HR\Employees\DocumentDetails\Fields\name\Name_is_audited_in_the_document_details_audit_record.cs" />
+    <Compile Include="Domain\HR\Employees\EmergencyContact\Events\Created\Adds_an_emergency_contact_details_audit_record.cs" />
+    <Compile Include="Domain\HR\Employees\EmergencyContact\Events\Created\EmergencyContactDetailsCreatedEventFixture.cs" />
+    <Compile Include="Domain\HR\Employees\EmergencyContact\Events\Created\EmergencyContactDetailsCreatedEventSpecification.cs" />
+    <Compile Include="Domain\HR\Employees\EmergencyContact\Events\Remove\ EmployeeEmergencyContactDetailsRemovedEventFixture.cs" />
+    <Compile Include="Domain\HR\Employees\EmergencyContact\Events\Remove\EmployeeEmergencycontactDetailsRemoveEventSpecification.cs" />
+    <Compile Include="Domain\HR\Employees\EmergencyContact\Events\Remove\Removing_an_emrgency_contact_details.cs" />
+    <Compile Include="Domain\HR\Employees\EmergencyContact\Events\Reordered\EmployeeEmergencyContactReorderedEventSpecification.cs" />
+    <Compile Include="Domain\HR\Employees\EmergencyContact\Events\Reordered\EmployeeEmergencyContactReorderedEventFixture.cs" />
+    <Compile Include="Domain\HR\Employees\EmergencyContact\Events\Reordered\ReorderingAnEmergencyContact.cs" />
+    <Compile Include="Domain\HR\Employees\EmergencyContact\Events\Updated\EmergencyContactDetailsUpdateEventFixture.cs" />
+    <Compile Include="Domain\HR\Employees\EmergencyContact\Events\Updated\EmergencyContactDetailsUpdateEventSpecification.cs" />
+    <Compile Include="Domain\HR\Employees\EmergencyContact\Events\Updated\Update_an_emergency_contact_details.cs" />
+    <Compile Include="Domain\HR\Employees\EmergencyContact\Fields\Name\Name_is_audited_in_the_contact_details_audit_record.cs" />
+    <Compile Include="Domain\HR\Employees\EmergencyContact\Fields\OtherPhoneNumber\OtherPhoneNumber_is_audited_in_the_correct_details_audit_record.cs" />
+    <Compile Include="Domain\HR\Employees\EmergencyContact\Fields\PrimaryPhoneNumber\PrimaryPhoneNumber_is_audited_in_the_correct_details_audit_record.cs" />
+    <Compile Include="Domain\HR\Employees\EmergencyContact\Fields\priority\Priority_is_audited_in_the_emergency_contact_details_audit_record.cs" />
+    <Compile Include="Domain\HR\Employees\EmergencyContact\Fields\Relationship\Relationship_is_audited_in_the_contact_details_audit_record.cs" />
+    <Compile Include="Domain\HR\Employees\EmploymentDetails\Fields\job_title\job_title_id_is_audited.cs" />
+    <Compile Include="Domain\HR\Employees\EmploymentDetails\Fields\location\location_id_is_audited.cs" />
+    <Compile Include="Domain\HR\Employees\Events\Created\Adds_an_employee_contact_details_audit_record.cs" />
+    <Compile Include="Domain\HR\Employees\Events\Created\Adds_an_employee_created_audit_record.cs" />
+    <Compile Include="Domain\HR\Employees\Events\Created\Adds_an_employee_employment_details_audit_record.cs" />
+    <Compile Include="Domain\HR\Employees\Events\Created\Adds_an_employee_personal_details_audit_record.cs" />
+    <Compile Include="Domain\HR\Employees\Events\Created\Creates_an_employee_audit_trail.cs" />
+    <Compile Include="Domain\HR\Employees\Events\Created\EmployeeCreatedEventSpecification.cs" />
+    <Compile Include="Domain\HR\Employees\Events\Created\EmployeeCreatedFixture.cs" />
+    <Compile Include="Domain\HR\Employees\EmploymentDetails\Events\Updated\Adds_an_employee_audit_record.cs" />
+    <Compile Include="Domain\HR\Employees\EmploymentDetails\Events\Updated\Adds_an_employee_created_audit_record_if_creating_the_audit_trail.cs" />
+    <Compile Include="Domain\HR\Employees\EmploymentDetails\Events\Updated\Adds_an_employment_details_audit_record_to_the_employee_audit_trail.cs" />
+    <Compile Include="Domain\HR\Employees\EmploymentDetails\Events\Updated\EmployeeEmploymentDetailsUpdatedEventSpecification.cs" />
+    <Compile Include="Domain\HR\Employees\EmploymentDetails\Events\Updated\EmploymentDetailsUpdatedFixture.cs" />
+    <Compile Include="Domain\HR\Employees\ImageDetails\Events\Removed\EmployeeImageDetailsRemovedEventFixture.cs" />
+    <Compile Include="Domain\HR\Employees\ImageDetails\Events\Removed\EmployeeImageDetailsRemovedEventSpecification.cs" />
+    <Compile Include="Domain\HR\Employees\ImageDetails\Events\Removed\Remoing_an_employee_image_details.cs" />
+    <Compile Include="Domain\HR\Employees\ImageDetails\Events\Updated\EmployeeImageDetailsUpdatedEventFixture.cs" />
+    <Compile Include="Domain\HR\Employees\ImageDetails\Events\Updated\EmployeeImageDetailsUpdatedEventSpecification.cs" />
+    <Compile Include="Domain\HR\Employees\ImageDetails\Events\Updated\Updates_an_employee_image_details.cs" />
+    <Compile Include="Domain\HR\Employees\NoteDetails\Events\Created\Adds_an_employee_note_details.cs" />
+    <Compile Include="Domain\HR\Employees\NoteDetails\Events\Created\EmployeeNoteDetailsCreatedEventFixture.cs" />
+    <Compile Include="Domain\HR\Employees\NoteDetails\Events\Created\EmployeeNoteDetailsCreatedEventSpecification.cs" />
+    <Compile Include="Domain\HR\Employees\NoteDetails\Events\Removed\EmployeeNoteDetailsRemovedEventFixture.cs" />
+    <Compile Include="Domain\HR\Employees\NoteDetails\Events\Removed\EmployeeNoteDetailsRemovedEventSpecification.cs" />
+    <Compile Include="Domain\HR\Employees\NoteDetails\Events\Removed\Removing_an_employee_note_details.cs" />
+    <Compile Include="Domain\HR\Employees\NoteDetails\Events\Updated\EmployeeNoteDetailsUpdatedEventFixture.cs" />
+    <Compile Include="Domain\HR\Employees\NoteDetails\Events\Updated\EmployeeNoteDetailsUpdatedEventSpecification.cs" />
+    <Compile Include="Domain\HR\Employees\NoteDetails\Events\Updated\Updates_an_employee_note_details.cs" />
+    <Compile Include="Domain\HR\Employees\NoteDetails\Fields\notes\Notes_is_audited_in_the_note_details_audit_record.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Events\Updated\Adds_an_employee_audit_record.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Events\Updated\Adds_an_employee_created_audit_record_if_creating_the_audit_trail.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Events\Updated\Adds_an_personal_details_audit_record_to_the_employee_audit_trail.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Events\Updated\EmployeePersonalDetailsUpdatedEventFixture.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Events\Updated\EmployeePersonalDetailsUpdatedEventSpecification.cs" />
+    <Compile Include="Domain\HR\Employees\EmploymentDetails\Fields\employee_reference\employee_reference_is_audited.cs" />
+    <Compile Include="Domain\HR\Employees\Events\Removed\EmployeePersonalDetailsUpdatedEventSpecification.cs" />
+    <Compile Include="Domain\HR\Employees\Events\Removed\EmployeeRemovedEventFixture.cs" />
+    <Compile Include="Domain\HR\Employees\Events\Removed\Employees_audit_trail_is_wiped_when_removed.cs" />
+    <Compile Include="Domain\HR\Employees\Fields\employee_id\employee_id_is_audited.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\date_of_birth\DateOfBirth_is_audited.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\ethnic_origin\Ethnic_origin_is_audited.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\forename\forename_is_audited.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\gender\Gender_is_audited.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\marital_status\Marital_status_is_audited.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\nationality\Nationality_is_audited.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\othername\Othername_is_audited.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\place_of_birth\PlaceOfBirth_is_audited.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\surname\surname_is_audited.cs" />
+    <Compile Include="Domain\HR\Employees\PersonalDetails\Fields\title\Title_is_audited.cs" />
+    <Compile Include="Domain\HR\Employees\Qualifications\Events\Created\Adding_an_employee_qualification_details.cs" />
+    <Compile Include="Domain\HR\Employees\Qualifications\Events\Created\EmployeeQualificationDetailsCreatedEventFixture.cs" />
+    <Compile Include="Domain\HR\Employees\Qualifications\Events\Created\EmployeeQualificationDetailsCreatedEventSpecification.cs" />
+    <Compile Include="Domain\HR\Employees\Qualifications\Events\Removed\EmployeeQualificationDetailsRemovedEventFixture.cs" />
+    <Compile Include="Domain\HR\Employees\Qualifications\Events\Removed\EmployeeQualificationDetailsRemovedEventSpecification.cs" />
+    <Compile Include="Domain\HR\Employees\Qualifications\Events\Removed\Removing_an_employee_qualification_details.cs" />
+    <Compile Include="Domain\HR\Employees\Qualifications\Fields\qualification\Qualification_is_audited_in_the_qualification_details_audit_record.cs" />
+    <Compile Include="Domain\HR\Employees\Skills\Events\Created\Adding_an_employee_skill_details.cs" />
+    <Compile Include="Domain\HR\Employees\Skills\Events\Created\EmployeeSkillDetailsCreatedEventFixture.cs" />
+    <Compile Include="Domain\HR\Employees\Skills\Events\Created\EmployeeSkillDetailsCreatedEventSpecification.cs" />
+    <Compile Include="Domain\HR\Employees\Skills\Events\Removed\EmployeeSkillDetailsRemovedEventFixture.cs" />
+    <Compile Include="Domain\HR\Employees\Skills\Events\Removed\EmployeeSkillDetailsRemovedEventSpecification.cs" />
+    <Compile Include="Domain\HR\Employees\Skills\Events\Removed\Removing_an_employee_skill_details.cs" />
+    <Compile Include="Domain\HR\Employees\Skills\Events\Reordered\EmployeeSkillReorderedEventFixture.cs" />
+    <Compile Include="Domain\HR\Employees\Skills\Events\Reordered\EmployeeSkillReorderedEventSpecification.cs" />
+    <Compile Include="Domain\HR\Employees\Skills\Events\Reordered\Reordering_an_employee_skill.cs" />
+    <Compile Include="Domain\HR\Employees\Skills\Fields\skill\Skill_is_audited_in_the_skill_details_audit_record.cs" />
+    <Compile Include="Helpers\Domain\HR\Employees\DependencyConfiguration.cs" />
+    <Compile Include="Helpers\Domain\HR\Employees\FakeEmployeeRepository.cs" />
+    <Compile Include="Helpers\SpecificationTemplates\Base\AuditSpecification.cs" />
+    <Compile Include="Infrastructure\AuditUnitTestDependencyConfiguration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.CodeStrutures\WorkSuite.Library.CodeStrutures.csproj">
+      <Project>{249BE708-3014-4584-9E14-CB087E54916E}</Project>
+      <Name>WorkSuite.Library.CodeStrutures</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.DomainTypes\WorkSuite.Library.DomainTypes.csproj">
+      <Project>{538C6F62-B398-41F1-917C-10659FDF6C78}</Project>
+      <Name>WorkSuite.Library.DomainTypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.Ninject\WorkSuite.Library.Ninject.csproj">
+      <Project>{FA9854F9-6908-483A-AE63-9354249E74BC}</Project>
+      <Name>WorkSuite.Library.Ninject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.Persistence\WorkSuite.Library.Persistence.csproj">
+      <Project>{C55F23BE-BC7A-4F70-81D3-AF5D645FE831}</Project>
+      <Name>WorkSuite.Library.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.Service.Specification\WorkSuite.Library.Service.Specification.csproj">
+      <Project>{E6053BB8-D527-4524-93DF-19FE290CF90E}</Project>
+      <Name>WorkSuite.Library.Service.Specification</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Core\src\Worksuite.Core\Worksuite.Core.csproj">
+      <Project>{1df54fed-2bc7-4317-b32e-53135723b267}</Project>
+      <Name>Worksuite.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\HR\src\Persistence\HR.Persistence.csproj">
+      <Project>{30E54F69-6055-4747-AFD7-D85E7C7F55A0}</Project>
+      <Name>HR.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\HR\src\Services\HR.Services.csproj">
+      <Project>{3D42E5CB-8885-42A6-A018-1C0F1D369123}</Project>
+      <Name>HR.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Domain\Audit.Domain.csproj">
+      <Project>{007077B1-606F-421D-91A3-07E9214571DD}</Project>
+      <Name>Audit.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Persistence\Audit.Persistence.csproj">
+      <Project>{BAE5C69D-879F-4C0B-B615-B600E5266B74}</Project>
+      <Name>Audit.Persistence</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

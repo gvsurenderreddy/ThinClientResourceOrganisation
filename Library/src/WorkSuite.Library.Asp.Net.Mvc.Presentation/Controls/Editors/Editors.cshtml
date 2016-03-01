@@ -1,0 +1,34 @@
+﻿@* Generator : MvcHelper GeneratePrettyNames : true *@
+
+@using Controls.Editors
+@using Controls.ViewElements
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.Editors
+
+@* Fallback - if we have a AReport type that we do not have an edit control for
+*@
+@helper For( IsAViewElement element ) {
+    
+    @ViewElement.Unknown(  )
+}
+
+
+@* Editor for a report
+*@
+@helper For( Editor view_model ){
+    var has_description = !string.IsNullOrWhiteSpace(@view_model.description);
+    <form   
+        data-component="editor"      
+        id="@view_model.id"
+        class="editor"
+          data-type="@view_model.data_type">
+          
+        <fieldset>
+            <legend class="editor-title">@view_model.title</legend>
+            @if (has_description)
+            {<div class="Report_Instructions">@view_model.description</div> }
+            @EditorFields.For( view_model.fields )
+            @EditorActions.For( view_model.actions, view_model.data_type )
+        </fieldset>
+    </form>        
+}

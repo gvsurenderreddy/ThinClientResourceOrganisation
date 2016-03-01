@@ -1,0 +1,874 @@
+﻿// ---------- EDITOR
+.hidden {
+	display: none !important;
+}
+
+// FORM WRAPPER
+.editor {
+	//clear:both;
+	margin:0 $layoutgrid_page_gutter $layoutgrid_lineheight $layoutgrid_page_gutter;
+	border: solid 1px $editor_border_colour;
+	padding: $layoutgrid_lineheight 0 0 0;
+	border: solid 1px $editor_border_colour;
+	@include editor;
+}
+
+.report-wrapper .editor,
+.shift-calendars-lister .editor {
+	margin:0;
+}
+
+.report-wrapper .editor:first-child {
+	border: solid 1px $editor_border_colour;
+}
+
+// LEGEND
+.editor-title {
+	@include layoutgrid_span12;
+	padding-bottom: $layoutgrid_lineheight;
+	border: 0;
+    line-height: 24px;
+	@include editor_legend;
+	@include respond-to(tablet) {
+		@include layoutgrid_span8_offset4;
+		padding-bottom: $layoutgrid_lineheight;
+	}
+}
+
+.report-wrapper .editor-title {
+		@include editor_sublegend;
+}
+
+// INSTRUCTIONS
+.Report_Instructions {
+	clear: left;
+	font-size: 10pt;
+	padding: 0 0 12px $layoutgrid_column_gutter;
+	@include respond-to(tablet) {
+		margin:0 $layoutgrid_column_gutter 0 $layoutgrid_span4;
+		clear: left;
+	}
+}
+
+// CONTROL WRAPPER
+.editor-controlset {
+	clear:both;
+	margin: 0;
+	//padding-top:$layoutgrid_lineheight*.5;
+	position:relative;
+	//border-top:solid 1px $editor_border_colour;
+	@include respond-to(tablet) {
+		//border-top:solid 1px $editor_border_colour;
+	}
+	@include respond-to(desktop) {
+		//border-top:0;
+	}
+}
+
+.editor-controlset:first-child {
+	border-top:0;
+}
+
+// LABLES
+.editor-label {
+	display: inline;
+	float: left;
+	padding: 0 0 $layoutgrid_lineheight*.25 $layoutgrid_column_gutter;
+	@include editor_labels;
+	@include respond-to(tablet) {
+		width: $layoutgrid_span4 - ($layoutgrid_column_gutter*4); // GAP REQUIRED FOR HELP;
+		clear:both;
+	}
+	@include respond-to(desktop) {
+		clear:left;
+		text-align: right;
+		@include layoutgrid_span4;
+		padding-top: $layoutgrid_lineheight*.5;
+	}
+}
+
+// HIDE LABLES FROM ADDRESS
+#line1-title, 
+#line2-title, 
+#line3-title,
+.report #county-title,
+.report #country-title {
+	text-indent: 200%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+// REQUIRED
+.editor-optreq  {
+	@include subtext;
+	color: $warningcolour_dark;
+	@include respond-to(tablet) {
+		clear: left;
+		display: block;
+	}
+}
+
+// ---------- DRAG AND DROP
+.dragged {
+	position: absolute;
+	opacity: 0.8;
+	z-index: 2000;
+}
+
+.placeholder {
+	position: relative;
+	background-color: #cccccc !important;
+	border: solid 1px #999999;
+	-moz-box-shadow: inset 0 0 10px #999999;
+	-webkit-box-shadow: inset 0 0 10px #999999;
+	box-shadow: inset 0 0 10px #999999;
+	list-style-type: none;
+	height:150px;
+}
+        
+#drag-address {
+	cursor: move !important;
+}
+		
+.dragged_editor_mode{
+	background-color: #f5c06b !important;
+	border: solid 1px #999999 !important;
+}
+
+.dragged_editor_mode legend{
+	@include editor_sublegend;
+}
+
+// ---------- FORM FIELDS
+// FAKE CONTROL BOX WRAPPER FOR ITEMS WITHOUT WIDTH SUCH AS RADIOS
+.editor-input-checkbox-wrapper,
+.editor-input-radio-wrapper,
+.editor-input-date-wrapper,
+.editor-input-splitbutton-wrapper,
+.editor-text,
+.editor-picture-wrapper,
+.editor-input-duration-wrapper,
+.editor-input-time-wrapper,
+.ColourPicker-Wrapper,
+.editor-colour-wrapper {
+	margin: 0 0 $layoutgrid_lineheight $layoutgrid_column_gutter;
+	border: 0;
+	padding: 0;
+	clear: both;
+	@include respond-to(tablet) {
+		clear: none;
+		float: right;
+		text-align: left;
+		width: ($layoutgrid_span4 * 2) - ($layoutgrid_column_gutter*2) ;
+		margin: 0 $layoutgrid_column_gutter $layoutgrid_lineheight 0;
+		clear: none;
+	}
+	@include respond-to(desktop) {
+		float: left;
+		width: $layoutgrid_span4 - ($layoutgrid_column_gutter*2) ;
+		margin: 0 0 $layoutgrid_lineheight $layoutgrid_column_gutter;
+	}
+}
+
+.editor-input-checkbox-wrapper,
+.editor-input-radio-wrapper {
+	padding-bottom: 0;
+	@include respond-to(desktop) {
+		padding: 6px 0 12px;
+	}
+}
+
+// STYLE FOR INPUTS WITHOUT LABLES
+.editor-picture-wrapper {
+	margin-left: $layoutgrid_span4+$layoutgrid_column_gutter;
+	both:left;
+}
+
+// SIMPLE TEXT, NO CONTROL
+.editor-text {
+	@include editor_text;
+	margin-top: 6px;
+}
+
+// SIMPLE TEXT, NO CONTROL
+.editor-text div{
+	margin-bottom: 6px;
+}
+
+
+// TEXT BOXES
+.editor-inputtext input {
+	width: $layoutgrid_span12 - ($layoutgrid_column_gutter*2);
+	margin: 0 $layoutgrid_column_gutter $layoutgrid_lineheight $layoutgrid_column_gutter;
+	padding: 3px;
+	clear:both;
+	@include border_box_sizing;
+	@include editor_fields;
+	@include respond-to(tablet) {
+		float:right;
+		width: ($layoutgrid_span4 * 2) - ($layoutgrid_column_gutter*2);
+		margin:0 $layoutgrid_column_gutter $layoutgrid_lineheight 0;
+		clear:none;
+	}
+	@include respond-to(desktop) {
+		float:left;
+		width: $layoutgrid_span4 - ($layoutgrid_column_gutter*2);
+		margin:0 0 $layoutgrid_lineheight $layoutgrid_column_gutter;
+	}
+}
+
+.editor-inputtext .input-3-characters {
+	width: 10%;
+	margin-right: ($layoutgrid_span4 - ($layoutgrid_column_gutter*2))-10%;
+}
+
+// DROPDOWN MENUS
+.editor-select select {
+	width: $layoutgrid_span12 - ($layoutgrid_column_gutter*2);
+	margin: 0 $layoutgrid_column_gutter $layoutgrid_lineheight $layoutgrid_column_gutter;
+	padding: 2px;
+	@include border_box_sizing;
+	@include editor_fields;
+	@include respond-to(tablet) {
+		float:right;
+		width: ($layoutgrid_span4 * 2) - ($layoutgrid_column_gutter*2) ;
+		margin:0 $layoutgrid_column_gutter $layoutgrid_lineheight 0;
+	}
+	@include respond-to(desktop) {
+		float:left;
+		width: $layoutgrid_span4 - ($layoutgrid_column_gutter*2) ;
+		margin:0 0 $layoutgrid_lineheight $layoutgrid_column_gutter;
+	}
+}
+
+.editor-select select option {
+    color: $calltoactioncolour_dark;
+}
+
+// TEXT AREA
+.editor-textarea textarea {
+	width: $layoutgrid_span12 - ($layoutgrid_column_gutter*2);
+	margin: 0 $layoutgrid_column_gutter  $layoutgrid_column_gutter $layoutgrid_column_gutter;
+	padding: 3px;
+	@include border_box_sizing;
+	@include editor_fields;
+	@include editor_textarea;
+	@media only screen and (min-width: 768px) {
+		float: right;
+		width: ($layoutgrid-span4 * 2) - ($layoutgrid_column_gutter*2) ;
+		margin:0 $layoutgrid_column_gutter $layoutgrid_lineheight 0;
+		clear: none; 
+	 }
+	@media only screen and (min-width: 960px) {
+		float: left;
+		width: $layoutgrid-span4 - ($layoutgrid_column_gutter*2) ;
+		margin:0 0 $layoutgrid_lineheight $layoutgrid_column_gutter; 
+	} 
+}
+
+// DATE OF BIRTH
+.editor-input-daydate,
+.editor-input-monthdate,
+.editor-input-yeardate {
+width: 31px;
+margin: 0 ($layoutgrid_column_gutter*.25) 0 0;
+padding: $layoutgrid_lineheight*.25;
+float: left;
+padding: 3px;
+@include border_box_sizing;
+@include editor_fields;
+}
+.editor-input-date-wrapper span {
+display:block;
+float:left;
+margin:6px 3px 0 3px;
+}
+.editor-input-yeardate {
+width: 50px;
+}
+
+
+// FILE UPLOAD
+.editor-fileupload input  {
+	width: $layoutgrid-span12 - ($layoutgrid_column_gutter*2);
+	margin: 0 $layoutgrid_column_gutter  $layoutgrid_column_gutter $layoutgrid_column_gutter;
+	padding: 3px;
+	@include border_box_sizing;
+	@include editor_fields;
+	@media only screen and (min-width: 768px) {
+		float: right;
+		width: ($layoutgrid-span4 * 2) - ($layoutgrid_column_gutter*2) ;
+		margin:0 $layoutgrid_column_gutter $layoutgrid_lineheight 0;
+		clear: none; 
+	}
+	@media only screen and (min-width: 960px) {
+		float: left;
+		width: $layoutgrid-span4 - ($layoutgrid_column_gutter*2) ;
+		margin:0 0 $layoutgrid_lineheight $layoutgrid_column_gutter; 
+	} 
+}
+
+// SPLIT BUTTON
+.editor-input-splitbutton, .editor-input-splitbutton ul {
+	list-style: none;
+	margin-bottom: 0 !important;
+	padding: 0 !important;
+	position: relative;
+	background: none !important;
+	border: 0 !important;
+}
+
+.editor-input-splitbutton li {
+	position: relative; 
+	float: left; 
+	zoom: 1;
+}
+
+.editor-input-splitbutton.primary-action li a {
+	display: block; 
+	text-decoration: none;
+	@include button_primary;
+	float: none;
+	margin: 0;
+}
+
+.editor-input-splitbutton.secondary-action li a {
+	display: block; 
+	text-decoration: none;
+	@include button_secondary;
+	float: none;
+	margin: 0;
+}
+
+.editor-input-splitbutton.primary-action li a:after {
+	content:"";
+	width: 0;
+	height: 0;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 8px solid #ffffff;
+	position: relative;
+	top: 12px;
+	margin-left: 6px;
+}
+
+.editor-input-splitbutton.secondary-action li a:after {
+	content:"";
+	width: 0;
+	height: 0;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 8px solid #555555;
+	position: relative;
+	top: 12px;
+	margin-left: 6px;
+}
+
+// DROPDOWN MENU
+.editor-input-splitbutton li ul { 
+	display: none;
+	position: absolute;
+	width: 150px; 
+	border: 1px solid #aaaaaa !important;
+	z-index:10000;
+}
+
+.editor-input-splitbutton li ul li { 
+	border-top: 1px solid #cccccc; 
+	float: none; 
+}
+
+.editor-input-splitbutton li ul li:first-child { 
+	border-top: 0;
+}
+
+.editor-input-splitbutton li ul li a { 
+   	width: 100%; 
+   	display: block; 
+   	color: #000000 !important;
+	padding: 5px;
+	text-decoration: none;
+	background-image: none !important;
+	background-color: #ffffff !important;
+	border: 0 !important;
+	text-shadow: none !important;
+} 
+
+.editor-input-splitbutton li ul li a:after {
+	border: 0 !important;
+}
+
+.editor-input-splitbutton.primary-action li ul li a:hover { 
+	background-color: #746abe !important;
+	color: #ffffff !important;
+	border:0 !important;
+}
+
+.editor-input-splitbutton.secondary-action li ul li a:hover { 
+	background-color: #cccccc !important;
+	color: #000000 !important;
+	border:0 !important;
+}
+
+.editor-input-splitbutton ul ul { 
+   	left: 100%; 
+   	top: 0; 
+}
+
+.editor-input-splitbutton li:hover > ul { 
+	display:block;
+}
+
+// IMAGE UPLOAD
+.editor-imageupload input {
+	width: $layoutgrid_span12 - ($layoutgrid_column_gutter*2);
+	margin: 0 $layoutgrid_column_gutter  $layoutgrid_column_gutter $layoutgrid_column_gutter;
+	padding: 3px;
+	@include border_box_sizing;
+	@include editor_fields;
+	@media only screen and (min-width: 768px) {
+		float: right;
+		width: ($layoutgrid_span4 * 2) - ($layoutgrid_column_gutter*2) ;
+		margin:0 $layoutgrid_column_gutter $layoutgrid_lineheight 0;
+		clear: none; 
+	}
+	@media only screen and (min-width: 960px) {
+		float: left;
+		width: $layoutgrid_span4 - ($layoutgrid_column_gutter*2) ;
+		margin:0 0 $layoutgrid_lineheight $layoutgrid_column_gutter; 
+	} 
+}
+
+.editor-imageupload img {
+	margin: 0 0 $layoutgrid_column_gutter 0;
+	clear:left;
+	@include border_box_sizing;
+	@include editor_fields;
+	@media only screen and (min-width: 768px) {
+		margin:0 0 $layoutgrid_lineheight 0;
+		clear: none; 
+	}
+	@media only screen and (min-width: 960px) {
+		margin:0 0 $layoutgrid_lineheight 0; 
+	} 
+}
+
+.editor-imageupload img {
+	color: #000000;
+	display:block;
+	clear:left;
+}
+
+.editor-imageupload a:link {
+	display:block;
+	clear:left;
+	@include editor_link;
+}
+
+.editor-imageupload a:hover {
+	@include editor_link_hover;
+}
+
+.editor-imageupload a:visited {
+	@include editor_link;
+}
+
+// TIME
+.editor-input-time-hours {
+	width: 30px;
+	margin: 0;
+	padding: 3px;
+	@include border_box_sizing;
+	@include editor_fields;
+}
+
+.editor-input-time-wrapper span:after {
+	content: ":";
+}
+
+.editor-input-time-minutes {
+	width: 30px;
+	margin: 0 ($layoutgrid_column_gutter*.25) 0 0;
+	padding: 2px;
+	@include border_box_sizing;
+	@include editor_fields;
+}
+
+.editor-input-duration-hours {
+	width: 30px;
+	margin: 0;
+	padding: 3px;
+	@include border_box_sizing;
+	@include editor_fields;
+}
+
+.editor-input-duration-minutes-label:after {
+	content: "Minutes";
+}
+
+.editor-input-duration-hours-label:after {
+	content: "Hours";
+}
+
+.editor-input-duration-minutes {
+	width: 30px;
+	margin: 0 0 0 6px;
+	padding: 2px;
+	@include border_box_sizing;
+	@include editor_fields;
+}
+
+// COLOUR PICKER
+.ColourPicker-Wrapper {
+	position: relative;
+}
+
+// STATIC COLOUR BLOCK
+.editor-colour-wrapper {
+	padding-bottom: 0;
+	margin-top: 3px;
+	margin-bottom: 9px;
+}
+
+.editor-colour-block {
+	width: 16px;
+	height: 16px;
+	border: solid 1px #555555;
+}
+
+// BUTTON
+.editor-submit {
+	padding: 0;
+	margin:0 0 0 $layoutgrid_page_gutter;
+	float: left;
+	@include respond-to(tablet) {
+		margin:0 0 $layoutgrid_lineheight ($layoutgrid_span4+$layoutgrid_column_gutter);
+	}
+}
+
+// PRIMARY BUTTON
+.primary-action {
+	float: left;
+	@include button_primary;
+	margin: 0 6px $layoutgrid_lineheight 0;
+}
+
+.primary-action:hover,
+.primary-action:focus {
+	@include button_primary_hover;
+}
+
+.primary-action[disabled=disabled] {
+	@include button_primary_disabled;
+}
+
+// SECONDARY BUTTON
+.secondary-action {
+	float: left;
+	@include button_secondary;
+	margin: 0 6px $layoutgrid_lineheight 0;
+}
+
+.secondary-action:hover,
+.secondary-action:focus {
+	@include button_secondary_hover;
+}
+
+.secondary-action[disabled=disabled] {
+	@include button_secondary_disabled;
+}
+
+/*
+// BUTTON ICONS
+.pallet .remove {
+	position: relative;
+	padding-right: 24px !important;
+	display:inline-block;
+	color: #000000;
+}
+
+.pallet .remove:before {
+	border-radius: 50%;
+	width: 15px;
+	height: 15px;
+	background-color: #990000;
+	content: "";
+	display:inline-block;
+	position: absolute;
+	right: 6px;
+	top:4px;
+	box-shadow: 0 1px 0 #000000 inset, 0 1px 0 #ffffff;
+}
+
+.pallet .remove:after {
+	content: "x";
+	color: #ffffff;
+	display:inline-block;
+	top:3px;
+	position: absolute;
+	right: 11px;
+	font-size:14pt;
+	font-family: calibri;
+}
+
+.save-action {
+	position: relative;
+}
+
+.save-action:before {
+	border-radius: 50%;
+	width: 16px;
+	height: 16px;
+	background-color: #5347AE;
+	content: "";
+	display:inline-block;
+	float:right;
+	margin-left: 6px;
+	box-shadow: 0 1px 0 #302977 inset, 0 1px 0 #6761A8;
+}
+
+.save-action:after {
+	content: "✓";
+	color: #ffffff;
+	display:inline-block;
+	top:3px;
+	position: absolute;
+	right: 9px;
+	font-size:10pt;
+	font-family: calibri;
+}
+
+.pallet .edit {
+	position: relative;
+	padding-right:20px;
+	display:inline-block;
+	color: #ffffff;
+}
+
+.pallet .edit:before {
+	width: 5px;
+	height: 5px;
+	background-color: #ffffff;
+	content: "";
+    transform: skew(-20deg, -20deg);
+	display:inline-block;
+	position: absolute;
+	right: 12px;
+	top:12px;
+}
+
+.pallet .edit:after {
+	height: 11px;
+	background-color: #ffffff;
+	content: "";
+	margin-left: 12px;
+    transform: rotate(45deg);
+    width: 4px;
+    border-bottom: 1px solid #5347AE;
+	display:inline-block;
+	top: 4px;
+	right: 8px;
+	position: absolute;
+}
+
+.pallet .edit:hover:before, 
+.pallet .edit:hover:after,
+.pallet .edit:before, 
+.pallet .edit:after  {
+	background-color: #ffffff;
+}
+
+.cancel-action {
+	position: relative;
+}
+
+.cancel-action:before {
+	border-radius: 50%;
+	width: 16px;
+	height: 16px;
+	background-color: #aaaaaa;
+	content: "";
+	display:inline-block;
+	float:right;
+	margin-left: 6px;
+	box-shadow: 0 1px 0 #333333 inset, 0 1px 0 #ffffff;
+}
+
+.cancel-action:after {
+	content: "x";
+	color: #555555;
+	display:inline-block;
+	top:0px;
+	position: absolute;
+	right: 9px;
+	font-size:14pt;
+	font-family: calibri;
+}
+*/
+
+// --------- FIELD LEVEL ERRORS
+.editor-label-errorwrapper {
+	@include layoutgrid_span12;
+	background: url(../Images/error-fieldindicator-pointdown.png) 10px bottom no-repeat;
+	padding-bottom: 8px;
+	padding-top: 8px;
+	@include respond-to(tablet) {
+		@include layoutgrid_span8_offset4;
+		padding-bottom: 8px;
+	}
+	@include respond-to(desktop) {
+		float: right;
+		margin: 0 0 6px 0;
+		@include layoutgrid_span4;
+		background: url(../Images/error-fieldindicator-pointleft.png) left $layoutgrid_lineheight*.5 no-repeat;
+		padding-left: 8px;
+	}
+}
+
+.editor-label-error {
+	display: block;
+	padding: $layoutgrid_lineheight*.5 $layoutgrid_lineheight*.5 $layoutgrid_lineheight*.5 28px;
+	background: url(../Images/error-background.png) $layoutgrid_lineheight*.5 $layoutgrid_lineheight*.25 no-repeat;
+	background-color: $warningcolour_mid;
+	@include round_all_corners;
+	@include titletext;
+	color: #FFFFFF;
+	font-size: 10pt;
+}
+
+// --------- FIELD LEVEL HELP
+.editor-label-help-wrapper {
+	@include layoutgrid_span12;
+	background: url(../Images/help-fieldindicator-pointdown.png) 10px bottom no-repeat;
+	padding-bottom: 8px;
+	padding-top: 8px;
+	@include respond-to(tablet) {
+		@include layoutgrid_span8_offset4;
+		padding-bottom: 8px;
+	}
+	@include respond-to(desktop) {
+		float: right;
+		margin: 0;
+		@include layoutgrid_span4;
+		background: url(../Images/help-fieldindicator-pointleft.png) left $layoutgrid_lineheight*.5 no-repeat;
+		padding-left: 8px;
+	}
+}
+
+.editor-label-help {
+	display: block;
+	padding: $layoutgrid_lineheight*.5 $layoutgrid_lineheight*.5 $layoutgrid_lineheight*.5 28px;
+	background: url(../Images/help-background.png) $layoutgrid_lineheight*.5 $layoutgrid_lineheight*.25 no-repeat;
+	@include help_style;
+	color: #FFFFFF;
+	font-size: 10pt;
+		@include respond-to(desktop) {
+  -webkit-box-shadow: 3px 3px 2px 0px rgba(50,30,0,.5);
+     -moz-box-shadow: 3px 3px 2px 0px rgba(50,30,0,.5);
+          box-shadow: 3px 3px 2px 0px rgba(50,30,0,.5);
+		  }
+}
+
+// --------- FIELD LEVEL HOVER HELP
+.editor-controlset:hover {
+	z-index:99999;
+}
+
+.editor-label-hoverhelp {
+	margin: -8px 0 0 0;
+	padding: 4px 0 0 0;
+	display:inline-block;
+	@include respond-to(tablet) {
+		margin: -4px 0 0 0;
+	}
+	@include respond-to(desktop) {
+		margin:3px $layoutgrid_column_gutter 0 $layoutgrid_column_gutter;
+		padding:0;
+	}
+}
+
+.editor-label-hoverhelp .editor-label-hoverhelp-icon {
+	background: url("../Images/help-hoverhelp-icon.png") no-repeat;
+	display: inline-block;
+	width: 16px;
+	height: 20px;
+	cursor: help;
+	margin:0 0 0 3px;
+}
+
+.editor-label-hoverhelp:hover {
+	display: block;
+	padding: $layoutgrid_lineheight*.3 $layoutgrid_lineheight*.5 $layoutgrid_lineheight*.3 0;
+	margin:0;
+	@include respond-to(desktop) {
+		padding:0;
+	}
+}
+
+.editor-label-hoverhelp .editor-label-help-wrapper {
+	display: none;
+}
+
+.editor-label-hoverhelp:hover .editor-label-help-wrapper {
+	display: block;
+	@include respond-to(desktop) {
+		position:absolute;
+		right:0;
+	}
+}
+
+.editor-label-hoverhelp:hover .editor-label-hoverhelp-icon {
+	display: none; 
+}
+
+// ---------- STATUS STYLES
+
+// ERRORS
+.editor-input-error {
+	border: 1px solid $control_border_colour_warning !important;
+}
+
+.editor-input-error[type=checkbox] {
+	outline: 1px solid $control_border_colour_warning;
+}
+
+.editor-input-error[type=radio] {
+	border: 0;
+}
+
+textarea.editor-input-error {
+	border: 1px solid $control_border_colour_required;
+}
+
+// REQUIRED
+input.editor-input-required,
+select.editor-input-required {
+	border: 1px solid $control_border_colour_required;
+}
+
+input.editor-input-required[type=checkbox] {
+	outline: 1px solid $control_border_colour_required;
+}
+
+input.editor-input-required[type=radio] {
+	border: 0;
+}
+
+textarea.editor-input-required {
+	border: 1px solid $control_border_colour_required;
+}
+
+// FOCUS
+input.editor-input-focus,
+select.editor-input-focus,
+textarea.editor-input-focus {
+	border: 1px solid $control_border_colour_selected;
+}
+
+input.editor-input-focus[type=checkbox] {
+	outline: 1px solid $control_border_colour_selected;
+}
+
+input.editor-input-focus[type=radio] {
+	border: 0;
+}

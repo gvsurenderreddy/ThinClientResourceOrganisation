@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9F56A494-078D-4838-A54C-C1D7B4F9E5F4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WorkSuite.Library.Asp.Net.Mvc.Server.Tests</RootNamespace>
+    <AssemblyName>WorkSuite.Library.Asp.Net.Mvc.Server.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentAssertions">
+      <HintPath>..\..\..\packages\FluentAssertions.3.0.107\lib\net45\FluentAssertions.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentAssertions.Core">
+      <HintPath>..\..\..\packages\FluentAssertions.3.0.107\lib\net45\FluentAssertions.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Humanizer, Version=1.28.0.0, Culture=neutral, PublicKeyToken=979442b78dfc278e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Humanizer.1.28.0\lib\portable-win+net40+sl50+wp8+wpa81\Humanizer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks, Version=3.6.0.0, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Microsoft.AspNet.Mvc.5.2.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Microsoft.AspNet.Razor.3.2.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="DateRangeBars\StaticallyDefined\Features\date_range_bar_will.cs" />
+    <Compile Include="DateRangePalettes\StaticallyDefined\Actions\Fields\Classes\Can_be_defined_from_the_model.cs" />
+    <Compile Include="DateRangePalettes\StaticallyDefined\Actions\Fields\Classes\Can_be_defined_statically.cs" />
+    <Compile Include="DateRangePalettes\StaticallyDefined\Actions\Fields\Name\Action_name_is_defined_by_the_action_definition.cs" />
+    <Compile Include="DateRangePalettes\StaticallyDefined\Actions\Fields\Title\Can_be_defined_from_the_model.cs" />
+    <Compile Include="DateRangePalettes\StaticallyDefined\Actions\Fields\Title\Title_can_be_defined_statically.cs" />
+    <Compile Include="DateRangePalettes\StaticallyDefined\Feature\date_range_palette_will.cs" />
+    <Compile Include="Framework\Page\Metadata\Model\IPageModelMetadataBuilderFactory_will.cs" />
+    <Compile Include="Framework\Page\Metadata\Model\IPageModelMetadataRepository_will.cs" />
+    <Compile Include="Framework\Page\Metadata\Model\IPageModelMetadataBuilder_will.cs" />
+    <Compile Include="ContentHeaders\DynamicHeaders\StaticallyDefined\Actions\Fields\Classes\Can_be_defined_from_the_model.cs" />
+    <Compile Include="ContentHeaders\DynamicHeaders\StaticallyDefined\Actions\Fields\Classes\Can_be_defined_statically.cs" />
+    <Compile Include="ContentHeaders\DynamicHeaders\StaticallyDefined\Actions\Fields\Name\Action_name_is_defined_by_the_action_definition.cs" />
+    <Compile Include="ContentHeaders\DynamicHeaders\StaticallyDefined\Actions\Fields\Title\Can_be_defined_from_the_model.cs" />
+    <Compile Include="ContentHeaders\DynamicHeaders\StaticallyDefined\Actions\Fields\Title\Title_can_be_defined_statically.cs" />
+    <Compile Include="ContentHeaders\DynamicHeaders\StaticallyDefined\Actions\Fields\Url\Url_can_be_defined_from_the_model.cs" />
+    <Compile Include="ContentHeaders\DynamicHeaders\StaticallyDefined\Actions\Fields\Url\Url_can_be_defined_statically.cs" />
+    <Compile Include="ContentHeaders\DynamicHeaders\StaticallyDefined\Fields\Classes\Classes_can_be_defined_from_the_model.cs" />
+    <Compile Include="ContentHeaders\DynamicHeaders\StaticallyDefined\Fields\Classes\Classes_can_be_defined_statically.cs" />
+    <Compile Include="ContentHeaders\DynamicHeaders\StaticallyDefined\Fields\Title\Title_can_be_defined_from_the_model.cs" />
+    <Compile Include="ContentHeaders\DynamicHeaders\StaticallyDefined\Fields\Title\Title_can_be_defined_statically.cs" />
+    <Compile Include="ContentHeaders\DynamicHeaders\StaticallyDefined\Helpers\AModel.cs" />
+    <Compile Include="ContentHeaders\DynamicHeaders\StaticallyDefined\Helpers\DynamicContentHeaderStaticDefinitionHelper.cs" />
+    <Compile Include="DateRangePalettes\StaticallyDefined\Fields\StartDate\start_date_can_be_defined_from_the_model.cs" />
+    <Compile Include="DateRangePalettes\StaticallyDefined\Fields\StartDate\start_date_can_be_defined_statically.cs" />
+    <Compile Include="DateRangePalettes\StaticallyDefined\Helpers\AModel.cs" />
+    <Compile Include="DateRangePalettes\StaticallyDefined\Helpers\DynamicDateRangePaletteStaticDefinitionHelper.cs" />
+    <Compile Include="DateRangeBars\StaticallyDefined\Fields\StartDate\start_date_can_be_defined_from_the_model.cs" />
+    <Compile Include="DateRangeBars\StaticallyDefined\Fields\StartDate\start_date_can_be_defined_statically.cs" />
+    <Compile Include="DateRangeBars\StaticallyDefined\Helpers\AModel.cs" />
+    <Compile Include="DateRangeBars\StaticallyDefined\Helpers\DynamicDateRangeBarStaticDefinitionHelper.cs" />
+    <Compile Include="Framework\ViewModels\DetailsLists\DetailsListBuilder_will.cs" />
+    <Compile Include="Framework\ViewModels\DetailsLists\DetailsListMetadataBuilder_will.cs" />
+    <Compile Include="Framework\ViewModels\DetailsLists\DetailsListModel.cs" />
+    <Compile Include="Framework\ViewModels\DetailsLists\DetalisListMetadataRepository_will.cs" />
+    <Compile Include="Framework\ViewModels\Editors\AnEditorModel.cs" />
+    <Compile Include="Framework\ViewModels\Editors\EditorFieldMetadataBuilder_will.cs" />
+    <Compile Include="Framework\ViewModels\Editors\EditorFieldMetadataRepository_will.cs" />
+    <Compile Include="Framework\ViewModels\Editors\EditorModelMetadataBuilder_will.cs" />
+    <Compile Include="Framework\ViewModels\Reports\ReportBuilder_will.cs" />
+    <Compile Include="Framework\ViewModels\Reports\ReportModelMetadataBuilder_will.cs" />
+    <Compile Include="Framework\ViewModels\Reports\ReportFieldMetadataBuilder_will.cs" />
+    <Compile Include="Framework\ViewModels\Editors\EditorBuilder_will.cs" />
+    <Compile Include="Framework\ViewModels\SectionedTileGrids\StaticallyDefined\Builder\Multiple_sections_can_be_added.cs" />
+    <Compile Include="Framework\ViewModels\SectionedTileGrids\StaticallyDefined\Fields\classes\I_can_add_classes_via_the_metadata.cs" />
+    <Compile Include="Framework\ViewModels\SectionedTileGrids\StaticallyDefined\Helpers\StaticSectionedTileGridHelper.cs" />
+    <Compile Include="Infrastrcuture\RouteConfigurations\build_mvc_route_from_route_defintion_will.cs" />
+    <Compile Include="ShiftCalendarsListers\DynamicHeaders\StaticallyDefined\Actions\Fields\Classes\Action_class_can_be_defined.cs" />
+    <Compile Include="ShiftCalendarsListers\DynamicHeaders\StaticallyDefined\Actions\Fields\Classes\Action_class_can_be_defined_statically.cs" />
+    <Compile Include="ShiftCalendarsListers\DynamicHeaders\StaticallyDefined\Actions\Fields\Name\Action_name_can_be_defined.cs" />
+    <Compile Include="ShiftCalendarsListers\DynamicHeaders\StaticallyDefined\Actions\Fields\Title\Action_title_can_be_defined.cs" />
+    <Compile Include="ShiftCalendarsListers\DynamicHeaders\StaticallyDefined\Actions\Fields\Title\Action_title_can_be_defined_statically.cs" />
+    <Compile Include="ShiftCalendarsListers\DynamicHeaders\StaticallyDefined\Actions\Fields\Url\Action_url_can_be_defined.cs" />
+    <Compile Include="ShiftCalendarsListers\DynamicHeaders\StaticallyDefined\Actions\Fields\Url\Action_url_can_be_defined_statically.cs" />
+    <Compile Include="ShiftCalendarsListers\DynamicHeaders\StaticallyDefined\Fields\Classes\Class_can_be_defined.cs" />
+    <Compile Include="ShiftCalendarsListers\DynamicHeaders\StaticallyDefined\Fields\Classes\Class_can_be_defined_statically.cs" />
+    <Compile Include="ShiftCalendarsListers\DynamicHeaders\StaticallyDefined\Fields\ShiftCalendars\Shift_calendars_are_defined_from_the_model.cs" />
+    <Compile Include="ShiftCalendarsListers\DynamicHeaders\StaticallyDefined\Fields\Title\Title_can_be_defined.cs" />
+    <Compile Include="ShiftCalendarsListers\DynamicHeaders\StaticallyDefined\Fields\Title\Title_can_be_defined_statically.cs" />
+    <Compile Include="ShiftCalendarsListers\DynamicHeaders\StaticallyDefined\Helpers\AModel.cs" />
+    <Compile Include="ShiftCalendarsListers\DynamicHeaders\StaticallyDefined\Helpers\DynamicShiftCalendarsListerStaticDefinitionHelper.cs" />
+    <Compile Include="ShiftCalendars\Dynamic\StaticallyDefined\Actions\Fields\Classes\Action_class_can_be_defined.cs" />
+    <Compile Include="ShiftCalendars\Dynamic\StaticallyDefined\Actions\Fields\Classes\Action_class_can_be_defined_statically.cs" />
+    <Compile Include="ShiftCalendars\Dynamic\StaticallyDefined\Actions\Fields\Name\Action_name_is_defined_by_the_action_definition.cs" />
+    <Compile Include="ShiftCalendars\Dynamic\StaticallyDefined\Actions\Fields\Title\Action_title_can_be_defined.cs" />
+    <Compile Include="ShiftCalendars\Dynamic\StaticallyDefined\Actions\Fields\Title\Action_title_can_be_defined_statically.cs" />
+    <Compile Include="ShiftCalendars\Dynamic\StaticallyDefined\Actions\Fields\Url\Action_url_can_be_defined.cs" />
+    <Compile Include="ShiftCalendars\Dynamic\StaticallyDefined\Actions\Fields\Url\Action_url_can_be_defined_statically.cs" />
+    <Compile Include="ShiftCalendars\Dynamic\StaticallyDefined\Fields\Classes\Class_can_be_defined.cs" />
+    <Compile Include="ShiftCalendars\Dynamic\StaticallyDefined\Fields\Classes\Class_can_be_defined_statically.cs" />
+    <Compile Include="ShiftCalendars\Dynamic\StaticallyDefined\Fields\StartDate\start_date_can_be_defined.cs" />
+    <Compile Include="ShiftCalendars\Dynamic\StaticallyDefined\Fields\ShiftPatterns\shift_patterns_can_be_built.cs" />
+    <Compile Include="ShiftCalendars\Dynamic\StaticallyDefined\Fields\Title\Title_can_be_defined.cs" />
+    <Compile Include="ShiftCalendars\Dynamic\StaticallyDefined\Fields\Title\Title_can_be_defined_statically.cs" />
+    <Compile Include="ShiftCalendars\Dynamic\StaticallyDefined\Helpers\AModel.cs" />
+    <Compile Include="ShiftCalendars\Dynamic\StaticallyDefined\Helpers\DynamicShiftCalendarStaticDefinitionHelper.cs" />
+    <Compile Include="Framework\ViewModels\TileGrids\StaticallyDefined\Fields\classes\I_can_add_classes_via_the_metadata.cs" />
+    <Compile Include="Framework\ViewModels\TileGrids\StaticallyDefined\Fields\Title\I_can_set_the_title_of_a_section_via_metadata.cs" />
+    <Compile Include="Framework\ViewModels\Tables\TableBuilder_will.cs" />
+    <Compile Include="Framework\ViewModels\TileGrids\StaticallyDefined\Builder\Allows_multiple_titles_to_be_added.cs" />
+    <Compile Include="Framework\ViewModels\TileGrids\StaticallyDefined\Helpers\StaticTileGridHelper.cs" />
+    <Compile Include="Framework\ViewModels\Tiles\DynamicTiles\StaticallyDefined\Fields\Classes\Classes_can_be_defined_from_the_model.cs" />
+    <Compile Include="Framework\ViewModels\Tiles\DynamicTiles\StaticallyDefined\Fields\Classes\Classes_can_be_defined_statically.cs" />
+    <Compile Include="Framework\ViewModels\Tiles\DynamicTiles\StaticallyDefined\Fields\Fields\Classes\Classes_can_be_defined_from_the_model.cs" />
+    <Compile Include="Framework\ViewModels\Tiles\DynamicTiles\StaticallyDefined\Fields\Fields\Classes\Classes_can_be_defined_statically.cs" />
+    <Compile Include="Framework\ViewModels\Tiles\DynamicTiles\StaticallyDefined\Fields\Fields\Fields_can_be_added_for_properties_of_the_model.cs" />
+    <Compile Include="Framework\ViewModels\Tiles\DynamicTiles\StaticallyDefined\Fields\Fields\Title\Title_can_be_defined_from_the_model.cs" />
+    <Compile Include="Framework\ViewModels\Tiles\DynamicTiles\StaticallyDefined\Fields\Fields\Title\Title_can_be_defined_statically.cs" />
+    <Compile Include="Framework\ViewModels\Tiles\DynamicTiles\StaticallyDefined\Fields\Title\Title_can_be_defined_statically.cs" />
+    <Compile Include="Framework\ViewModels\Tiles\DynamicTiles\StaticallyDefined\Fields\Title\Title_can_be_defined_from_the_model.cs" />
+    <Compile Include="Framework\ViewModels\Tiles\DynamicTiles\StaticallyDefined\Fields\url\Url_can_be_defined_statically.cs" />
+    <Compile Include="Framework\ViewModels\Tiles\DynamicTiles\StaticallyDefined\Fields\url\Url_can_be_defined_from_the_model.cs" />
+    <Compile Include="Framework\ViewModels\Tiles\DynamicTiles\StaticallyDefined\Helpers\AModel.cs" />
+    <Compile Include="Framework\ViewModels\Tiles\DynamicTiles\StaticallyDefined\Fields\Id\Id_can_be_defined_from_the_model.cs" />
+    <Compile Include="Framework\ViewModels\Tiles\DynamicTiles\StaticallyDefined\Fields\Id\Id_can_be_defined_statically.cs" />
+    <Compile Include="Framework\ViewModels\Tiles\DynamicTiles\StaticallyDefined\Helpers\DynamicTileStaticDefinitionHelper.cs" />
+    <Compile Include="Framework\ViewModels\Helpers\FakeRouteBuilder.cs" />
+    <Compile Include="Framework\ViewModels\Tiles\StaticTiles\StaticallyDefined\Builder\Creates_a_new_instance_on_build.cs" />
+    <Compile Include="Framework\ViewModels\Tiles\StaticTiles\StaticallyDefined\Fields\classes\I_can_add_classes_via_the_metadata.cs" />
+    <Compile Include="Framework\ViewModels\Tiles\StaticTiles\StaticallyDefined\Fields\Fields\Static_tiles_do_not_support_fields.cs" />
+    <Compile Include="Framework\ViewModels\Tiles\StaticTiles\StaticallyDefined\Helpers\StaticTileHelper.cs" />
+    <Compile Include="Framework\ViewModels\Tiles\StaticTiles\StaticallyDefined\Fields\Id\I_can_set_the_id_via_the_metadata.cs" />
+    <Compile Include="Framework\ViewModels\Tiles\StaticTiles\StaticallyDefined\Fields\Title\I_can_set_the_title_via_the_metadata.cs" />
+    <Compile Include="Framework\ViewModels\Tiles\StaticTiles\StaticallyDefined\Fields\url\I_can_set_the_url_via_the_metadata.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\WorkSuite.Library.Asp.Net.Mvc.Server\WorkSuite.Library.Asp.Net.Mvc.Server.csproj">
+      <Project>{B8E420E6-C270-44A9-AA9F-A1418975BD39}</Project>
+      <Name>WorkSuite.Library.Asp.Net.Mvc.Server</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\WorkSuite.Library.CodeStrutures\WorkSuite.Library.CodeStrutures.csproj">
+      <Project>{249BE708-3014-4584-9E14-CB087E54916E}</Project>
+      <Name>WorkSuite.Library.CodeStrutures</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\WorkSuite.Library.DomainTypes\WorkSuite.Library.DomainTypes.csproj">
+      <Project>{538C6F62-B398-41F1-917C-10659FDF6C78}</Project>
+      <Name>WorkSuite.Library.DomainTypes</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

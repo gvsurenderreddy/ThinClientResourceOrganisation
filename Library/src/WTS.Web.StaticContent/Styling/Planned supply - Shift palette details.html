@@ -1,0 +1,819 @@
+﻿<html>
+<head>
+    <meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" name="viewport">
+    <!--
+        page-id & resouce-id
+
+        page-id is the identity of the current page.  It can be used to look up the root for the page in the rout repository
+        resource-id is the identity of the resource that the page is displaying.  It generally contains all the values that are needed for page route's parameters.
+
+      -->
+    <meta content="operations-calendar-details" name="page-id" id="page-id">
+    <meta content="{&quot;start_date&quot;:&quot;2014-10-22T00:00:00+01:00&quot;,&quot;range_type&quot;:0,&quot;operations_calendar_id&quot;:1}" name="resource-id" id="resource-id">
+    <!--[if lte IE 8]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="http://localhost:2258/Static/css/WorkSuite.css">
+
+    <!--
+        Patch older browsers.
+
+        The development strategy is to develop to current standard and just patch
+        older browsers.  The idea being that as we stop supporting older browsers
+        all we have to do is remove the shims that we have added rather than have
+        to remove application logic that we implemented to specifically target
+        older browsers.
+        -->
+    <script src="http://localhost:2258/Static/js/library/respond-js/respond.js"></script>
+
+
+    <title>Planned supply</title>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="dependencies" src="http://localhost:2258/Static/js/Infrastructure/dependency_config.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="startup" src="http://localhost:2258/Static/js/Application/Startup/app_startup.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="page_api" src="http://localhost:2258/Static/js/Application/Views/Page/page_api.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="dom" src="http://localhost:2258/Static/js/Primitives/dom.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="feature_degradation" src="http://localhost:2258/Static/js/Application/Utilities/feature_degradation.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="callbacks" src="http://localhost:2258/Static/js/Primitives/callbacks.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="operational_calendar" src="http://localhost:2258/Static/js/Application/Views/PlannedSupply/operational_calendar.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="underscore" src="http://localhost:2258/Static/js/library/underscore-js/underscore-min.1.5.1.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="console" src="http://localhost:2258/Static/js/Primitives/logger.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery" src="http://localhost:2258/Static/js/library/jquery/jquery-1.10.2.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="controller" src="http://localhost:2258/Static/js/Application/Utilities/controller.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="presenter" src="http://localhost:2258/Static/js/Application/Utilities/presenter.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="global" src="http://localhost:2258/Static/js/Primitives/global.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="modal" src="http://localhost:2258/Static/js/Primitives/modal.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="guard" src="http://localhost:2258/Static/js/Primitives/guard.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="persistent_storage" src="http://localhost:2258/Static/js/Primitives/persistent_storage.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="string_extensions" src="http://localhost:2258/Static/js/Primitives/string.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="page_resources" src="http://localhost:2258/Static/js/Application/Utilities/page_resources.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ajax" src="http://localhost:2258/Static/js/Primitives/ajax.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="operational_calendar_api" src="http://localhost:2258/Static/js/Application/Views/PlannedSupply/operational_calendar_api.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jqueryeasyModal" src="http://localhost:2258/Static/js/library/easyModal/jqueryeasyModal.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="resources" src="http://localhost:2258/Static/js/Application/Utilities/resources.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="moment" src="http://localhost:2258/Static/js/library/moment-js/moment.min.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="date_range_calendar_api" src="http://localhost:2258/Static/js/Application/Views/Components/date_range_calendar/date_range_calendar_api.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="date_range" src="http://localhost:2258/Static/js/Application/Utilities/date_range.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="event" src="http://localhost:2258/Static/js/Primitives/event.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="route_builder" src="http://localhost:2258/Static/js/Application/Utilities/route_builder.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="random" src="http://localhost:2258/Static/js/Primitives/random.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="route_repository" src="http://localhost:2258/Static/js/Application/Utilities/route_repository.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="routes" src="/named-routes?callback=define"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="component_system" src="http://localhost:2258/Static/js/Application/Views/ComponentSystem/component_system.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="date_range_calendar_startup" src="http://localhost:2258/Static/js/Application/Startup/date_range_calendar_startup.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="date_range_calendar_events" src="http://localhost:2258/Static/js/Application/Views/Components/date_range_calendar/date_range_calendar_events.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="date_range_bar_events" src="http://localhost:2258/Static/js/Application/Views/Components/date_range_bar/date_range_bar_events.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="shift_pattern_grid_startup" src="http://localhost:2258/Static/js/Application/Startup/shift_pattern_grid_startup.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="shift_pattern_grid_events" src="http://localhost:2258/Static/js/Application/Views/Components/shift_pattern_grid/shift_pattern_grid_events.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="shift_pattern_grid_api" src="http://localhost:2258/Static/js/Application/Views/Components/shift_pattern_grid/shift_pattern_grid_api.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="time_allocation_palette_loader" src="http://localhost:2258/Static/js/Application/Utilities/time_allocation_palette_loader.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="component_system_events" src="http://localhost:2258/Static/js/Application/Views/ComponentSystem/component_system_events.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="behaviours_repository" src="http://localhost:2258/Static/js/Application/Views/ComponentSystem/behaviours_repository.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="content_header" src="http://localhost:2258/Static/js/Application/Views/ComponentSystem/ContentHeader/content_header.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="shift_calendar_lister" src="http://localhost:2258/Static/js/Application/Views/ComponentSystem/ShiftCalendarLister/shift_calendar_lister.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="shift_calendar" src="http://localhost:2258/Static/js/Application/Views/ComponentSystem/ShiftCalendar/shift_calendar.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="editor" src="http://localhost:2258/Static/js/Application/Views/ComponentSystem/Editor/editor.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="shift_time_allocation_palette" src="http://localhost:2258/Static/js/Application/Views/ComponentSystem/ShiftTimeAllocationPalette/shift_time_allocation_palette.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="events_repository" src="http://localhost:2258/Static/js/Application/Views/ComponentSystem/events_repository.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="content_header_api" src="http://localhost:2258/Static/js/Application/Views/ComponentSystem/ContentHeader/content_header_api.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="shift_calendar_api" src="http://localhost:2258/Static/js/Application/Views/ComponentSystem/ShiftCalendar/shift_calendar_api.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="content_header_events" src="http://localhost:2258/Static/js/Application/Views/ComponentSystem/ContentHeader/content_header_events.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="shift_calendar_lister_events" src="http://localhost:2258/Static/js/Application/Views/ComponentSystem/ShiftCalendarLister/shift_calendar_lister_events.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="shift_calendar_events" src="http://localhost:2258/Static/js/Application/Views/ComponentSystem/ShiftCalendar/shift_calendar_events.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="editor_events" src="http://localhost:2258/Static/js/Application/Views/ComponentSystem/Editor/editor_events.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="white_space_time_allocation_palette_events" src="http://localhost:2258/Static/js/Application/Views/ComponentSystem/WhiteSpaceTimeAllocationPalette/white_space_time_allocation_palette_events.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="shift_time_allocation_palette_events" src="http://localhost:2258/Static/js/Application/Views/ComponentSystem/ShiftTimeAllocationPalette/shift_time_allocation_palette_events.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="shift_calendar_lister_api" src="http://localhost:2258/Static/js/Application/Views/ComponentSystem/ShiftCalendarLister/shift_calendar_lister_api.js"></script>
+</head>
+<body>
+
+    <header>
+        <div class="titlebar">
+            <nav>
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="/">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/operations-calendars/view">
+                            View operations calendars
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <h1>Planned supply</h1>
+        </div>
+    </header>
+    <div class="operations-calendar-details" id="content">
+        <div class="" id="notifications">
+            <div class="" id="notification-icon"></div>
+        </div>
+
+
+
+        <div class="palette">
+            <h2>Date Range</h2>
+            <menu class="menu Palette-DateRange-Toggle" data-selected-range="Week">
+                <a class="action  Palette-DateRange-Toggle-Week secondary-action" data-action="toggle-week">
+                    Week
+                </a>
+                <a class="action  Palette-DateRange-Toggle-FourWeeks secondary-action" data-action="toggle-four-weeks">
+                    4 weeks
+                </a>
+            </menu>
+            <div id="calendar" data-selected-start-date="22/10/2014" data-calendar-start-date="22/10/2014" class="fc fc-ltr">
+                <table class="fc-header">
+                    <tbody>
+                        <tr>
+                            <td class="fc-header-left" id="date-range-back">
+                                <span class="fc-button  fc-state-default fc-corner-left fc-corner-right">
+                                    <span class="fc-icon fc-icon-left-single-arrow"></span>
+                                </span>
+                            </td>
+                            <td class="fc-header-center">
+                                <span class="fc-header-title">
+                                    <h2>October 2014</h2>
+                                </span>
+                            </td>
+                            <td class="fc-header-right" id="date-range-forward">
+                                <span class="fc-button fc-state-default fc-corner-left fc-corner-right">
+                                    <span class="fc-icon fc-icon-right-single-arrow"></span>
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div style="" class="fc-content">
+                    <div class="fc-view fc-grid">
+                        <div class="fc-event-container" style="position:absolute;z-index:8;top:0;left:0"></div>
+                        <table cellspacing="0" class="fc-border-separate" style="width:100%">
+                            <thead>
+                                <tr class="fc-first fc-last">
+                                    <th style="width: 27px;" class="fc-day-header fc-widget-header">M</th>
+                                    <th style="width: 27px;" class="fc-day-header fc-widget-header">T</th>
+                                    <th style="width: 27px;" class="fc-day-header fc-widget-header">W</th>
+                                    <th style="width: 27px;" class="fc-day-header fc-widget-header">T</th>
+                                    <th style="width: 27px;" class="fc-day-header fc-widget-header">F</th>
+                                    <th style="width: 27px;" class="fc-day-header fc-widget-header">S</th>
+                                    <th style="width: 27px;" class="fc-day-header fc-widget-header">S</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="fc-first">
+                                    <td class="fc-day fc-widget-content fc-first  fc-other-month" data-date="29/09/2014">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">29</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="fc-day fc-widget-content fc-first  fc-other-month" data-date="30/09/2014">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">30</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="fc-day fc-widget-content fc-first  " data-date="01/10/2014">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">1</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="fc-day fc-widget-content fc-first  " data-date="02/10/2014">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">2</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="fc-day fc-widget-content fc-first  " data-date="03/10/2014">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">3</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="fc-day fc-widget-content fc-first  " data-date="04/10/2014">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">4</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="fc-day fc-widget-content fc-first  " data-date="05/10/2014">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">5</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="fc-first">
+                                    <td class="fc-day fc-widget-content fc-first  " data-date="06/10/2014">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">6</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="fc-day fc-widget-content fc-first  " data-date="07/10/2014">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">7</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="fc-day fc-widget-content fc-first  " data-date="08/10/2014">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">8</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="fc-day fc-widget-content fc-first  " data-date="09/10/2014">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">9</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="fc-day fc-widget-content fc-first  " data-date="10/10/2014">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">10</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="fc-day fc-widget-content fc-first  " data-date="11/10/2014">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">11</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="fc-day fc-widget-content fc-first  " data-date="12/10/2014">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">12</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="fc-first">
+                                    <td class="fc-day fc-widget-content fc-first  " data-date="13/10/2014">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">13</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="fc-day fc-widget-content fc-first  " data-date="14/10/2014">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">14</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="fc-day fc-widget-content fc-first  " data-date="15/10/2014">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">15</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="fc-day fc-widget-content fc-first  " data-date="16/10/2014">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">16</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="fc-day fc-widget-content fc-first  " data-date="17/10/2014">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">17</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="fc-day fc-widget-content fc-first  " data-date="18/10/2014">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">18</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="fc-day fc-widget-content fc-first  " data-date="19/10/2014">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">19</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="fc-first">
+                                    <td class="fc-day fc-widget-content fc-first  " data-date="20/10/2014">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">20</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="fc-day fc-widget-content fc-first  " data-date="21/10/2014">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">21</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="fc-day fc-widget-content fc-first highlighted " data-date="22/10/2014">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">22</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="fc-day fc-widget-content fc-first highlighted " data-date="23/10/2014">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">23</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="fc-day fc-widget-content fc-first highlighted " data-date="24/10/2014">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">24</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="fc-day fc-widget-content fc-first highlighted " data-date="25/10/2014">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">25</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="fc-day fc-widget-content fc-first highlighted " data-date="26/10/2014">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">26</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="fc-first">
+                                    <td class="fc-day fc-widget-content fc-first highlighted " data-date="27/10/2014">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">27</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="fc-day fc-widget-content fc-first highlighted " data-date="28/10/2014">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">28</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="fc-day fc-widget-content fc-first  " data-date="29/10/2014">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">29</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="fc-day fc-widget-content fc-first  " data-date="30/10/2014">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">30</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="fc-day fc-widget-content fc-first  " data-date="31/10/2014">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">31</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="fc-day fc-widget-content fc-first  fc-other-month" data-date="01/11/2014">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">1</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="fc-day fc-widget-content fc-first  fc-other-month" data-date="02/11/2014">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">2</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="fc-first">
+                                    <td class="fc-day fc-widget-content fc-first  fc-other-month" data-date="03/11/2014">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">3</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="fc-day fc-widget-content fc-first  fc-other-month" data-date="04/11/2014">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">4</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="fc-day fc-widget-content fc-first  fc-other-month" data-date="05/11/2014">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">5</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="fc-day fc-widget-content fc-first  fc-other-month" data-date="06/11/2014">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">6</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="fc-day fc-widget-content fc-first  fc-other-month" data-date="07/11/2014">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">7</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="fc-day fc-widget-content fc-first  fc-other-month" data-date="08/11/2014">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">8</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="fc-day fc-widget-content fc-first  fc-other-month" data-date="09/11/2014">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">9</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="palette " data-component="simple-palette">
+            <h2>Operation Calendar</h2>
+            <h3>manchester 1</h3>
+            <menu class="menu">
+                <a href="/operations-calendar/1/operations-calendar-details-editor" class="action edit  primary-action" data-action="edit" data-context="content-header">edit</a>
+                <a href="/operations-calendar/1/remove-operations-calendar-editor" class="action remove  secondary-action" data-action="remove" data-context="content-header">remove</a>
+            </menu>
+
+        </div>
+
+        <div class="palette shift-palette " data-component="shift-time-allocation-palette">
+            <h2>Shift</h2>
+            <div class="ShiftDetials">
+                <h3 class="ShiftDetials_Title">Test</h3>
+                <div class="DefinitionListArticle">
+                    <header class="DefinitionListArticle_Header">
+                        <h3 class="DefinitionListArticle_Header_Title">Shift times</h3>
+                    </header>
+                    <dl class="DefinitionListArticle_Section">
+                        <dt class="DefinitionListArticle_Section_Title StartTime Clock">Start time</dt>
+                        <dd class="DefinitionListArticle_Section_Value StartTime Clock">06:00</dd>
+                        <dt class="DefinitionListArticle_Section_Title EndTime Clock">End time</dt>
+                        <dd class="DefinitionListArticle_Section_Value EndTime Clock">18:00</dd>
+                    </dl>
+                </div>
+                <div class="DefinitionListArticle Small">
+                    <header class="DefinitionListArticle_Header">
+                        <h3 class="DefinitionListArticle_Header_Title">Break 1</h3>
+                    </header>
+                    <dl class="DefinitionListArticle_Section">
+                        <dt class="DefinitionListArticle_Section_Title StartTime Clock">Start time</dt>
+                        <dd class="DefinitionListArticle_Section_Value StartTime Clock">09:00</dd>
+                        <dt class="DefinitionListArticle_Section_Title EndTime Clock">End time</dt>
+                        <dd class="DefinitionListArticle_Section_Value EndTime Clock">09:15</dd>
+                        <dt class="DefinitionListArticle_Section_Title PaymentType">Payment type</dt>
+                        <dd class="DefinitionListArticle_Section_Value PaymentType">Paid</dd>
+                    </dl>
+                </div>
+                <div class="DefinitionListArticle Small">
+                    <header class="DefinitionListArticle_Header">
+                        <h3 class="DefinitionListArticle_Header_Title">Break 2</h3>
+                    </header>
+                    <dl class="DefinitionListArticle_Section">
+                        <dt class="DefinitionListArticle_Section_Title StartTime Clock">Start time</dt>
+                        <dd class="DefinitionListArticle_Section_Value StartTime Clock">12:00</dd>
+                        <dt class="DefinitionListArticle_Section_Title EndTime Clock">End time</dt>
+                        <dd class="DefinitionListArticle_Section_Value EndTime Clock">01:00</dd>
+                        <dt class="DefinitionListArticle_Section_Title PaymentType">Payment type</dt>
+                        <dd class="DefinitionListArticle_Section_Value PaymentType">Unpaid</dd>
+                    </dl>
+                </div>
+                <div class="DefinitionListArticle Small">
+                    <header class="DefinitionListArticle_Header">
+                        <h3 class="DefinitionListArticle_Header_Title">Break 3</h3>
+                    </header>
+                    <dl class="DefinitionListArticle_Section">
+                        <dt class="DefinitionListArticle_Section_Title StartTime Clock">Start time</dt>
+                        <dd class="DefinitionListArticle_Section_Value StartTime Clock">15:00</dd>
+                        <dt class="DefinitionListArticle_Section_Title EndTime Clock">End time</dt>
+                        <dd class="DefinitionListArticle_Section_Value EndTime Clock">15:15</dd>
+                        <dt class="DefinitionListArticle_Section_Title PaymentType">Payment type</dt>
+                        <dd class="DefinitionListArticle_Section_Value PaymentType">Paid</dd>
+                    </dl>
+                </div>
+
+                <!--div class="DefinitionListArticle">
+                    <header class="DefinitionListArticle_Header">
+                        <h3 class="DefinitionListArticle_Header_Title">Accounts</h3>
+                    </header>
+                    <dl class="DefinitionListArticle_Section">
+                     <dt class="DefinitionListArticle_Section_Title">Gross duration</dt>
+                     <dd class="DefinitionListArticle_Section_Value">11<abbr class="Abbreviation" title="hour"><span>h</span> </abbr>30<abbr class="Abbreviation" title="minute"><span>m</span></abbr></dd>
+                     <dt class="DefinitionListArticle_Section_Title">Net duration</dt>
+                     <dd class="DefinitionListArticle_Section_Value">11<abbr class="Abbreviation" title="hour"><span>h</span></abbr></dd>
+                     <dt class="DefinitionListArticle_Section_Title">Working time</dt>
+                     <dd class="DefinitionListArticle_Section_Value">10<abbr class="Abbreviation" title="hour"><span>h</span></abbr>30<abbr class="Abbreviation" title="minute"><span>m</span></abbr></dd>
+                    </dl>
+                </div-->
+
+                </div>
+            <menu class="menu">
+                <a href="/operations-calendar/1/shift-calendar/1/shift-calendar-patterns/1/shift-occurrence/1/edit-page" class="action edit  primary-action" data-action="edit">edit</a>
+
+                <a href="/operations-calendar/1/shift-calendar/1/shift-calendar-patterns/1/shift-occurrence/1/remove-page" class="action remove  primary-action" data-action="remove">remove</a>
+
+            </menu>
+            <menu class="menu">
+                <a href="/operations-calendar/1/shift-calendar/1/shift-calendar-patterns/1/shift-occurrence/1/edit-all-page" class="action edit  primary-action" data-action="edit">edit all</a>
+
+                <a href="/operations-calendar/1/shift-calendar/1/shift-calendar-patterns/1/shift-occurrence/1/remove-all-page" class="action remove  primary-action" data-action="remove">remove all</a>
+
+            </menu>
+
+
+        </div>
+
+
+
+
+
+
+
+
+        <div class="content-header " data-component="content-header">
+            <h2>manchester 1</h2>
+            <menu class="menu">
+                <a href="/operations-calendar/1/operations-calendar-details-editor" class="action edit " data-action="edit">edit</a>
+                <a href="/operations-calendar/1/remove-operations-calendar-editor" class="action remove " data-action="remove">remove</a>
+            </menu>
+
+        </div>
+        <div class="control-bar">
+            <div id="date_range">
+                <button id="back" class="action"></button>
+                <button id="forward" class="action"></button>
+                <button class="action secondary-action" id="today">Go to today</button>
+                <span id="date">22 - 28 October 2014</span>
+            </div>
+        </div>
+        <section class="shift-calendars-lister" data-component="shift-calendars-lister">
+
+            <article class="shift-calendars-lister-header ">
+                <h2>Shift calendars</h2>
+                <menu class="menu">
+                    <a href="/operations-calendar/1/shift-calendars/new" class="action new " data-action="new">new</a>
+                </menu>
+
+            </article>
+
+            <article class="shift-calendar " data-component="shift-calendar">
+                <header>
+                    <h2>Pickers</h2>
+                    <menu class="menu">
+                        <a href="/operations-calendar/1/shift-calendar/1/shift-calendar-patterns" class="action view " data-action="view">view</a>
+                        <a href="/operations-calendar/1/shift-calendar/1/shift-calendar-details-editor" class="action edit " data-action="edit">edit</a>
+                        <a href="/operations-calendar/1/shift-calendar/1/remove-shift-calendar-editor" class="action remove " data-action="remove">remove</a>
+                    </menu>
+
+                </header>
+                <table class="">
+                    <thead>
+                        <tr>
+                            <th class="shift-block-label"></th>
+                            <th class="shift-block previous"></th>
+                            <th class="shift-block ">
+                                <span class="shift-block-day">
+                                    <abbr title="Wed"><span>W</span></abbr>
+                                </span>
+                                <span class="shift-block-date">22</span>
+                            </th>
+                            <th class="shift-block ">
+                                <span class="shift-block-day">
+                                    <abbr title="Thu"><span>T</span></abbr>
+                                </span>
+                                <span class="shift-block-date">23</span>
+                            </th>
+                            <th class="shift-block ">
+                                <span class="shift-block-day">
+                                    <abbr title="Fri"><span>F</span></abbr>
+                                </span>
+                                <span class="shift-block-date">24</span>
+                            </th>
+                            <th class="shift-block shift-block-weekend">
+                                <span class="shift-block-day">
+                                    <abbr title="Sat"><span>S</span></abbr>
+                                </span>
+                                <span class="shift-block-date">25</span>
+                            </th>
+                            <th class="shift-block shift-block-weekend">
+                                <span class="shift-block-day">
+                                    <abbr title="Sun"><span>S</span></abbr>
+                                </span>
+                                <span class="shift-block-date">26</span>
+                            </th>
+                            <th class="shift-block ">
+                                <span class="shift-block-day">
+                                    <abbr title="Mon"><span>M</span></abbr>
+                                </span>
+                                <span class="shift-block-date">27</span>
+                            </th>
+                            <th class="shift-block ">
+                                <span class="shift-block-day">
+                                    <abbr title="Tue"><span>T</span></abbr>
+                                </span>
+                                <span class="shift-block-date">28</span>
+                            </th>
+                            <th class="shift-block next"></th>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        <tr data-shift-calendar-pattern-id="1" data-shift-calendar-id="1" data-operations-calendar-id="1">
+                            <td class="row-label">
+                                <span class="row-label-pattern">Test</span>
+                                <div class="row-label-resources">Resources: <span>3</span></div>
+                            </td>
+                            <td style="background-color:rgb();" class="shift-block previous"></td>
+                            <td style="background-color:rgb(255,255,255);" class="shift-block shift-block-selected" data-block-date="22/10/2014" data-block-content-type="shift" id="wrwtcyuluzwgugvg" selected="selected">
+                                <div class="shift-block-title">Test</div>
+                                <div class="timeline">
+                                    <span class="timeline-period rest" style="width: 4.23611111111111%;"></span>
+                                    <span class="timeline-period workingtime" style="width: 4.23611111111111%;"></span>
+                                </div>
+                            </td>
+                            <td style="background-color:rgb();" class="shift-block" data-block-date="23/10/2014" data-block-content-type="white_space">
+                                <div class="shift-block-title"></div>
+                                <div class="timeline">
+                                </div>
+                            </td>
+                            <td style="background-color:rgb();" class="shift-block" data-block-date="24/10/2014" data-block-content-type="white_space">
+                                <div class="shift-block-title"></div>
+                                <div class="timeline">
+                                </div>
+                            </td>
+                            <td style="background-color:rgb();" class="shift-block" data-block-date="25/10/2014" data-block-content-type="white_space">
+                                <div class="shift-block-title"></div>
+                                <div class="timeline">
+                                </div>
+                            </td>
+                            <td style="background-color:rgb();" class="shift-block" data-block-date="26/10/2014" data-block-content-type="white_space">
+                                <div class="shift-block-title"></div>
+                                <div class="timeline">
+                                </div>
+                            </td>
+                            <td style="background-color:rgb();" class="shift-block" data-block-date="27/10/2014" data-block-content-type="white_space">
+                                <div class="shift-block-title"></div>
+                                <div class="timeline">
+                                </div>
+                            </td>
+                            <td style="background-color:rgb();" class="shift-block" data-block-date="28/10/2014" data-block-content-type="white_space">
+                                <div class="shift-block-title"></div>
+                                <div class="timeline">
+                                </div>
+                            </td>
+                            <td style="background-color:rgb();" class="shift-block next"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </article>
+        </section>
+
+
+
+
+    </div>
+    <footer>
+        &copy; 2013 Working Time Solutions Ltd.
+    </footer>
+
+    <!--
+        Load the application logic for the page
+
+        -->
+    <script src="http://localhost:2258/Static/js/library/require-js/require.js"></script>
+    <script src="http://localhost:2258/Static/js/Infrastructure/module-paths.1.js"></script>
+    <script src="/application-boot-module-definition"></script>
+    <script type="text/javascript">
+        //Improve: We really shouldn't be touching the global object.
+        var thin_client_base_url = "/";
+
+        (function (base_url) {
+            // configure the require.js dependencies and then load the behaviours that are
+            // needed for this page
+            requirejs.config({
+                baseUrl: base_url,
+                paths: {
+                    "dependencies": "Static/js/Infrastructure/dependency_config",
+                    "routes": '/' + "named-routes?callback=define",
+                    "workflow": '/' + "workflow?callback=define"
+                }
+            });
+
+            require(['dependencies'], function (config) {
+                requirejs.config(config);
+
+                require(['startup'], function () {
+
+
+    require(['operational_calendar'], function(){ });
+
+                });
+            });
+
+        }('http://localhost:2258/'));
+
+    </script>
+
+
+
+
+    <!-- Visual Studio Browser Link -->
+    <script id="__browserLink_initializationData" type="application/json">
+        {"appName":"Firefox","requestId":"55324a76f00940d1b00604b29b4c495b"}
+    </script>
+    <script async="async" src="http://localhost:61024/6f88b7f228a0466fbccf72f666eaa3a9/browserLink" type="text/javascript"></script>
+    <!-- End Browser Link -->
+
+</body>
+</html>

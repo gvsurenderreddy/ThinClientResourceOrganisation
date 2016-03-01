@@ -1,0 +1,23 @@
+﻿@* Generator : MvcHelper GeneratePrettyNames : true *@
+
+@using Controls.Primitives
+@using Controls.SimplePalette
+@using Controls.ViewElements
+@using Server.Framework.ViewModels
+@using Server.SimplePalettes
+@* Fallback - if we have a AReport type that we do not have an edit control for
+*@
+@helper For(IsAViewElement element)
+{
+
+    @ViewElement.Unknown()
+}
+
+@helper For(SimplePalette view_model)
+{
+    <div data-component="simple-palette" class="palette @view_model.classes.AsHtmlClassString()">
+        <h2>@view_model.title</h2>
+        <h3>@view_model.description</h3>
+        @SimplePaletteActions.For(view_model.actions)
+    </div>
+}

@@ -1,0 +1,71 @@
+// Layout
+@mixin border_box_sizing {
+   -moz-box-sizing: border-box; 
+-webkit-box-sizing: border-box; 
+	    box-sizing: border-box;	
+}
+
+// LAYOUT SCAFFOLDING
+$layoutgrid_lineheight: 12px;
+$layoutgrid_width_px: 960px;
+$layoutgrid_gutter_width_px: 10px;
+
+// RESPONSIVE DESIGH BREAK POINTS
+@mixin respond-to($media) {
+  @if $media == tablet {
+    @media only screen and (min-width: 768px) { @content; }
+  }
+  @else if $media == desktop {
+    @media only screen and (min-width: 960px) { @content; }
+  }
+}
+
+$layoutgrid_page_gutter: percentage($layoutgrid_gutter_width_px/$layoutgrid_width_px);
+$layoutgrid_column_gutter: percentage($layoutgrid_gutter_width_px/($layoutgrid_width_px - ($layoutgrid_gutter_width_px*2)));
+
+$layoutgrid_width: percentage($layoutgrid_width_px/1px);
+
+// SPANS
+$layoutgrid_span1: (100%/12) ;
+
+$layoutgrid_span12: 100%;
+@mixin layoutgrid_span12 {
+	@include border_box_sizing;
+	width: $layoutgrid_span12;
+	padding: 0 $layoutgrid_page_gutter 0 $layoutgrid_page_gutter;
+}
+
+$layoutgrid_span3: (100% / 4);
+
+$layoutgrid_span4: (100% / 3);
+
+@mixin layoutgrid_span4 {
+	@include border_box_sizing;
+	width: $layoutgrid_span4;
+	padding: 0 $layoutgrid_column_gutter;
+}
+
+@mixin layoutgrid_span4_offset4 {
+	@include border_box_sizing;
+	width: (100% / 3);
+	margin: $layoutgrid_lineheight (100% / 3);
+}
+
+$layoutgrid_span8: (100%/3)*2;
+$layoutgrid_offset8: (100%/3)*2;
+
+@mixin layoutgrid_span8 {
+	@include border_box_sizing;
+	width: (100% / 3)*2;
+	padding: 0 $layoutgrid_column_gutter;
+}
+
+@mixin layoutgrid_span8_offset4 {
+	@include border_box_sizing;
+	width: (100% / 3)*2;
+	margin: 0 (100% / 3);
+	padding: 0 $layoutgrid_column_gutter;
+}
+
+$layoutgrid_span9: (100%/4)*3;
+$layoutgrid_offset9: (100%/4)*3;

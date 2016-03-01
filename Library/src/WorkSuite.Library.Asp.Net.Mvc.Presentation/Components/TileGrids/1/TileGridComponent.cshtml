@@ -1,0 +1,55 @@
+﻿@* Generator : MvcHelper GeneratePrettyNames : true *@
+
+@using WTS.WorkSuite.Library.CodeStrutures.Behavioral
+
+@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Components.Tiles._1
+@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Components.TileGrids._1
+@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Components.ViewComponents._1;
+
+
+@helper Render ( TileGridViewModel view_model ) {
+Guard.IsNotNull( view_model, "view_model" );
+<article class="TileGrid">
+@foreach ( var section in view_model.sections ) { @TileGridSection( section ); }
+</article>        
+}
+
+@helper TileGridSection ( TileGridSectionViewModel view_model ) {
+<section class="TileGrid_Section">
+    @TileGridSectionTitle( view_model )
+    <nav class="TileGrid_Section_Tiles">
+    @foreach ( var tile in view_model.tiles ) { @TileGridSectionTile( tile ); }
+    </nav>
+</section>
+}
+
+@helper TileGridSectionTitle ( TileGridSectionViewModel view_model ) { 
+if ( !string.IsNullOrWhiteSpace( view_model.title ) ) {   
+<h2 class="TileGrid_Section_Title">@view_model.title</h2>
+}
+}
+
+@helper TileGridSectionTile ( IComponentViewModel view_model ) {
+<div class="TileGrid_Section_Tile">
+    @ViewModelComponent.Render( view_model as dynamic )
+</div>
+}
+
+
+
+@*
+    <article class="TileGrid">
+
+        <section class="TileGrid_Section">
+            <h2 class="TileGrid_Section_Title">Tile grid section title</h2>
+
+            <nav class="TileGrid_Section_Tiles">
+                <div class="TileGrid_Section_Tile">
+                    <!-- tile -->
+                </div>
+            </nav>
+        </section>
+
+    </article>
+
+*@

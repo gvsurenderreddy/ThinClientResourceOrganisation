@@ -1,0 +1,15 @@
+﻿@* Generator : MvcHelper GeneratePrettyNames : true *@
+
+@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Utilities
+
+@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Components.Tiles._1
+@using WTS.WorkSuite.Library.CodeStrutures.Behavioral
+
+@helper Render ( TileViewModel tile ) {
+
+    Guard.IsNotNull( tile, "tile" );
+
+    <a data-route-request = "@tile.route_request.ToJson()"  class="Tile @tile.call_to_action.modifier">
+        <h2 class="Tile_Title">@tile.title</h2>
+    </a>        
+}

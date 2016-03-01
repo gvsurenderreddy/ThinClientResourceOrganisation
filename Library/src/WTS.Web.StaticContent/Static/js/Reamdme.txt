@@ -1,0 +1,26 @@
+﻿Migrations to new javascript framework
+--------------------------------------
+
+We are currently in the process of migrating to a new javascript framework.  This is needed becasue our first attemp was not flexible enough to deal with what is needed.  The net result of this is that while in this process we will will have the old and new framework running side by side.  
+
+The folder structure of the new javascript architecture is
+
+Static
+  \ js
+     \ html
+	 \ Infrastructure
+	 \ library
+	 \ utils  (This will be changed to primitives once the old framework is no longer needed)
+
+All other folders and their content are legacy and should be removed once we have fully migrated to the new component system.  
+
+html  - Contains functionality that is specific to browsers, items that are not stored in this folder are theoretically  usable outside of the browser in something like nodes.
+
+Infrastructure - Contains all the components that are needed to bootstrap the framework in an application.  There is a Readme.txt file in this folder that explains how to bootstrap the framework.
+
+library - Contains all the third party libraries, incliding require.js. We keep the souce locally rather than via cdns because we may have to deploy the application into sites that are closed (can not access the internet).
+
+utils - This contains primitive modules that can be reused in any module e.g. guard. This should be called primities but that will cause a clash with the existing framework.  This will be renamed once when the legacy framework has been completely removed.
+
+
+NOTE - All other folders and their content are for the legacy framework and should be removed once we are no longer using it.

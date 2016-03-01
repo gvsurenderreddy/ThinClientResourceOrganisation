@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="../Static/css/WorkSuite.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta id="page-id" name="page-id" content="operations-calendar-details" />
+    <meta id="resource-id" name="resource-id" content="{&quot;start_date&quot;:&quot;\/Date(1402354800000)\/&quot;,&quot;operations_calendar_id&quot;:1}" />
+    <!--[if lte IE 8]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="http://localhost:16355/Static/css/WorkSuite.css" rel="stylesheet" />
+
+    <!--
+        Patch older browsers.
+
+        The development strategy is to develop to current standard and just patch
+        older browsers.  The idea being that as we stop supporting older browsers
+        all we have to do is remove the shims that we have added rather than have
+        to remove application logic that we implemented to specifically target
+        older browsers.
+        -->
+    <script src="http://localhost:16355/Static/js/library/respond-js/respond.js"></script>
+
+
+    <title>Planned supply</title>
+</head>
+<body>
+    <header>
+        <div class="titlebar">
+            <nav>
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="/">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/operations-calendars/view">
+                            View operations calendars
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <h1>Planned supply</h1>
+        </div>
+    </header>
+    <div id="content">
+
+
+        <!-- Tile -->
+
+        <a class="Tile">
+            <h2 class="Tile_Title">Tile title</h2>
+        </a>
+
+        <br /><br />
+
+        <!-- Tile grid -->
+        <article class="TileGrid">
+
+            <section class="TileGrid_Section">
+                <h2 class="TileGrid_Section_Title">Tile grid section title</h2>
+
+                <nav class="TileGrid_Section_Tiles">
+                    <div class="TileGrid_Section_Tile">
+                        <a class="Tile">
+                            <h2 class="Tile_Title">Tile title</h2>
+                        </a>
+                    </div>
+                    <div class="TileGrid_Section_Tile">
+                        <a class="Tile Tile_Primary">
+                            <h2 class="Tile_Title">Tile title</h2>
+                        </a>
+                    </div>
+                    <div class="TileGrid_Section_Tile">
+                        <a class="Tile Tile_Secondary">
+                            <h2 class="Tile_Title">Tile title</h2>
+                        </a>
+                    </div>
+                    <div class="TileGrid_Section_Tile">
+                        <a class="Tile Tile_Special">
+                            <h2 class="Tile_Title">Tile title</h2>
+                        </a>
+                    </div>
+                    <div class="TileGrid_Section_Tile">
+                        <a class="Tile">
+                            <h2 class="Tile_Title">Tile title</h2>
+                        </a>
+                    </div>
+                </nav>
+            </section>
+        </article>
+
+    </div>
+    <footer>
+        &copy; 2013 Working Time Solutions Ltd.
+    </footer>
+</body>
+</html>

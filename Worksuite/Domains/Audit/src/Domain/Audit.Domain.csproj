@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{007077B1-606F-421D-91A3-07E9214571DD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WTS.WorkSuite.Audit</RootNamespace>
+    <AssemblyName>WTS.WorkSuite.Audit.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HR\Employees\Address\AddAddressDetailsAuditRecordWhenAddressIsCreated.cs" />
+    <Compile Include="HR\Employees\Address\AddAddressDetailsAuditRecordWhenAddressIsRemoved.cs" />
+    <Compile Include="HR\Employees\Address\AddAddressDetailsAuditRecordWhenAddressIsReordered.cs" />
+    <Compile Include="HR\Employees\Address\AddAddressDetailsAuditRecordWhenAddressIsUpdated.cs" />
+    <Compile Include="HR\Employees\AddContactDetailsAuditRecordWhenUpdated.cs" />
+    <Compile Include="HR\Employees\Address\DependencyConfiguration.cs" />
+    <Compile Include="HR\Employees\AggregateRoot\EmployeeDocumentDetailsAuditRecordBuilder.cs" />
+    <Compile Include="HR\Employees\AggregateRoot\EmployeeNoteDetailsAuditRecordBuilder.cs" />
+    <Compile Include="HR\Employees\AggregateRoot\EmployeeQualificationDetailsAuditRecordBuilder.cs" />
+    <Compile Include="HR\Employees\AggregateRoot\EmployeeSkillDetailsAuditRecordBuilder.cs" />
+    <Compile Include="HR\Employees\Documents\AddDocumentDetailsAuditRecordWhenDocumentIsRemoved.cs" />
+    <Compile Include="HR\Employees\Documents\AddDocumentDetailsAuditRecordWhenDocumentIsUploaded.cs" />
+    <Compile Include="HR\Employees\Documents\DependencyConfiguration.cs" />
+    <Compile Include="HR\Employees\EmergencyContact\AddEmergencyContactAuditRecordWhenEmergencyConatctIsReordered.cs" />
+    <Compile Include="HR\Employees\EmergencyContact\AddEmergencyContactDetailsAuditRecordWhenEmergencyContactIsRemoved.cs" />
+    <Compile Include="HR\Employees\EmergencyContact\AddEmergencyContactDetailsAuditRecordWhenEmergencyContactIsUpdated.cs" />
+    <Compile Include="HR\Employees\AddEmploymentDetailsAduitRecordWhenUpdated.cs" />
+    <Compile Include="HR\Employees\AddPersonalDetailsAduitRecordWhenUpdated.cs" />
+    <Compile Include="HR\Employees\EmergencyContact\AddEmergencyContactDetailsAuditRecordWhenContactIsCreated.cs" />
+    <Compile Include="HR\Employees\AggregateRoot\EmergencyContactDetailsAuditRecordBuilder.cs" />
+    <Compile Include="HR\Employees\AggregateRoot\EmployeeAddressDetailsAuditRecordBuilder.cs" />
+    <Compile Include="HR\Employees\AggregateRoot\EmployeeAuditRecordBuilder.cs" />
+    <Compile Include="HR\Employees\AggregateRoot\EmployeeAuditTrailBuilder.cs" />
+    <Compile Include="HR\Employees\AggregateRoot\EmployeeContactDetailsAuditRecordBuilder.cs" />
+    <Compile Include="HR\Employees\AggregateRoot\EmployeeImageDetailsAuditRecordBuilder.cs" />
+    <Compile Include="HR\Employees\CreateEmployeeAuditTrailWhenEmployeeCreated.cs" />
+    <Compile Include="HR\Employees\DependencyConfiguration.cs" />
+    <Compile Include="HR\Employees\AggregateRoot\EmployeeEmploymentDetailsAuditRecordBuilder.cs" />
+    <Compile Include="HR\Employees\AggregateRoot\EmployeePersonalDetailsAuditRecordBuilder.cs" />
+    <Compile Include="HR\Employees\AggregateRoot\GetOrCreateEmployeeAuditTrail.cs" />
+    <Compile Include="HR\Employees\EmergencyContact\DependencyConfiguration.cs" />
+    <Compile Include="HR\Employees\Image\AddImageDetailsAuditRecordWhenImageIsRemoved.cs" />
+    <Compile Include="HR\Employees\Image\AddImageDetailsAuditRecordWhenImageIsUpdated.cs" />
+    <Compile Include="HR\Employees\Image\DependencyConfiguration.cs" />
+    <Compile Include="HR\Employees\Notes\AddNoteDetailsAuditRecordWhenNoteIsCreated.cs" />
+    <Compile Include="HR\Employees\Notes\AddNoteDetailsAuditRecordWhenNoteIsRemoved.cs" />
+    <Compile Include="HR\Employees\Notes\AddNoteDetailsAuditRecordWhenNoteIsUpdated.cs" />
+    <Compile Include="HR\Employees\Notes\DependencyConfiguration.cs" />
+    <Compile Include="HR\Employees\Qualifications\AddQualificationDetailsAuditRecordWhenAnEmployeeQualificationIsRemoved.cs" />
+    <Compile Include="HR\Employees\Qualifications\AddQualificationDetailsAuditRecordWhenEmployeeQualificationIsCreated.cs" />
+    <Compile Include="HR\Employees\Qualifications\DependencyConfiguration.cs" />
+    <Compile Include="HR\Employees\Skills\AddSkillDetailsAuditRecordWhenAnEmployeeSkillIsRemoved.cs" />
+    <Compile Include="HR\Employees\Skills\AddSkillDetailsAuditRecordWhenAnEmployeeSkillIsReordered.cs" />
+    <Compile Include="HR\Employees\Skills\AddSkillDetailsAuditRecordWhenSkillIsCreated.cs" />
+    <Compile Include="HR\Employees\Skills\DependencyConfiguration.cs" />
+    <Compile Include="HR\Employees\WipeEmployeesAuditTrailWhenRemoved.cs" />
+    <Compile Include="Infrastructure\DomainConfiguration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.CodeStrutures\WorkSuite.Library.CodeStrutures.csproj">
+      <Project>{249BE708-3014-4584-9E14-CB087E54916E}</Project>
+      <Name>WorkSuite.Library.CodeStrutures</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.DomainTypes\WorkSuite.Library.DomainTypes.csproj">
+      <Project>{538C6F62-B398-41F1-917C-10659FDF6C78}</Project>
+      <Name>WorkSuite.Library.DomainTypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.Ninject\WorkSuite.Library.Ninject.csproj">
+      <Project>{FA9854F9-6908-483A-AE63-9354249E74BC}</Project>
+      <Name>WorkSuite.Library.Ninject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Library\src\WorkSuite.Library.Persistence\WorkSuite.Library.Persistence.csproj">
+      <Project>{C55F23BE-BC7A-4F70-81D3-AF5D645FE831}</Project>
+      <Name>WorkSuite.Library.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Core\src\Worksuite.Core\Worksuite.Core.csproj">
+      <Project>{1df54fed-2bc7-4317-b32e-53135723b267}</Project>
+      <Name>Worksuite.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\HR\src\Persistence\HR.Persistence.csproj">
+      <Project>{30E54F69-6055-4747-AFD7-D85E7C7F55A0}</Project>
+      <Name>HR.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\HR\src\Services\HR.Services.csproj">
+      <Project>{3D42E5CB-8885-42A6-A018-1C0F1D369123}</Project>
+      <Name>HR.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Persistence\Audit.Persistence.csproj">
+      <Project>{BAE5C69D-879F-4C0B-B615-B600E5266B74}</Project>
+      <Name>Audit.Persistence</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

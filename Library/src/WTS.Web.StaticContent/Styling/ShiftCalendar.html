@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="../Static/css/WorkSuite.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta id="page-id" name="page-id" content="operations-calendar-details" />
+    <meta id="resource-id" name="resource-id" content="{&quot;start_date&quot;:&quot;\/Date(1402354800000)\/&quot;,&quot;operations_calendar_id&quot;:1}" />
+    <!--[if lte IE 8]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="http://localhost:16355/Static/css/WorkSuite.css" rel="stylesheet" />
+
+    <!--
+        Patch older browsers.
+
+        The development strategy is to develop to current standard and just patch
+        older browsers.  The idea being that as we stop supporting older browsers
+        all we have to do is remove the shims that we have added rather than have
+        to remove application logic that we implemented to specifically target
+        older browsers.
+        -->
+    <script src="http://localhost:16355/Static/js/library/respond-js/respond.js"></script>
+
+
+    <title>Planned supply</title>
+</head>
+<body>
+    <header>
+        <div class="titlebar">
+            <nav>
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="/">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/operations-calendars/view">
+                            View operations calendars
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <h1>Planned supply</h1>
+        </div>
+    </header>
+    <div id="content" class="operations-calendar-details">
+        <div id="notifications" class="">
+            <div id="notification-icon" class=""></div>
+        </div>
+
+
+
+        <div class="palette">
+             <h2>Date Range</h2>
+            <menu class="menu Palette-DateRange-Toggle ButtonGroup_Wrapper">
+                <a class="ButtonGroup ButtonGroup" href="">Week</a>
+                <a class="ButtonGroup ButtonGroup_Selected" href="">4 weeks</a>
+            </menu>
+            <div class="fc fc-ltr" data-calendar-start-date="01/07/2014" data-selected-start-date="01/07/2014" id='calendar'>
+                <table class="fc-header">
+                    <tbody>
+                        <tr>
+                            <td id="date-range-back" class="fc-header-left">
+                                <span class="fc-button  fc-state-default fc-corner-left fc-corner-right">
+                                    <span class="fc-icon fc-icon-left-single-arrow"></span>
+                                </span>
+                            </td>
+                            <td class="fc-header-center">
+                                <span class="fc-header-title">
+                                    <h2>July 2014</h2>
+                                </span>
+                            </td>
+                            <td id="date-range-forward" class="fc-header-right">
+                                <span class="fc-button fc-state-default fc-corner-left fc-corner-right">
+                                    <span class="fc-icon fc-icon-right-single-arrow"></span>
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="fc-content" style="">
+                    <div class="fc-view fc-grid">
+                        <div style="position:absolute;z-index:8;top:0;left:0" class="fc-event-container"></div>
+                        <table cellspacing="0" style="width:100%" class="fc-border-separate">
+                            <thead>
+                                <tr class="fc-first fc-last">
+                                    <th class="fc-day-header fc-widget-header" style="width: 27px;">M</th>
+                                    <th class="fc-day-header fc-widget-header" style="width: 27px;">T</th>
+                                    <th class="fc-day-header fc-widget-header" style="width: 27px;">W</th>
+                                    <th class="fc-day-header fc-widget-header" style="width: 27px;">T</th>
+                                    <th class="fc-day-header fc-widget-header" style="width: 27px;">F</th>
+                                    <th class="fc-day-header fc-widget-header" style="width: 27px;">S</th>
+                                    <th class="fc-day-header fc-widget-header" style="width: 27px;">S</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="fc-first">
+                                    <td data-date="30/06/2014" class="fc-day fc-widget-content fc-first  fc-other-month">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">30</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-date="01/07/2014" class="fc-day fc-widget-content fc-first highlighted ">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">1</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-date="02/07/2014" class="fc-day fc-widget-content fc-first highlighted ">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">2</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-date="03/07/2014" class="fc-day fc-widget-content fc-first highlighted ">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">3</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-date="04/07/2014" class="fc-day fc-widget-content fc-first highlighted ">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">4</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-date="05/07/2014" class="fc-day fc-widget-content fc-first highlighted ">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">5</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-date="06/07/2014" class="fc-day fc-widget-content fc-first highlighted ">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">6</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="fc-first">
+                                    <td data-date="07/07/2014" class="fc-day fc-widget-content fc-first highlighted ">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">7</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-date="08/07/2014" class="fc-day fc-widget-content fc-first  ">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">8</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-date="09/07/2014" class="fc-day fc-widget-content fc-first  ">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">9</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-date="10/07/2014" class="fc-day fc-widget-content fc-first  ">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">10</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-date="11/07/2014" class="fc-day fc-widget-content fc-first  ">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">11</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-date="12/07/2014" class="fc-day fc-widget-content fc-first  ">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">12</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-date="13/07/2014" class="fc-day fc-widget-content fc-first  ">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">13</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="fc-first">
+                                    <td data-date="14/07/2014" class="fc-day fc-widget-content fc-first  ">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">14</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-date="15/07/2014" class="fc-day fc-widget-content fc-first  ">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">15</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-date="16/07/2014" class="fc-day fc-widget-content fc-first  ">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">16</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-date="17/07/2014" class="fc-day fc-widget-content fc-first  ">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">17</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-date="18/07/2014" class="fc-day fc-widget-content fc-first  ">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">18</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-date="19/07/2014" class="fc-day fc-widget-content fc-first  ">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">19</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-date="20/07/2014" class="fc-day fc-widget-content fc-first  ">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">20</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="fc-first">
+                                    <td data-date="21/07/2014" class="fc-day fc-widget-content fc-first  ">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">21</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-date="22/07/2014" class="fc-day fc-widget-content fc-first  ">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">22</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-date="23/07/2014" class="fc-day fc-widget-content fc-first  ">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">23</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-date="24/07/2014" class="fc-day fc-widget-content fc-first  ">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">24</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-date="25/07/2014" class="fc-day fc-widget-content fc-first  ">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">25</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-date="26/07/2014" class="fc-day fc-widget-content fc-first  ">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">26</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-date="27/07/2014" class="fc-day fc-widget-content fc-first  ">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">27</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="fc-first">
+                                    <td data-date="28/07/2014" class="fc-day fc-widget-content fc-first  ">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">28</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-date="29/07/2014" class="fc-day fc-widget-content fc-first  ">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">29</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-date="30/07/2014" class="fc-day fc-widget-content fc-first  ">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">30</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-date="31/07/2014" class="fc-day fc-widget-content fc-first  ">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">31</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-date="01/08/2014" class="fc-day fc-widget-content fc-first  fc-other-month">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">1</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-date="02/08/2014" class="fc-day fc-widget-content fc-first  fc-other-month">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">2</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-date="03/08/2014" class="fc-day fc-widget-content fc-first  fc-other-month">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">3</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="fc-first">
+                                    <td data-date="04/08/2014" class="fc-day fc-widget-content fc-first  fc-other-month">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">4</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-date="05/08/2014" class="fc-day fc-widget-content fc-first  fc-other-month">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">5</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-date="06/08/2014" class="fc-day fc-widget-content fc-first  fc-other-month">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">6</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-date="07/08/2014" class="fc-day fc-widget-content fc-first  fc-other-month">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">7</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-date="08/08/2014" class="fc-day fc-widget-content fc-first  fc-other-month">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">8</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-date="09/08/2014" class="fc-day fc-widget-content fc-first  fc-other-month">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">9</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-date="10/08/2014" class="fc-day fc-widget-content fc-first  fc-other-month">
+                                        <div style="min-height: 22px;">
+                                            <div class="fc-day-number">10</div>
+                                            <div class="fc-day-content">
+                                                <div style="position: relative; height: 0px;">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-component="simple-palette" class="palette ">
+            <h2>Operation Calendar</h2>
+            <h3>Manchester Site #1</h3>
+            <menu class="menu">
+                <a data-context="content-header" data-action="edit" class="action edit  primary-action" href="/operations-calendar/1/operations-calendar-details-editor">edit</a>
+                <a data-context="content-header" data-action="remove" class="action remove  secondary-action" href="/operations-calendar/1/remove-operations-calendar-editor">remove</a>
+            </menu>
+
+        </div>
+        <div data-component="content-header" class="content-header ">
+            <h2>Manchester Site #1</h2>
+            <menu class="menu">
+                <a data-action="edit" class="action edit " href="/operations-calendar/1/operations-calendar-details-editor">edit</a>
+                <a data-action="remove" class="action remove " href="/operations-calendar/1/remove-operations-calendar-editor">remove</a>
+            </menu>
+
+        </div>
+        <div class="control-bar">
+            <div id="date_range">
+                <button id="back"></button>
+                <button id="forward"></button>
+                <button id="today" class="secondary-action">Go to today</button>
+                <span id="date">1 - 7 July 2014</span>
+            </div>
+        </div>
+        <section data-component="shift-calendars-lister" class="shift-calendars-lister">
+
+            <article class="shift-calendars-lister-header ">
+                <h2>Shift calendars</h2>
+                <menu class="menu">
+                    <a data-action="new" class="action new " href="/operations-calendar/1/shift-calendars/new">new</a>
+                </menu>
+
+            </article>
+            <article data-component="shift-calendar"
+                     class="shift-calendar ">
+                <header>
+                    <h2>Dispatch</h2>
+                    <menu class="menu">
+                        <a data-action="view" class="action view " href="/operations-calendar/1/shift-calendar/1/shift-calendar-patterns">view</a>
+                        <a data-action="edit" class="action edit " href="/operations-calendar/1/shift-calendar/1/shift-calendar-details-editor">edit</a>
+                        <a data-action="remove" class="action remove " href="/operations-calendar/1/shift-calendar/1/remove-shift-calendar-editor">remove</a>
+                    </menu>
+                </header>
+
+                <table class="ShiftCalendar ShiftCalendar_Week">
+                    <thead>
+                        <tr>
+                            <th class="ShiftCalendar_Label"></th>
+                            <th class="ShiftCalendar_Previous"></th>
+                            <th class="ShiftCalendar_DateHeader">
+                                <span class="ShiftCalendar_Day"><abbr title="Mon"><span>M</span></abbr></span>
+                                <span class="ShiftCalendar_Date">1</span>
+                            </th>
+                            <th class="ShiftCalendar_DateHeader">
+                                <span class="ShiftCalendar_Day"><abbr title="Tue"><span>T</span></abbr></span>
+                                <span class="ShiftCalendar_Date">2</span>
+                            </th>
+                            <th class="ShiftCalendar_DateHeader">
+                                <span class="ShiftCalendar_Day"><abbr title="Wed"><span>W</span></abbr></span>
+                                <span class="ShiftCalendar_Date">3</span>
+                            </th>
+                            <th class="ShiftCalendar_DateHeader">
+                                <span class="ShiftCalendar_Day"><abbr title="Thu"><span>T</span></abbr></span>
+                                <span class="ShiftCalendar_Date">4</span>
+                            </th>
+                            <th class="ShiftCalendar_DateHeader">
+                                <span class="ShiftCalendar_Day"><abbr title="Fri"><span>F</span></abbr></span>
+                                <span class="ShiftCalendar_Date">5</span>
+                            </th>
+                            <th class="ShiftCalendar_DateHeader ShiftCalendar-Weekend">
+                                <span class="ShiftCalendar_Day"><abbr title="Sat"><span>S</span></abbr></span>
+                                <span class="ShiftCalendar_Date">6</span>
+                            </th>
+                            <th class="ShiftCalendar_DateHeader ShiftCalendar-Weekend">
+                                <span class="ShiftCalendar_Day"><abbr title="Sun"><span>S</span></abbr></span>
+                                <span class="ShiftCalendar_Date">7</span>
+                            </th>
+                            <th class="ShiftCalendar_Next"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="2" class="ShiftCalendar_Label">
+                                <div>
+                                    <span class="ShiftCalendar_Label_Title">Team 4</span>
+                                    <div class="ShiftCalendar_Label_Resources">Resources: <span>3</span></div>
+                                </div>
+                            </td>
+                            <td rowspan="2" class="ShiftCalendar_Previous"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(255,238,143);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">6:00 - 18:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(255,238,143);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">6:00 - 18:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(0,204,163);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">18:00 - 6:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(0,204,163);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">18:00 - 6:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td rowspan="2" class="ShiftCalendar_Next"></td>
+                        </tr>
+                        <tr>
+                            <td class="ShiftCalendar_Timeline" colspan="7">
+                                <span style="width: 32.14285%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 7.14285%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 7.14285%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 7.14285%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 14.28571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 7.14285%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 7.14285%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 7.14285%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ShiftCalendar_Label" rowspan="2">
+                                <span class="ShiftCalendar_Label_Title">Team C</span>
+                                <div class="ShiftCalendar_Label_Resources">Resources: <span>3</span></div>
+                            </td>
+                            <td rowspan="2" class="ShiftCalendar_Previous"></td>
+                            <td class="ShiftCalendar_ShiftBlock" >
+                                <div class="ShiftCalendar_ShiftBlock_Title"></div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock">
+                                <div class="ShiftCalendar_ShiftBlock_Title"></div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(255,238,143);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">6:00 - 18:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(255,238,143);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">6:00 - 18:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(0,204,163);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">18:00 - 6:00</div>
+                            </td>
+                            <td rowspan="2" class="ShiftCalendar_Next" style="background-color:rgb(0,204,163);"></td>
+                        </tr>
+                        <tr>
+                            <td class="ShiftCalendar_Timeline" colspan="7">
+                                <span style="width: 60.71428%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 7.14285%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 7.14285%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 7.14285%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 14.28571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 3.57142%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ShiftCalendar_Label" rowspan="2">
+                                <span class="ShiftCalendar_Label_Title">Team B</span>
+                                <div class="ShiftCalendar_Label_Resources">Resources: <span>3</span></div>
+                            </td>
+                            <td rowspan="2" class="ShiftCalendar_Previous" style="background-color:rgb(0,204,163);"></td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(0,204,163);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">18:00 - 6:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(0,204,163);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">18:00 - 6:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(255,238,143);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">6:00 - 18:00</div>
+                            </td>
+                            <td rowspan="2" class="ShiftCalendar_Next" style="background-color:rgb(255,238,143);"></td>
+                        </tr>
+                        <tr>
+                            <td class="ShiftCalendar_Timeline" colspan="7">
+                                <span style="width: 3.57142%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 7.14285%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 7.14285%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 7.14285%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 7.14285%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 57.57142%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 7.14285%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ShiftCalendar_Label" rowspan="2">
+                                <span class="ShiftCalendar_Label_Title">Team A</span>
+                                <div class="ShiftCalendar_Label_Resources">Resources: <span>3</span></div>
+                            </td>
+                            <td rowspan="2" class="ShiftCalendar_Previous" style="background-color:rgb(255,238,143);"></td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(255,238,143);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">6:00 - 18:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(255,238,143);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">6:00 - 18:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(0,204,163);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">18:00 - 6:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(0,204,163);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">18:00 - 6:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td rowspan="2" class="ShiftCalendar_Next"></td>
+                        </tr>
+                        <tr>
+                            <td class="ShiftCalendar_Timeline" colspan="7">
+                                <span style="width: 3.57142%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 7.14285%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 7.14285%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 7.14285%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 14.28571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 7.14285%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 7.14285%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 7.14285%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="ShiftCalendar ShiftCalendar_Month">
+                    <thead>
+                        <tr>
+                            <th class="ShiftCalendar_Label"></th>
+                            <th class="ShiftCalendar_Previous"></th>
+                            <th class="ShiftCalendar_DateHeader">
+                                <span class="ShiftCalendar_Day"><abbr title="Tue"><span>T</span></abbr></span>
+                                <span class="ShiftCalendar_Date">1</span>
+                            </th>
+                            <th class="ShiftCalendar_DateHeader">
+                                <span class="ShiftCalendar_Day"><abbr title="Wed"><span>W</span></abbr></span>
+                                <span class="ShiftCalendar_Date">2</span>
+                            </th>
+                            <th class="ShiftCalendar_DateHeader">
+                                <span class="ShiftCalendar_Day"><abbr title="Thu"><span>T</span></abbr></span>
+                                <span class="ShiftCalendar_Date">3</span>
+                            </th>
+                            <th class="ShiftCalendar_DateHeader">
+                                <span class="ShiftCalendar_Day"><abbr title="Fri"><span>F</span></abbr></span>
+                                <span class="ShiftCalendar_Date">4</span>
+                            </th>
+                            <th class="ShiftCalendar_DateHeader ShiftCalendar_Weekend">
+                                <span class="ShiftCalendar_Day"><abbr title="Sat"><span>S</span></abbr></span>
+                                <span class="ShiftCalendar_Date">5</span>
+                            </th>
+                            <th class="ShiftCalendar_DateHeader ShiftCalendar_Weekend">
+                                <span class="ShiftCalendar_Day"><abbr title="Sun"><span>S</span></abbr></span>
+                                <span class="ShiftCalendar_Date">6</span>
+                            </th>
+                            <th class="ShiftCalendar_DateHeader">
+                                <span class="ShiftCalendar_Day"><abbr title="Mon"><span>M</span></abbr></span>
+                                <span class="ShiftCalendar_Date">7</span>
+                            </th>
+                            <th class="ShiftCalendar_DateHeader">
+                                <span class="ShiftCalendar_Day"><abbr title="Tue"><span>T</span></abbr></span>
+                                <span class="ShiftCalendar_Date">8</span>
+                            </th>
+                            <th class="ShiftCalendar_DateHeader">
+                                <span class="ShiftCalendar_Day"><abbr title="Wed"><span>W</span></abbr></span>
+                                <span class="ShiftCalendar_Date">9</span>
+                            </th>
+                            <th class="ShiftCalendar_DateHeader">
+                                <span class="ShiftCalendar_Day"><abbr title="Thu"><span>T</span></abbr></span>
+                                <span class="ShiftCalendar_Date">10</span>
+                            </th>
+                            <th class="ShiftCalendar_DateHeader">
+                                <span class="ShiftCalendar_Day"><abbr title="Fri"><span>F</span></abbr></span>
+                                <span class="ShiftCalendar_Date">11</span>
+                            </th>
+                            <th class="ShiftCalendar_DateHeader ShiftCalendar_Weekend">
+                                <span class="ShiftCalendar_Day"><abbr title="Sat"><span>S</span></abbr></span>
+                                <span class="ShiftCalendar_Date">12</span>
+                            </th>
+                            <th class="ShiftCalendar_DateHeader ShiftCalendar_Weekend">
+                                <span class="ShiftCalendar_Day"><abbr title="Sun"><span>S</span></abbr></span>
+                                <span class="ShiftCalendar_Date">13</span>
+                            </th>
+                            <th class="ShiftCalendar_DateHeader">
+                                <span class="ShiftCalendar_Day"><abbr title="Mon"><span>M</span></abbr></span>
+                                <span class="ShiftCalendar_Date">14</span>
+                            </th>
+                            <th class="ShiftCalendar_DateHeader">
+                                <span class="ShiftCalendar_Day"><abbr title="Tue"><span>T</span></abbr></span>
+                                <span class="ShiftCalendar_Date">15</span>
+                            </th>
+                            <th class="ShiftCalendar_DateHeader">
+                                <span class="ShiftCalendar_Day"><abbr title="Wed"><span>W</span></abbr></span>
+                                <span class="ShiftCalendar_Date">16</span>
+                            </th>
+                            <th class="ShiftCalendar_DateHeader">
+                                <span class="ShiftCalendar_Day"><abbr title="Thu"><span>T</span></abbr></span>
+                                <span class="ShiftCalendar_Date">17</span>
+                            </th>
+                            <th class="ShiftCalendar_DateHeader">
+                                <span class="ShiftCalendar_Day"><abbr title="Fri"><span>F</span></abbr></span>
+                                <span class="ShiftCalendar_Date">18</span>
+                            </th>
+                            <th class="ShiftCalendar_DateHeader ShiftCalendar_Weekend">
+                                <span class="ShiftCalendar_Day"><abbr title="Sat"><span>S</span></abbr></span>
+                                <span class="ShiftCalendar_Date">19</span>
+                            </th>
+                            <th class="ShiftCalendar_DateHeader ShiftCalendar_Weekend">
+                                <span class="ShiftCalendar_Day"><abbr title="Sun"><span>S</span></abbr></span>
+                                <span class="ShiftCalendar_Date">20</span>
+                            </th>
+                            <th class="ShiftCalendar_DateHeader">
+                                <span class="ShiftCalendar_Day"><abbr title="Mon"><span>M</span></abbr></span>
+                                <span class="ShiftCalendar_Date">21</span>
+                            </th>
+                            <th class="ShiftCalendar_DateHeader">
+                                <span class="ShiftCalendar_Day"><abbr title="Tue"><span>T</span></abbr></span>
+                                <span class="ShiftCalendar_Date">22</span>
+                            </th>
+                            <th class="ShiftCalendar_DateHeader">
+                                <span class="ShiftCalendar_Day"><abbr title="Wed"><span>W</span></abbr></span>
+                                <span class="ShiftCalendar_Date">23</span>
+                            </th>
+                            <th class="ShiftCalendar_DateHeader">
+                                <span class="ShiftCalendar_Day"><abbr title="Thu"><span>T</span></abbr></span>
+                                <span class="ShiftCalendar_Date">24</span>
+                            </th>
+                            <th class="ShiftCalendar_DateHeader">
+                                <span class="ShiftCalendar_Day"><abbr title="Fri"><span>F</span></abbr></span>
+                                <span class="ShiftCalendar_Date">25</span>
+                            </th>
+                            <th class="ShiftCalendar_DateHeader ShiftCalendar_Weekend">
+                                <span class="ShiftCalendar_Day"><abbr title="Sat"><span>S</span></abbr></span>
+                                <span class="ShiftCalendar_Date">26</span>
+                            </th>
+                            <th class="ShiftCalendar_DateHeader ShiftCalendar_Weekend">
+                                <span class="ShiftCalendar_Day"><abbr title="Sun"><span>S</span></abbr></span>
+                                <span class="ShiftCalendar_Date">27</span>
+                            </th>
+                            <th class="ShiftCalendar_DateHeader">
+                                <span class="ShiftCalendar_Day"><abbr title="Mon"><span>M</span></abbr></span>
+                                <span class="ShiftCalendar_Date">28</span>
+                            </th>
+                            <th class="ShiftCalendar_Next"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ShiftCalendar_Label" rowspan="2">
+                                <span class="ShiftCalendar_Label_Title">Team A</span>
+                                <div class="ShiftCalendar_Label_Resources">Resources: <span>5</span></div>
+                            </td>
+                            <td class="ShiftCalendar_Previous" rowspan="2"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(173,204,0);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">6:00 - 18:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(173,204,0);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">6:00 - 18:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(0,204,194);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">18:00 - 6:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(0,204,194);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">18:00 - 6:00</div>
+                            </td>
+                            <td data-block-content-type="white_space" data-block-date="07/07/2014" class="shift-block" style="background-color:rgb();">
+                                <div class="ShiftCalendar_ShiftBlock_Title"></div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(173,204,0);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">6:00 - 18:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(173,204,0);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">6:00 - 18:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(0,204,194);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">18:00 - 6:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(0,204,194);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">18:00 - 6:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(0,204,194);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">18:00 - 6:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(173,204,0);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">6:00 - 18:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(173,204,0);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">6:00 - 18:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(173,204,0);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">6:00 - 18:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(0,204,194);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">18:00 - 6:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(0,204,194);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">18:00 - 6:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_Next" rowspan="2"></td>
+                        </tr>
+                        <tr>
+                            <td class="ShiftCalendar_Timeline" colspan="28">
+                                <span style="width: 8.03570%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 3.57142%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 17.85714%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 3.57142%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 14.28571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 3.57142%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ShiftCalendar_Label" rowspan="2">
+                                <span class="ShiftCalendar_Label_Title">Team B</span>
+                                <div class="ShiftCalendar_Label_Resources">Resources: <span>5</span></div>
+                            </td>
+                            <td class="ShiftCalendar_Previous" rowspan="2"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(173,204,0);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">6:00 - 18:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(173,204,0);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">6:00 - 18:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(0,204,194);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">18:00 - 6:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(0,204,194);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">18:00 - 6:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(0,204,194);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">18:00 - 6:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(173,204,0);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">6:00 - 18:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(173,204,0);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">6:00 - 18:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(173,204,0);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">6:00 - 18:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(0,204,194);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">18:00 - 6:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(0,204,194);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">18:00 - 6:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(173,204,0);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">6:00 - 18:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(173,204,0);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">6:00 - 18:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(0,204,194);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">18:00 - 6:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(0,204,194);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">18:00 - 6:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_Next" rowspan="2"></td>
+                        </tr>
+                        <tr>
+                            <td class="ShiftCalendar_Timeline" colspan="28">
+                                <span style="width: 15.17857%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 3.57142%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 14.28571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 3.57142%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 14.28571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 3.57142%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ShiftCalendar_Label" rowspan="2">
+                                <span class="ShiftCalendar_Label_Title">Team C</span>
+                                <div class="ShiftCalendar_Label_Resources">Resources: <span>5</span></div>
+                            </td>
+                            <td class="ShiftCalendar_Previous" style="background-color:rgb(0,204,194);" rowspan="2"></td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(0,204,194);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">18:00 - 6:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(0,204,194);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">18:00 - 6:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(173,204,0);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">6:00 - 18:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(173,204,0);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">6:00 - 18:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(173,204,0);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">6:00 - 18:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(0,204,194);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">18:00 - 6:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(0,204,194);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">18:00 - 6:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(173,204,0);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">6:00 - 18:00</div>
+                                <div class="timeline">
+                                    <span style="width: 25%;" class="timeline-period rest"></span>
+                                    <span style="width: 50%;" class="timeline-period workingtime"></span>
+                                </div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(173,204,0);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">6:00 - 18:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(0,204,194);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">18:00 - 6:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(0,204,194);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">18:00 - 6:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb();">
+                                <div class="shift-block-title"></div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(173,204,0);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">6:00 - 18:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(173,204,0);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">6:00 - 18:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(0,204,194);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">18:00 - 6:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(0,204,194);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">18:00 - 6:00</div>
+                            </td>
+                            <td class="ShiftCalendar_Next" style="background-color:rgb(0,204,194);" rowspan="2"></td>
+                        </tr>
+                        <tr>
+                            <td class="ShiftCalendar_Timeline" colspan="28">
+                                <span style="width: 2.67858%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 14.28571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 3.57142%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 17.85714%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 3.57142%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 14.28571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                        </tr>
+                        <tr>
+                            <td class="ShiftCalendar_Label" rowspan="2">
+                                <span class="ShiftCalendar_Label_Title">Team D</span>
+                                <div class="ShiftCalendar_Label_Resources">Resources: <span>5</span></div>
+                            </td>
+                            <td class="ShiftCalendar_Previous" style="background-color:rgb(173,204,0);" rowspan="2"></td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(173,204,0);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">6:00 - 18:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(173,204,0);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">6:00 - 18:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(0,204,194);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">18:00 - 6:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(0,204,194);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">18:00 - 6:00</div>
+                              </td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(173,204,0);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">6:00 - 18:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(173,204,0);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">6:00 - 18:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(0,204,194);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">18:00 - 6:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(0,204,194);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">18:00 - 6:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(173,204,0);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">6:00 - 18:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(173,204,0);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">6:00 - 18:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(0,204,194);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">18:00 - 6:00</div>
+                              </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(0,204,194);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">18:00 - 6:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(0,204,194);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">18:00 - 6:00</div>
+                            </td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock"></td>
+                            <td class="ShiftCalendar_ShiftBlock" style="background-color:rgb(173,204,0);">
+                                <div class="ShiftCalendar_ShiftBlock_Title">6:00 - 18:00</div>
+                            </td>
+                            <td class="ShiftCalendar_Next" style="background-color:rgb(173,204,0);" rowspan="2"></td>
+                        </tr>
+                        <tr>
+                            <td class="ShiftCalendar_Timeline" colspan="28">
+                                <span style="width: 0.89285%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 3.57142%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 17.85714%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 3.57142%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 17.85714%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 3.57142%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                                <span style="width: 14.28571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_Rest"></span>
+                                <span style="width: 1.78571%;" class="ShiftCalendar_Timeline_Duration ShiftCalendar_Timeline_WorkingTime"></span>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </article>
+        </section>
+        
+    </div>
+    <footer>
+        &copy; 2013 Working Time Solutions Ltd.
+    </footer>
+
+    <!--
+        Load the application logic for the page
+
+        -->
+    <script src="http://localhost:16355/Static/js/library/require-js/require.js"></script>
+    <script type="text/javascript">
+        //Improve: We really shouldn't be touching the global object.
+        var thin_client_base_url = "/";
+
+        (function (base_url) {
+            // configure the require.js dependencies and then load the behaviours that are
+            // needed for this page
+            requirejs.config({
+                baseUrl: base_url,
+                paths: {
+                    "dependencies": "Static/js/Infrastructure/dependency_config",
+                    "routes": '/' + "named-routes?callback=define",
+                    "workflow": '/' + "workflow?callback=define"
+                }
+            });
+
+            require(['dependencies'], function (config) {
+                requirejs.config(config);
+
+                require(['startup'], function () {
+
+
+                    require(['operational_calendar'], function () { });
+
+                });
+            });
+
+        }('http://localhost:16355/'));
+
+    </script>
+
+</body>
+
+</html>

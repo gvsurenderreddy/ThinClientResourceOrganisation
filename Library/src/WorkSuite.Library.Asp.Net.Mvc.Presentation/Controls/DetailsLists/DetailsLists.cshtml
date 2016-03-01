@@ -1,0 +1,28 @@
+﻿@* Generator : MvcHelper GeneratePrettyNames : true *@
+
+@using Controls.Reports
+@using WorkSuite.Library.Asp.Net.Mvc.Server.Framework.ViewModels.DetailsLists
+
+@helper For(DetailsList view_model)
+{
+    var has_description = !string.IsNullOrWhiteSpace(@view_model.header.description);
+    
+    <section id="@view_model.id" class="report-wrapper @(view_model.is_sortable ? "sortable" : null)">
+
+        <article 
+        id="@view_model.id-header"
+        class="details-list-header report" >
+            <h2>@view_model.header.title</h2>
+            @ReportActions.For(@view_model.header.actions)
+            @if (has_description){<p>@view_model.header.description</p>}
+        </article>
+
+        @foreach (var element in view_model.elements)
+        {
+            @Reports.For(element as dynamic)
+        }
+
+
+    </section>
+        
+}

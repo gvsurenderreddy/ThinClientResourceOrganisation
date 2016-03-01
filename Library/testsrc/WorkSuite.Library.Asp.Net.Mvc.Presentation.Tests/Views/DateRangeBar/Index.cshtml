@@ -1,0 +1,22 @@
+﻿@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Controls.ContentHeaders
+@using WorkSuite.Library.Asp.Net.Mvc.Presentation.Controls.DateRangeBar
+@model WorkSuite.Library.Asp.Net.Mvc.Server.DateRangeBars.DateRangeBar
+
+@{
+    Layout = null;
+
+    const string title = "WorkSuite.Library.Asp.Net.Mvc.Presentation.Tests - Date Range Bars";
+}
+
+    <!DOCTYPE HTML>
+
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>@title</title>
+    </head>
+    <body>
+        <h1>@title</h1>
+        @DateRangeBars.For( Model as dynamic )
+    </body>
+</html>

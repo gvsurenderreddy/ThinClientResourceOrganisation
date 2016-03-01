@@ -1,0 +1,7 @@
+﻿using WTS.WorkSuite.Library.CodeStrutures.Behavioral;
+
+namespace WorkSuite.Configuration.Service.Configuration.StaticContent.GetCurrentStaticContent
+{
+    public interface IGetCurrentStaticContent
+        : IQuery <GetCurrentStaticContentResponse>{}
+}
